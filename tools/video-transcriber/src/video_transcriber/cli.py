@@ -21,10 +21,14 @@ from .config import (
     AUDIO_EXTENSIONS,
     BATCH_DASHBOARD_PORT,
     BATCH_DEFAULT_MODEL,
+    CHAPTER_MIN_SECONDS,
+    CHAPTER_THRESHOLD,
+    CHAPTER_WINDOW_SIZE,
     CHUNK_MAX_WORDS,
     DEFAULT_LANGUAGE,
     DEFAULT_MODEL,
     MEDIA_EXTENSIONS,
+    SUMMARY_MAX_SENTENCES,
     TEXT_EXTENSIONS,
     VIDEO_EXTENSIONS,
     WHISPER_MODELS,
@@ -78,6 +82,22 @@ def process(
     max_words: int = typer.Option(
         CHUNK_MAX_WORDS, "--max-words",
         help="Max words per chunk",
+    ),
+    srt: bool = typer.Option(
+        False, "--srt",
+        help="Generate SRT subtitle file",
+    ),
+    vtt: bool = typer.Option(
+        False, "--vtt",
+        help="Generate VTT subtitle file",
+    ),
+    chapters: bool = typer.Option(
+        False, "--chapters",
+        help="Detect and generate chapters",
+    ),
+    summarize: bool = typer.Option(
+        False, "--summarize",
+        help="Generate extractive summary",
     ),
 ) -> None:
     """Full pipeline: download + transcribe + clean + chunk."""
@@ -179,7 +199,55 @@ def process(
     chunks = chunk_transcription(cleaned_segs, max_words=max_words)
     save_chunks(chunks, output)
 
-    # Summary
+    # Optional: Captions (SRT/VTT)
+    if srt or vtt:
+        from .captions import save_srt, save_vtt
+
+        caption_title = metadata.title if metadata else Path(source).stem
+        if srt:
+            srt_path = output / "transcription.srt"
+            save_srt(cleaned_segs, srt_path)
+            console.print(f"  [green]SRT:[/green] {srt_path.name}")
+        if vtt:
+            vtt_path = output / "transcription.vtt"
+            save_vtt(cleaned_segs, vtt_path, title=caption_title)
+            console.print(f"  [green]VTT:[/green] {vtt_path.name}")
+
+    # Optional: Chapters
+    detected_chapters = None
+    if chapters:
+        from .chapters import chapters_to_markdown, detect_chapters, save_chapters
+
+        console.print("\n[bold cyan]Chapters:[/bold cyan] Detecting topic boundaries...")
+        detected_chapters = detect_chapters(cleaned_segs)
+        if detected_chapters:
+            save_chapters(detected_chapters, output / "chapters.json")
+            ch_md = chapters_to_markdown(detected_chapters)
+            (output / "chapters.md").write_text(ch_md, encoding="utf-8")
+            console.print(f"  [green]Found {len(detected_chapters)} chapters[/green]")
+            for ch in detected_chapters:
+                console.print(f"    [{ch.start_formatted}] {ch.title}")
+        else:
+            console.print("  No chapters detected (content too short or uniform)")
+
+    # Optional: Summarize
+    generated_summary = None
+    if summarize:
+        from .summarizer import save_summary, summarize_segments, summary_to_markdown
+
+        console.print("\n[bold cyan]Summary:[/bold cyan] Generating extractive summary...")
+        sum_title = metadata.title if metadata else Path(source).stem
+        generated_summary = summarize_segments(cleaned_segs, title=sum_title)
+        if generated_summary.full_summary:
+            save_summary(generated_summary, output / "summary.json")
+            sum_md = summary_to_markdown(generated_summary)
+            (output / "summary.md").write_text(sum_md, encoding="utf-8")
+            console.print(f"  [green]{generated_summary.word_count} words, "
+                          f"{len(generated_summary.key_points)} key points[/green]")
+        else:
+            console.print("  No summary generated (not enough content)")
+
+    # Results summary
     console.print("\n" + "=" * 50)
     console.print("[bold green]COMPLETE[/bold green]")
     console.print("=" * 50)
@@ -194,6 +262,10 @@ def process(
     table.add_row("Words", f"{word_count:,}")
     table.add_row("Chunks", str(len(chunks)))
     table.add_row("Language", result.language)
+    if detected_chapters:
+        table.add_row("Chapters", str(len(detected_chapters)))
+    if generated_summary:
+        table.add_row("Summary", f"{generated_summary.word_count} words")
     console.print(table)
     console.print()
 
@@ -283,6 +355,22 @@ def batch(
         CHUNK_MAX_WORDS, "--max-words",
         help="Max words per chunk (requires --chunk)",
     ),
+    srt: bool = typer.Option(
+        False, "--srt",
+        help="Generate SRT subtitle per video",
+    ),
+    vtt: bool = typer.Option(
+        False, "--vtt",
+        help="Generate VTT subtitle per video",
+    ),
+    chapters: bool = typer.Option(
+        False, "--chapters",
+        help="Detect chapters per video",
+    ),
+    do_summarize: bool = typer.Option(
+        False, "--summarize",
+        help="Generate extractive summary per video",
+    ),
     dry_run: bool = typer.Option(
         False, "--dry-run",
         help="List videos without processing",
@@ -309,6 +397,10 @@ def batch(
         output_dir=output_dir,
         chunk=do_chunk,
         max_words=max_words,
+        generate_srt=srt,
+        generate_vtt=vtt,
+        generate_chapters=chapters,
+        generate_summary=do_summarize,
     )
 
     # Scan

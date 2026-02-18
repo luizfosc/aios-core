@@ -21,6 +21,14 @@ BATCH_STATUS_FILE = "batch-status.json"
 BATCH_DASHBOARD_PORT = 8765
 BATCH_SENTENCES_PER_PARAGRAPH = 5
 
+# Chapter detection defaults
+CHAPTER_MIN_SECONDS = 120.0
+CHAPTER_WINDOW_SIZE = 15
+CHAPTER_THRESHOLD = 0.75
+
+# Summarization defaults
+SUMMARY_MAX_SENTENCES = 10
+
 # Supported formats
 AUDIO_EXTENSIONS = {".mp3", ".wav", ".m4a", ".flac", ".ogg", ".aac", ".wma", ".opus"}
 VIDEO_EXTENSIONS = {".mp4", ".mkv", ".webm", ".avi", ".mov", ".wmv", ".flv", ".m4v"}

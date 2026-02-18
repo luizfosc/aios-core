@@ -1,8 +1,8 @@
 # video-transcriber
 
-CLI tool that downloads, transcribes, cleans, chunks, and **batch-processes** video/audio content. Includes Whisper hallucination loop cleaning and optional HTML dashboard.
+CLI tool that downloads, transcribes, cleans, chunks, and **batch-processes** video/audio content. Includes Whisper hallucination loop cleaning, SRT/VTT captions, chapter detection, extractive summarization, and optional HTML dashboard.
 
-**Version:** 1.1.0
+**Version:** 1.2.0
 
 ## Install
 
@@ -48,6 +48,22 @@ Output:
     └── manifest.json          # Chunk metadata
 ```
 
+With all Tier 1 features enabled:
+```bash
+vt process "https://youtube.com/watch?v=xxx" --srt --vtt --chapters --summarize
+```
+
+Additional output:
+```
+/tmp/vt-result/
+├── transcription.srt          # SRT subtitles
+├── transcription.vtt          # WebVTT subtitles
+├── chapters.json              # Detected chapter boundaries
+├── chapters.md                # Chapters as markdown TOC
+├── summary.json               # Extractive summary
+└── summary.md                 # Summary as markdown
+```
+
 ### Download only
 
 ```bash
@@ -77,6 +93,9 @@ vt batch ~/Dropbox/Cursos/MeuCurso --dashboard
 
 # Custom model and language
 vt batch ~/Dropbox/Cursos/MeuCurso --model turbo --language pt --dashboard
+
+# With captions and chapters
+vt batch ~/Dropbox/Cursos/MeuCurso --srt --chapters --summarize
 ```
 
 Output per video: `{video-stem}-transcricao.md` alongside the original file.
@@ -85,6 +104,9 @@ Features:
 - Recursive directory scan
 - Automatic resume (skips videos with existing `-transcricao.md`)
 - Whisper hallucination loop cleaning via `clean_segments()`
+- SRT/VTT subtitle generation per video
+- Automatic chapter detection via vocabulary shift analysis
+- Extractive summarization (no LLM required)
 - Atomic status JSON writes (`batch-status.json`)
 - Graceful Ctrl+C (re-run to resume)
 - Optional HTML dashboard (`--dashboard`)
@@ -99,6 +121,10 @@ Features:
 | `--language` | `pt` | Language code (pt, en, auto) |
 | `--output` | `/tmp/vt-<hash>/` | Output directory |
 | `--max-words` | `2000` | Max words per chunk |
+| `--srt` | off | Generate SRT subtitle file |
+| `--vtt` | off | Generate VTT subtitle file |
+| `--chapters` | off | Detect and generate chapters |
+| `--summarize` | off | Generate extractive summary |
 
 ### Batch command
 
@@ -111,6 +137,10 @@ Features:
 | `--port` | `8765` | Dashboard server port |
 | `--chunk` | off | Generate chunks per video |
 | `--max-words` | `2000` | Max words per chunk |
+| `--srt` | off | Generate SRT subtitle per video |
+| `--vtt` | off | Generate VTT subtitle per video |
+| `--chapters` | off | Detect chapters per video |
+| `--summarize` | off | Generate extractive summary per video |
 | `--dry-run` | off | List videos without processing |
 
 ## Deprecated Scripts

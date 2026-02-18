@@ -40,6 +40,10 @@ class BatchEngine:
         output_dir: Path | None = None,
         chunk: bool = False,
         max_words: int = 2000,
+        generate_srt: bool = False,
+        generate_vtt: bool = False,
+        generate_chapters: bool = False,
+        generate_summary: bool = False,
     ) -> None:
         self.source_dir = Path(source_dir).resolve()
         self.model = model
@@ -47,6 +51,10 @@ class BatchEngine:
         self.output_dir = Path(output_dir).resolve() if output_dir else None
         self.chunk = chunk
         self.max_words = max_words
+        self.generate_srt = generate_srt
+        self.generate_vtt = generate_vtt
+        self.generate_chapters = generate_chapters
+        self.generate_summary = generate_summary
 
         self._is_running = False
         self._all_videos: list[Path] = []
@@ -229,6 +237,34 @@ class BatchEngine:
                 chunks = chunk_transcription(cleaned_segs, max_words=self.max_words)
                 chunk_dir = output_path.parent / f"{video_path.stem}-chunks"
                 save_chunks(chunks, chunk_dir)
+
+            # Optional captions
+            if self.generate_srt or self.generate_vtt:
+                from .captions import save_srt, save_vtt
+
+                base = output_path.parent / video_path.stem
+                if self.generate_srt:
+                    save_srt(cleaned_segs, base.with_suffix(".srt"))
+                if self.generate_vtt:
+                    save_vtt(cleaned_segs, base.with_suffix(".vtt"), title=video_path.stem)
+
+            # Optional chapters
+            if self.generate_chapters:
+                from .chapters import chapters_to_markdown, detect_chapters, save_chapters
+
+                chapters = detect_chapters(cleaned_segs)
+                if chapters:
+                    base = output_path.parent / f"{video_path.stem}-chapters.json"
+                    save_chapters(chapters, base)
+
+            # Optional summary
+            if self.generate_summary:
+                from .summarizer import save_summary, summarize_segments
+
+                summary = summarize_segments(cleaned_segs, title=video_path.stem)
+                if summary.full_summary:
+                    base = output_path.parent / f"{video_path.stem}-summary.json"
+                    save_summary(summary, base)
 
         finally:
             # Cleanup temp audio
