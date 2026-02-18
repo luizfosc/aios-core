@@ -99,6 +99,18 @@ def process(
         False, "--summarize",
         help="Generate extractive summary",
     ),
+    obsidian: bool = typer.Option(
+        False, "--obsidian",
+        help="Generate Obsidian-native markdown with frontmatter",
+    ),
+    glossary: bool = typer.Option(
+        False, "--glossary",
+        help="Extract glossary of key terms and proper names",
+    ),
+    index: bool = typer.Option(
+        False, "--index",
+        help="Index transcription in SQLite FTS5 search database",
+    ),
 ) -> None:
     """Full pipeline: download + transcribe + clean + chunk."""
     # Determine output directory
@@ -247,6 +259,73 @@ def process(
         else:
             console.print("  No summary generated (not enough content)")
 
+    # Optional: Glossary
+    generated_glossary = None
+    if glossary:
+        from .glossary import extract_glossary, glossary_to_markdown, save_glossary
+
+        console.print("\n[bold cyan]Glossary:[/bold cyan] Extracting key terms...")
+        generated_glossary = extract_glossary(cleaned_segs)
+        if generated_glossary.entries:
+            save_glossary(generated_glossary, output / "glossary.json")
+            gl_md = glossary_to_markdown(generated_glossary)
+            (output / "glossary.md").write_text(gl_md, encoding="utf-8")
+            console.print(
+                f"  [green]{generated_glossary.total_terms} terms:[/green] "
+                f"{len(generated_glossary.proper_names)} names, "
+                f"{len(generated_glossary.technical_terms)} technical, "
+                f"{len(generated_glossary.concepts)} concepts"
+            )
+        else:
+            console.print("  No terms extracted (not enough content)")
+
+    # Optional: Obsidian
+    if obsidian:
+        from .obsidian import save_obsidian
+
+        console.print("\n[bold cyan]Obsidian:[/bold cyan] Generating Obsidian-native markdown...")
+        obs_title = metadata.title if metadata else Path(source).stem
+        obs_kwargs: dict = {
+            "title": obs_title,
+            "source": source,
+            "language": result.language,
+            "model": model,
+        }
+        if detected_chapters:
+            obs_kwargs["chapters"] = [ch.to_dict() for ch in detected_chapters]
+        if generated_summary and generated_summary.full_summary:
+            obs_kwargs["summary_text"] = generated_summary.full_summary
+        if generated_glossary and generated_glossary.entries:
+            obs_kwargs["glossary_terms"] = [e.to_dict() for e in generated_glossary.entries[:20]]
+        obs_path = output / f"{Path(source).stem if not metadata else obs_title}.md"
+        # Sanitize filename
+        safe_name = re.sub(r'[<>:"/\\|?*]', '_', obs_path.stem)
+        obs_path = output / f"{safe_name}-obsidian.md"
+        save_obsidian(cleaned_segs, obs_path, **obs_kwargs)
+        console.print(f"  [green]Saved:[/green] {obs_path.name}")
+
+    # Optional: Search index
+    indexed_count = 0
+    if index:
+        from .search import SearchIndex
+
+        console.print("\n[bold cyan]Index:[/bold cyan] Adding to search database...")
+        idx_title = metadata.title if metadata else Path(source).stem
+        db_path = output / "vt-search.db"
+        with SearchIndex(db_path) as idx:
+            indexed_count = idx.index_transcription(
+                cleaned_segs,
+                title=idx_title,
+                source_path=source,
+                language=result.language,
+                model=model,
+            )
+            idx_stats = idx.stats()
+        console.print(
+            f"  [green]Indexed {indexed_count} segments[/green] "
+            f"({idx_stats['documents']} docs in DB)"
+        )
+
     # Results summary
     console.print("\n" + "=" * 50)
     console.print("[bold green]COMPLETE[/bold green]")
@@ -266,6 +345,10 @@ def process(
         table.add_row("Chapters", str(len(detected_chapters)))
     if generated_summary:
         table.add_row("Summary", f"{generated_summary.word_count} words")
+    if generated_glossary:
+        table.add_row("Glossary", f"{generated_glossary.total_terms} terms")
+    if indexed_count:
+        table.add_row("Indexed", f"{indexed_count} segments")
     console.print(table)
     console.print()
 
@@ -371,6 +454,18 @@ def batch(
         False, "--summarize",
         help="Generate extractive summary per video",
     ),
+    do_obsidian: bool = typer.Option(
+        False, "--obsidian",
+        help="Generate Obsidian-native markdown per video",
+    ),
+    do_glossary: bool = typer.Option(
+        False, "--glossary",
+        help="Extract glossary per video",
+    ),
+    do_index: bool = typer.Option(
+        False, "--index",
+        help="Index all transcriptions in SQLite FTS5 search database",
+    ),
     dry_run: bool = typer.Option(
         False, "--dry-run",
         help="List videos without processing",
@@ -401,6 +496,9 @@ def batch(
         generate_vtt=vtt,
         generate_chapters=chapters,
         generate_summary=do_summarize,
+        generate_obsidian=do_obsidian,
+        generate_glossary=do_glossary,
+        generate_index=do_index,
     )
 
     # Scan
@@ -694,6 +792,85 @@ def ingest(
     console.print(f"\n[green]Done:[/green] {len(chunks)} chunks, {total_words:,} words")
     console.print(f"  Output: {chunks_dir}")
     console.print(f"  Manifest: {chunks_dir / 'manifest.json'}")
+
+
+@app.command()
+def search(
+    query: str = typer.Argument(help="Search query (supports FTS5 syntax: AND, OR, NOT, \"phrases\")"),
+    db: Path = typer.Option(
+        Path.home() / ".vt" / "vt-search.db", "--db",
+        help="Path to search database",
+    ),
+    limit: int = typer.Option(
+        20, "--limit", "-n",
+        help="Maximum results",
+    ),
+) -> None:
+    """Search across all indexed transcriptions."""
+    from .search import SearchIndex
+
+    db = db.resolve()
+    if not db.exists():
+        console.print(f"[red]No search database found at: {db}[/red]")
+        console.print("Use --index flag with process/batch to build the index.")
+        raise typer.Exit(1)
+
+    with SearchIndex(db) as idx:
+        results = idx.search(query, limit=limit)
+        idx_stats = idx.stats()
+
+    if not results:
+        console.print(f"No results for: [bold]{query}[/bold]")
+        console.print(f"  Database: {idx_stats['documents']} documents, {idx_stats['total_words']:,} words")
+        raise typer.Exit(0)
+
+    console.print(f"\n[bold]Results for:[/bold] {query} ({len(results)} matches)\n")
+
+    for i, r in enumerate(results, 1):
+        snippet = r.snippet.replace(">>>", "[bold yellow]").replace("<<<", "[/bold yellow]")
+        console.print(f"  [dim]{i:2d}.[/dim] [bold]{r.title}[/bold]")
+        console.print(f"      [{r.timestamp_formatted}] {snippet}")
+        console.print()
+
+    console.print(f"[dim]Database: {idx_stats['documents']} docs, {idx_stats['total_words']:,} words[/dim]")
+
+
+@app.command(name="search-stats")
+def search_stats(
+    db: Path = typer.Option(
+        Path.home() / ".vt" / "vt-search.db", "--db",
+        help="Path to search database",
+    ),
+) -> None:
+    """Show search index statistics."""
+    from .search import SearchIndex
+
+    db = db.resolve()
+    if not db.exists():
+        console.print(f"[red]No search database found at: {db}[/red]")
+        raise typer.Exit(1)
+
+    with SearchIndex(db) as idx:
+        s = idx.stats()
+        docs = idx.list_documents()
+
+    console.print(f"\n[bold]Search Index Stats[/bold]\n")
+    table = Table(show_header=False, box=None, padding=(0, 2))
+    table.add_column(style="bold")
+    table.add_column()
+    table.add_row("Database", str(db))
+    table.add_row("Size", f"{s['db_size_mb']} MB")
+    table.add_row("Documents", str(s['documents']))
+    table.add_row("Segments", str(s['segments']))
+    table.add_row("Total Words", f"{s['total_words']:,}")
+    console.print(table)
+
+    if docs:
+        console.print(f"\n[bold]Indexed Documents ({len(docs)}):[/bold]\n")
+        for d in docs:
+            console.print(f"  - {d['title']} ({d['word_count']:,} words, {d['segment_count']} segments)")
+
+    console.print()
 
 
 if __name__ == "__main__":

@@ -28,7 +28,7 @@ Auto-generated tools registry. Updated: 2026-02-18
 ### video-transcriber
 
 - **Language:** Python
-- **Description:** CLI tool that downloads, transcribes, cleans, chunks, and **batch-processes** video/audio content. Includes Whisper hallucination loop cleaning, SRT/VTT captions, chapter detection, extractive summarization, and optional HTML dashboard.
+- **Description:** CLI tool that downloads, transcribes, cleans, chunks, and **batch-processes** video/audio content. Includes Whisper hallucination loop cleaning, SRT/VTT captions, chapter detection, extractive summarization, Obsidian integration, glossary extraction, full-text search index, and optional HTML dashboard.
 - **Path:** `tools/video-transcriber/`
 - **Docs:** [README](video-transcriber/README.md)
 

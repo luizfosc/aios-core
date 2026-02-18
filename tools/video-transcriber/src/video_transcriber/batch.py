@@ -44,6 +44,9 @@ class BatchEngine:
         generate_vtt: bool = False,
         generate_chapters: bool = False,
         generate_summary: bool = False,
+        generate_obsidian: bool = False,
+        generate_glossary: bool = False,
+        generate_index: bool = False,
     ) -> None:
         self.source_dir = Path(source_dir).resolve()
         self.model = model
@@ -55,6 +58,9 @@ class BatchEngine:
         self.generate_vtt = generate_vtt
         self.generate_chapters = generate_chapters
         self.generate_summary = generate_summary
+        self.generate_obsidian = generate_obsidian
+        self.generate_glossary = generate_glossary
+        self.generate_index = generate_index
 
         self._is_running = False
         self._all_videos: list[Path] = []
@@ -265,6 +271,44 @@ class BatchEngine:
                 if summary.full_summary:
                     base = output_path.parent / f"{video_path.stem}-summary.json"
                     save_summary(summary, base)
+
+            # Optional glossary
+            if self.generate_glossary:
+                from .glossary import extract_glossary, save_glossary
+
+                glossary = extract_glossary(cleaned_segs)
+                if glossary.entries:
+                    base = output_path.parent / f"{video_path.stem}-glossary.json"
+                    save_glossary(glossary, base)
+
+            # Optional Obsidian
+            if self.generate_obsidian:
+                from .obsidian import save_obsidian
+
+                obs_path = output_path.parent / f"{video_path.stem}-obsidian.md"
+                save_obsidian(
+                    cleaned_segs,
+                    obs_path,
+                    title=video_path.stem,
+                    source=str(video_path),
+                    language=self.language,
+                    model=self.model,
+                )
+
+            # Optional search index
+            if self.generate_index:
+                from .search import SearchIndex
+
+                db_dir = self.output_dir or self.source_dir
+                db_path = db_dir / "vt-search.db"
+                with SearchIndex(db_path) as idx:
+                    idx.index_transcription(
+                        cleaned_segs,
+                        title=video_path.stem,
+                        source_path=str(video_path),
+                        language=self.language,
+                        model=self.model,
+                    )
 
         finally:
             # Cleanup temp audio
