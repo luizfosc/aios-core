@@ -22,6 +22,19 @@ function extractYamlBlock(content) {
 }
 
 /**
+ * Extract YAML frontmatter from markdown content (--- delimited)
+ * @param {string} content - Full markdown content
+ * @returns {string|null} - YAML content without delimiters, or null if not found
+ */
+function extractFrontmatter(content) {
+  const fmMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
+  if (fmMatch && fmMatch[1]) {
+    return fmMatch[1].trim();
+  }
+  return null;
+}
+
+/**
  * Parse YAML content safely with fallback for problematic patterns
  * @param {string} yamlContent - YAML string to parse
  * @returns {object|null} - Parsed object or null on error
@@ -142,8 +155,13 @@ function parseAgentFile(filePath) {
     const content = fs.readFileSync(filePath, 'utf8');
     result.raw = content;
 
-    // Extract YAML block
-    const yamlContent = extractYamlBlock(content);
+    // Extract YAML block (fenced ```yaml``` first, then frontmatter ---)
+    let yamlContent = extractYamlBlock(content);
+    let isFrontmatter = false;
+    if (!yamlContent) {
+      yamlContent = extractFrontmatter(content);
+      isFrontmatter = !!yamlContent;
+    }
     if (!yamlContent) {
       result.error = 'No YAML block found';
       return result;
@@ -162,6 +180,16 @@ function parseAgentFile(filePath) {
         result.error = 'Failed to parse YAML';
         return result;
       }
+    } else if (isFrontmatter) {
+      // Frontmatter agents have a flat schema (name, description, model, tools)
+      // Map to the expected structure for compatibility
+      result.yaml = parsed;
+      result.agent = {
+        name: parsed.name || result.id,
+        title: parsed.description ? parsed.description.split('\n')[0].trim() : null,
+        model: parsed.model || null,
+      };
+      result.frontmatter = parsed;
     } else {
       result.yaml = parsed;
 
@@ -285,6 +313,7 @@ function formatCommandsList(commands, prefix = '*') {
 
 module.exports = {
   extractYamlBlock,
+  extractFrontmatter,
   parseYaml,
   extractSection,
   parseAgentFile,
