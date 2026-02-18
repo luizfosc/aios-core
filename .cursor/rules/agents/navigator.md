@@ -21,6 +21,7 @@ Definição de arquitetura → Use @architect.
 - `*orchestrate` - Setup multi-chat orchestration
 - `*checkpoint` - Criar checkpoint manual de progresso
 - `*status-report` - Gerar relatório de status completo
+- `*navigator-doctor` - Run health check and diagnostics
 - `*guide` - Show comprehensive usage guide for this agent
 - `*exit` - Exit navigator mode
 
