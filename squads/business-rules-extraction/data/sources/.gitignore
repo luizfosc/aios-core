@@ -1,0 +1,8 @@
+# Book/paper source texts (copyrighted materials - do not commit)
+*.txt
+*.pdf
+*.epub
+*.mobi
+
+# Keep directory structure
+!.gitignore
