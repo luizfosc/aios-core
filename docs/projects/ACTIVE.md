@@ -31,4 +31,4 @@
 | B4 | app-artes-ensinio | cmux workspace | Em andamento (42% contexto, $8.21) | Continuar sessão Lovable |
 | B5 | ~~app-extrair-dados-whatsapp-ensinio~~ | cmux workspace | Cancelado — deletado | — |
 | B6 | casa-fundamental | cmux workspace | Backlog | Definir escopo e objetivos |
-| 19 | ensinio-whatsapp-prospector | 🏠 | 🔄 Em andamento | — | 2026-03-16 | [INDEX](/Users/luizfosc/CODE/Projects/ensinio-whatsapp-prospector/.aios/INDEX.md) |
+| 19 | **ensinio-whatsapp-prospector** | 🏠 | ✅ **HARD-P0-001 Done (40 tests), HARD-P0-002 created (~30min polish)** | **@dev (Dex)** | **2026-03-16 21:15** | [INDEX](~/CODE/Projects/ensinio-whatsapp-prospector/.aios/INDEX.md) |
