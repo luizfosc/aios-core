@@ -1,15 +1,19 @@
 status:
   branch: chore/devops-10-improvements
   modifiedFiles:
+    - .aios-core/data/port-registry.json
     - .aios/session.json
-  modifiedFilesTotalCount: 1
+    - docs/projects/.aios-core/
+    - docs/projects/advisor-board/.aios/
+    - docs/projects/advisor-board/.claude/
+  modifiedFilesTotalCount: 26
   recentCommits:
-    - '6 chore: add luiz-fosc-palestras-negocio to ACTIVE projects'
-    - 'c chore: update ACTIVE.md - ensinio-whatsapp-prospector Wave 3 complete'
-  currentEpic: Ensinio Prospector App
-  currentStory: story-m1-foundation
-  lastUpdate: '2026-03-17T18:52:06.291Z'
+    - '8 backup: 2026-03-18 01:09'
+    - '4 chore: mark qa-to-devops handoff as consumed'
+  currentEpic: null
+  currentStory: HTM-1.3-integration-hardening
+  lastUpdate: '2026-03-18T04:23:22.385Z'
   isGitRepo: true
-timestamp: 1773773526292
+timestamp: 1773807802391
 ttl: 60
-gitFingerprint: 1773442718658.3108:1773772427893.1558
+gitFingerprint: 1773442718658.3108:1773807780329.4385

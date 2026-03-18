@@ -9,7 +9,7 @@ O `ensinio-mind` é o squad de conhecimento centralizado da Ensinio. Ele contém
 
 ## Por que existe
 
-Antes, o conhecimento Ensinio estava preso dentro do `ensinio-whatsapp-prospector`, com symlinks para o `ensinio-prospector`. Isso não escalava — cada novo squad teria que fazer symlink para dentro de um squad de prospecção.
+Antes, o conhecimento Ensinio estava preso dentro do `whatsapp-prospector`, com symlinks para o prospector squad. Isso não escalava — cada novo squad teria que fazer symlink para dentro de um squad de prospecção.
 
 Agora, o `ensinio-mind` é o **source of truth**. Todos os squads Ensinio consomem daqui.
 
@@ -28,8 +28,8 @@ squads/ensinio-mind/                    <- SOURCE OF TRUTH
       ├── scoring-criteria.md           # Qualificação de leads (temperatura 1-10)
       └── message-rules.md             # Regras de comunicação
 
-squads/ensinio-whatsapp-prospector/     <- CONSOME do mind
-squads/ensinio-prospector/              <- CONSOME do mind
+squads/whatsapp-prospector/     <- CONSOME do mind
+squads/whatsapp-prospector/              <- CONSOME do mind
 (futuros squads ensinio-*)              <- CONSOME do mind
 ```
 

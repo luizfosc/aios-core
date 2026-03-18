@@ -1,4 +1,5 @@
 {
+  "enabledMcpjsonServers": ["alexa"],
   "hooks": {
     "SessionStart": [
       {

@@ -173,7 +173,7 @@ Restante do session file:
 > Exemplos de comando de ativação:
 > - `/AIOS:agents:aios-master` (agentes AIOS)
 > - `/AIOS:agents:dev` (agente dev)
-> - `/ensinio-whatsapp-prospector:README` (squad)
+> - `/whatsapp-prospector:README` (squad)
 > - Se nenhum agente especial estava ativo: `nenhum (Claude Code puro)`
 
 ## Arquivos para contexto (próximo Claude DEVE ler)

@@ -305,7 +305,7 @@
 
 - **ensinio-expert** — N/A
 
-### Squad: ensinio-prospector (5)
+### Squad: whatsapp-prospector (5)
 
 - **prospector-chief** — N/A
 - **prospect-analyst** — N/A

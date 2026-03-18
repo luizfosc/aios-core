@@ -61,15 +61,14 @@ metadata:
   sources:
     - "ensinio.com (site oficial)"
     - "Pitch Deck Ensinio 2026 (52 slides)"
-    - "ensinio-whatsapp-prospector/data/ (KB v2.0.0)"
+    - "whatsapp-prospector/data/ (KB v2.0.0)"
     - "Google Forms — Gui Ávila (06/03/2026)"
     - "Google Forms — Antonio (12/03/2026)"
     - "Google Forms — Ricardo (13/03/2026)"
     - "tl;dv calls — Ricardo (vendas) + Bhrenda (suporte)"
     - "tl;dv batch 1 (5 calls processadas 2026-03-14): 69b45eb, Como Elevar, Como implementar agentes, Como automatizar vendas, Continuação Luiz e Flávia"
   consumers:
-    - ensinio-prospector
-    - ensinio-whatsapp-prospector
+    - whatsapp-prospector
     - "(futuros squads ensinio-*)"
   pending_data:
     - "ensinio-partnership-program.md — Programa de parceiros/revendedores (v3.0)"

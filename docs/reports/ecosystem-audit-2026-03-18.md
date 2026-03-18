@@ -1,271 +1,740 @@
 # Ecosystem Audit Report
 
 **Data:** 2026-03-18
-**Score Global:** 8.2/10
-**Dimensoes:** 6 | **Issues:** 24 total
+**Score Global:** 6.7/10
 
----
+## 📊 Resumo por Dimensão
 
-## Resumo por Dimensao
+| Dimensão | Score | Status | Issues |
+|----------|-------|--------|--------|
+| Projects | 10/10 | ✅ EXCELLENT | 0 |
+| Squads | 9.4/10 | ✅ EXCELLENT | 4 |
+| Agents | 5.3/10 | ⚠️ NEEDS_WORK | 32 |
+| Skills | 0.2/10 | ⚠️ NEEDS_WORK | 111 |
+| Minds | 6.7/10 | ⚠️ NEEDS_WORK | 17 |
+| Tools | 8.6/10 | ✅ APPROVED | 3 |
 
-| Dimensao | Score | Status | Items | OK | Issues |
-|----------|-------|--------|-------|-----|--------|
-| Projects | 9.4/10 | APPROVED | 17 | 16 | 3 |
-| Squads | 7.8/10 | NEEDS_WORK | 70 | 60 | 6 |
-| Agents | 7.5/10 | NEEDS_WORK | 38 | 24 | 2 |
-| Skills | 7.6/10 | NEEDS_WORK | 43 | 35 | 3 |
-| Minds | 9.7/10 | EXCELLENT | 36 | 35 | 1 |
-| Tools | 8.5/10 | APPROVED | 17 | 17 | 2 |
+## 🚨 Action Items (167 total)
 
----
+### P1 (ALTO) — 8 items
 
-## 1. Projects (9.4/10) — APPROVED
+1. **Squads / sop-factory:** Missing README.md
+   - **Fix:** Create README with squad overview
+   - **Esforço:** 1h
 
-**17 projetos ativos** | 16 com configs OK (94%)
+2. **Skills / criar-app-completo:** Missing SKILL.md
+   - **Fix:** Create SKILL.md with usage and implementation
+   - **Esforço:** 1h
 
-### Conformidade
+3. **Skills / deep-research:** Missing SKILL.md
+   - **Fix:** Create SKILL.md with usage and implementation
+   - **Esforço:** 1h
 
-| Metrica | Valor | Status |
-|---------|-------|--------|
-| Projetos com INDEX.md | 11/11 centralized | OK |
-| Projetos com .claude/ | 16/17 | OK |
-| Projetos com .aios/ | 16/17 | OK |
-| Stories ativas | 35 | OK |
-| Stories sem broken links | 35/35 | OK |
+4. **Skills / design-system-extractor:** Missing SKILL.md
+   - **Fix:** Create SKILL.md with usage and implementation
+   - **Esforço:** 1h
 
-### Stories por Status
+5. **Skills / obsidian-app-filler:** Missing SKILL.md
+   - **Fix:** Create SKILL.md with usage and implementation
+   - **Esforço:** 1h
 
-| Status | Qty | % |
-|--------|-----|---|
-| Ready for Review | 11 | 31% |
-| Pendente | 7 | 20% |
-| Draft | 5 | 14% |
-| In Progress | 4 | 11% |
-| DONE | 2 | 6% |
-| Backlog/Commitment | 3 | 9% |
-| Validated/Approved | 2 | 6% |
+6. **Skills / prd-generator:** Missing SKILL.md
+   - **Fix:** Create SKILL.md with usage and implementation
+   - **Esforço:** 1h
 
-### Issues
+7. **Skills / superpowers:** Missing SKILL.md
+   - **Fix:** Create SKILL.md with usage and implementation
+   - **Esforço:** 1h
 
-| # | Prioridade | Issue | Fix |
-|---|-----------|-------|-----|
-| P-1 | P1 | `video-privacy-filter` sem .aios/ e .claude/ | Criar configs ou remover de ACTIVE.md |
-| P-2 | P2 | 2 links quebrados em ACTIVE.md (Squad Ecosystem Quality epic path) | Corrigir paths |
-| P-3 | P2 | 3 projetos orfaos em docs/projects/ (business-rules-extraction, lifecycle-skills-audit, squad-ecosystem-quality) | Integrar ou deletar |
+8. **Minds / renner-silva:** Missing outputs/ directory
+   - **Fix:** Create outputs/ and extract DNA
+   - **Esforço:** 4h
 
----
+### P2 (MÉDIO) — 159 items
 
-## 2. Squads (7.8/10) — NEEDS_WORK
+1. **Squads / ai-reels:** Missing agents/ directory
+   - **Fix:** Create agents/ and add agent definitions
+   - **Esforço:** 2h
 
-**70 squads** | 66 com README (94%) | 63 com agents (90%)
+2. **Squads / synapse:** Missing agents/ directory
+   - **Fix:** Create agents/ and add agent definitions
+   - **Esforço:** 2h
 
-### Distribuicao
+3. **Squads / viral-squad:** agents/ directory empty
+   - **Fix:** Add agent definitions
+   - **Esforço:** 2h
 
-| Metrica | Count | % |
-|---------|-------|---|
-| Com README.md | 66/70 | 94.3% |
-| Com agents/ | 63/70 | 90.0% |
-| Com tasks/ | 66/70 | 94.3% |
-| Com workflows | 59/70 | 84.3% |
+4. **Agents / aios-master.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
 
-### Top 5 Mais Completos
+5. **Agents / aios-master.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
 
-1. **squad-creator** — 41.5 KB README, 6 agents, 46 tasks, 40 workflows
-2. **squad-creator-pro** — 41.4 KB README, 3 agents, 42 tasks, 36 workflows
-3. **design** — 9 agents, 101 tasks, 29 workflows
-4. **affiliates** — 17 agents, 73 tasks, 29 workflows
-5. **dan-koe** — 9 agents, 59 tasks, 17 workflows
+6. **Agents / analyst.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
 
-### README Size Distribution
+7. **Agents / analyst.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
 
-| Range | Count |
-|-------|-------|
-| < 1 KB | 4 (synapse, tathi-deandhela, ai-reels, palestras-master) |
-| 1-5 KB | 20 |
-| 5-10 KB | 25 |
-| 10-20 KB | 11 |
-| 20+ KB | 4 |
+8. **Agents / architect.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
 
-### Issues
+9. **Agents / architect.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
 
-| # | Prioridade | Issue | Fix |
-|---|-----------|-------|-----|
-| S-1 | P1 | `sop-factory` sem README.md | Criar README template |
-| S-2 | P1 | `mmos-squad` tem 10 agents mas 0 tasks (incompleto) | Adicionar tasks ou marcar DEPRECATED |
-| S-3 | P1 | `viral-squad` sem agents/ e sem tasks/ | Completar ou remover |
-| S-4 | P2 | `__MACOSX` e `_imports` sao artefatos (nao squads reais) | Cleanup |
-| S-5 | P2 | 4 squads com README < 1KB (sub-documentados) | Expandir documentacao |
-| S-6 | P2 | `business-rules-extraction` tem 8 agents, 0 tasks, 6 workflows (padrao incomum) | Revisar completude |
+10. **Agents / data-engineer.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
 
----
+11. **Agents / data-engineer.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
 
-## 3. Agents (7.5/10) — NEEDS_WORK
+12. **Agents / dev.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
 
-**38 agentes** | 24 modernos (63%) | 14 legados (37%)
+13. **Agents / dev.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+14. **Agents / devops.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+15. **Agents / devops.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+16. **Agents / navigator.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+17. **Agents / navigator.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+18. **Agents / oalanicolas.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+19. **Agents / pedro-valerio.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+20. **Agents / pm.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+21. **Agents / pm.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+22. **Agents / po.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+23. **Agents / po.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+24. **Agents / prompt-architect.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+25. **Agents / prompt-architect.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+26. **Agents / qa.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+27. **Agents / qa.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+28. **Agents / sm.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+29. **Agents / sm.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+30. **Agents / sop-extractor.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+31. **Agents / squad-creator.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+32. **Agents / squad-creator.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+33. **Agents / squad.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+34. **Agents / ux-design-expert.md:** Missing YAML frontmatter
+   - **Fix:** Add frontmatter with name, description, model, tools
+   - **Esforço:** 0.5h
+
+35. **Agents / ux-design-expert.md:** Missing Mission/Task Router section
+   - **Fix:** Add router to map mission keywords to task files
+   - **Esforço:** 1h
+
+36. **Skills / angular:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+37. **Skills / angular:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+38. **Skills / angular:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+39. **Skills / angular-state-management:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+40. **Skills / angular-state-management:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+41. **Skills / angular-state-management:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+42. **Skills / app-builder:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+43. **Skills / app-builder:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+44. **Skills / audit-project-config:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+45. **Skills / avalonia-viewmodels-zafiro:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+46. **Skills / avalonia-viewmodels-zafiro:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+47. **Skills / avalonia-viewmodels-zafiro:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+48. **Skills / blotato:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+49. **Skills / blotato:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+50. **Skills / blotato:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+51. **Skills / book-to-markdown:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+52. **Skills / book-to-markdown:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+53. **Skills / canva:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+54. **Skills / canva:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+55. **Skills / canva:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+56. **Skills / celf-context:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+57. **Skills / celf-context:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+58. **Skills / celf-context:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+59. **Skills / cloud-penetration-testing:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+60. **Skills / cloud-penetration-testing:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+61. **Skills / cloud-penetration-testing:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+62. **Skills / code-refactoring-refactor-clean:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+63. **Skills / code-refactoring-refactor-clean:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+64. **Skills / code-refactoring-refactor-clean:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+65. **Skills / context-surgeon:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+66. **Skills / context-surgeon:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+67. **Skills / context-surgeon:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+68. **Skills / dashboard-generator:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+69. **Skills / dashboard-generator:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+70. **Skills / dashboard-generator:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+71. **Skills / decision-tree-generator:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+72. **Skills / decision-tree-generator:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+73. **Skills / decision-tree-generator:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+74. **Skills / deep-search:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+75. **Skills / deep-search:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+76. **Skills / deep-search:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+77. **Skills / deepgram-transcriber:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+78. **Skills / deepgram-transcriber:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+79. **Skills / deepgram-transcriber:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+80. **Skills / game-development:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+81. **Skills / game-development:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+82. **Skills / game-development:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+83. **Skills / god-mode:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+84. **Skills / god-mode:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+85. **Skills / godot-gdscript-patterns:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+86. **Skills / godot-gdscript-patterns:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+87. **Skills / godot-gdscript-patterns:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+88. **Skills / groq-transcriber:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+89. **Skills / groq-transcriber:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+90. **Skills / groq-transcriber:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+91. **Skills / image-creator:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+92. **Skills / image-creator:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+93. **Skills / image-creator:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+94. **Skills / mcp-builder:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+95. **Skills / mcp-builder:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+96. **Skills / mcp-builder:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+97. **Skills / md-to-branded-pdf:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+98. **Skills / md-to-branded-pdf:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+99. **Skills / md-to-branded-pdf:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+100. **Skills / md-to-landing-page:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+101. **Skills / md-to-landing-page:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+102. **Skills / md-to-landing-page:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+103. **Skills / nextjs-react-expert:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+104. **Skills / nextjs-react-expert:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+105. **Skills / nextjs-react-expert:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+106. **Skills / obsidian-tag-manager:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+107. **Skills / obsidian-tag-manager:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+108. **Skills / obsidian-tag-manager:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+109. **Skills / pre-deploy-telegram-bot:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+110. **Skills / pre-deploy-telegram-bot:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+111. **Skills / pt-br-accentuation:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+112. **Skills / pt-br-accentuation:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+113. **Skills / pt-br-accentuation:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+114. **Skills / quality-dashboard:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+115. **Skills / quality-dashboard:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+116. **Skills / quality-dashboard:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+117. **Skills / sherlock-investigator:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+118. **Skills / sherlock-investigator:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+119. **Skills / sherlock-investigator:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+120. **Skills / skill-creator:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+121. **Skills / skill-creator:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+122. **Skills / skill-creator:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+123. **Skills / synapse:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+124. **Skills / synapse:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+125. **Skills / synapse:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+126. **Skills / system-prompt-architect:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+127. **Skills / system-prompt-architect:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+128. **Skills / system-prompt-architect:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+129. **Skills / tech-search:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+130. **Skills / tech-search:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+131. **Skills / tech-search:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+132. **Skills / tokenizacao:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
+
+133. **Skills / tokenizacao:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
+
+134. **Skills / tokenizacao:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
+
+135. **Skills / unreal-engine-cpp-pro:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
 
-### Formato
+136. **Skills / unreal-engine-cpp-pro:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
 
-| Formato | Count | % |
-|---------|-------|---|
-| Moderno (YAML frontmatter) | 24 | 63% |
-| Legado (Markdown puro + ACTIVATION-NOTICE) | 14 | 37% |
+137. **Skills / unreal-engine-cpp-pro:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
 
-### Agentes Modernos (AIOS prefix)
+138. **Skills / vulnerability-scanner:** Missing ## Usage section
+   - **Fix:** Add Usage section with examples
+   - **Esforço:** 0.5h
 
-aios-analyst, aios-architect, aios-data-engineer, aios-dev, aios-devops, aios-master, aios-pm, aios-po, aios-qa, aios-sm, aios-ux + copy-chief, cyber-chief, data-chief, db-sage, design-chief, design-system, legal-chief, prompt-architect, story-chief, tools-orchestrator, traffic-masters-chief, navigator, sop-extractor
+139. **Skills / vulnerability-scanner:** Missing ## Implementation section
+   - **Fix:** Add Implementation section
+   - **Esforço:** 0.5h
 
-### Agentes Legados (Core)
+140. **Skills / vulnerability-scanner:** Missing slash command in .claude/commands/
+   - **Fix:** Create slash command file
+   - **Esforço:** 0.25h
 
-dev, qa, architect, pm, po, sm, devops, analyst, data-engineer, ux-design-expert, oalanicolas, pedro-valerio, squad, squad-creator
+141. **Minds / alex-hormozi:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-### Issues
+142. **Minds / annie-duke:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-| # | Prioridade | Issue | Fix |
-|---|-----------|-------|-----|
-| A-1 | P1 | 14 agentes em formato legado (37%) — sem YAML frontmatter padronizado | Migrar para formato moderno |
-| A-2 | P2 | Duplicacao funcional: `dev` + `aios-dev`, `qa` + `aios-qa`, etc. | Consolidar ou documentar diferenca |
+143. **Minds / chris-voss:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
----
+144. **Minds / clayton-christensen:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-## 4. Skills (7.6/10) — NEEDS_WORK
+145. **Minds / elon-musk:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-**43 skills** | 35 com SKILL.md (81%) | 17 com slash command (40%)
+146. **Minds / hamilton-helmer:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-### Cobertura
+147. **Minds / jose-amorim:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-| Metrica | Count | % |
-|---------|-------|---|
-| Com SKILL.md | 35/43 | 81.4% |
-| Com slash command | 17/43 | 39.5% |
-| Sem SKILL.md | 6 | 14.0% |
+148. **Minds / keith-cunningham:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-### Skills sem SKILL.md
+149. **Minds / leandro-ladeira:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-- `criar-app-completo` (tem README.md + QUICKSTART.md)
-- `deep-research` (tem README.md + config.yaml)
-- `design-system-extractor` (tem INDEX.md + CHANGELOG.md)
-- `obsidian-app-filler`
-- `prd-generator`
-- `superpowers`
+150. **Minds / nassim-taleb:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-### Issues
+151. **Minds / robert-cialdini:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-| # | Prioridade | Issue | Fix |
-|---|-----------|-------|-----|
-| SK-1 | P1 | 6 skills sem SKILL.md (padrao obrigatorio) | Criar SKILL.md com frontmatter |
-| SK-2 | P1 | 26 skills sem slash command (60.5% nao descobriveis) | Gerar .claude/commands/ |
-| SK-3 | P2 | Inconsistencia: skills com README detalhado mas sem SKILL.md padronizado | Padronizar |
+152. **Minds / shane-parrish:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
----
+153. **Minds / steve-jobs:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-## 5. Minds (9.7/10) — EXCELLENT
+154. **Minds / thiago-tessman:** Partial DNA (missing voice or thinking)
+   - **Fix:** Complete DNA extraction
+   - **Esforço:** 3h
 
-**36 mentes** | 35 completas (97%) | 1 parcial (3%)
+155. **Minds / verne-harnish:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-### Status
+156. **Minds / walt-disney:** outputs/ exists but no DNA files
+   - **Fix:** Extract DNA from sources
+   - **Esforço:** 4h
 
-| Status | Count | % | Score |
-|--------|-------|---|-------|
-| Complete (sources + outputs) | 35 | 97.2% | 10 |
-| Partial (sources only) | 1 | 2.8% | 5 |
-| Sources-Only | 0 | 0% | 2 |
+157. **Tools / audit-project-configs.js:** Missing usage comment in header
+   - **Fix:** Add header comment with usage instructions
+   - **Esforço:** 0.25h
 
-### Mind Parcial
+158. **Tools / fix-project-configs.js:** Missing usage comment in header
+   - **Fix:** Add header comment with usage instructions
+   - **Esforço:** 0.25h
 
-- **renner-silva** — tem `sources/` mas falta `outputs/`
+159. **Tools / validate-skills-symlink.js:** Missing usage comment in header
+   - **Fix:** Add header comment with usage instructions
+   - **Esforço:** 0.25h
 
-### Observacoes
+## 📋 Detalhamento por Dimensão
 
-- Padrao consistente: `sources/` (imutavel) + `outputs/` (regeneravel)
-- Nenhuma mind tem README.md individual (padrao do squad)
-- INDEX.md em `squads/mind-cloning/minds/INDEX.md` serve como catalogo
+### Projects
 
-### Issues
+- **Score:** 10/10
+- **Status:** EXCELLENT
+- **Total:** 16
+- **OK:** 16
+- **Issues:** 0
 
-| # | Prioridade | Issue | Fix |
-|---|-----------|-------|-----|
-| M-1 | P2 | `renner-silva` sem outputs/ (incompleto) | Rodar extraction pipeline |
+### Squads
 
----
+- **Score:** 9.4/10
+- **Status:** EXCELLENT
+- **Total:** 61
+- **OK:** 56
+- **Issues:** 4
 
-## 6. Tools (8.5/10) — APPROVED
+### Agents
 
-**17 scripts** | 100% com header comments | 65% executaveis
+- **Score:** 5.3/10
+- **Status:** NEEDS_WORK
+- **Total:** 38
+- **OK:** 20
+- **Issues:** 32
 
-### Inventario
+### Skills
 
-| Script | Tipo | Exec | Proposito |
-|--------|------|------|-----------|
-| append-to-active.js | JS | No | Adiciona row ao ACTIVE.md |
-| audit-project-configs.js | JS | Yes | Audita configs de projetos |
-| copy-project-config.js | JS | Yes | Copia configs entre projetos |
-| create-epic-structure.js | JS | Yes | Cria estrutura de epic |
-| create-session-handoff.js | JS | No | Cria handoff de sessao |
-| fix-hybrid-symlinks.js | JS | Yes | Corrige symlinks hybrid |
-| fix-project-configs.js | JS | Yes | Corrige configs de projetos |
-| google-sheets-writer.js | JS | No | Escrever dados em Google Sheets |
-| install-aliases.sh | Shell | Yes | Instala aliases globais |
-| new-epic.js | JS | Yes | Cria nova epic |
-| new-story.js | JS | Yes | Cria nova story |
-| organize-all-projects.js | JS | Yes | Organiza todos os projetos |
-| port-manager.js | JS | Yes | Alocacao de portas |
-| rollback-project.js | JS | No | Rollback de projeto |
-| validate-active.js | JS | No | Valida ACTIVE.md |
-| validate-skills-symlink.js | JS | Yes | Valida symlinks de skills |
-| validate-structure.js | JS | Yes | Valida estrutura do projeto |
+- **Score:** 0.2/10
+- **Status:** NEEDS_WORK
+- **Total:** 44
+- **OK:** 1
+- **Issues:** 111
 
-### Issues
+### Minds
 
-| # | Prioridade | Issue | Fix |
-|---|-----------|-------|-----|
-| T-1 | P2 | 6 scripts sem permissao executavel | `chmod +x` nos 6 scripts |
-| T-2 | P2 | Sem README.md no diretorio tools/ | Criar indice de tools |
+- **Score:** 6.7/10
+- **Status:** NEEDS_WORK
+- **Total:** 40
+- **OK:** 23
+- **Issues:** 17
 
----
+### Tools
 
-## Action Items Consolidados (24 total)
+- **Score:** 8.6/10
+- **Status:** APPROVED
+- **Total:** 21
+- **OK:** 18
+- **Issues:** 3
 
-### P0 — CRITICO (0 items)
-
-Nenhum issue critico identificado.
-
-### P1 — ALTO (8 items)
-
-| # | Dimensao | Issue | Esforco |
-|---|---------|-------|---------|
-| P-1 | Projects | `video-privacy-filter` sem configs | 15min |
-| S-1 | Squads | `sop-factory` sem README.md | 15min |
-| S-2 | Squads | `mmos-squad` incompleto (10 agents, 0 tasks) | 1h |
-| S-3 | Squads | `viral-squad` sem agents e tasks | 30min |
-| A-1 | Agents | 14 agentes em formato legado | 4h |
-| SK-1 | Skills | 6 skills sem SKILL.md | 1h |
-| SK-2 | Skills | 26 skills sem slash command | 2h |
-| SK-3 | Skills | Inconsistencia SKILL.md vs README | 1h |
-
-### P2 — MEDIO (9 items)
-
-| # | Dimensao | Issue | Esforco |
-|---|---------|-------|---------|
-| P-2 | Projects | 2 links quebrados em ACTIVE.md | 10min |
-| P-3 | Projects | 3 projetos orfaos | 15min |
-| S-4 | Squads | Artefatos __MACOSX e _imports | 5min |
-| S-5 | Squads | 4 squads com README < 1KB | 1h |
-| S-6 | Squads | business-rules-extraction padrao incomum | 30min |
-| A-2 | Agents | Duplicacao funcional dev/aios-dev | 2h |
-| M-1 | Minds | renner-silva sem outputs | 30min |
-| T-1 | Tools | 6 scripts sem permissao exec | 5min |
-| T-2 | Tools | Sem README no dir tools/ | 15min |
-
----
-
-## Proximos Passos
-
-1. **Quick Wins (< 30min):** P-2, S-4, T-1 — links, cleanup, chmod
-2. **P1 Priority:** SK-1, SK-2 — skills sem SKILL.md e slash commands
-3. **Structural:** A-1 — migrar agentes legados para formato moderno
-4. **Review:** S-2, S-3 — decidir futuro de squads incompletos
-
----
-
-*Gerado automaticamente pelo Ecosystem Audit Skill v1.0*
-*Synkra AIOS — 2026-03-18*

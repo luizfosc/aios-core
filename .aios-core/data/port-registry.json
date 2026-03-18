@@ -1,1 +1,26 @@
-{}
+{
+  "meta-ads-prospector": {
+    "port": 3000,
+    "type": "app",
+    "allocatedAt": "2026-03-18T04:21:20.057Z",
+    "status": "allocated"
+  },
+  "tabgroup-vault": {
+    "port": 8000,
+    "type": "squad",
+    "allocatedAt": "2026-03-18T04:21:20.255Z",
+    "status": "allocated"
+  },
+  "garimpoai": {
+    "port": 8001,
+    "type": "squad",
+    "allocatedAt": "2026-03-18T04:21:20.353Z",
+    "status": "allocated"
+  },
+  "zeroaudio": {
+    "port": 3002,
+    "type": "app",
+    "allocatedAt": "2026-03-18T04:21:20.637Z",
+    "status": "allocated"
+  }
+}

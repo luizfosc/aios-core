@@ -64,7 +64,7 @@ squads/*
 # Published squads (whitelisted for repository)
 !squads/claude-code-mastery/
 !squads/ensinio-mind/
-!squads/ensinio-whatsapp-prospector/
+!squads/whatsapp-prospector/
 keys/
 *.secret
 *.credentials

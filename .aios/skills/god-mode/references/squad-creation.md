@@ -8,7 +8,7 @@ A squad is a self-contained collection of agents, tasks, workflows, and config t
 
 | Element | Pattern | Example |
 |---------|---------|---------|
-| Squad name | `{kebab-case}` | `advisor-board`, `ensinio-whatsapp-prospector` |
+| Squad name | `{kebab-case}` | `advisor-board`, `whatsapp-prospector` |
 | Slash prefix | `{camelCase}` (in config.yaml) | `advisorBoard`, `ensinioProspector` |
 | Agent ID | `{prefix}-{role}` | `ab-hormozi`, `ep-parser` |
 | Task ID | `{prefix}-{role}-{verb}-{noun}.md` | `ab-chief-run-session.md` |

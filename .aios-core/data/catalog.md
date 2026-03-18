@@ -26,7 +26,7 @@
 | design | | | `/design` |
 | dopamine-learning | Dopamine Learning Squad: Complete Documentation | `/dopamine-learning` |
 | ensinio-mind | Ensinio Mind — Knowledge Hub | `/ensinio-mind` |
-| ensinio-prospector | Ensinio Prospector | `/ensinio-prospector` |
+| whatsapp-prospector | WhatsApp Prospector | `/whatsapp-prospector` |
 | etl-universal-converter | ETL Universal Converter | `/etl-universal-converter` |
 | file-research | File Research Squad | `/file-research` |
 | gui-avila | Squad Gui Ávila | `/gui-avila` |
@@ -72,7 +72,7 @@
 
 ---
 
-## Skills (42)
+## Skills (43)
 
 | Skill | Descrição | Ativação |
 |-------|-----------|----------|
@@ -95,6 +95,7 @@
 | deep-search | Deep Search | `/AIOS:skills:deep-search` |
 | deepgram-transcriber | Deepgram Transcriber | `/AIOS:skills:deepgram-transcriber` |
 | design-system-extractor | Sem descrição | `/AIOS:skills:design-system-extractor` |
+| ecosystem-audit | Ecosystem Audit Skill | `/AIOS:skills:ecosystem-audit` |
 | game-development | Game Development | `/AIOS:skills:game-development` |
 | god-mode | God Mode v3.1 — Supreme Operator AIOX | `/AIOS:skills:god-mode` |
 | godot-gdscript-patterns | Godot GDScript Patterns | `/AIOS:skills:godot-gdscript-patterns` |
@@ -192,7 +193,7 @@
 | Categoria | Total | Coverage |
 |-----------|-------|----------|
 | Squads | 61 | 100% |
-| Skills | 42 | 100% |
+| Skills | 43 | 100% |
 | Tools | 14 | 100% |
 | Agents | 12 | 100% |
 

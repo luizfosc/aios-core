@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
 const readline = require('readline');
-const { generateWhatsAppLink } = require('../squads/ensinio-whatsapp-prospector/lib/whatsapp-utils');
+const { generateWhatsAppLink } = require('../squads/whatsapp-prospector/lib/whatsapp-utils');
 
 const TSV_FILE = path.join(__dirname, '../data/outputs/mentoria-50k/outreach-sheets-final.tsv');
 
