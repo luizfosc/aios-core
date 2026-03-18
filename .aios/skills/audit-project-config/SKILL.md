@@ -1,197 +1,198 @@
 # Audit Project Config Skill
 
-Valida configurações `.claude/` de projetos existentes contra templates atuais.
+Valida configuracoes `.claude/` de projetos existentes contra templates atuais.
 
 ## Uso
 
-```
-/audit-project-config
+```bash
+/audit-project-config           # Apenas auditar
+/audit-project-config --fix     # Auditar + oferecer auto-fix
 ```
 
-ou
-
-```
-/audit-project-config {project-name}
-```
+---
 
 ## O Que Faz
 
-1. **Scanneia projetos:**
-   - Lê `docs/projects/ACTIVE.md`
+1. **Scanneia todos os projetos ativos:**
+   - Le `docs/projects/ACTIVE.md`
    - Detecta projetos CENTRALIZED e HYBRID
    - Identifica caminho de cada projeto
 
-2. **Valida configuração `.claude/`:**
-   - Verifica se `.claude/` existe
-   - Compara `settings.json` com template atual
-   - Verifica se `CLAUDE.md` tem placeholders não substituídos
-   - Valida que `behavioral-rules.md` está atualizado
+2. **Valida configuracao `.claude/` (3 camadas):**
+   - **L1 Structural:** Arquivos existem? (.claude/, settings.json, CLAUDE.md, rules/)
+   - **L2 Semantic:** Conteudo valido? (placeholders, hooks format, permissions)
+   - Cada issue tem severidade: CRITICAL, HIGH, MEDIUM, LOW
 
-3. **Gera relatório de gaps:**
-   - Lista projetos sem `.claude/`
-   - Lista projetos com configuração desatualizada
-   - Lista projetos com placeholders não substituídos
+3. **Gera relatorio de gaps:**
+   - Health Score (X/Y OK, Z%)
+   - Issues por severidade
+   - Projetos sem `.claude/`, com config desatualizada, com placeholders
 
-4. **Oferece auto-fix:**
-   - Pergunta se quer corrigir gaps automaticamente
-   - Executa `copy-project-config.js` para projetos com problemas
+4. **Oferece auto-fix (opcional, com dry-run obrigatorio):**
+   - Dry-run preview antes de qualquer alteracao
+   - First-fix validation (corrige 1, valida, entao oferece batch)
+   - Subprocess error handling (exit code, file exists, JSON valid)
 
-## Workflow
+---
 
-Quando invocado:
+## Implementacao
 
-1. **Ler ACTIVE.md:**
-   - Parse table para extrair lista de projetos
-   - Para cada projeto, extrair:
-     - Nome (coluna "Projeto")
-     - Link INDEX (coluna "INDEX")
-     - Detectar modo (HYBRID se link contém `.aios/`, CENTRALIZED se contém `docs/projects/`)
+Execute estas acoes sequencialmente:
 
-2. **Para cada projeto:**
-   - Computar caminho `.claude/`:
-     - CENTRALIZED: `docs/projects/{nome}/.claude/`
-     - HYBRID: `{path-from-link}/../.claude/` (relativo ao INDEX.md)
-   - Verificar se `.claude/` existe
-   - Se existe:
-     - Ler `settings.json` e comparar com template (verificar se tem keys essenciais)
-     - Ler `CLAUDE.md` e buscar por `{{` (placeholder não substituído)
-     - Verificar se `behavioral-rules.md` existe
-   - Se não existe:
-     - Marcar como "MISSING CONFIG"
+### 1. Rodar Audit
 
-3. **Gerar relatório:**
-
-```markdown
-# Audit Report — Project Configurations
-
-**Data:** {hoje}
-**Total Projetos:** {N}
-**Com Configuração:** {X}
-**Sem Configuração:** {Y}
-**Desatualizados:** {Z}
-
-## ✅ OK ({X} projetos)
-
-| # | Projeto | Modo | Config Path |
-|---|---------|------|-------------|
-| 1 | my-app | HYBRID | ~/CODE/Projects/my-app/.claude/ |
-
-## ❌ Missing Config ({Y} projetos)
-
-| # | Projeto | Modo | Esperado Em |
-|---|---------|------|-------------|
-| 2 | old-proj | CENTRALIZED | docs/projects/old-proj/.claude/ |
-
-## ⚠️ Outdated / Incomplete ({Z} projetos)
-
-| # | Projeto | Issue | Details |
-|---|---------|-------|---------|
-| 3 | partial-app | Placeholders | {{PROJECT_NAME}} não substituído |
-| 4 | legacy-squad | Missing behavioral-rules.md | — |
+```bash
+node tools/audit-project-configs.js
 ```
 
-4. **Perguntar ao usuário:**
+### 2. Ler Relatorio
 
-Use `AskUserQuestion` com opções:
-- "Corrigir automaticamente todos os gaps"
-- "Corrigir apenas projetos sem config"
-- "Apenas mostrar relatório (não corrigir nada)"
-- "Escolher quais projetos corrigir"
+Ler `docs/reports/project-config-audit.md` e extrair metricas.
 
-5. **Se escolher auto-fix:**
-   - Para cada projeto com gap:
-     - Ler INDEX.md para extrair tipo de projeto
-     - Executar `node ~/aios-core/tools/copy-project-config.js {destination} {type} "{name}" {mode}`
-     - Validar que foi criado com sucesso
-     - Atualizar relatório: ❌ → ✅
+### 3. Mostrar Resumo
 
-6. **Mostrar resumo final:**
+Formatar output conciso para o usuario.
 
-```
-🎉 Audit Complete!
+### 4. Se --fix, Rodar Dry-Run
 
-✅ 15 projetos OK
-🔧 5 projetos corrigidos
-⏭️ 2 projetos pulados (escolha do usuário)
+```bash
+node tools/fix-project-configs.js --dry-run
 ```
 
-## Detalhes de Validação
+Mostrar preview e perguntar ao usuario (AskUserQuestion):
+- "Corrigir todos (batch)"
+- "Corrigir apenas 1 (validacao)"
+- "Nao corrigir nada"
 
-### settings.json
-Verificar que contém pelo menos:
-- `permissions.allow` (array não vazio)
-- `permissions.deny` (array contendo deny rules de segurança)
-- `alwaysThinkingEnabled` (boolean)
+### 5. Executar Fix (se aprovado)
 
-### CLAUDE.md
-Verificar que NÃO contém:
-- `{{PROJECT_NAME}}`
-- `{{MODE}}`
-- `{{INDEX_PATH}}`
-- `{{STORIES_PATH}}`
-- `{{SESSIONS_PATH}}`
-- `{{PROJECT_SLUG}}`
-- `{{SAVE_LOCATION}}`
-- `{{MODE_DESCRIPTION}}`
+```bash
+# Primeiro fix para validacao
+node tools/fix-project-configs.js --first-only
 
-Se contém, marcar como "Placeholders não substituídos"
-
-### behavioral-rules.md
-Verificar que arquivo existe e tem conteúdo (> 100 chars).
-
-## Edge Cases
-
-- **Projeto sem tipo definido no INDEX.md:** Usar `knowledge` como fallback
-- **Path inválido no ACTIVE.md:** Marcar como "INVALID PATH" e pular
-- **Projeto externo sem .aios/INDEX.md:** Marcar como "HYBRID MODE INCOMPLETE"
-
-## Exemplo de Uso
-
-```
-User: /audit-project-config
-
-Claude:
-🔍 Auditando configurações de projetos...
-
-Lendo docs/projects/ACTIVE.md...
-✅ Encontrados 20 projetos
-
-Validando configurações...
-[██████████] 20/20
-
-📊 Relatório gerado!
-
-✅ OK: 15 projetos
-❌ Missing Config: 3 projetos (ensinio-mind, legacy-tool, old-research)
-⚠️ Outdated: 2 projetos (partial-app tem placeholders, squad-x sem behavioral-rules.md)
-
-Quer corrigir automaticamente?
-1. Sim, corrigir todos os 5 gaps
-2. Apenas criar config para os 3 sem config
-3. Não, só mostrar relatório
+# Batch completo (apos primeiro validado)
+node tools/fix-project-configs.js
 ```
 
-## Implementação
+### 6. Re-Audit
 
-Execute estas ações sequencialmente:
+Validar que gaps foram resolvidos.
 
-1. Ler `docs/projects/ACTIVE.md`
-2. Parse table (regex ou split por linhas)
-3. Para cada projeto:
-   - Extrair nome, link INDEX, detectar modo
-   - Validar `.claude/` conforme regras acima
-4. Gerar relatório markdown
-5. Usar `AskUserQuestion` para escolher ação
-6. Se auto-fix:
-   - Para cada projeto com gap:
-     - Ler INDEX.md → extrair tipo
-     - `node copy-project-config.js ...`
-     - Validar sucesso
-7. Mostrar resumo final
+### 7. Resumo Final
 
-## Notas
+Mostrar delta (BEFORE vs AFTER).
 
-- **Não modificar** projetos que já têm `.claude/` funcionando (mesmo que desatualizado levemente)
-- **Respeitar** customizações do usuário em `project-rules.md`
-- **Nunca sobrescrever** `settings.json` que foi customizado (a menos que usuário confirme)
-- **Logging:** Mostrar progresso durante scan (barra de progresso ou emoji ✅ ❌)
+---
+
+## Veto System
+
+O skill usa vetos que BLOQUEIAM execucao em condicoes inseguras:
+
+| Veto | Condicao | Acao |
+|------|----------|------|
+| VETO_1 | ACTIVE.md nao existe | HALT |
+| VETO_2 | Table sem colunas Projeto/INDEX | HALT |
+| VETO_3 | Zero projetos encontrados | HALT |
+| VETO_4 | Modo ambiguo (nem HYBRID nem CENTRALIZED) | SKIP + WARN |
+| VETO_5 | Path computado fora do homedir | HALT |
+| VETO_6 | Path relativo nao resolve | HALT |
+| VETO_7 | Auto-fix sem dry-run preview | HALT |
+| VETO_8 | Primeiro fix falha | HALT batch |
+| VETO_9 | Destination not writeable | SKIP + WARN |
+| VETO_10 | Subprocess exit code != 0 | HALT batch |
+| VETO_11 | Arquivo esperado nao criado | HALT |
+| VETO_12 | Arquivo criado mas JSON invalido | HALT |
+
+---
+
+## Validation Layers
+
+### L1: Structural Validation
+
+- `.claude/` directory existe
+- Arquivos obrigatorios presentes:
+  - `settings.json`
+  - `CLAUDE.md`
+  - `rules/behavioral-rules.md`
+
+### L2: Semantic Validation
+
+- `settings.json`:
+  - `hooks` DEVE ser objeto `{}`, NAO array `[]` (CRITICAL)
+  - Matchers devem ser strings, nao objetos (HIGH)
+  - `permissions.allow` existe e e array (HIGH)
+  - `permissions.deny` existe e e array (HIGH)
+- `CLAUDE.md`:
+  - Nenhum placeholder `{{}}` fora de code blocks (HIGH)
+- `behavioral-rules.md`:
+  - Tem conteudo (> 100 chars) (LOW)
+
+---
+
+## CENTRALIZED vs HYBRID
+
+| Criterio | CENTRALIZED | HYBRID |
+|----------|-------------|--------|
+| Projeto vive em | `aios-core/` (squads, minds) | `~/CODE/Projects/` (apps externos) |
+| INDEX.md em | `docs/projects/{name}/INDEX.md` | `{path}/.aios/INDEX.md` |
+| .claude/ em | `docs/projects/{name}/.claude/` | `{path}/.claude/` |
+| Use quando | Squad, mind clone, research interno | App full-stack, pipeline externo |
+
+---
+
+## Placeholders Validados
+
+O skill verifica que NENHUM destes placeholders existe fora de code blocks:
+
+| Placeholder | Exemplo (substituido) |
+|-------------|----------------------|
+| `{{PROJECT_NAME}}` | Minha App |
+| `{{MODE}}` | HYBRID |
+| `{{MODE_DESCRIPTION}}` | Governanca local |
+| `{{INDEX_PATH}}` | .aios/INDEX.md |
+| `{{STORIES_PATH}}` | .aios/stories/active/ |
+| `{{SESSIONS_PATH}}` | .aios/sessions/ |
+| `{{PROJECT_SLUG}}` | minha-app |
+| `{{SAVE_LOCATION}}` | .aios/ |
+
+---
+
+## Project Types
+
+Tipos validos detectados automaticamente via INDEX.md:
+
+| Tipo | Detectado por | Exemplo |
+|------|--------------|---------|
+| `app` | "Type: App", "Next.js", "React" | meta-ads-prospector |
+| `squad` | "Type: Squad", "Agent", "Workflow" | gui-avila-mind |
+| `mind-clone` | "Type: Mind Clone", "Mind DNA" | naval-ravikant-mind |
+| `pipeline` | "Type: Pipeline", "Automation", "ETL" | — |
+| `research` | "Type: Research", "Study", "Analysis" | — |
+| `knowledge` | Fallback (nenhum pattern match) | evolution-api |
+
+---
+
+## Dependencies
+
+| Resource | Path | Usado Para |
+|----------|------|-----------|
+| ACTIVE.md | `docs/projects/ACTIVE.md` | Lista de projetos |
+| audit script | `tools/audit-project-configs.js` | Executa audit |
+| fix script | `tools/fix-project-configs.js` | Executa auto-fix |
+| copy-project-config | `tools/copy-project-config.js` | Cria .claude/ novo |
+| settings-format rules | `.claude/rules/settings-format.md` | Referencia hooks format |
+
+---
+
+## Scripts
+
+| Script | Uso | Exit Codes |
+|--------|-----|------------|
+| `tools/audit-project-configs.js` | Valida todos os projetos | 0: OK, 1: CRITICAL issues, 2: VETO |
+| `tools/fix-project-configs.js` | Corrige gaps | 0: OK, 1: Falhas parciais, 2: VETO |
+| `tools/fix-project-configs.js --dry-run` | Preview sem alterar | 0: Sempre |
+| `tools/fix-project-configs.js --first-only` | Corrige 1 projeto (validacao) | 0/1/2 |
+
+---
+
+**Versao:** 2.0 (Hardened — Tripartite Analysis 2026-03-18)
