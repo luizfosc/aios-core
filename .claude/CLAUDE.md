@@ -81,6 +81,11 @@ npm run lint          # ESLint
 npm run typecheck     # TypeScript
 npm run build         # Build produção
 npm run dev           # Desenvolvimento
+
+# Ecosystem Index
+node scripts/generate-ecosystem-index.js    # Regenerar índice de minds/agentes
+/ecosystem-index                            # Ver índice completo
+/ecosystem-index minds                      # Ver só minds
 ```
 
 ---

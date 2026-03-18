@@ -68,6 +68,23 @@ subagents:
     permissionMode: acceptEdits
     memory: project
 
+  thiago_finch:
+    description: |
+      Business strategy & viability architect. Invoke for:
+      - PHASE 0 (BEFORE): Viability check (GO/NO-GO decision, ROI analysis, market scan)
+      - PHASE 3 (AFTER): Monetization package (pricing, GTM, sales funnel, authority)
+      Expert in funnel optimization, loss aversion analysis, and business model design.
+      BOOKEND agent - opens and closes squad creation process.
+    model: opus
+    tools:
+      - Read
+      - Grep
+      - WebSearch
+      - WebFetch
+      - Write
+    permissionMode: default
+    memory: project
+
 hooks:
   PreToolUse:
     - matcher: "Write"
@@ -196,6 +213,24 @@ Signal: <promise>COMPLETE</promise>
 Task: Audit workflow wf-create-squad.yaml
 Check: Veto conditions, unidirectional flow, checkpoint coverage
 Output: Validation report
+Signal: <promise>COMPLETE</promise>
+```
+
+### Invoking @thiago_finch (PHASE 0 - Viability)
+```
+Task: Viability check for "Sales High-Ticket" squad
+Analysis: Market size, ROI estimate, downside analysis (Loss Aversion 2.5:1)
+Output: GO/NO-GO decision + business case
+Veto Power: YES (if NO-GO, halt squad creation)
+Signal: <promise>COMPLETE</promise>
+```
+
+### Invoking @thiago_finch (PHASE 3 - Monetization)
+```
+Task: Monetization package for squad
+Input: Completed squad (agents + tasks + workflows)
+Output: Pricing strategy, sales funnel, GTM plan, authority scaffold
+Deliverable: Business plan ready for launch
 Signal: <promise>COMPLETE</promise>
 ```
 

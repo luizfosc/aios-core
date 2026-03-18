@@ -21,6 +21,7 @@ phases:
     specialist: Renan Vieira
     activation: "Read squads/mind-cloning/minds/renan-vieira/agents/renan-vieira.md and adopt persona"
     duration: 45-60min
+    dependencies_required: []  # First phase, no dependencies
 
     objective: |
       Definir posicionamento de autoridade percebida no Instagram/redes.
@@ -36,11 +37,44 @@ phases:
       - Plano de conteúdo de autoridade
       - Frameworks de autoridade percebida
 
+    artifact_storage:
+      file: "outputs/phase1_renan_output.md"
+      format: markdown
+      template: |
+        # Phase 1: Posicionamento High-Ticket (Renan Vieira)
+
+        ## Estratégia de Posicionamento Visual
+        [PREENCHER]
+
+        ## Plano de Conteúdo de Autoridade
+        [PREENCHER]
+
+        ## Frameworks de Autoridade Percebida
+        [PREENCHER]
+
+        ## Red Flags Detectados
+        [LISTAR SE HOUVER]
+      available_to: ["phase_2", "phase_3", "phase_4", "phase_5", "phase_6", "phase_7", "phase_8"]
+
     checkpoint:
-      condition: "Posicionamento definido e validado"
-      veto:
-        - "Posicionamento genérico (não diferenciado)"
-        - "Sem estratégia visual clara"
+      type: artifact_validation  # Runtime validation (not string-based)
+      artifact: "outputs/phase1_renan_output.md"
+      checks:
+        - exists: true
+        - contains_all:
+            - "Estratégia de posicionamento"
+            - "Depoimentos"
+            - "Bio clara"
+        - word_count_min: 200
+      timeout: 60  # seconds (automatic, does not depend on executor)
+      on_fail: BLOCK_PHASE_2
+      veto_conditions:
+        - condition: "Artifact não existe"
+          message: "Phase 1 output não foi gerado. Complete posicionamento antes de continuar."
+        - condition: "Word count < 200"
+          message: "Posicionamento insuficiente. Detalhe mais (mínimo 200 palavras)."
+        - condition: "Missing keywords"
+          message: "Faltam elementos obrigatórios: Depoimentos, Bio clara. Revise output."
 
     handoff_to: phase_2
 
@@ -50,6 +84,13 @@ phases:
     activation: "/leandro-ladeira:leandro-ladeira"
     command: "*big-idea"
     duration: 30-45min
+    dependencies_required: ["phase_1"]  # Requires posicionamento first
+
+    validation:
+      script: |
+        Check .workflow_state.json:
+        IF "phase_1" NOT IN phases_completed
+        THEN VETO: "Cannot start Big Idea without Posicionamento (Phase 1)"
 
     objective: |
       Definir hipótese central de vendas (Big Idea).
@@ -79,6 +120,13 @@ phases:
     activation: "/hormozi:README"
     workflow: "wf-grand-slam-offer"
     duration: 1-1.5h
+    dependencies_required: ["phase_1", "phase_2"]  # Requires posicionamento + big idea
+
+    validation:
+      script: |
+        Check .workflow_state.json:
+        IF "phase_1" NOT IN phases_completed OR "phase_2" NOT IN phases_completed
+        THEN VETO: "Cannot create offer without Posicionamento (Phase 1) + Big Idea (Phase 2)"
 
     objective: |
       Criar oferta irresistível que faz pessoas sentirem-se estúpidas ao dizer não.
@@ -113,6 +161,13 @@ phases:
       - "Eugene Schwartz (Awareness level)"
       - "Gary Halbert (Sales letter)"
     duration: 1.5-2h
+    dependencies_required: ["phase_3"]  # Requires offer first
+
+    validation:
+      script: |
+        Check .workflow_state.json:
+        IF "phase_3" NOT IN phases_completed
+        THEN VETO: "Cannot write copy without Grand Slam Offer (Phase 3)"
 
     objective: |
       Criar copy de vendas high-ticket (sales page, emails, ads).
@@ -142,6 +197,13 @@ phases:
     specialist: Renner Silva
     activation: "/renner-silva:README"
     duration: 1-1.5h
+    dependencies_required: ["phase_4"]  # Requires copy first
+
+    validation:
+      script: |
+        Check .workflow_state.json:
+        IF "phase_4" NOT IN phases_completed
+        THEN VETO: "Cannot create VSL without Copy (Phase 4)"
 
     objective: |
       Criar roteiro de VSL ou narrativa de vendas com storytelling estratégico.
@@ -170,6 +232,35 @@ phases:
     activation: "/conversao-extrema:agents:traffic-masters-chief"
     alternative: "/leandro-ladeira:leandro-ladeira *estrategia-perpetuo"
     duration: 1.5-2h
+    dependencies_required: ["phase_3", "phase_5"]  # Requires offer + VSL
+
+    validation:
+      script: |
+        Check .workflow_state.json:
+        IF "phase_3" NOT IN phases_completed OR "phase_5" NOT IN phases_completed
+        THEN VETO: "Cannot run traffic without Offer (Phase 3) + VSL (Phase 5)"
+
+    context_carryover:
+      consumes_from: "phase_1"
+      artifact: "outputs/phase1_renan_output.md"
+      extract_fields:
+        - red_flags
+      veto_on_red_flag:
+        - condition: "Instagram low-ticket" IN red_flags
+          message: |
+            ⛔ **VETO ATIVADO** (VETO-RV03: Instagram Low-Ticket)
+
+            Na Phase 1 (Posicionamento), o Renan detectou que seu Instagram NÃO está pronto
+            para tráfego pago (autoridade percebida insuficiente).
+
+            **Por quê bloquear?** Tráfego sem autoridade = dinheiro queimado. Você vai pagar
+            por cliques, mas não vai converter porque o prospect vai cair num Instagram fraco.
+
+            **O que fazer:**
+            1. Volte na Phase 1
+            2. Corrija Instagram (depoimentos, números concretos, bio clara)
+            3. Rerun workflow a partir da Phase 1
+            4. Quando Instagram estiver pronto, Phase 6 vai liberar
 
     objective: |
       Criar campanha de tráfego pago (Google Ads, Meta Ads, Stories 10x).
@@ -203,6 +294,13 @@ phases:
       - "Robert Cialdini (7 Principles)"
       - "Oren Klaff (Frame Control)"
     duration: 1-1.5h
+    dependencies_required: ["phase_3"]  # Requires offer to negotiate
+
+    validation:
+      script: |
+        Check .workflow_state.json:
+        IF "phase_3" NOT IN phases_completed
+        THEN VETO: "Cannot create negotiation script without Offer (Phase 3)"
 
     objective: |
       Criar estratégia de fechamento e handling de objeções.
@@ -233,6 +331,13 @@ phases:
     activation: "Read squads/mind-cloning/minds/tathi-deandhela/outputs/mind_dna_complete.yaml"
     alternative: "/tathi-deandhela:README"
     duration: 30-45min
+    dependencies_required: ["phase_7"]  # Requires negotiation script
+
+    validation:
+      script: |
+        Check .workflow_state.json:
+        IF "phase_7" NOT IN phases_completed
+        THEN VETO: "Cannot refine communication without Negotiation script (Phase 7)"
 
     objective: |
       Refinar comunicação e influência para rapport máximo.

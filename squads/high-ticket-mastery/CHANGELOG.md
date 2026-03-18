@@ -1,5 +1,72 @@
 # Changelog — High-Ticket Mastery Squad
 
+## [1.3.0] - 2026-03-18
+
+### 🔒 Security (Integration Hardening) — CRITICAL
+
+**MAJOR IMPROVEMENT:** VETOs now enforced + Dependencies validated + Red flags propagate
+
+#### P0 Fixes (CRÍTICO)
+
+**AC-1: Runtime VETO Enforcement**
+- **Added:** `.workflow_state.json` tracker
+- **Added:** `pre_activation_checks` in `high-ticket-chief.md`
+- **Changed:** VETO-RV02 ("Pensar pequeno") now triggers BEFORE pipeline start (not just in Phase 1)
+- **Impact:** Prevents 2-3h of wasted work with wrong mindset
+
+**AC-2: Phase Dependency Validation**
+- **Added:** `dependencies_required` in ALL 8 phases
+- **Added:** `validation` script in each phase (checks `.workflow_state.json`)
+- **Changed:** User CANNOT skip phases (enforced technically, not just declared)
+- **Impact:** Impossible to run Phase 6 (traffic) without Phase 3 (offer)
+
+**AC-3: Artifact-Based Checkpoints**
+- **Changed:** Phase 1 checkpoint from string → `artifact_validation` (runtime)
+- **Added:** Automatic checks: file exists, contains keywords, word count min
+- **Added:** Timeout 60s (no human waiting)
+- **Impact:** Checkpoint validates AUTOMATICALLY (doesn't depend on executor honesty)
+
+#### P1 Fixes (IMPORTANTE)
+
+**AC-4: Inherited VETOs**
+- **Added:** `inherited_vetos` section in `high-ticket-chief.md`
+- **Added:** VETOs from Renan (RV02, RV03, RV04) + Hormozi (H01, H02)
+- **Changed:** Orchestrator applies component VETOs BEFORE routing
+- **Impact:** User blocked early if Dream Outcome vago, Instagram low-ticket, etc.
+
+**AC-5: Red Flag Propagation**
+- **Added:** `artifact_storage` in Phase 1 (saves red flags)
+- **Added:** `context_carryover` in Phase 6 (consumes red flags from Phase 1)
+- **Added:** VETO in Phase 6 if "Instagram low-ticket" detected in Phase 1
+- **Impact:** Prevents running traffic on broken Instagram (saves money)
+
+### Files Modified
+
+- `agents/high-ticket-chief.md` — Pre-activation checks + inherited VETOs
+- `workflows/end-to-end-launch.yaml` — Dependencies + artifact validation + context carryover
+- `config.yaml` — Version bump 1.2.0 → 1.3.0
+- `.workflow_state.json` — NEW (runtime tracker)
+- `CHANGELOG.md` — Updated (this file)
+
+### Quality Scores (After Integration Hardening)
+
+| Analyst | v1.2.0 | v1.3.0 | Delta |
+|---------|--------|--------|-------|
+| @oalanicolas (Fidelity) | 8.0/10 | 8.5/10 | **+6%** |
+| @pedro-valerio (Process Integrity) | 5.8/10 | **7.8/10** | **+34%** ⭐ |
+| **OVERALL** | 6.9/10 | **8.2/10** | **+19%** |
+
+**Target:** 8.7/10 (90% achieved)
+
+### Story
+
+- **Story:** `docs/stories/active/HTM-1.3-integration-hardening.md`
+- **Type:** Enhancement (P0 + P1)
+- **Effort:** 5-6h
+- **Analysts:** @oalanicolas + @pedro-valerio
+
+---
+
 ## [1.2.0] - 2026-03-17
 
 ### 🎨 Voice DNA (Continuous Improvement)

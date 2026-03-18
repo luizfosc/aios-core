@@ -1,9 +1,9 @@
 squad_name: high-ticket-mastery
-version: 1.2.0  # P0 + P1 fixes applied (quality score 8.0/10)
+version: 1.3.0  # Integration hardening: VETOs enforced + dependency validation + red flag propagation
 type: fusion  # Orchestration layer, NOT standalone
 orchestration: true
 created: 2026-03-17
-updated: 2026-03-17
+updated: 2026-03-18
 
 description: |
   Pipeline completo de vendas high-ticket end-to-end.
