@@ -1,23 +1,15 @@
 status:
-  branch: main
+  branch: chore/devops-10-improvements
   modifiedFiles:
-    - .aios-core/data/catalog.md
     - .aios/session.json
-    - .aios/sessions/recent.json
-    - .aios/sessions/unknown.json
-    - .aios/skills/celf-context/
-  modifiedFilesTotalCount: 7
+  modifiedFilesTotalCount: 1
   recentCommits:
-    - >-
-      e chore: checkpoint session — ensinio phone resolution + sheets + MCP
-      OAuth
-    - >-
-      b feat(ensinio): phone resolution 77/77 + Google Sheets pipeline + OAuth
-      helper
-  currentEpic: null
-  currentStory: null
-  lastUpdate: '2026-03-10T22:34:13.651Z'
+    - '6 chore: add luiz-fosc-palestras-negocio to ACTIVE projects'
+    - 'c chore: update ACTIVE.md - ensinio-whatsapp-prospector Wave 3 complete'
+  currentEpic: Ensinio Prospector App
+  currentStory: story-m1-foundation
+  lastUpdate: '2026-03-17T18:52:06.291Z'
   isGitRepo: true
-timestamp: 1773182053652
+timestamp: 1773773526292
 ttl: 60
-gitFingerprint: 1771601599664.0227:1773178877103.6584
+gitFingerprint: 1773442718658.3108:1773772427893.1558

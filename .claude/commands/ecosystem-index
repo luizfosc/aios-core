@@ -1,0 +1,37 @@
+# ecosystem-index
+
+Display the AIOS Ecosystem Index with all minds and agents.
+
+## Usage
+
+```bash
+/ecosystem-index          # Show complete index
+/ecosystem-index minds    # Show only minds section
+/ecosystem-index agents   # Show only agents section
+/ecosystem-index squads   # Show only squads section
+```
+
+## Subcommands
+
+- **`/ecosystem-index`** - Displays the complete ecosystem index
+- **`/ecosystem-index minds`** - Filters to show only the Minds section
+- **`/ecosystem-index agents`** - Filters to show only Core Agents section
+- **`/ecosystem-index squads`** - Filters to show only Squad Agents section
+
+## How It Works
+
+Reads `docs/ECOSYSTEM-INDEX.md` and displays the requested section(s).
+
+## Regenerate Index
+
+If the index is outdated, regenerate it with:
+
+```bash
+node scripts/generate-ecosystem-index.js
+```
+
+---
+
+**Implementation:**
+
+Read `docs/ECOSYSTEM-INDEX.md` and filter sections based on the subcommand argument.

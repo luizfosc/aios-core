@@ -1,48 +1,133 @@
-Inicio de sessao ou usuario quer retomar trabalho. Execute os passos abaixo SEM carregar squads/skills:
+Início de sessão ou usuário quer retomar trabalho. Execute os passos abaixo SEM carregar squads/skills:
 
-**Argumento opcional:** O usuario pode passar o nome do projeto direto: `/resume {projeto}`
+**Argumento opcional:** O usuário pode passar o nome do projeto direto: `/resume {projeto}`
 Se `$ARGUMENTS` estiver preenchido, use-o como nome do projeto e PULE para o Passo 2.
 
-## Passo 1: Mostrar projetos ativos (pular se argumento fornecido)
+**Validação do argumento:**
+1. Verificar se `docs/projects/{argumento}/` existe (modo CENTRALIZED)
+2. Se NÃO existir: verificar ACTIVE.md por link INDEX que contenha o argumento
+3. Se encontrar link absoluto (ex: `~/CODE/Projects/{argumento}/.aios/INDEX.md`) → modo HYBRID
+4. Se NÃO encontrar em nenhum lugar: mostrar "Projeto '{argumento}' não encontrado." e cair no Passo 1
+
+## Passo 1: Mostrar projetos ativos (pular se argumento válido fornecido)
+
 - Leia `docs/projects/ACTIVE.md`
-- Mostre todos os projetos ordenados por data da ultima sessao (mais recentes primeiro):
+- Se ACTIVE.md não existir ou estiver vazio: mostrar "Nenhum projeto ativo encontrado. Use `/new-project` para criar um." e PARAR
+- Mostre todos os projetos ordenados por data da última sessão (mais recentes primeiro):
 
 ```
-# | Projeto | Status | Agente/Squad | Ultima Sessao | Proximo Passo
+# | Projeto | Status | Agente/Squad | Última Sessão | INDEX
 ```
 
-- Use AskUserQuestion para o usuario escolher qual projeto retomar
+- Use AskUserQuestion para o usuário escolher qual projeto retomar
 
-## Passo 2: Carregar contexto do projeto
-Apos o usuario escolher (ou usar o argumento fornecido):
+## Passo 2: Detectar modo de governança
 
-1. Leia `docs/projects/{projeto}/INDEX.md`
-2. Extraia o campo **Project Path** (se existir) — sera usado no Passo 3
-3. Verifique se existe session file recente em `docs/projects/{projeto}/sessions/`
-   - Se sim, leia o mais recente (por data no nome do arquivo)
-   - Se nao, use apenas o INDEX.md
-4. Se o session file lista "Arquivos para contexto", leia esses arquivos (max 5)
+Após o usuário escolher (ou usar o argumento fornecido):
 
-## Passo 3: Resumo de contexto
-Apresente ao usuario de forma concisa:
+**Detecção de modo:**
+1. Se `docs/projects/{projeto}/INDEX.md` existe → `index_path` = `docs/projects/{projeto}/INDEX.md`, modo = **CENTRALIZED**
+2. Se a row no ACTIVE.md tem link INDEX absoluto (ex: `~/CODE/Projects/.../.aios/INDEX.md`) → seguir esse path, modo = **HYBRID**
+3. Se `.aios/INDEX.md` existe no cwd atual → `index_path` = `.aios/INDEX.md`, modo = **HYBRID**
+
+Guardar `index_path`, `sessions_path`, `modo`.
+
+## Passo 3: Carregar contexto do projeto
+
+1. Leia `{index_path}`
+   - Se não existir: mostrar "INDEX.md ausente para '{projeto}'. Rode `/new-project` para criar a estrutura." e PARAR
+   - **Validar INDEX.md:** verificar se contém "Estado Atual" ou "Status". Se vazio ou corrompido: avisar "⚠️ INDEX.md corrompido. Restaure manualmente." e PARAR
+2. Extraia o campo **Local** (se existir)
+3. Determine `sessions_path`:
+   - **CENTRALIZED:** `docs/projects/{projeto}/sessions/`
+   - **HYBRID:** diretório pai de `{index_path}` + `/sessions/`
+4. Verifique se existe session file recente em `{sessions_path}`
+   - Se sim, leia o mais recente (por data no nome, considerar sufixos `-02`, `-03`, `-xxxx`)
+   - Se falhar ao ler (arquivo corrompido/truncado): avisar "⚠️ Session file corrompido, usando apenas INDEX.md" e continuar
+   - Se não houver session files, use apenas o INDEX.md
+5. Se o session file lista "Arquivos para contexto", leia esses arquivos (máximo 5 primeiros)
+   - Se algum arquivo não existir mais: pular e avisar "⚠️ Arquivo {path} não encontrado (pode ter sido deletado)"
+   - Se houver mais de 5 listados: ler apenas os 5 primeiros e avisar "Listados mais de 5 arquivos, lendo os 5 primeiros."
+
+## Passo 3.5: Recuperar estado de stories e epics
+
+Se o session file contiver seção "Stories em andamento" ou "Epic":
+
+1. **Stories:** Extrair path e progresso de cada story listada
+   - Ler a story para obter estado atualizado dos checkboxes
+2. **Epic execution plan:** Se o session file mencionar `*execute-epic {path}`:
+   - Ler o YAML para obter wave atual e stories pendentes
+   - Guardar o path para sugerir como comando de retomada
+3. Se NÃO houver seção de stories/epics no session file:
+   - Buscar stories ativas em `docs/stories/active/` que mencionem o projeto
+   - Buscar epic plans em `docs/stories/epics/` com `EPIC-*-EXECUTION.yaml`
+
+## Passo 4: Resumo de contexto
+
+Apresente ao usuário de forma concisa:
 
 ```
 ## Projeto: {nome}
+**Tipo:** {tipo, se disponível no INDEX.md}
 **Status:** {estado atual}
-**Ultima sessao:** {data} — {o que foi feito}
+**Modo:** {HYBRID ou CENTRALIZED}
+**Última sessão:** {data} — {o que foi feito}
 **Agente/Squad:** {qual estava ativo}
-**Decisoes ja tomadas:** {lista, para nao refazer}
-**Proximo passo:** {acao exata}
+**Decisões já tomadas:** {lista, para não refazer}
+**Próximo passo:** {ação exata}
 ```
 
-Se o projeto tem **Project Path** externo (extraido no Passo 2), adicione:
+Se houver **stories ativas** (do Passo 3.5), adicione:
 
 ```
-**Working Directory:** `{project path}`
-⚠️ O codigo deste projeto vive fora de aios-core. Considere trocar o working directory para trabalhar nele.
+**Story ativa:** `{story-file}` — {título} ({N}/{total} ACs)
+  Pendentes: {lista dos ACs não marcados}
 ```
 
-## Passo 4: Aguardar confirmacao
-- Pergunte: "Quer continuar com esse proximo passo, ou fazer algo diferente?"
-- NAO execute nada sem confirmacao explicita do usuario
-- Se o usuario quiser ativar um agente/squad, ai sim carregue o recurso necessario
+Se houver **epic execution plan** (do Passo 3.5), adicione:
+
+```
+**Epic:** `{epic-file}` — Wave {N}/{total} ({M} stories pendentes)
+**Retomar epic:** `@pm *execute-epic {yaml-path}`
+```
+
+Se o projeto tem **Local** externo (extraído no Passo 3), adicione:
+
+```
+**Working Directory:** `{local}`
+⚠️ O código deste projeto vive fora de aios-core. Considere trocar o working directory:
+cd {local}
+```
+
+Adicione informação de git se disponível:
+
+```
+**Git:** branch `{branch atual}` — {N arquivos modificados, ou "limpo"}
+**Última atividade:** há {X dias/horas desde a última sessão}
+```
+
+Se última sessão foi há mais de 7 dias, adicione: "⚠️ Contexto pode estar desatualizado — revise antes de continuar."
+
+## Passo 4.5: Sugerir ativação de agente
+
+Se o session file contiver "Comando de ativação" (ex: `/AIOS:agents:dev`, `/AIOS:agents:aios-master`, etc):
+
+1. Extraia o comando de ativação do session file
+2. Mostre DESTACADO no resumo:
+
+```
+🔑 **Agente da última sessão:** {nome do agente}
+   Para reativar: `{comando de ativação}`
+```
+
+3. Se o comando de ativação for `nenhum (Claude Code puro)`: omitir esta seção
+
+**IMPORTANTE:** O `/resume` NÃO ativa o agente automaticamente. Apenas mostra o comando para o usuário rodar manualmente. Isso porque a ativação muda o comportamento do Claude e precisa de consentimento explícito.
+
+## Passo 5: Aguardar confirmação
+
+- Pergunte: "Quer continuar com esse próximo passo, ou fazer algo diferente?"
+- Se houver comando de ativação de agente (do Passo 4.5), sugira: "Quer reativar o agente? Rode: `{comando de ativação}`"
+- Se houver epic execution plan pendente, sugira: "Quer retomar o epic? Rode: `@pm *execute-epic {yaml-path}`"
+- NÃO execute nada sem confirmação explícita do usuário
+- Se o usuário quiser ativar um agente/squad, aí sim carregue o recurso necessário

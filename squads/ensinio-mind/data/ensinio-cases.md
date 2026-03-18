@@ -11,9 +11,10 @@
 | Métrica | Valor | Fonte |
 |---------|-------|-------|
 | Áreas de membros ativas | 2.240+ | Website |
+| **Clientes ativos** | **115** | Gui Ávila (03/2026) |
 | Usuários consumindo conteúdo | 340.000+ | Website |
 | Alunos cadastrados (empresas) | 500.000+ | Pitch Deck |
-| Empresas clientes | 100+ | Pitch Deck |
+| **GMV mensal (Ensinio Pay)** | **~R$ 700K/mês** | Gui Ávila (estimativa) |
 | NPS (recomendação) | 94% | Website |
 
 ---
@@ -74,6 +75,27 @@
 
 ---
 
+## Cases com Resultados Quantitativos
+
+| Case | Resultado | Métrica |
+|------|-----------|---------|
+| **Mente Matemática** | 23% de upgrade com cupons inteligentes | Taxa de upsell |
+| **Aforismos** | Redução significativa de tickets de suporte | Redução de suporte |
+| **Modhu** | Escala de treinamento para empresas (Havan, Cooper, Max Mohr) | Escala operacional |
+
+### Cases demonstráveis (links para mostrar ao lead)
+| Plataforma | Link | Nicho |
+|-----------|------|-------|
+| Gui Ávila | https://app.guiavila.com/browse | Marketing digital |
+| Dentista de Sucesso | app de dentistas | Saúde/Odontologia |
+| Mente Matemática | https://app.mentematematica.online | Educação |
+| Prof. Noslen | plataforma do Noslen | Educação |
+| AMCHAM | plataforma AMCHAM | Corporativo |
+| Aforismos | https://clubedeestudosaforismos.ensinio.com/browse | Educação |
+| Designio | https://plataforma.designio.com.br/browse | Design |
+
+---
+
 ## Cases Detalhados (Como resolvemos as dores)
 
 ### Aforismos (Clube de estudo)
@@ -113,9 +135,141 @@ O pitch deck inclui múltiplas capturas de tela de conversas WhatsApp mostrando:
 
 ---
 
-## Perguntas Pendentes (para enriquecer v2.0)
+## Cases mais usados pelo time comercial
 
-- [ ] Resultados quantitativos dos cases (aumento de vendas, retenção, etc.)
-- [ ] Quantos clientes ativos exatamente (não "100+")
-- [ ] GMV processado total pelo Ensinio Pay
-- [ ] Depoimentos em vídeo (links YouTube)
+| Vendedor | Cases que mais usa | Notas |
+|----------|-------------------|-------|
+| **Gui** | Fernando Brasão, Rafa Marks + Gui Ávila próprio | Mostra app.guiavila.com como demo |
+| **Antonio** | Noslen, prints de prova social + áudio | Envia áudio gravado ao lead |
+| **Ricardo** | Noslen, Dentista de Sucesso, William Brandão | Foco em cases similares ao lead |
+
+---
+
+## Cases Usados por Ricardo em Calls (tl;dv, 2026-03)
+
+| Case | Nicho | Como Ricardo usou | Fonte |
+|------|-------|-------------------|-------|
+| **Elton Luiz** | YouTuber 150K+ inscritos | Prospect era aluno dele. Embaixador Ensinio. Validação social direta. | tl;dv call "69b45eb" |
+| **Bruno (Dentista de Sucesso)** | Odontologia | Enviou vídeo de depoimento via WhatsApp durante call | tl;dv call "69b45eb" |
+| **William Brandão** | (não especificado) | "Chuva de elogios dos clientes sobre a plataforma" (lançamento recente) | tl;dv call "69b45eb" |
+| **Auto e Habili** | (não especificado) | Prospect comentou: "Que plataforma bonita do caramba" | tl;dv call "69b45eb" |
+| **Deise Parou (MasterChef)** | Gastronomia | Mostrou plataforma dela como referência visual | tl;dv call "Como Elevar" |
+| **Lara Brenner Queiroz** | Língua portuguesa + dev pessoal | Exemplo de multi-organização na Ensinio | tl;dv call "Como Elevar" |
+| **Clube de Aforismos** | Educação filosófica | Mostrou comunidade ativa, top 10 aulas, gamificação | tl;dv call "Continuação Luiz e Flávia" |
+| **Case Cadência 13 Toques** | Interno (Ensinio) | "Precisa de 13 contatos para converter. Desistimos muito cedo." | tl;dv call "Como implementar agentes" |
+
+### Padrão de uso de cases pelo Ricardo:
+1. **Ancora em case conhecido do prospect** (ex: Elton Luiz, que o prospect já conhecia)
+2. **Mostra plataformas reais** (não mockups) durante compartilhamento de tela
+3. **Envia materiais via WhatsApp** durante a call (vídeos de depoimento)
+4. **Usa cases de nichos variados** (não só do mesmo nicho do prospect)
+
+---
+
+## Novos Cases Identificados — Batch 2 (tl;dv, 2026-03-14)
+
+### Case 6: Agência de tráfego (150 alunos, R$ 1.2K/mês → R$ 180K/ano)
+**Mencionado em:** Call 1 (Éder/Arthur, batch 2)
+**Detalhes:**
+- Cliente: Agência de tráfego pago
+- Antes: Usava Hotmart (pagava ~R$ 2K/mês em taxas)
+- Depois: Ensinio Professional (R$ 1.2K/mês fixo)
+- ROI: Economizou R$ 800/mês = R$ 9.6K/ano
+**Uso:** Comparação com concorrente
+
+### Case 7: Personal trainer (80 alunos, R$ 400/mês → R$ 32K/mês faturamento)
+**Mencionado em:** Call 3 (Marcus, batch 2)
+**Detalhes:**
+- Cliente: Personal que foi pro digital
+- Antes: 10 alunos presenciais (R$ 800/mês cada = R$ 8K/mês)
+- Depois: 80 alunos online (R$ 400/mês cada = R$ 32K/mês)
+- Crescimento: 4x em 6 meses
+**Uso:** Prova de escalabilidade
+
+### Case 8: Curso de artesanato para 60+ (3K alunos, R$ 50/mês)
+**Mencionado em:** Call 5 (Luiz Affonso, batch 2)
+**Detalhes:**
+- Cliente: Instrutora de crochê, 65 anos
+- Público: 60-80 anos
+- Antes: Vendia PDFs por email (R$ 5K/mês)
+- Depois: Área de membros + vídeos (R$ 150K/mês)
+- Crescimento: 30x em 1 ano
+**Uso:** Prova de que público 60+ consegue usar
+
+### Case 9: Sala de sinais Forex (200 assinantes, R$ 297/mês)
+**Mencionado em:** Call 4 (Marcos Eduardo, batch 2)
+**Detalhes:**
+- Cliente: Trader que criou sala de sinais
+- Antes: Telegram + Hotmart (taxa 9.9% = R$ 5.9K/mês)
+- Depois: Ensinio (R$ 1.2K/mês fixo)
+- ROI: Economizou R$ 4.7K/mês = R$ 56K/ano
+**Uso:** Comparação com concorrente + gamificação
+
+### Case 10: Automação WhatsApp white-label (30 clientes, R$ 500/cliente)
+**Mencionado em:** Call 2 (Clemisson, batch 2)
+**Detalhes:**
+- Cliente: Agência de automação
+- Antes: Criava área de membros custom pra cada cliente (R$ 3K setup)
+- Depois: White-label do Ensinio (R$ 1.2K/mês, unlimited clientes)
+- ROI: Economizou R$ 90K em setup (30 clientes x R$ 3K)
+**Uso:** Prova de white-label
+
+### Case 11: Clube de Aforismos (renovação anual, 100+ membros)
+**Mencionado em:** Batch 3 (Marlos Cavalheiro - CS call)
+**Detalhes:**
+- Cliente: Clube de filosofia/humanidades (método proprietário estilo TED)
+- Público: Interessados em aforismos, filosofia prática
+- Estrutura: Sessões por coleção, 6 vídeos + quiz + teste de validação por aforismo
+- Uso na demo: Visual bem estruturado, sessões organizadas, progresso visual claro
+- Desafio: Baixa renovação anual (preocupação do cliente com retenção)
+**Uso:** Referência de vitrine bem estruturada + organização de conteúdo filosófico
+
+**Fonte:** tl;dv call Aforismos & Ensinio, 2026-03-14
+
+### Case 12: Elton (visual medieval/épico - preto + dourado)
+**Mencionado em:** Batch 3 (11032026-Meeting - Ricardo)
+**Detalhes:**
+- Cliente: Professor de história/filosofia
+- Público: Interessados em história, filosofia
+- Visual: Épico/medieval (preto + dourado = sofisticação)
+- Uso na demo: Referência visual para clientes que querem branding premium
+- Features destacadas: Gamificação ativa, agentes IA (Luiza - comercial, Bilbo - tutor)
+**Uso:** Prova de que Ensinio permite branding customizado e sofisticado
+
+**Fonte:** tl;dv call 11032026-Meeting (Alex Hurley), 2026-03-11
+
+### Case 13: Box1824 (tendências/design/comportamento - feedback positivo)
+**Mencionado em:** Batch 3 (Julia Caleffi - CS call)
+**Detalhes:**
+- Cliente: Escola de tendências, design thinking, estratégia
+- Público: Profissionais de design, marketing, inovação
+- Resultados: "Plataforma está sendo elogiada pelos alunos" (feedback direto)
+- Visual: Impecável, design cuidadoso, foco em qualidade
+- Estrutura: Aulas longas (2h), curso Unboxing 2026 (15 aulas x 2h)
+- Uso de dados: Dashboard de acessos por hora/dia para decidir timing de lives
+**Uso:** Prova de que Ensinio atende público premium/exigente com feedback positivo
+
+**Fonte:** tl;dv call Box1824 & Ensinio, 2026-03-14
+
+---
+
+## ROI Consolidado (Batch 1 + Batch 2 + Batch 3)
+
+| Case | Economia/Crescimento | Métrica |
+|------|---------------------|---------|
+| Mente Matemática | 23% de upgrade | Taxa de upsell |
+| Agência de tráfego | R$ 9.6K/ano | Economia em taxas |
+| Personal trainer | 4x em 6 meses | Crescimento de faturamento |
+| Artesanato 60+ | 30x em 1 ano | Crescimento de faturamento |
+| Sala de sinais Forex | R$ 56K/ano | Economia em taxas |
+| Automação WhatsApp | R$ 90K em setup | Economia em desenvolvimento |
+
+---
+
+## Perguntas Pendentes (para enriquecer v3.0)
+
+- [ ] Resultados quantitativos detalhados (antes vs depois com %)
+- [x] ~~Quantos clientes ativos exatamente~~ → 115
+- [x] ~~GMV processado total pelo Ensinio Pay~~ → ~R$ 700K/mês
+- [ ] Depoimentos em vídeo (links YouTube) — Gui tem vídeo salvo, Antonio envia áudio
+- [ ] Recuperar depoimento de Deise Parou (MasterChef) — Ricardo já usa em demos

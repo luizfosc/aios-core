@@ -6,11 +6,13 @@
 
 | Métrica | Valor |
 |---------|-------|
-| **Ciclo médio** | 2-4 semanas |
-| **Touchpoints necessários** | 2-3 |
+| **Ciclo médio (SDR)** | 1-2 semanas (Antonio) a 2-4 semanas (Gui) |
+| **Ciclo médio (Closer)** | 4-7 dias (Ricardo) a 2-4 semanas (casos complexos) |
+| **Touchpoints necessários** | 2-3 (SDR) / 6-10 (Closer com follow-ups) |
 | **Taxa de conversão etapa crítica** | Lead qualificado → Demo |
-| **Bloqueador mais comum** | "Precisa consultar sócio" ou "esperar lançamento" |
-| **Acelerador mais forte** | Ofereça bônus + migração gratuita |
+| **Maior taxa de perda** | SDR qualificar (Gui) / Follow-up (Antonio) / Em conversa e contactando (Ricardo) |
+| **Bloqueador mais comum** | "Precisa consultar sócio" ou "analisando a plataforma e some" |
+| **Acelerador mais forte** | Case + migração gratuita + custo da inação |
 
 ---
 
@@ -63,7 +65,7 @@
 ### Etapa 3: Reunião com Closer (Demo)
 **Tempo:** 5-7 dias após qualificação
 
-**Duração:** ~1 hora (mais ou menos)
+**Duração:** 30-60 minutos (Ricardo: 40min, Gui: ~1hr)
 
 **Ações (Closer faz):**
 - [ ] Apresenta Ensinio visualmente (demo ao vivo)
@@ -273,16 +275,61 @@ Qualquer dúvida? Responda este email!"
 
 ---
 
+## Equipe Comercial
+
+| Métrica | Valor |
+|---------|-------|
+| **Vendedores/SDRs** | 2 (time enxuto) |
+| **Meta mensal** | ~30 novos clientes |
+| **Ticket médio primeiro contrato** | R$ 399/mês x 12 (Professional anual = R$ 4.788) |
+| **Plano mais vendido (volume)** | Starter (gratuito) |
+| **Plano mais vendido (receita)** | Business (R$ 999/mês) |
+| **Contratos** | Ambos (mensal e anual, sem preferência) |
+| **Follow-ups antes de desistir** | 6-10 (Ricardo) / máx 3 (Gui) |
+| **Intervalo entre follow-ups** | 1 dia (Ricardo) / 2 dias (Gui) |
+
 ## Canais Principais de Fechamento
 
-| Canal | % de Vendas | Notas |
-|-------|-----------|-------|
-| **Ligação/Call** | 70% | Mais eficaz |
-| **Email** | 15% | Suporta, não fecha |
-| **WhatsApp** | 10% | Inicial, qualificação |
-| **Demo gravada** | 5% | Casos especiais |
+| Canal | Eficácia | Notas |
+|-------|----------|-------|
+| **Indicação de clientes** | Altíssima | Canal mais forte (Ricardo) |
+| **Ligação/Call (Zoom/Meet)** | Alta | Principal canal de fechamento |
+| **Vídeos do Gui no YouTube** | Alta | Geração de leads orgânica |
+| **Eventos presenciais** | Média-Alta | Networking e demos |
+| **Parcerias** | Média | Revenda e afiliados |
+| **Marketing (Meta/Google)** | Média | Leads do marketing (Antonio) |
 
 ---
+
+## Onboarding de Cliente Novo
+
+### Processo
+1. **Vídeo do Gui Ávila** mostrando passo a passo no YouTube
+2. **Passo a passo gravado** pela Bhrenda (CS) enviado ao cliente
+3. **Call de onboarding** por chamada de vídeo (para Professional anual)
+4. **Trilha gravada** + chamada de tira-dúvidas
+
+### Timeline
+- **Tempo para estar "rodando":** 1-2 semanas
+- **Migração assistida:** Sim, oferecida para todos os planos pagos
+
+## Informação Enterprise
+
+> "Se for uma empresa, temos uma solução enterprise separada da solução dos infoprodutores. O ticket é bem mais alto." — Gui Ávila
+
+- Solução enterprise é separada da solução de infoprodutores
+- Ticket maior, negociação diferente
+- Processo de vendas pode ser mais longo (várias propostas)
+- Nesse caso, o compromisso na primeira reunião nunca é o fechamento e sim a próxima reunião
+
+## Contatos Internos para Dúvidas
+
+| Nome | Área | Contato |
+|------|------|---------|
+| **Carlos** | Comercial/Produto | Referência do Gui |
+| **Cleisson** | Comercial/Produto | Referência do Gui |
+| **Ricardo** | Closer | +55 18 99188-5184 |
+| **Bhrenda** | CS/Onboarding | Via time interno |
 
 ## Próximas Oportunidades (v2.0)
 
@@ -293,4 +340,135 @@ Qualquer dúvida? Responda este email!"
 
 ---
 
-**Versão:** 1.0 | **Data:** 2026-03-07 | **Fonte:** Google Forms - Gui Ávila + experiência de vendas Ensinio
+## Padrões de Ciclo Observados em Campo (tl;dv, 2026-03)
+
+### Padrão 1: Same-Day Close (Ciclo Relâmpago)
+- **Duração:** 1 call = fechamento
+- **Perfil:** Prospect já testou plataforma sozinho, chegou convicto
+- **Exemplo:** Nicho católico, testou Starter, ligou Carla suporte, Antônio agendou, Ricardo fechou na call. Cartão processado durante a call.
+- **Acelerador:** UX transparente (prospect testou sozinho), urgência real (lançamento em 30 dias), case de alguém que conhece (Elton Luiz)
+(Fonte: tl;dv call "69b45eb", 2026-03)
+
+### Padrão 2: Two-Call Close (Trial + Follow-up)
+- **Duração:** 1-2 semanas
+- **Perfil:** Prospect cético ou com experiências ruins anteriores
+- **Exemplo:** Rede de franquias (35 escolas), já usou Boteconversa 2 anos
+- **Fluxo:** Call 1 (discovery + demo + setup trial 300 créditos) → 1 semana de teste → Call 2 (review + proposta customizada)
+- **Acelerador:** Suporte hands-on durante trial, materiais assíncronos (vídeos do Gui)
+(Fonte: tl;dv call "Como automatizar suas vendas", 2026-03)
+
+### Padrão 3: Async Decision (Precisam Passar para Decisor)
+- **Duração:** 2-4 semanas
+- **Perfil:** Prospect é executor mas não decide sozinho (head de ops, gerente)
+- **Exemplo:** Blog monetization (35K alunos), Bruna (ops) precisa passar para Cris (fundadora)
+- **Fluxo:** Call com executor → envia gravação + transcript → follow-up segunda → call 2 com decisor (se necessário)
+- **Tática Ricardo:** NÃO empurrou. "Entendo que a Cris tem que estar envolvida." Enviou materials assíncronos.
+(Fonte: tl;dv call "Como Elevar a Experiência", 2026-03)
+
+### Padrão 4: Migração Gradual (Trial Estendido)
+- **Duração:** 1-3 meses (dupla plataforma)
+- **Perfil:** Prospect com grande base (2K+ alunos), quer migrar sem risco
+- **Exemplo:** Costura/modelagem, manter Carne 3-6 meses enquanto migra "formiguinha"
+- **Risco:** Duplo custo, fragmentação de esforço, churn por esquecimento
+- **Tática Ricardo:** Trial estendido gratuito até dia 1, pricing customizado
+(Fonte: tl;dv call "Continuação Luiz e Flávia", 2026-03)
+
+### Insight: Venda de AI Agent vs Plataforma EAD
+O ciclo de vendas de **AI Agents** é diferente do ciclo de **plataforma EAD**:
+
+| Aspecto | Plataforma EAD | AI Agent |
+|---------|---------------|----------|
+| Ticket | R$399-1.999/mês | R$200-6.000/mês (créditos) |
+| Ciclo | 1-4 semanas | 1-2 semanas (trial-first) |
+| Objeção principal | Migração | Preço dos créditos |
+| Demo | Visual (mostrar plataforma) | Co-criação (construir agente ao vivo) |
+| Decision trigger | UX + cases | Speed-to-Lead + ROI |
+
+---
+
+## Churn Risks Ativos (Batch 3, tl;dv 2026-03-14)
+
+### Gil Junior (Preparatório PF) — 85% de risco
+
+**Sinais:**
+- Comparando custos com Hotmart + Tutoria
+- Reclamando de taxa de parcelamento (3,49% vs 2,99% desejado) - transparência legal gera objeção
+- Saque lento (D+3 Ted vs D+2 Hotmart até meio-dia)
+- **Bug crítico:** Arquivo .apkg não funciona (flashcards Anki) — **BLOQUEADOR** para nicho de concursos
+
+**Contexto:**
+- Cliente: Preparatório para Polícia Federal, 2.000+ alunos
+- Faturamento estimado: R$ 50-200K/mês
+- Ticket: R$ 200-800/mês por aluno
+- Plataforma anterior: Hotmart
+
+**Timeline:** Decisão até dia 25 do mês (limite para migrar ou renovar)
+
+**Ações recomendadas:**
+1. ⚠️ **URGENTE:** Resolver bug .apkg (Anki flashcards) — **P0**
+2. Mostrar comparativo real de custos (incluir custo oculto de Hotmart: chargeback 4%, antecipação 3,49%)
+3. CS proativo para acompanhar decisão
+4. Oferecer trial estendido para testar .apkg quando corrigido
+
+**Impacto se perder:**
+- Sinal negativo para nicho preparatórios (PF, OAB, tribunais)
+- Perda de R$ 4.000/ano (custo fixo) + taxa sobre R$ 50-200K/mês vendas
+
+**Fonte:** tl;dv call Gil Junior & Ensinio, 2026-03-14
+
+---
+
+### Vamos para o Quadro — 100% de churn (confirmado)
+
+**Status:** Cancelamento confirmado em 30/03/2026
+
+**Motivo:** Empresa encerrando plataforma digital (não especificado por quê)
+
+**Contexto:**
+- Clientes: Eduardo Barradas + Rosane
+- Produto: Cursos para concursos/vestibulares
+- Situação: Precisam exportar dados + cancelar recorrências em massa
+
+**Ações em andamento:**
+1. ✅ Exportação de dados (bug no filtro "ativos" — Bhrenda corrigindo)
+2. ✅ Cancelamento de recorrências em massa (dev vai fazer bulk cancel)
+3. ✅ Plataforma grátis até 30/03 (cortesia para garantir acesso dos alunos)
+
+**Data final:** 30/03/2026 (fixo)
+
+**Aprendizado:** Cliente satisfeito (sem reclamação da plataforma), mas negócio encerrou. Nada que Ensinio pudesse fazer.
+
+**Fonte:** tl;dv call Vamos para o Quadro & Ensinio, 2026-03-14
+
+---
+
+### Aforismos (Marlos Cavalheiro) — 40% de churn risk
+
+**Sinais:**
+- Renovação anual baixa (preocupação do cliente)
+- "A renovação é baixa... esperava mas quero minimizar isso"
+- Precisa de dados manuais (cruzar vendas + acessos no Excel) — não tem dashboard pronta
+
+**Contexto:**
+- Cliente: Clube de filosofia/humanidades (método proprietário)
+- Modelo: Assinatura anual
+- Público: Interessados em aforismos, filosofia prática
+- Plataforma: Migrou recentemente (jan/25), renovações começaram jan/26
+
+**Timeline:** Renovações anuais vencem a partir de jan/26 (12 meses após migração)
+
+**Ações recomendadas:**
+1. Check-in proativo no mês de renovação (antecipar objeções)
+2. Mostrar dados de uso para justificar valor (taxa de conclusão, acessos)
+3. Oferecer ajustes de UX (progresso visual + recompensa) — cliente pediu
+4. **Feature Request P1:** Dashboard de engajamento pronta (sem Excel manual)
+
+**Impacto se perder:**
+- Perda de receita recorrente anual
+- Sinal para outros clientes com modelo anual
+
+**Fonte:** tl;dv call Aforismos & Ensinio, 2026-03-14
+
+---
+
+**Versão:** 3.1 | **Data:** 2026-03-14 | **Fonte:** Google Forms (06-13/03) + tl;dv calls batch 1+2+3 (26 calls, 2026-03)

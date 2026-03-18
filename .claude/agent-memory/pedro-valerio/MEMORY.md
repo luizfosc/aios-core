@@ -1,9 +1,9 @@
 # @pedro-valerio Memory - Process Absolutist
 
 ## Quick Stats
-- Workflows auditados: 7 (deep-research v1.0→v1.1; BRE extract v1.0→v1.1, formalize v1.0→v1.1; Mind Cloning v1.1)
+- Workflows auditados: 12 (deep-research v1.0→v1.1; BRE extract v1.0→v1.1, formalize v1.0→v1.1; Mind Cloning v1.1; Project Lifecycle v1.0; YouTube Transcription v1.0; /new-project v1.0; Ensinio WhatsApp Prospector v5.0; High-Ticket Mastery v1.0)
 - Clones auditados: 2 (renner-silva v1.1=8.5, v1.2=9.0)
-- Veto conditions criadas: 18 (deep-research) + 24 (BRE v1.1)
+- Veto conditions propostas: 18 (deep-research) + 24 (BRE v1.1) + 8 (Project Lifecycle) + 8 (/new-project v1.0) + 12 (Ensinio v5.0) + 10 (HTM v1.0)
 - Detalhes completos: `audit-history.md`
 
 ---
@@ -24,6 +24,11 @@
 | BRE wf-formalize v1.0 | 54 | VETO |
 | BRE wf-formalize v1.1 | 83 | APROVAR |
 | Mind Cloning v1.1 | 78 | APROVAR c/ ressalvas |
+| Project Lifecycle v1.0 | 40 | VETO |
+| YouTube Transcription v1.0 | 47 | VETO |
+| /new-project v1.0 | 67 | VETO |
+| **Ensinio Prospector v5.0** | **73** | **APROVAR c/ ressalvas** |
+| **High-Ticket Mastery v1.0** | **58** | **VETO** |
 
 ---
 
@@ -54,6 +59,23 @@
 - Handoff sem input_validation (todos workflows)
 - Dois arquivos descrevendo mesmo fluxo (Mind Cloning: clone-mind.md + workflow YAML)
 - Sem timeout protection (Mind Cloning v1.1)
+- Sobrescrita silenciosa por naming collision (Project Lifecycle: session YYYY-MM-DD.md)
+- Skill B cria artefato de Skill A como fallback (checkpoint cria INDEX.md = viola single responsibility)
+- Data contract com campo renomeado entre template e dados reais (Project Path vs Local)
+- **Fallback silencioso com return None** (YouTube: 429 rate limit → transcript-api → browser-cookies → None sem veto)
+- **Subprocess delegation sem veto** (aios-transcriber → youtube_captions.py, check=False = erro oculto)
+- **Extension-only validation** (is_audio_file: .mp3 OK, mas .txt renomeado pra .mp3 passa)
+- **State file sem lock** (TranscriptionState: JSON atômico mas concurrent access = race condition)
+- **FAIL LATE** (/new-project: validation no Passo 6 → deveria estar em Passo 0)
+- **Validation sem rollback** (/new-project: falha deixa lixo no disco)
+- **Silent skip** (create-epic-structure: INDEX.md existe → pula sem ABORT)
+- **Table corruption** (/new-project: ACTIVE.md append sem validar header)
+- **Veto conditions documentadas mas SEM enforcement** (Ensinio: QG diz "halt" mas nada força throw)
+- **Optional phase com falha silenciosa** (Ensinio Phase 9 GHL: erro → log → continue = dessincronizado)
+- **Threshold sem veto** (Ensinio phone_coverage < 70% continua, deveria haltar)
+- **WARN em vez de BLOCK** (HTM: V2 Skip Foundation = WARN, contradiz allow_skip:false do workflow)
+- **Menu oferece opcao sem implementacao** (HTM: "Lancamento Rapido" sem rapid-launch.yaml)
+- **Activation ambigua** (HTM: "Direct call" e "Direct reference" nao sao slash commands executaveis)
 
 ## Patterns Efetivos
 - Enforcement global: `enforcement: { checkpoint_policy, veto_behavior, max_retries }`
@@ -62,6 +84,8 @@
 - Checkpoint types: auto, human_review, quality_gate
 - Global safeguards: max_duration, max_tokens, max_waves, plateau_threshold
 - Quality Gate Enforcement: gate define CRITERIA, veto ENFORCA (blocking: true)
+- **Retry com backoff exponencial** (Deepgram: [5s, 10s, 30s], Search: 2^retry)
+- **Atomic write pattern** (TranscriptionState: tmp → replace)
 
 ---
 
@@ -70,10 +94,18 @@
 - Conteudo rico NAO compensa workflow fraco (Mind Cloning: tasks 9/10, workflow 6/10)
 - Duplicacao de fluxo (task + workflow YAML) e GAP CRITICAL - single source of truth
 - CONDITIONAL paths precisam de tracking/propagacao entre fases
+- **Fallback chain SEM veto final = silent failure** (YouTube: 3 níveis mas resultado vazio = continue)
+- **Magic bytes > extension check** (is_audio_file só olha .mp3, não valida header)
+- **Subprocess com check=False = esconde erro** (youtube.py → youtube_captions.py retorna False, mas erro não sobe)
 
 ---
 
 ## Notas Recentes
+- [2026-03-17] High-Ticket Mastery v1.0 VETO (58/100) — 10C, 8H, 8M. **Enforcement zero:** veto conditions documentadas mas nao bloqueiam. CRITICAL: V2=WARN contradiz allow_skip:false, menu oferece workflow inexistente, zero fallback/timeout, handoffs sem input_validation. Arquitetura FUSION solida mas sem travas. Audit: `squads/high-ticket-mastery/AUDIT-2026-03-17.md`
+- [2026-03-16] Ensinio Prospector v5.0 APROVAR c/ RESSALVAS (73/100) — 3C, 4H, 3M. **Veto sem enforcement:** QG documentado mas não força throw. CRITICAL: Phase 9 (GHL) falha silenciosa, phone_coverage sem threshold, schema validation ausente. Pipeline sólido mas precisa hardening. Audit: `.aios/audits/process-workflow-audit-2026-03-16.md`
+- [2026-03-15] /new-project v1.0 VETO (67/100) — 3C, 4H, 4M, 2L. **Fail Late** violação: validation no fim. CRITICAL: rollback ausente, table corruption, scan não bloqueia
+- [2026-03-13] YouTube Transcription v1.0 VETO (47/100) — 3C, 2H, 6M, 1L. Fallback chain sem veto, subprocess sem raise, extension-only validation
+- [2026-03-11] Project Lifecycle v1.0 VETO (40/100) — 3C, 4H, 4M, 2L. Skills /new-project+/checkpoint+/resume sem veto conditions
 - [2026-03-11] Mind Cloning v1.1 APROVADO c/ RESSALVAS (78/100) — 3C, 5M, 7m. Gap: workflow YAML sem gates em 3/5 fases
 - [2026-03-11] BRE v1.1 APROVADO — extract 85, formalize 83
 - [2026-03-09] renner-silva v1.2 APROVADO (9.0/10)

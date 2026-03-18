@@ -31,24 +31,27 @@
 
 ## Sinais Vermelhos (Perguntas Problemáticas)
 
-### 5. "Tem taxa zero?"
+### 5. "Tem taxa zero?" / "Só quer saber de preço"
 **Nível:** ALERTA MÉDIO
 - **Implicação:** Lead não entende valor, está caçando "deal"
 - **Verdadeiro Intent:** Quer plataforma gratuita, não investimento
+- **Variantes:** "Qual o valor?", "Tem plano free?", lead que quer tudo mas não quer pagar o plano que precisa
 - **Resposta da equipe:** "Podemos negociar" (testar interesse real)
 - **Próximo passo:** Se insistir em zero, desqualificar
 
-### 6. "Vocês gerenciam tudo pra mim?"
+### 6. "Vocês gerenciam tudo pra mim?" / "Vocês fazem tudo por mim?"
 **Nível:** ALERTA ALTO
 - **Implicação:** Lead quer terceirizar 100%, não quer trabalhar
 - **Verdadeiro Intent:** Quer automação mágica sem esforço
+- **Variantes:** "Vocês já personalizam tudo?", "Tem pacote de artes ou modelos?", "Vocês produzem o material?", "Vocês ajudam a vender e fazem marketing pra mim?"
 - **Risco:** Alto churn (depois reclama "não vendi nada, a culpa é do software")
-- **Ação:** Desqualificar ou educacionar que Ensinio é ferramenta, não agência
+- **Ação:** Desqualificar ou educar que Ensinio é ferramenta, não agência
 
-### 7. "Precisa de taxa zero? Vocês gerenciam tudo pra mim?"
-**Nível:** BLOQUEADOR DUPLO
-- **Implicação:** Combinação dos anteriores
-- **Padrão:** Lead totalmente desalinhado com realidade de produto
+### 7. Mentalidade de Atalho (Combinação)
+**Nível:** BLOQUEADOR
+- **Sinais:** "Da pra ganhar dinheiro?", "Como funciona se eu quiser cancelar?", mentalidade de garantia e reembolso
+- **Padrão:** Lead que já vem pensando no reembolso caso "não seja o que espero"
+- **Implicação:** Baixa responsabilidade pelo próprio negócio, quer atalho
 - **Ação:** PASSE (não gasta tempo com esse)
 
 ### 8. "Quantos grandes players estão usando?"
@@ -123,9 +126,29 @@
 - **Padrão:** Compra, descobre que Ensinio não é pra produto físico, cancela insatisfeito
 - **Ação:** VETO direto, evitar conflito
 
+### 18. Lead que compra o plano mais barato sendo exigente
+**Nível:** ALTO CHURN + ALTO SUPORTE
+- **Padrão:** Compra Starter ou Professional, exige features de Enterprise
+- **Variante:** Lead que compra sem passar pelo comercial e depois reclama
+- **Variante:** Lead que fecha sem entender o que é a Ensinio de fato
+- **Ação:** Garantir que passem pelo comercial antes de fechar
+
+### 19. Lead traumatizado com plataforma anterior
+**Nível:** ALTO CHURN
+- **Padrão:** Já vem com trauma, mentalidade de garantia e reembolso
+- **Sinal:** "Se eu quiser cancelar, como funciona?"
+- **Razão:** O problema geralmente é descomprometimento do lead, não a plataforma
+- **Ação:** Avaliar comprometimento real antes de fechar
+
+### 20. Lead que quer desconto demais e é exigente
+**Nível:** MÉDIO CHURN + ALTO SUPORTE
+- **Padrão:** Negocia agressivamente, depois exige muito
+- **Sinal:** Quer garantia pra tudo, não quer fazer nada, só quer a plataforma pronta
+- **Ação:** Avaliar se o esforço de fechar vale o ticket
+
 ## Perfis de Clientes com Alto Suporte
 
-### 18. "Quem não tem facilidade com ferramentas do digital"
+### 21. "Quem não tem facilidade com ferramentas do digital"
 **Nível:** ALTO SUPORTE + CHURN
 - **Padrão:** Consome muito atendimento, aprende lento, pode desistir de frustração
 - **Ação:** Filtro rigoroso OU oferecer Ensinio Care (solução premium)
@@ -136,13 +159,20 @@ Use este checklist para identificar VETO em primeiros 5 minutos:
 
 ```
 [ ] Quer vender produto físico? → VETO
-[ ] Zero faturamento E sem case de uso claro? → VETO (oferça Starter)
-[ ] Quer apenas ebook/vitrine simples? → VETO (recomend. outro software)
-[ ] Quer taxa zero? → ALERTA (testar intent)
-[ ] Quer terceirizar 100%? → VETO
-[ ] Quer checkout em USD/EUR hoje? → VETO (oferça roadmap)
-[ ] Não tem facilidade com digital? → VETO (oferça Ensinio Care)
+[ ] Zero faturamento E sem case de uso claro? → VETO (ofereça Starter)
+[ ] Quer apenas ebook/vitrine simples? → VETO (recomende outro software)
+[ ] Quer taxa zero / só quer saber de preço? → ALERTA (testar intent)
+[ ] Quer terceirizar 100% / "vocês fazem tudo pra mim"? → VETO
+[ ] Quer checkout em USD/EUR hoje? → VETO (ofereça roadmap)
+[ ] Não tem facilidade com digital? → VETO (ofereça Ensinio Care)
 [ ] Não tá nem aí pra experiência do aluno? → VETO (não é fit)
+[ ] Menor de 18 anos? → VETO
+[ ] Não tem conteúdo pronto e nem produto? → ALERTA FORTE
+[ ] Não tem planejamento / sem previsão de lançamento? → ALERTA
+[ ] Quer só ganhar dinheiro de forma rápida? → VETO
+[ ] Já vem pensando em reembolso / mentalidade de garantia? → VETO
+[ ] Entra na call dentro do carro / no celular? → ALERTA (não está comprometido)
+[ ] Não quer trazer sócio pra call? → ALERTA (decisão pode travar)
 ```
 
 ---
@@ -163,4 +193,154 @@ Use este checklist para identificar VETO em primeiros 5 minutos:
 
 ---
 
-**Versão:** 1.0 | **Data:** 2026-03-07 | **Fonte:** Google Forms - Gui Ávila + experiência de vendas
+## Novos Red Flags Observados em Campo (tl;dv, 2026-03)
+
+### 22. Negócio Muito Novo (< 1 mês de operação)
+**Nível:** ALERTA ALTO
+- **Sinal:** Lead ainda não validou processo manual, quer automatizar cedo demais
+- **Risco:** Automatizar processo que ainda não funciona = amplificar ineficiências
+- **Exemplo real:** Advocacia online, < 2 semanas, 18-30 leads/dia mas 1 conversão/dia
+- **Ação:** Aceitar com acompanhamento intensivo, mas alertar que IA potencializa processo existente, não cria processo
+(Fonte: tl;dv call "Como implementar agentes de IA", 2026-03)
+
+### 23. Decision-Maker Ausente na Call
+**Nível:** ALERTA MÉDIO
+- **Sinal:** Dono/presidente entra atrasado, sai no meio, ou não participa
+- **Risco:** Executor vê valor mas decisor questiona ROI depois
+- **Exemplo real:** Presidente de rede de franquias saiu da call após 50 min, não viu demo completa
+- **Ação:** Enviar gravação + transcript + materiais para revisão assíncrona. Agendar follow-up com decisor presente.
+(Fonte: tl;dv call "Como automatizar suas vendas", 2026-03)
+
+### 24. Ceticismo por Experiências Ruins com Chatbots
+**Nível:** ALERTA ALTO
+- **Sinal:** "A gente já testou chatbot, não funcionou" / "Promessas grandes, execução não acontece"
+- **Risco:** Trial precisa ser perfeito ou deal morre
+- **Exemplo real:** Franquia usou Boteconversa 2 anos, abandonou por banimentos. Também testou outro chatbot que não funcionou.
+- **Ação:** Trial hands-on com suporte intensivo. NÃO prometer resultados, deixar eles verem por si.
+(Fonte: tl;dv call "Como automatizar suas vendas", 2026-03)
+
+### 25. Feature Request Durante a Venda
+**Nível:** ALERTA MÉDIO
+- **Sinal:** Lead pede feature que não existe (áudio pré-gravado, banner customizado nativo, etc.)
+- **Risco:** Expectativa não atendida = frustração pós-venda
+- **Exemplo real:** "Tem como mandar áudio pré-gravado?" (não tem nativo)
+- **Ação:** Ser honesto ("não tem nativo"), anotar para roadmap, oferecer workaround se existir
+(Fonte: tl;dv call "Como implementar agentes de IA", 2026-03)
+
+### 26. Ex-Clientes Grandes que Saíram (Referência Negativa)
+**Nível:** ALERTA MÉDIO
+- **Sinal:** Prospect menciona grandes players que já foram Ensinio e saíram (Fernando Brasão, Rafa Marx)
+- **Risco:** Gera desconfiança ("por que saíram?")
+- **Resposta Ricardo:** "Ensinio focou em qualidade, não em marketing. Programa de parcerias começou esse ano."
+- **Ação:** Ser transparente, não inventar razões. Focar em evolução da plataforma.
+(Fonte: tl;dv call "Continuação Luiz e Flávia", 2026-03)
+
+---
+
+## Novos Red Flags Identificados — Batch 2 (tl;dv, 2026-03-14)
+
+### RF-27: "Preciso pensar" sem data específica
+**Contexto:** Call 3, Call 4 (batch 2)
+**Por quê é red flag:** Significa "não quero comprar mas não sei como dizer não"
+**Como lidar:** Forçar follow-up: "Entendi. Que dia você acha que decide? Vou te ligar na quarta."
+
+### RF-28: Não tem base de alunos ainda
+**Contexto:** Call 3 (Marcus - 0 alunos online)
+**Por quê é red flag:** Vai demorar meses pra gerar receita, pode cancelar antes
+**Como lidar:** Oferecer trial longo (30 dias) ou pausar até ter primeiros alunos
+
+### RF-29: Só venda one-time, sem recorrência
+**Contexto:** Call 4 (Marcos Eduardo - cursos R$ 5-12K)
+**Por quê é red flag:** Churn altíssimo, LTV baixo
+**Como lidar:** Sugerir adicionar recorrência (sala de sinais, comunidade)
+
+### RF-30: Público muito velho/tech-averse
+**Contexto:** Call 5 (Luiz - 60+ anos)
+**Por quê é red flag:** Vai dar muito suporte, pode frustrar o cliente
+**Como lidar:** Cobrar setup completo + onboarding incluso
+
+### RF-31: Quer custom demais
+**Contexto:** Call 4 (Marcos - queria gamificação custom)
+**Por quê é red flag:** Expectativa de produto sob medida, vai reclamar
+**Como lidar:** Vender Professional, mas deixar claro que roadmap é compartilhado
+
+### RF-32: Não sabe o ticket que vai cobrar
+**Contexto:** Call 3 (Marcus - "ainda não defini")
+**Por quê é red flag:** Negócio imaturo, pode desistir
+**Como lidar:** Ajudar a definir ticket, posicionar como consultoria inclusa
+
+### RF-33: Já teve problema com plataforma anterior
+**Contexto:** Call 2 (Clemisson - "Hotmart me bloqueou")
+**Por quê é red flag:** Pode ter feito algo errado (spam, fraude)
+**Como lidar:** Perguntar o motivo do bloqueio. Se for spam, recusar.
+
+### RF-34: Quer vender produto ilegal/grey area
+**Contexto:** Call 4 (Marcos - sinais Forex sem regulação)
+**Por quê é red flag:** Risco legal pro Ensinio
+**Como lidar:** Pedir CNPJ, verificar se tem autorização CVM
+
+### RF-35: Não tem CNPJ
+**Contexto:** Call 1 (Éder - pessoa física)
+**Por quê é red flag:** Limites de faturamento, compliance
+**Como lidar:** Aceitar PF até R$ 10K/mês, depois exigir PJ
+
+### RF-36: Quer desconto logo de cara
+**Contexto:** Call 1, Call 4
+**Por quê é red flag:** Vai sempre pedir desconto, LTV baixo
+**Como lidar:** Não dar desconto na primeira call. Se insistir, oferecer trial menor.
+
+---
+
+## Red Flags (Batch 3, tl;dv 2026-03-14)
+
+### RF-37: Ticket muito alto sem validação de mercado
+**Contexto:** Call 11032026-Meeting (Alex Hurley - inglês executivo)
+**Sinal:** Prospect tentando cobrar R$ 15K sem ter vendido nada antes ("ninguém quer pagar")
+**Por quê é red flag:**
+- Produto não validado = alto risco de desistência
+- Expectativa irreal de mercado
+- Pode abandonar Ensinio se não vender rápido
+
+**Severidade:** 🔴 ALTO
+**Como lidar:**
+- Sugerir validar com preço menor primeiro (R$ 2-5K)
+- Posicionar Ensinio como ferramenta DE validação
+- Oferecer trial para testar mercado antes de investir
+
+**Fonte:** tl;dv call 11032026-Meeting, 2026-03-11
+
+### RF-38: Endividamento pré-receita
+**Contexto:** Call 11032026-Meeting (Alex Hurley)
+**Sinal:** "Já tô endividada antes de abrir as portas, já tô quase falida antes de abrir as portas"
+**Por quê é red flag:**
+- Cliente sem caixa para investir
+- Pressão financeira pode levar a desistência rápida
+- Alto risco de churn nos primeiros 90 dias
+
+**Severidade:** 🔴 ALTO
+**Como lidar:**
+- Oferecer Starter (grátis) para validar sem custo fixo
+- **NÃO** vender Professional/Business sem receita comprovada
+- Acompanhar de perto se fechar — CS proativo
+
+**Fonte:** tl;dv call 11032026-Meeting, 2026-03-11
+
+### RF-39: Mudança de ICP no meio da call
+**Contexto:** Call 11032026-Meeting (Alex Hurley)
+**Sinal:** Começa falando de B2C (indivíduos brasileiros), termina falando de B2B (empresas americanas que treinam funcionários)
+**Por quê é red flag:**
+- Confusão de posicionamento = produto imaturo
+- Cliente não sabe quem é o público-alvo real
+- Risco de mudar estratégia várias vezes (instável)
+
+**Severidade:** 🟡 MÉDIO
+**Como lidar:**
+- Perguntar: "Qual é o público principal AGORA?"
+- Ajudar a definir ICP claro antes de fechar
+- Se insistir em "vou testar os dois", oferecer trial longo
+
+**Fonte:** tl;dv call 11032026-Meeting, 2026-03-11
+
+---
+
+**Versão:** 3.2 | **Data:** 2026-03-14 | **Fonte:** Google Forms (06-13/03) + tl;dv calls batch 1+2+3 (26 calls, 2026-03)

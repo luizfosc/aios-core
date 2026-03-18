@@ -21,6 +21,7 @@
 
 ```text
 docs/
+├── ECOSYSTEM-INDEX.md         # 🆕 Centralized index of minds & agents
 ├── getting-started.md         # English (root)
 ├── guides/                    # English
 ├── installation/              # English

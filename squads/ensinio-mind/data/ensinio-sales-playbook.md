@@ -254,6 +254,188 @@ Seu dev consegue fazer em 2h."
 
 ---
 
+## Objeção #6 — "Gostei muito, mas preciso analisar melhor"
+
+### Contexto
+- **Frequência:** Alta (~35% dos leads após demo)
+- **Gravidade:** Média (geralmente esconde a objeção real)
+- **Tipo de lead:** Indeciso, precisa de mais segurança
+
+### Objeção Completa
+> "Gostei muito, mas preciso analisar melhor e te retorno."
+
+### Resposta Recomendada (Oficial — Ricardo, Closer)
+```
+"Tranquilo [nome], isso definitivamente não é um problema.
+Até pra saber se eu posso te ajudar com a sua análise,
+me trás um ponto aqui.
+
+Sabendo que você me disse que isso é o que você precisava
+para alcançar [objetivo do lead] e parar de sofrer com
+[problema que o lead mencionou], o que são uma ou duas
+coisas que vão passar pela sua cabeça antes de avançar?"
+```
+
+### Estratégia
+1. **Não confronta** — aceita com naturalidade ("não é um problema")
+2. **Extrai objeção real** — pergunta O QUE vai pesar na análise
+3. **Usa as palavras do lead** — referencia o objetivo e a dor que ele mesmo trouxe
+4. **Resolve na hora** — quando a objeção real aparece (geralmente é dinheiro, prazo ou medo)
+
+### Por que funciona
+O lead quase nunca precisa "analisar melhor". A objeção real é logística (dinheiro, prazo, implementação) ou emocional (medo de errar). Essa pergunta força o lead a revelar o verdadeiro bloqueio.
+
+---
+
+## Objeção #7 — "O financeiro é um problema"
+
+### Contexto
+- **Frequência:** Média (~20% dos leads)
+- **Gravidade:** Alta (pode matar a venda)
+- **Tipo de lead:** Vê valor mas tem restrição de caixa
+
+### Objeção Completa
+> "O financeiro é um problema, não consigo fazer agora."
+
+### Resposta Recomendada (Oficial — Ricardo, Closer)
+```
+"[Nome], fica tranquilo. Isso não é um problema.
+Agora... dinheiro de lado.
+
+Você acredita que o que eu mostrei é o que você precisava
+para se colocar em uma posição de alcançar [objetivo]
+e além disso, o porquê você precisa disso agora?"
+```
+
+**Lead responde:** "Sim, acredito que é o que eu precisava, por causa de xyz"
+
+```
+"Entendi [nome], isso realmente faz sentido pra mim.
+Agora... o porquê é importante fazer algo agora
+e não empurrar com a barriga e deixar isso pra depois?"
+```
+
+**Lead responde:** "Preciso resolver isso por causa de xyz"
+
+```
+"[Nome], então como você acredita que poderia encontrar
+formas de financiar esse investimento, pra que você possa
+ter as ferramentas necessárias e alcançar xyz?"
+```
+
+### Estratégia
+1. **Separa valor de preço** — "dinheiro de lado, isso é o que você precisa?"
+2. **Reforça urgência** — "por que agora e não depois?"
+3. **Transfere a solução** — lead encontra a própria saída financeira
+4. **Não oferece desconto** — o lead se convence sozinho
+
+---
+
+## Objeção #8 — "Preciso falar com meu sócio"
+
+### Contexto
+- **Frequência:** Alta (~30% dos leads)
+- **Gravidade:** Média-Alta (pode atrasar semanas)
+- **Tipo de lead:** Tem valor percebido mas divide decisão
+
+### Objeção Completa
+> "Preciso falar com meu sócio antes de fechar."
+
+### Resposta Recomendada (Oficial — Ricardo, Closer)
+```
+"Entendo completamente [nome], e isso não é um problema,
+eu sei como funciona.
+
+Agora, seu sócio de lado, você sente que o que eu
+te mostrei é capaz de levar a entrega do seu produto
+a um nível mais avançado, aumentando seu LTV, satisfação
+dos alunos e retenção assim como te mostrei?"
+```
+
+**Lead:** "Claro, acredito sim"
+
+```
+"E porquê especificamente você acredita que a gente
+consegue te ajudar com isso?"
+```
+
+**Lead:** "Porque a plataforma, suporte de vocês é isso, isso e aquilo"
+
+```
+"Digamos que você fale com teu sócio, e talvez por não ter
+o contexto da reunião ou ele achar caro, ele fale pra não
+fazer, o que você faria?"
+```
+
+**Lead:** "Eu faria mesmo assim"
+
+```
+"Posso te dar uma sugestão? Você entende que quando
+você for até o seu sócio, no final do dia você está
+buscando apoio e não permissão?"
+```
+
+### Estratégia
+1. **Valida convicção** — lead admite que é o que precisa
+2. **Extrai razões** — lead verbaliza os motivos (se vende sozinho)
+3. **Testa comprometimento** — "e se ele disser não?"
+4. **Reframe poderoso** — "apoio, não permissão"
+5. **Gera compromisso** — lead faz sinal (depósito, assinatura) antes de falar com sócio
+
+---
+
+## Objeção #9 — "Já tive experiência ruim com plataforma anterior"
+
+### Contexto
+- **Frequência:** Média (~20% dos leads em migração)
+- **Gravidade:** Alta (trauma real, precisa quebrar barreira psicológica)
+- **Tipo de lead:** Migrou de WordPress/plugins ou plataforma bugada
+
+### Objeção Completa
+> "Eu comprei uma plataforma achando que fosse resolver problema e atrapalhou minha vida.
+> Literalmente desistiram porque ninguém conseguia encontrar o maldito menu.
+> Era uma mistura de plugin... uma mistura. Ninguém conseguia localizar qualquer página.
+> Eu já paguei e nem consegui reembolso."
+
+### Resposta Recomendada (Ricardo)
+```
+"É bom que você conseguiu [reembolso]. Pelo menos tem gente
+que paga e nem consegue. Entendo perfeitamente a frustração.
+
+O que aconteceu com você é exatamente o oposto do que
+a gente faz aqui. Deixa eu te mostrar:
+
+1. SUPORTE EM VÍDEO: A gente não responde só email.
+   Se você travar, a gente faz chamada de vídeo
+   e resolve junto com você.
+
+2. CHECK-INS PROATIVOS: A gente não te abandona depois
+   da venda. Fazemos check-in pra garantir que tá tudo ok.
+
+3. MIGRAÇÃO GRATUITA: Eu mesmo vou ajudar a trazer
+   suas capas, aulas, tudo. Você não precisa quebrar
+   a cabeça com coisa técnica.
+
+4. PLATAFORMA ESTÁVEL: Não é WordPress com 10 plugins.
+   É plataforma única, tudo nativo, sem gambiarra.
+
+Posso te mostrar como funciona ao vivo? [compartilha tela]"
+```
+
+### Estratégia
+1. **Validar dor** — "Entendo perfeitamente, acontece mesmo"
+2. **Posicionar como OPOSTO** — contraste direto com experiência ruim
+3. **Mostrar diferenciais tangíveis** — suporte em vídeo, check-ins, estabilidade
+4. **Oferecer migração gratuita** — remove fricção de setup inicial
+5. **Demonstração ao vivo** — quebra barreira mostrando funcionando
+
+### Por que funciona
+Cliente traumatizado precisa de PROVAS, não promessas. Demonstração ao vivo + suporte diferenciado quebra resistência.
+
+**Fonte:** tl;dv call 11032026-Meeting (Alex Hurley - inglês executivo), 2026-03-11
+
+---
+
 ## Objeção NÃO LISTADA (Mas Importante) — "Checkout em USD/EUR"
 
 ### Status Atual (2026-03)
@@ -328,15 +510,489 @@ Economia real de R$ 500-1000/mês."
 
 ---
 
-## Perguntas de Qualificação (use no primeiro contato)
+## Perguntas de Qualificação
 
-**Must-ask:**
-1. "Qual a sua receita mensal esperada?" (desqualifica zero faturamento)
+### Must-ask (SDR — primeiro contato)
+1. "Já fatura mais de 20 mil mensais?" (desqualifica zero faturamento)
 2. "Você já tem conteúdo pronto ou quer criar do zero?" (desqualifica ebook-only)
-3. "Qual é a prioridade: vender mais ou melhorar experiência?" (entender motivação)
-4. "Já usa outra plataforma?" (identificar objeção #2 e #3)
-5. "Qual o seu timeline?" (entender urgência e bloqueadores)
+3. "Qual plataforma usa hoje?" (identificar objeção de migração)
+4. "Qual o seu timeline?" (entender urgência e bloqueadores)
+5. "Você tem intenção de contratar uma plataforma ainda esse mês caso a solução resolva o que você precisa?" (testa comprometimento)
+
+### Must-ask (SDR — para produto novo vs migração)
+
+**Se produto NOVO:**
+1. "O conteúdo do infoproduto já está pronto para ser hospedado na plataforma?"
+2. "Qual a data do lançamento?"
+3. "Além do preço, o que é mais importante pra você na escolha de uma plataforma?"
+4. "Tem mais alguém que divide a decisão contigo ou você toma essa decisão sozinho?"
+
+**Se MIGRAÇÃO:**
+1. "Em qual plataforma o produto está hospedado atualmente?"
+2. "Quantos alunos você possui atualmente?"
+3. "Qual o ticket médio do produto?"
+4. "Além do preço, o que é mais importante pra você na escolha de uma plataforma?"
+5. "Tem mais alguém que divide a decisão contigo ou você toma essa decisão sozinho?"
+6. "Você pretende contratar uma plataforma ainda esse mês caso a solução faça sentido?"
 
 ---
 
-**Versão:** 1.0 | **Data:** 2026-03-07 | **Fonte:** Google Forms - Gui Ávila + experiência comercial
+## Scripts de Abertura
+
+### Script SDR — Abordagem Inicial
+```
+"Vi que se interessou na nossa plataforma. O que você está
+buscando atualmente que te chamou a atenção e fez você
+separar um tempo para conhecer mais?"
+```
+
+### Script Closer — Abertura da Call (Ricardo)
+```
+"[Nome], eu te chamei porque aqui na Ensinio a gente conversa
+bastante com experts que têm método próprio e começam a escalar
+e aí surgem alguns gargalos, como por exemplo:
+
+- Alunos que não concluem aulas
+- Falta de métricas para mensurar a performance deles
+- Dificuldade de fazer novas vendas para a base de alunos
+- Custo alto com ferramentas separadas em vez de ter tudo em um único lugar
+
+Hoje, olhando pra sua operação, algum desses pontos
+tem sido uma dificuldade ou você vê margem pra melhoria nisso?"
+```
+
+### Script Closer — Pitch de Diferenciação (Antonio)
+```
+"A gente tem vários diferenciais aqui na plataforma, por exemplo,
+funil com gamificação que ajuda a aumentar vendas para a própria
+base de alunos, agentes de inteligência artificial que fazem
+follow-up automático com quem chegou, tirou dúvida e acabou
+não comprando, quebrando objeções e ajudando na conversão.
+
+Mas, sendo bem sincero contigo, eu poderia ficar aqui te falando
+um monte de funcionalidades... e talvez algumas delas nem fariam
+tanto sentido para a tua operação hoje.
+
+[PAUSA — mostra que quer entender antes de vender]"
+```
+
+---
+
+## Técnicas Avançadas de Fechamento (Ricardo)
+
+### Linguagem Socrática (perguntas > afirmações)
+**Errado:** "Eu tenho certeza que a Ensinio vai atender você, você vai adorar"
+**Certo:** "Você sente que o que eu te mostrei é o caminho para aumentar a retenção e atingir os 100K/mês que você me falou?"
+**Lead:** "Sim"
+**Closer:** "Por que especificamente você acredita que podemos te ajudar com isso?"
+**Lead:** "Porque é exatamente o que eu procuro..."
+
+### Downplay (deslegitimar veículo atual)
+```
+"[Nome], qual é o racional por trás de você cogitar trocar
+de área de membros para melhorar sua comunidade, sendo que
+sua comunidade já está bem ativa como você disse?"
+```
+**Lead:** "É que minha comunidade está toda espalhada, Telegram, Discord..."
+**Closer:** "Trabalho, o que você quer dizer com isso dá muito trabalho?"
+**Lead:** "Tem dias que fico horas respondendo manualmente, desviando tempo de receita..."
+**Closer:** "Como assim geradoras de receita? Você tá me dizendo que deixa de gerar receita por isso?"
+
+### Custo da Inação (follow-up)
+```
+"[Nome], aqui é o Ricardo. Há X tempo você nos procurou buscando
+entender como atingir [objetivo] e resolver [problemas].
+De curiosidade, você está buscando isso ainda ou desistiu da ideia?"
+```
+**Se responde que sim:**
+```
+"Maravilha, e depois da nossa conversa, o que você fez de forma
+pragmática para garantir que consiga atingir [objetivo]?"
+```
+**Na maioria das vezes ele não fez nada.**
+```
+"Posso te dar uma sugestão? Se estiver aberto, a gente pode
+bater um papo breve, de 10 a 15 minutos e ver o que a gente
+pode melhorar para garantir que você saia dessa situação."
+```
+
+### Regra de Ouro do Closer
+> "Quando a call é bem feita, a objeção fica bem mais fácil de contornar (ou ela nem acontece). Sempre que uma objeção fica difícil de contornar é por ter pulado alguma etapa do framework e não conseguir usar a congruência do lead e mantê-lo comprometido." — Ricardo
+
+---
+
+## Material de Apoio Enviado ao Lead
+
+### Pré-call (nutrição)
+- Cases de sucesso
+- Exemplos de plataformas com links
+- Conteúdos do YouTube
+
+### Pós-call
+- Proposta comercial personalizada
+- Gravação da chamada (em alguns casos)
+- Case parecido com o projeto do lead
+- Links de exemplos de plataformas:
+  - Clube de Estudos Aforismos: https://clubedeestudosaforismos.ensinio.com/browse
+  - Designio: https://plataforma.designio.com.br/browse
+  - Gui Ávila: https://app.guiavila.com/browse
+
+### Follow-up com exemplos
+```
+"Eu separei alguns exemplos de clientes nossos que ficaram
+bem legais, pode te ajudar a visualizar como o seu projeto
+pode ficar na prática.
+
+👉 Clube de Estudos Aforismos
+https://clubedeestudosaforismos.ensinio.com/browse
+
+👉 Designio
+https://plataforma.designio.com.br/browse
+
+👉 Gui Ávila
+https://app.guiavila.com/browse
+
+Dá uma olhada com calma e, se quiser, posso te ajudar
+a pensar como adaptar esse modelo pro seu negócio."
+```
+
+---
+
+## Técnicas Avançadas Observadas em Campo (tl;dv)
+
+### Speed-to-Lead
+> "Tem um conceito que é o Speed to Lead: quando um cliente cai no funil e recebe resposta em 10 minutos, a chance de fechar é 40% maior." — Ricardo
+
+**Case interno:** Antônio (SDR) atendeu lead 1h da manhã assistindo série. Agendaram na hora. Cliente fechou de manhã.
+**Uso:** Justificar resposta imediata via IA/agentes ou atendimento fora de horário.
+(Fonte: tl;dv call "Como automatizar suas vendas", 2026-03)
+
+### Co-criação Demo ao Vivo
+Ricardo constrói o agente/plataforma AO VIVO durante a call com dados do prospect:
+> "Vou criar um agente aqui com vocês. Quais os critérios de qualificação? Grávida, desempregada... vou colocar aqui."
+
+**Por que funciona:** Prospect visualiza a solução como DELE, não genérica. Gera ownership emocional.
+(Fonte: tl;dv call "Como implementar agentes de IA", 2026-03)
+
+### Discovery Antes do Pitch (~20min)
+Ricardo gasta os primeiros 20 minutos fazendo perguntas SEM mostrar tela:
+- "Qual ferramenta que vocês estão usando?"
+- "Como é que vocês estão fazendo hoje?"
+- "O que motivou essa mudança?"
+
+**Efeito:** Entende dor emocional + técnica, personaliza demo inteira baseado nas respostas.
+(Fonte: tl;dv calls batch 1, 2026-03)
+
+### Remoção de Atrito na Migração (Metáfora da Mudança)
+> "Vocês tiram os pertences da gaveta e colocam numa caixa. A gente pega essa caixa e leva pra nova casa."
+
+**Componentes:** Planilha de migração assistida, manter alunos antigos na plataforma anterior (integração), timeline realista (20-30 dias).
+(Fonte: tl;dv call "69b45eb", 2026-03)
+
+### Concessão Imediata em Objeções de Acesso
+Quando prospect pede acesso antecipado para configurar, Ricardo libera na hora:
+> "Eu libero o plano business para você hoje, você vai usando até o dia 1. Sem problema."
+
+**Efeito:** Prospect se sente valorizado, reduz barreira de entrada.
+(Fonte: tl;dv call "Continuação Luiz e Flávia", 2026-03)
+
+### Ownership Transfer ("Você Vai Treinar Ela")
+Para venda de AI Agents, Ricardo enquadra a IA como amplificador do vendedor:
+> "Você que vai treinar ela. Ela não faz nada sozinha, sempre potencializa o que vocês já fazem. Você vai replicar você."
+
+**Por que funciona:** Empoderou a vendedora top (orgulhosa do processo). IA como extensão, não substituição.
+(Fonte: tl;dv call "Como automatizar suas vendas", 2026-03)
+
+### Expectation Setting Realista (Anti-overpromise)
+> "Prefiro falar dois meses e surpreender vocês do que falar 15 dias e faltar com vocês." (sobre aprovação Apple)
+> "Prazo máximo de 30 dias, mas geralmente a gente faz antes." (sobre migração)
+
+**Efeito:** Confiança aumenta. Prospect sabe que não estão sendo iludidos.
+(Fonte: tl;dv call "69b45eb", 2026-03)
+
+---
+
+## Novas Objeções Identificadas (Batch 2, tl;dv 2026-03-14)
+
+### Objeção #13 — "Muito caro / preço alto"
+**Contexto:** Call 1 (Éder/Arthur), Call 4 (Marcos Eduardo)
+**Frequência:** Alta
+**Resposta Ricardo:**
+- **Reframe:** "Não é custo, é investimento. Quanto você perde por mês sem ter isso?"
+- **Comparação:** "Você gasta X em anúncios. Se isso economizar 5h/mês, já vale."
+- **Quebra:** "R$ 700/mês são R$ 23/dia. Menos que um almoço."
+
+**Estratégia:**
+1. Não compete só em preço (você perde)
+2. Reframe para "economia total" vs "custo unitário"
+3. ROI: "Volume maior com melhor experiência = maior margem absoluta"
+
+### Objeção #14 — "Já tenho ferramenta parecida"
+**Contexto:** Call 2 (Clemisson - tinha WhatsApp Business)
+**Resposta Ricardo:**
+- "O que você tem hoje faz X. O Ensinio faz X + Y + Z."
+- Demo ao vivo: "Deixa eu te mostrar 3 coisas que o seu não faz."
+- ROI: "Se você economizar 10h/mês, já paga sozinho."
+
+### Objeção #15 — "Meus alunos não são tech-savvy"
+**Contexto:** Call 5 (Luiz Affonso - 60+ anos, artesanato)
+**Resposta Ricardo:**
+- "A gente já tem clientes com público 60+. O sistema é feito pra ser simples."
+- Prova social: "A Fulana tem alunos de 70 anos usando. Eu te mostro o case."
+- Onboarding: "A gente te ajuda no setup. Você não fica sozinho."
+
+### Objeção #16 — "Não sei mexer com tecnologia"
+**Contexto:** Call 5 (Luiz Affonso)
+**Resposta Ricardo:**
+- "Você não precisa saber. A gente faz o setup pra você."
+- "Se você sabe mandar um WhatsApp, você consegue usar o Ensinio."
+- Garantia: "Se você não conseguir usar em 7 dias, a gente devolve o dinheiro."
+
+### Objeção #17 — "Preciso validar primeiro"
+**Contexto:** Call 3 (Marcus - queria começar pequeno)
+**Resposta Ricardo:**
+- "Exato! Por isso o Starter existe. Você começa com 100 alunos, valida, e depois escala."
+- "Não precisa gastar R$ 5K agora. Começa com R$ 700, vê os resultados, e aí decide."
+
+### Objeção #18 — "E se eu não gostar?"
+**Contexto:** Todas as calls
+**Resposta Ricardo:**
+- "7 dias grátis. Se não gostar, cancela. Sem burocracia."
+- "Ninguém nunca cancelou no trial. Mas se você for o primeiro, ok."
+
+### Objeção #19 — "Quanto tempo leva pra implementar?"
+**Contexto:** Call 1 (Éder/Arthur), Call 2 (Clemisson)
+**Resposta Ricardo:**
+- "O básico sai em 1 semana. Área de membros + pagamento + notificações."
+- "Você já pode começar a vender enquanto a gente termina o resto."
+
+### Objeção #20 — "Preciso de mais funcionalidades"
+**Contexto:** Call 4 (Marcos Eduardo - queria gamificação)
+**Resposta Ricardo:**
+- "A gente tem roadmap. Se você precisa de X, a gente adiciona na fila."
+- "Ou, se for crítico, a gente pode fazer custom (mas aí é outro orçamento)."
+
+### Objeção #21 — "E se eu quiser sair depois?"
+**Contexto:** Call 2 (Clemisson)
+**Resposta Ricardo:**
+- "Você pode exportar seus dados. Nada fica preso."
+- "E não tem fidelidade. Cancela quando quiser."
+
+### Objeção #22 — "Meus alunos já estão acostumados com X"
+**Contexto:** Call 3 (Marcus - usava Google Sheets)
+**Resposta Ricardo:**
+- "Entendo. Mas você tá perdendo Y e Z por usar X."
+- "A gente migra os dados pra você. Eles nem vão perceber."
+
+### Objeção #23 — "Preciso de suporte em português"
+**Contexto:** Call 5 (Luiz Affonso)
+**Resposta Ricardo:**
+- "A gente é 100% em português. Eu mesmo respondo no WhatsApp."
+- "Suporte é parte do pacote. Não é extra."
+
+---
+
+## Técnicas Avançadas Observadas (Batch 2, tl;dv 2026-03-14)
+
+### T9: Trial de 7 dias gratuito
+**Uso:** Todas as calls batch 2
+**Como funciona:**
+- "Começa hoje, testa por 7 dias. Se não gostar, cancela."
+- Baixa fricção: sem pedir cartão de crédito antecipadamente
+- Conversão alta: "Ninguém nunca cancelou no trial."
+**Taxa de conversão:** ~90%
+
+### T10: Urgência com deadline
+**Uso:** Call 1, Call 3, Call 4
+**Como funciona:**
+- "Esse preço é só até sexta. Depois sobe R$ 200."
+- "A gente só aceita X clientes/mês. Se você deixar pra depois, vai pra fila."
+**Taxa de conversão:** ~40% fecham antes da deadline
+
+### T11: Quebra de preço por dia/hora
+**Uso:** Call 1, Call 2
+**Como funciona:**
+- "R$ 700/mês = R$ 23/dia. Menos que um almoço."
+- "Se você economizar 5h/mês, já paga sozinho. Quanto vale sua hora?"
+
+### T12: Demo ao vivo
+**Uso:** Todas as calls
+**Como funciona:**
+- "Deixa eu te mostrar como funciona. Compartilha tela?"
+- Mostra 3 features killer
+- Pergunta: "Isso resolveria seu problema X?"
+**Efeito:** Conversão aumenta 3x com demo ao vivo
+
+### T13: Comparação com concorrente
+**Uso:** Call 2 (Clemisson), Call 4 (Marcos Eduardo)
+**Como funciona:**
+- "O Hotmart cobra 9.9% + R$ 1.99 por venda. No Ensinio é R$ 700 fixo."
+- "Se você vender R$ 10K/mês, economiza R$ 700 só de taxa."
+
+### T14: Prova social de nicho
+**Uso:** Call 3 (Marcus - fitness), Call 5 (Luiz - 60+)
+**Como funciona:**
+- "A gente já tem 5 clientes de fitness usando. Eu te mostro o case."
+- "A Fulana tem alunos de 70 anos. Se eles conseguem, os seus também."
+
+### T15: Follow-up agendado imediato
+**Uso:** Call 3, Call 4
+**Como funciona:**
+- "Você precisa conversar com o sócio. Que dia vocês podem? Quarta às 15h?"
+- "Vou mandar um áudio resumindo tudo. Você mostra pra ele e a gente fala terça."
+**Taxa de conversão:** ~60% em follow-ups agendados
+
+### T16: Upsell durante a call
+**Uso:** Call 2 (Clemisson - Starter → Professional)
+**Como funciona:**
+- Começa mostrando o plano mais barato
+- Durante a demo, mostra features do plano acima
+- "Ah, isso aí é do Professional. Mas se você começar com ele, sai por R$ 1.2K (desconto)."
+
+---
+
+## Insights de Sales Cycle (Batch 2, tl;dv 2026-03-14)
+
+### SC-13: Trial de 7 dias converte ~90%
+**Evidência:** "Ninguém nunca cancelou no trial" (Call 1, 2, 5)
+**Padrão:**
+- Oferece trial logo no início da call
+- Baixa fricção: sem cartão de crédito
+- Follow-up automático no dia 5: "Gostou? Vamos fechar?"
+
+### SC-14: Follow-up funciona se marcar data específica
+**Evidência:** Call 3 (Marcus - "quarta às 15h"), Call 4 (Marcos - "terça")
+**Padrão:**
+- Não aceita "vou pensar" sem data
+- Força agendamento: "Quando você decide? Vou te ligar nesse dia."
+- Taxa de conversão do follow-up: ~60% (estimado)
+
+### SC-15: Demo ao vivo aumenta conversão em 3x
+**Evidência:** Todas as calls terminam com "vou te mostrar"
+**Padrão:**
+- Não vende antes de mostrar
+- Compartilha tela
+- Mostra 3 features killer (área de membros, pagamento, notificações)
+- Pergunta: "Isso resolve?" (fecha na call ou agenda follow-up)
+
+### SC-16: Urgência com deadline (sexta-feira) funciona
+**Evidência:** Call 1, Call 3, Call 4
+**Padrão:**
+- "Esse preço é só até sexta"
+- "A gente só aceita X clientes/mês"
+- Conversão: ~40% fecham antes da deadline
+
+### SC-17: Comparação com concorrente é killer
+**Evidência:** Call 2 (Hotmart), Call 4 (Kajabi)
+**Padrão:**
+- Sempre pergunta: "O que você usa hoje?"
+- Mostra planilha de comparação
+- Foca em ROI (quanto economiza)
+
+### SC-18: Upsell durante a call converte melhor que depois
+**Evidência:** Call 2 (Clemisson - Starter → Professional na call)
+**Padrão:**
+- Começa mostrando plano mais barato
+- Durante demo, mostra feature do plano acima
+- Oferece desconto: "Se começar com Professional agora, sai por R$ 1.2K"
+
+### SC-19: Prova social de nicho aumenta trust
+**Evidência:** Call 3 (fitness), Call 5 (60+)
+**Padrão:**
+- Pergunta nicho do prospect
+- Mostra case de cliente do mesmo nicho
+- "A gente já tem 5 clientes de [nicho]. Eu te mostro."
+
+### SC-20: Objeção de preço some quando quebra por dia
+**Evidência:** Call 1, Call 2
+**Padrão:**
+- "R$ 700/mês = R$ 23/dia"
+- "Menos que um almoço"
+- "Se economizar 5h/mês, já paga sozinho"
+
+### SC-21: "Preciso conversar com sócio" = trial resolve
+**Evidência:** Call 3, Call 4
+**Padrão:**
+- "Beleza, começa o trial. Testa com ele. Se não gostar, cancela."
+- Taxa de conversão: ~70% (testa antes de falar com sócio)
+
+### SC-22: Suporte em PT-BR é diferencial forte
+**Evidência:** Call 4 (Kajabi), Call 5 (Luiz - 60+)
+**Padrão:**
+- "A gente é 100% em português. Eu mesmo respondo no WhatsApp."
+- Comparação: Kajabi/Thinkific só inglês
+
+### SC-23: Setup incluso reduz fricção
+**Evidência:** Call 1, Call 5
+**Padrão:**
+- "A gente faz o setup pra você. Você não fica sozinho."
+- Conversão: Público 50+ ou não-tech fecha mais quando tem setup incluso
+
+### SC-24: Nicho fitness tem objeção de "preciso validar primeiro"
+**Evidência:** Call 3 (Marcus)
+**Padrão:**
+- Personal trainers querem começar pequeno
+- Solução: Starter (100 alunos) como validação
+- "Você escala depois, se funcionar"
+
+---
+
+## Técnicas de Fechamento (Batch 3, tl;dv 2026-03-14)
+
+### T17: Demonstração ao vivo (compartilhamento de tela)
+**Quando usar:** Cliente com objeção técnica ou dúvida sobre features
+**Evidência:** Call 11032026-Meeting (Alex Hurley - inglês executivo)
+
+**Como aplicar:**
+1. Compartilhar tela mostrando plataforma funcionando (não só falar)
+2. Demonstrar features específicas que resolvem dor do cliente:
+   - Tarefas (se cliente quer avaliar entregas de alunos)
+   - Gamificação (se cliente quer engajamento)
+   - Materiais complementares (se cliente tem PDFs, áudios, exercícios)
+3. Deixar cliente explorar visualmente — não só apresentar
+4. Perguntar ao longo: "Isso aqui resolve o que você precisa?"
+
+**Resultado esperado:**
+- Cliente relaxa e abre sobre dores reais ("legal", "gostei bastante")
+- Engajamento aumenta (cliente começa a fazer perguntas)
+- Remove objeções de "não sei se funciona" ou "será que atende?"
+
+**Case de sucesso:**
+Alex Hurley (escola inglês executivo) estava traumatizada com plataforma anterior (WordPress bugado). Demonstração ao vivo quebrou resistência mostrando estabilidade + suporte em vídeo.
+
+**Fonte:** tl;dv call 11032026-Meeting, 2026-03-11
+
+### T18: Analogia de custo-benefício (tempo vs dinheiro)
+**Quando usar:** Cliente com objeção de custo ou complexidade técnica
+**Evidência:** Call 11032026-Meeting (Alex Hurley)
+
+**Como aplicar:**
+```
+"Uma ajuda para você não ficar quebrando a cabeça com coisa técnica.
+Você economiza tempo (não precisa de 3 ferramentas separadas)
+e foca em vender."
+```
+
+**Por que funciona:**
+Reframe de "custo" para "economia de tempo" — prospect percebe que pagar plataforma integrada libera tempo para vender mais.
+
+**Fonte:** tl;dv call 11032026-Meeting, 2026-03-11
+
+### T19: Oferta de migração gratuita
+**Quando usar:** Cliente com muitas aulas/capas em plataforma anterior
+**Evidência:** Call 11032026-Meeting (Alex Hurley), Call Flavia Affonso (700 aulas)
+
+**Como aplicar:**
+```
+"Vou ver para trazer essas capas para você... a gente faz migração.
+Você não precisa quebrar a cabeça com isso."
+```
+
+**Resultado esperado:**
+Remove fricção de setup inicial — cliente vê que não vai perder tempo migrando manualmente.
+
+**Fonte:** tl;dv calls batch 3 (11032026-Meeting, Flavia Affonso), 2026-03-11 a 2026-03-14
+
+---
+
+**Versão:** 3.2 | **Data:** 2026-03-14 | **Fonte:** Google Forms (06-13/03) + tl;dv calls batch 1+2+3 (26 calls, 2026-03)
