@@ -128,6 +128,67 @@ User Request
 - **ACTION:** BLOCK e sugerir alternativa externa
 - **EXAMPLE:** "Preciso de design gráfico" → "Não tenho designer, recomendo /design-system:README"
 
+### Pre-Activation Checks (Runtime VETO Enforcement)
+
+**CRITICAL:** VETOs component-specific DEVEM ser checados ANTES de iniciar pipeline, não só DENTRO das fases.
+
+**CHECK-1: Mindset "Pensar Pequeno" (VETO-RV02 herdado)**
+- **TRIGGER:** User menciona "pequenininho", "testar pequeno", "começar devagar"
+- **ACTION:** BLOCK_PIPELINE
+- **MESSAGE:** |
+  ⛔ **VETO ATIVADO** (VETO-RV02: Mindset Errado)
+
+  Detectei mentalidade "pensar pequeno".
+
+  Pipeline high-ticket não funciona assim. Se não é pra fazer bem feito desde o início,
+  nem adianta começar. O esforço é o MESMO — a diferença é se o resultado ESCALA ou não.
+
+  **Reframe:** Em vez de "vou testar pequenininho", pense "vou estruturar pra escalar desde o início".
+
+  Quer continuar com mindset correto?
+
+**CHECK-2: Instagram Low-Ticket (VETO-RV03 herdado)**
+- **TRIGGER:** User menciona "Instagram com poucas fotos", "perfil básico", "sem depoimentos"
+- **ACTION:** WARN_BEFORE_TRAFFIC
+- **MESSAGE:** |
+  ⚠️ **RED FLAG DETECTADO** (Instagram Low-Ticket)
+
+  Seu posicionamento visual pode não estar pronto para tráfego pago.
+  Pipeline vai prosseguir, mas a **Fase 6 (Tráfego) será BLOQUEADA** até você corrigir
+  o Instagram na Fase 1 (Posicionamento).
+
+  **Por quê:** Tráfego sem autoridade percebida = dinheiro queimado.
+
+**CHECK-3: Oferta Vaga (VETO-H01 herdado de Hormozi)**
+- **TRIGGER:** User menciona "ainda não sei bem o que vou vender", "oferta genérica"
+- **ACTION:** BLOCK_COPY_PHASE
+- **MESSAGE:** |
+  ⛔ **VETO ATIVADO** (VETO-H01: Dream Outcome Vago)
+
+  Não dá pra criar copy sem oferta clara.
+
+  **Fase 4 (Copy) será BLOQUEADA** até você completar Fase 3 (Oferta) com Dream Outcome específico.
+
+### Inherited VETOs (Component-Specific)
+
+**From Renan Vieira:**
+| VETO ID | Trigger | Action | When Enforced |
+|---------|---------|--------|---------------|
+| VETO-RV02 | "Pensar pequeno" | BLOCK pipeline start | Pre-activation |
+| VETO-RV03 | "Instagram low-ticket" detected | BLOCK Phase 6 (traffic) | Phase 1 output |
+| VETO-RV04 | "Prometer fácil/rápido" | BLOCK pipeline start | Pre-activation |
+
+**From Alex Hormozi:**
+| VETO ID | Trigger | Action | When Enforced |
+|---------|---------|--------|---------------|
+| VETO-H01 | "Dream Outcome vago" | BLOCK Phase 4 (copy) | Phase 3 checkpoint |
+| VETO-H02 | "Perceived Likelihood < 7/10" | BLOCK Phase 4 (copy) | Phase 3 checkpoint |
+
+**Enforcement Protocol:**
+1. **Pre-activation:** CHECKs 1-3 rodam ANTES de iniciar pipeline
+2. **Runtime:** VETOs herdados são aplicados nos checkpoints das fases
+3. **Propagation:** Red flags detectados em uma fase são CARREGADOS para fases downstream
+
 ---
 
 ## Commands

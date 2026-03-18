@@ -79,6 +79,23 @@
             "command": "node \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/auto-reindex-projects.cjs\"",
             "timeout": 10,
             "async": true
+          },
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/ecosystem-index-trigger.cjs\"",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/ecosystem-index-trigger.cjs\"",
+            "timeout": 10,
+            "async": true
           }
         ]
       }

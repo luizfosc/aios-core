@@ -1,6 +1,6 @@
 # AIOX Catalog
 
-> Gerado automaticamente em 15/03/2026
+> Gerado automaticamente em 18/03/2026
 
 ---
 
@@ -27,10 +27,10 @@
 | dopamine-learning | Dopamine Learning Squad: Complete Documentation | `/dopamine-learning` |
 | ensinio-mind | Ensinio Mind — Knowledge Hub | `/ensinio-mind` |
 | ensinio-prospector | Ensinio Prospector | `/ensinio-prospector` |
-| ensinio-whatsapp-prospector | Ensinio WhatsApp Prospector | `/ensinio-whatsapp-prospector` |
 | etl-universal-converter | ETL Universal Converter | `/etl-universal-converter` |
 | file-research | File Research Squad | `/file-research` |
 | gui-avila | Squad Gui Ávila | `/gui-avila` |
+| high-ticket-mastery | HighTicket Mastery Squad | `/high-ticket-mastery` |
 | high-ticket-sales | HighTicket Sales Squad | `/high-ticket-sales` |
 | hormozi | Hormozi Squad — The $100M Mind System | `/hormozi` |
 | icp-cloning | 🧬 ICP Cognitive Cloning Squad | `/icp-cloning` |
@@ -72,13 +72,14 @@
 
 ---
 
-## Skills (41)
+## Skills (42)
 
 | Skill | Descrição | Ativação |
 |-------|-----------|----------|
 | angular | Angular Expert | `/AIOS:skills:angular` |
 | angular-state-management | Angular State Management | `/AIOS:skills:angular-state-management` |
 | app-builder | App Builder - Application Building Orchestrator | `/AIOS:skills:app-builder` |
+| audit-project-config | Audit Project Config Skill | `/AIOS:skills:audit-project-config` |
 | avalonia-viewmodels-zafiro | Avalonia ViewModels with Zafiro | `/AIOS:skills:avalonia-viewmodels-zafiro` |
 | blotato | Blotato Publisher | `/AIOS:skills:blotato` |
 | book-to-markdown | Book to Markdown | `/AIOS:skills:book-to-markdown` |
@@ -191,7 +192,7 @@
 | Categoria | Total | Coverage |
 |-----------|-------|----------|
 | Squads | 61 | 100% |
-| Skills | 41 | 100% |
+| Skills | 42 | 100% |
 | Tools | 14 | 100% |
 | Agents | 12 | 100% |
 
