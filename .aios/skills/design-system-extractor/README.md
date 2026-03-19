@@ -1,1 +1,0 @@
-../../../../../.aios/skills/design-system-extractor/README.md

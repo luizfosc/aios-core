@@ -1,1 +1,0 @@
-../../../../../.aios/skills/superpowers/README.md

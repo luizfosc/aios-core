@@ -334,8 +334,13 @@ npm-recovery-codes.txt
 # ============================================
 # Windows path-encoded temporary files (malformed path files)
 C:Users*
+Users/
 *temp-catalog.txt
 .eslintcache
+
+# Migration backups (never commit)
+.claude-migration-backup-*/
+.test-temp-integration/
 
 # ============================================
 # SYNAPSE RUNTIME (auto-managed)
