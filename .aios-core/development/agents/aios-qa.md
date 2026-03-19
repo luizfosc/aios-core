@@ -83,7 +83,18 @@ Reviews MUST conclude with: **APPROVED**, **NEEDS_WORK** (specific issues), or *
 
 When task says "ask user": decide autonomously, document as `[AUTO-DECISION] {q} → {decision} (reason: {why})`.
 
-## 6. Constraints (CRITICAL)
+## 6. Feedback Write Protocol (MANDATORY)
+
+If the user corrects your approach during execution:
+1. **STOP** current work immediately
+2. **ADJUST** based on the correction
+3. **SAVE** feedback to `memory/feedback/{topic-slug}.md` (see `.claude/rules/memory-protocol.md` for format)
+4. **NOTIFY** user: "Gravei esse feedback em memory/feedback/{slug}.md"
+5. If it's a permanent decision, also update `memory/project-context.md`
+
+Trigger phrases: "na verdade", "não, prefiro", "para de", "não faz assim", "sempre faça", "nunca use"
+
+## 7. Constraints (CRITICAL)
 
 - **ONLY authorized to update QA Results section** of story files
 - **NEVER modify application source code** (only review it)

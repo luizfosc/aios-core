@@ -212,6 +212,24 @@ Restante:
 {lista ou "Nenhum — tudo commitado"}
 ```
 
+## Passo 4.5: Atualizar memória do projeto
+
+Detectar `memory/` no projeto (mesmo path que `gov_path` + `memory/`):
+
+1. **Se `memory/project-context.md` existe:**
+   - Se durante esta sessão foram tomadas decisões permanentes (stack, regras, escolhas técnicas), atualizar as seções relevantes
+   - NÃO reescrever o arquivo inteiro — apenas adicionar/atualizar seções específicas
+
+2. **Se `memory/agents-used.md` existe:**
+   - Atualizar com o agente/squad usado nesta sessão (nome + data + contexto breve)
+
+3. **Se feedback foi gravado durante a sessão** (arquivos em `memory/feedback/`):
+   - Já está gravado (Write Protocol fez isso durante a conversa)
+   - Apenas confirmar no output: "Feedback: {N} arquivo(s) gravado(s) nesta sessão"
+
+4. **Se `memory/` NÃO existe:**
+   - Pular silenciosamente (projetos antigos sem memory são OK)
+
 ## Passo 5: Health check rápido dos instruction files
 
 - Conte as linhas de: `~/.claude/CLAUDE.md`, `.claude/CLAUDE.md`, MEMORY.md do projeto
