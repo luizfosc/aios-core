@@ -436,6 +436,67 @@ Cliente traumatizado precisa de PROVAS, não promessas. Demonstração ao vivo +
 
 ---
 
+## Objeção #10 — "IA não substitui meu vendedor / meus alunos não vão gostar de robô"
+
+### Contexto
+- **Frequência:** Média-Alta (~25% dos leads quando se fala de agentes)
+- **Gravidade:** Média (geralmente cai quando vê demo ao vivo)
+- **Tipo de lead:** Tem equipe de vendas, valoriza atendimento humano
+
+### Objeção Completa
+> "Meus clientes querem falar com gente de verdade. IA não funciona pra meu público."
+
+### Resposta Recomendada (Oficial)
+```
+"Entendo. E concordo que IA sozinha não fecha venda complexa.
+Mas olha o que o agente faz PRA VOCÊ, não no lugar de você:
+
+1. RESPONDE ÀS 3H DA MANHÃ:
+   Lead mandou WhatsApp de madrugada? Seu SDR tá dormindo.
+   O agente responde, qualifica e agenda reunião pro dia seguinte.
+   Speed-to-Lead: 40% mais chance de fechar.
+
+2. FAZ FOLLOW-UP SEM VOCÊ LEMBRAR:
+   Lead parou de responder? O agente retoma contato.
+   Você vê no painel o motivo e pode cancelar se quiser.
+
+3. RESPONDE DÚVIDA DE ALUNO:
+   'Qual módulo fala sobre X?' — o agente responde na hora.
+   Seu time de suporte foca nos casos complexos.
+
+4. TREINA COM SEU TOM DE VOZ:
+   Não é um robô genérico. Você configura as diretrizes,
+   o tom, o que pode e não pode falar.
+
+O agente é uma extensão sua, não um substituto.
+Como disse o Ricardo: 'Você vai treinar ela.
+Ela não faz nada sozinha, sempre potencializa o que você já faz.'
+
+Quer ver ao vivo? Eu crio um agente COM VOCÊ agora,
+com os dados do seu negócio, e a gente testa."
+```
+
+### Estratégia
+1. **Concordar primeiro** — "IA sozinha não fecha venda complexa" (remove resistência)
+2. **Reframe** — agente como extensão, não substituição
+3. **Speed-to-Lead** — argumento irrefutável (dados mostram 40% mais conversão)
+4. **Demo ao vivo** — co-criar agente com dados do prospect (ownership emocional)
+5. **Tutor** — ângulo de suporte que ninguém questiona
+
+### Objeção Variante — "E se o agente falar besteira?"
+**Resposta:** "Você define as diretrizes. O agente só fala o que você autoriza.
+E você vê todas as conversas no painel. Se algo não ficou bom, ajusta na hora."
+
+### Objeção Variante — "Já uso Manychat / chatbot externo"
+**Resposta:** "O agente Ensinio é diferente: ele sabe seus produtos, preços e cupons
+nativamente. Não precisa de integração. E marca reunião direto na sua agenda.
+Quer ver a diferença ao vivo?"
+
+### Fonte
+Vídeo Setup Completo — Gui Ávila (2026-03-14) + tl;dv "Como automatizar suas vendas" (Ricardo, 2026-03)
+
+---
+
 ## Objeção NÃO LISTADA (Mas Importante) — "Checkout em USD/EUR"
 
 ### Status Atual (2026-03)
@@ -995,4 +1056,4 @@ Remove fricção de setup inicial — cliente vê que não vai perder tempo migr
 
 ---
 
-**Versão:** 3.2 | **Data:** 2026-03-14 | **Fonte:** Google Forms (06-13/03) + tl;dv calls batch 1+2+3 (26 calls, 2026-03)
+**Versão:** 3.3 | **Data:** 2026-03-20 | **Fonte:** Google Forms (06-13/03) + tl;dv calls batch 1+2+3 (26 calls, 2026-03) + Vídeo Setup Completo Gui Ávila (2026-03-14)

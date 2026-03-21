@@ -56,6 +56,16 @@
 | Fernando Brasão | CEO Marketing Brasil, fundador do maior MasterMind do mercado digital com 200+ negócios |
 | Shirlei Rescarolli | Especialista em liderança, fundadora da Modhu, escola que treina novos líderes em empresas como Havan, Cooper e Max Mohr |
 | Natalia Arcuri | (Mencionada no website) |
+| Rafa Marks | Número 1 em funis do Brasil, fundador do Hackers do Marketing |
+
+### Plataformas showcase (mencionadas por Gui Ávila no vídeo de setup):
+| Plataforma | Descrição | Destaque |
+|-----------|-----------|----------|
+| Magic Online | Maior marketplace de conteúdo de ilusionismo da América Latina (plataforma do Gui Ávila) | Trilhas, gamificação completa, loja de recompensas, assinatura Membro Platinum |
+| Clube de Aforismos | Plataforma de cliente com interface Netflix e trilhas | Exemplo de trilha como sequência de cursos |
+| Designio | Plataforma de cliente com comunidade integrada | Vídeo de fundo, estética sofisticada |
+| Mente Matemática | Escola de matemática online (Prof. Frederico Torres) | Billboard com destaque único, domínio app.mentematematica.online |
+| Plataforma Experiência | Plataforma de demonstração usada pela equipe Ensinio para gravar tutoriais | Loja de recompensas, gamificação ativa |
 
 ---
 

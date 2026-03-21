@@ -17,12 +17,15 @@ import {
 
 // Regex patterns for detecting and parsing messages
 const ANDROID_BR_PATTERN = /^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2})\s+-\s+(.+?):\s+(.*)$/m;
-const IOS_BR_PATTERN = /^\[(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(\d{1,2}):(\d{2}):(\d{2})\]\s+(.+?):\s+(.*)$/m;
+const IOS_BR_PATTERN = /^\[(\d{1,2})\/(\d{1,2})\/(\d{4}),?\s+(\d{1,2}):(\d{2}):(\d{2})\]\s+(.+?):\s+(.*)$/m;
 
 // System message filters
 const SYSTEM_MESSAGE_FILTERS = [
   /mensagens e chamadas são protegidas/i,
+  /mensagens e ligações são protegidas/i,
+  /privacidade avançada da conversa/i,
   /criou o grupo/i,
+  /criou este grupo/i,
   /adicionou/i,
   /saiu/i,
   /removeu/i,
@@ -31,6 +34,12 @@ const SYSTEM_MESSAGE_FILTERS = [
   /mudou o assunto/i,
   /apagou esta mensagem/i,
   /<mídia oculta>/i,
+  /áudio ocultado/i,
+  /figurinha omitida/i,
+  /imagem ocultada/i,
+  /vídeo ocultado/i,
+  /documento ocultado/i,
+  /GIF ocultado/i,
 ];
 
 // Title prefixes that should be separated from names
@@ -60,10 +69,11 @@ const NAME_SELF_ID_PATTERNS = [
  * @returns Detected format
  */
 function detectFormat(content: string): WhatsAppFormat {
-  if (ANDROID_BR_PATTERN.test(content)) {
+  const cleaned = content.replace(/[\u200e\u200f\u200b\u200c\u200d\ufeff]/g, '');
+  if (ANDROID_BR_PATTERN.test(cleaned)) {
     return 'android_br';
   }
-  if (IOS_BR_PATTERN.test(content)) {
+  if (IOS_BR_PATTERN.test(cleaned)) {
     return 'ios_br';
   }
   return 'unknown';
@@ -75,7 +85,8 @@ function detectFormat(content: string): WhatsAppFormat {
  * @returns True if message is a system message
  */
 function isSystemMessage(content: string): boolean {
-  return SYSTEM_MESSAGE_FILTERS.some(filter => filter.test(content));
+  const cleaned = content.replace(/[\u200e\u200f\u200b\u200c\u200d\ufeff]/g, '').trim();
+  return SYSTEM_MESSAGE_FILTERS.some(filter => filter.test(cleaned));
 }
 
 /**
@@ -132,8 +143,9 @@ function resolveNameFromMessages(
  * @returns Cleaned and properly formatted name
  */
 function extractIntelligentName(rawName: string): string {
-  // Remove leading/trailing whitespace
-  let name = rawName.trim();
+  // Remove zero-width chars, leading/trailing whitespace, and ~ prefix
+  let name = rawName.replace(/[\u200e\u200f\u200b\u200c\u200d\ufeff]/g, '').trim();
+  name = name.replace(/^~\s*/, '').trim();
 
   if (!name) {
     return 'Unknown';
@@ -192,8 +204,11 @@ interface RawMessage {
 }
 
 function parseLine(line: string, format: WhatsAppFormat): RawMessage | null {
+  // Strip zero-width characters that WhatsApp inserts
+  const cleanLine = line.replace(/[\u200e\u200f\u200b\u200c\u200d\ufeff]/g, '');
+
   if (format === 'android_br') {
-    const match = line.match(ANDROID_BR_PATTERN);
+    const match = cleanLine.match(ANDROID_BR_PATTERN);
     if (!match) {
       return null;
     }
@@ -216,7 +231,7 @@ function parseLine(line: string, format: WhatsAppFormat): RawMessage | null {
   }
 
   if (format === 'ios_br') {
-    const match = line.match(IOS_BR_PATTERN);
+    const match = cleanLine.match(IOS_BR_PATTERN);
     if (!match) {
       return null;
     }

@@ -1,17 +1,16 @@
 ---
 name: sync-projects
 description: >-
-  Sincroniza projetos locais e contexto pessoal com o Bridge Doc no Google Docs.
-  O Bridge Doc serve como ponte entre Claude Code (local) e o Telegram Bot (VPS),
-  dando ao bot contexto sobre projetos ativos e vida pessoal para classificação
-  mais rica de ideias no braindump.
+  Sincroniza contexto de projetos locais com o Telegram Bot (VPS) via HTTP API.
+  Escaneia projetos, coleta git log e stack, envia resumo para o bot classificar
+  ideias com contexto rico no braindump.
 risk: safe
 source: self
 ---
 
-# Sync Projects — Bridge Doc Updater
+# Sync Projects — Project Pulse
 
-Atualiza o Google Doc "Meus Projetos & Contexto" que o bot Telegram lê para enriquecer classificações Eisenhower.
+Escaneia projetos locais, coleta atividade recente do git, e envia para o Telegram Bot via `POST /api/projects/sync`.
 
 ## Quando Usar
 
@@ -19,65 +18,59 @@ Atualiza o Google Doc "Meus Projetos & Contexto" que o bot Telegram lê para enr
 - Quando quiser que o bot tenha contexto atualizado sobre seus projetos
 - Periodicamente (recomendado: 1x por semana)
 
-## O Que Faz
+## Como Usar
 
-1. Lê o registry local (`data/project-registry.json` do telegram-agenda-bot)
-2. Lê memórias de perfil do usuário (se disponíveis)
-3. Formata tudo como conteúdo para Google Doc
-4. Atualiza o Bridge Doc via MCP google-workspace
+### Via slash command (recomendado)
 
-## Execução
+```
+/sync-pulse            # Escaneia e envia
+/sync-pulse --dry-run  # Apenas visualiza o que seria enviado
+```
+
+### Via CLI direto
 
 ```bash
-# No diretório do telegram-agenda-bot
-cd ~/CODE/Projects/telegram-agenda-bot
+# Dry run (sem enviar)
+node scripts/generate-project-pulse.js --dry-run
+
+# Enviar para o bot
+BOT_API_URL=http://seu-ip:3000 SYNC_API_KEY=sua-chave node scripts/generate-project-pulse.js
 ```
 
-### Passo 1: Ler Registry
+## Env Vars Necessárias
 
-Ler `data/project-registry.json` e extrair:
-- Nome do projeto
-- Tipo (app, tool, framework, etc.)
-- Stack
-- Descrição
-- Path
+| Var | Descrição |
+|-----|-----------|
+| `BOT_API_URL` | URL base do bot na VPS (ex: `http://ip:3000`) |
+| `SYNC_API_KEY` | Chave de autenticação (deve ser igual no `.env` do bot) |
 
-### Passo 2: Ler Contexto Pessoal
+## O Que Escaneia
 
-Verificar memórias em:
-- `~/.claude/projects/-Users-luizfosc-CODE-Projects-telegram-agenda-bot/memory/user_*.md`
-- Extrair informações relevantes para contexto
+| Diretório | Tipo |
+|-----------|------|
+| `~/CODE/Projects/` | app |
+| `~/CODE/design-systems/` | design-system |
+| `~/CODE/frameworks/` | framework |
+| `~/CODE/tools/` | tool |
 
-### Passo 3: Formatar e Atualizar
+Para cada projeto coleta: nome, tipo, stack (do package.json), últimos 5 commits (git log), status (do INDEX.md).
 
-Usar MCP `google-workspace` para atualizar o Bridge Doc:
-
-```
-mcp__google-workspace__docs_replaceText
-```
-
-Formato do documento:
+## Fluxo
 
 ```
-# Meus Projetos & Contexto
-Última atualização: {timestamp}
+Local: generate-project-pulse.js
+  → Escaneia ~/CODE/
+  → git log -5 para cada projeto
+  → POST /api/projects/sync (com x-api-key)
 
-## Projetos Ativos
-{lista de projetos com nome, tipo, stack, descrição}
-
-## Contexto Pessoal
-{informações de perfil e contexto}
-
-## Prioridades Atuais
-{extraído de memórias de projeto}
+Bot (VPS):
+  → Salva em data/project-context.json
+  → context-injector.ts lê e injeta no LLM
+  → Ideias/braindump ganham contexto de projetos
 ```
-
-### Passo 4: Confirmar
-
-Informar ao usuário que o Bridge Doc foi atualizado e o bot terá contexto atualizado em até 30 minutos (cache TTL).
 
 ## Notas
 
-- O Bridge Doc ID é armazenado em `data/report-index.json` do telegram-agenda-bot
-- Se o Bridge Doc não existir, o bot cria automaticamente na primeira execução
-- O bot faz cache de 30 minutos do conteúdo do Bridge Doc
+- Substitui o antigo mecanismo de Bridge Doc (Google Docs)
+- O bot não precisa de restart — lê o arquivo a cada 5 min (cache do context-injector)
+- O endpoint exige header `x-api-key` para autenticação

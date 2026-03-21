@@ -1,0 +1,1 @@
+../../../../../.aios/skills/superpowers/SKILL.md

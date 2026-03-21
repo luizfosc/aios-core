@@ -1,0 +1,47 @@
+name: playwright-architect
+display_name: Playwright Architect
+version: 1.0.0
+domain: browser_automation
+icon: 🎭
+
+description: |
+  Squad para criar scripts Playwright/Stagehand incríveis de forma guiada.
+  O usuário descreve o que quer, o squad navega o site, mapeia a estrutura,
+  e gera o script final testado e funcional.
+
+keywords:
+  - playwright
+  - stagehand
+  - browser automation
+  - web scraping
+  - script generation
+  - ai browser
+
+tech_stack:
+  runtime: node
+  framework: stagehand v3 (@browserbasehq/stagehand)
+  browser: playwright (chromium)
+  ai_model: openai/gpt-4o-mini (default)
+  schema: zod
+  tool_path: tools/smart-browser-playwright/
+
+agents:
+  orchestrator: playwright-chief
+  tier_0:
+    - recon-mapper
+  tier_1:
+    - script-architect
+    - code-generator
+  tier_2:
+    - script-tester-validator
+    - pattern-librarian-architect
+
+workflows:
+  primary: wf-create-script.yaml
+
+settings:
+  default_mode: guided  # guided | autonomous
+  default_browser: headed
+  default_model: openai/gpt-4o-mini
+  script_output_dir: output/scripts/
+  pattern_library_dir: data/patterns/

@@ -24,9 +24,10 @@ Ricardo usa a metáfora da mudança de casa:
 4. Alunos migrados via bulk import ou convite por email
 
 ### Trilha de Onboarding
-1. **Trilha gravada** (vídeos do Gui Ávila no YouTube) — autoserviço
-2. **Call de tira-dúvidas** com gerente de conta (Bhrenda) — agendada
-3. **Check-in em 21 dias** — "a gente pega no pé de vocês de forma positiva"
+1. **Vídeo completo de setup** (Gui Ávila, 1h50min, YouTube) — autoserviço, 10 partes + 7 dicas de design. [Link](https://www.youtube.com/watch?v=FXtV6uQomUQ)
+2. **Checklist de setup:** `checklists/client-platform-setup.md` — passo a passo em 10 fases com checkboxes
+3. **Call de tira-dúvidas** com gerente de conta (Bhrenda) — agendada
+4. **Check-in em 21 dias** — "a gente pega no pé de vocês de forma positiva"
 
 > "Nada mais justo que vocês usarem 100% do que vocês estão investindo." — Ricardo
 

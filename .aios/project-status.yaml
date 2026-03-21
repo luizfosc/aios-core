@@ -1,19 +1,19 @@
 status:
   branch: chore/devops-10-improvements
   modifiedFiles:
-    - .aios-core/data/port-registry.json
+    - .aios-core/data/catalog.md
+    - .aios/project-status.yaml
     - .aios/session.json
-    - docs/projects/.aios-core/
-    - docs/projects/advisor-board/.aios/
-    - docs/projects/advisor-board/.claude/
-  modifiedFilesTotalCount: 26
+    - .aios/skills/sync-projects/SKILL.md
+    - .claude/commands/catalog.md
+  modifiedFilesTotalCount: 48
   recentCommits:
-    - '8 backup: 2026-03-18 01:09'
-    - '4 chore: mark qa-to-devops handoff as consumed'
+    - 'd backup: 2026-03-19 13:36'
+    - '8 chore: deep cleanup — remove rogue paths, backup, broken symlinks'
   currentEpic: null
   currentStory: HTM-1.3-integration-hardening
-  lastUpdate: '2026-03-18T04:23:22.385Z'
+  lastUpdate: '2026-03-20T19:23:00.591Z'
   isGitRepo: true
-timestamp: 1773807802391
+timestamp: 1774034580592
 ttl: 60
-gitFingerprint: 1773442718658.3108:1773807780329.4385
+gitFingerprint: 1773442718658.3108:1773938166193.6099

@@ -1,0 +1,1 @@
+../../../../.aios/skills/pre-deploy-telegram-bot/SKILL.md

@@ -203,19 +203,115 @@ Escalabilidade garantida."
 
 ---
 
+## Argumento #4 — "Agentes de IA Nativos (Economia de Headcount)"
+
+### Pitch Curto
+```
+"Com Ensinio AI você não precisa mais de uma equipe de SDRs.
+O agente vende pelo WhatsApp, marca reunião na sua agenda,
+faz follow-up automático e sabe de cor seus produtos e preços."
+```
+
+### Pitch Completo (2-3 min)
+```
+"Hoje você provavelmente tem:
+- 1 ou mais SDRs respondendo WhatsApp/Instagram
+- Alguém marcando reunião manualmente
+- Alunos mandando dúvida que ninguém responde à noite
+
+Com Ensinio AI, você liga uma chave e pronto:
+
+AGENTE DE VENDAS:
+- Responde lead no WhatsApp 24/7
+- Conhece seus produtos, preços e cupons (nativo, não precisa configurar)
+- Qualifica lead, quebra objeção, agenda reunião direto na sua agenda
+- Se o lead para de responder, o agente faz follow-up sozinho
+- Você vê no painel o motivo de cada follow-up e pode cancelar
+
+AGENTE TUTOR:
+- Aluno tem dúvida sobre aula? O agente responde na hora
+- Reduz volume de tickets, monitores e tutores
+- Menos headcount de suporte = mais margem
+
+O DIFERENCIAL:
+Como o agente está DENTRO da sua plataforma, ele já sabe
+o que você vende, quanto custa, quais cupons existem.
+Não é um chatbot genérico plugado com Zapier.
+É como ter um vendedor e um tutor que sabem TUDO do seu negócio.
+
+CONEXÃO:
+Você conecta seu próprio WhatsApp via QR code.
+Mesmo número, mesmo app. Sem número novo, sem complicação.
+
+Cada habilidade é uma chave: liga vendas, liga reunião,
+liga follow-up. Desliga o que não quiser. Simples.
+
+E o que tá vindo: social selling via Instagram,
+agente que escuta áudio e vê imagem. Absurdo."
+```
+
+### Quando Usar
+- ✅ Fase: Demo (mostrar agente funcionando ao vivo)
+- ✅ Público: Leads com equipe de SDRs (custo de headcount alto)
+- ✅ Melhor momento: Quando lead reclama de "responder WhatsApp o dia todo"
+- ✅ Variação: Se lead é solopreneur → foco em "você não precisa contratar ninguém"
+- ✅ Variação: Se lead tem time grande → foco em "reduzir custo de atendimento"
+
+### Objeção Que Defende Contra
+- "Já tenho SDR" → "Seu SDR não trabalha 24/7 nem faz follow-up automático"
+- "IA não vende bem" → "A IA sabe seus produtos de cor. Mostra ao vivo."
+- "Meu público não gosta de robô" → "O agente é treinado com seu tom de voz. Ninguém percebe."
+- "Preciso de algo mais sofisticado" → "O agente conecta com sua agenda, faz qualificação e encaminha pro closer humano quando é hora"
+
+### Casos de Uso (Exemplos)
+- **Gui Ávila:** Usa agente "Juliana" para atendimento e vendas no WhatsApp
+- **Speed-to-Lead:** Lead responde em segundos, não em horas (40% mais chance de fechar)
+- **Ricardo (Closer):** Co-cria agente AO VIVO na call com dados do prospect → ownership emocional
+
+### Combinação Poderosa: IA + All-in-One
+```
+"O agente já sabe o que você vende porque tá dentro da Ensinio.
+Nenhuma outra plataforma tem isso. Hotmart não tem.
+Memberkit não tem. Kiwify não tem.
+Você economiza headcount E aumenta conversão."
+```
+
+### Métrica de Sucesso
+- Lead pergunta: "Como eu configuro o agente?"
+- Lead pergunta: "Posso ver uma conversa real do agente?"
+- Lead faz conta: "Se eu tirar 1 SDR, já paga a plataforma"
+
+### Fonte
+Vídeo "Plataforma e App para Infoprodutores" — Gui Ávila (2026-03-14)
++ tl;dv calls batch 1-3 (Ricardo — co-criação de agente ao vivo)
+
+---
+
 ## Matriz: Qual Argumento em Cada Fase
 
 | Fase | Argumento Principal | Secundário | Ferramentas |
 |------|-------------------|-----------|------------|
 | **Lead qualificação (SDR)** | #1 (economia) | #3 (proof) | Slide deck economia |
-| **Demo (Closer)** | #2 (gamificação + app) | #1 (all-in-one) | Live demo |
+| **Demo (Closer)** | #2 (gamificação + app) | #4 (agentes IA) | Live demo + co-criação agente |
+| **Lead com equipe de SDRs** | #4 (agentes IA) | #1 (economia) | Demo agente ao vivo |
 | **Objeção (qualquer agente)** | Depende objeção | — | Playbook |
-| **Follow-up (sem resposta)** | #3 (proof social) | #1 (economia) | Case studies |
-| **Final (converter trial)** | #2 + #3 combinado | — | Depoimentos |
+| **Follow-up (sem resposta)** | #3 (proof social) | #4 (agentes IA) | Case studies + "seu agente faz isso sozinho" |
+| **Final (converter trial)** | #2 + #3 combinado | #4 (agentes IA) | Depoimentos + demo agente |
 
 ---
 
 ## Combinações Poderosas (2 argumentos juntos)
+
+### Combinação D: Origem + Credibilidade (Dog Food)
+```
+"A Ensinio não foi criada por devs que nunca venderam um curso.
+O Gui Ávila criou a Ensinio porque ele precisava dela pro Mágica Online,
+a maior plataforma de ilusionismo da América Latina.
+Ele escreveu o livro 'Shortcuts' sobre psicologia social.
+Ele é infoprodutor há mais de uma década.
+A plataforma nasceu da dor real de quem vende conteúdo."
+```
+**Quando:** Lead questiona se a Ensinio entende o mercado de infoprodutos
 
 ### Combinação A: Economia + Experiência
 ```

@@ -1,6 +1,6 @@
 # AIOX Catalog
 
-> Gerado automaticamente em 18/03/2026
+> Gerado automaticamente em 19/03/2026
 
 ---
 
@@ -26,7 +26,6 @@
 | design | | | `/design` |
 | dopamine-learning | Dopamine Learning Squad: Complete Documentation | `/dopamine-learning` |
 | ensinio-mind | Ensinio Mind — Knowledge Hub | `/ensinio-mind` |
-| whatsapp-prospector | WhatsApp Prospector | `/whatsapp-prospector` |
 | etl-universal-converter | ETL Universal Converter | `/etl-universal-converter` |
 | file-research | File Research Squad | `/file-research` |
 | gui-avila | Squad Gui Ávila | `/gui-avila` |
@@ -59,7 +58,7 @@
 | repertoire-mapper | Repertoire Mapper | `/repertoire-mapper` |
 | seo | SEO Expert Squad | `/seo` |
 | site-performance-audit | siteperformanceaudit — External Web Performance Audit Squad | `/site-performance-audit` |
-| sop-factory | Sem descrição | `/sop-factory` |
+| sop-factory | SOP Factory | `/sop-factory` |
 | squad-creator | Squad Creator | `/squad-creator` |
 | squad-creator-pro | Squad Creator | `/squad-creator-pro` |
 | storytelling-masters-fosc | Storytelling Masters Fosc | `/storytelling-masters-fosc` |
@@ -68,11 +67,12 @@
 | transcript-sculptor | Transcript Sculptor | `/transcript-sculptor` |
 | video-content-distillery | Content Distillery Squad | `/video-content-distillery` |
 | viral-squad | | | `/viral-squad` |
+| whatsapp-prospector | WhatsApp Prospector | `/whatsapp-prospector` |
 | zona-genialidade | Zona Genialidade Squad | `/zona-genialidade` |
 
 ---
 
-## Skills (43)
+## Skills (47)
 
 | Skill | Descrição | Ativação |
 |-------|-----------|----------|
@@ -88,13 +88,13 @@
 | cloud-penetration-testing | Cloud Penetration Testing | `/AIOS:skills:cloud-penetration-testing` |
 | code-refactoring-refactor-clean | Refactor and Clean Code | `/AIOS:skills:code-refactoring-refactor-clean` |
 | context-surgeon | Context Surgeon v1.1.0 | `/AIOS:skills:context-surgeon` |
-| criar-app-completo | 🚀 Criar App Completo | `/AIOS:skills:criar-app-completo` |
+| criar-app-completo | Criar App Completo | `/AIOS:skills:criar-app-completo` |
 | dashboard-generator | Dashboard Generator - Interactive Web Dashboards | `/AIOS:skills:dashboard-generator` |
 | decision-tree-generator | Decision Tree Documentation Generator | `/AIOS:skills:decision-tree-generator` |
-| deep-research | Deep Research v1.0 - General-Purpose Deep Research Pipeline | `/AIOS:skills:deep-research` |
+| deep-research | Deep Research | `/AIOS:skills:deep-research` |
 | deep-search | Deep Search | `/AIOS:skills:deep-search` |
 | deepgram-transcriber | Deepgram Transcriber | `/AIOS:skills:deepgram-transcriber` |
-| design-system-extractor | Sem descrição | `/AIOS:skills:design-system-extractor` |
+| design-system-extractor | Design System Extractor | `/AIOS:skills:design-system-extractor` |
 | ecosystem-audit | Ecosystem Audit Skill | `/AIOS:skills:ecosystem-audit` |
 | game-development | Game Development | `/AIOS:skills:game-development` |
 | god-mode | God Mode v3.1 — Supreme Operator AIOX | `/AIOS:skills:god-mode` |
@@ -104,16 +104,20 @@
 | mcp-builder | MCP Server Development Guide | `/AIOS:skills:mcp-builder` |
 | md-to-branded-pdf | MD to Branded (PDF + HTML) | `/AIOS:skills:md-to-branded-pdf` |
 | md-to-landing-page | md-to-landing-page | `/AIOS:skills:md-to-landing-page` |
+| memory-audit | Memory Audit Skill | `/AIOS:skills:memory-audit` |
 | nextjs-react-expert | Next.js & React Performance Expert | `/AIOS:skills:nextjs-react-expert` |
-| obsidian-app-filler | 📝 Obsidian App Filler | `/AIOS:skills:obsidian-app-filler` |
+| obsidian-app-filler | Obsidian App Filler | `/AIOS:skills:obsidian-app-filler` |
 | obsidian-tag-manager | Obsidian Tag Manager | `/AIOS:skills:obsidian-tag-manager` |
-| prd-generator | 📄 PRD Generator | `/AIOS:skills:prd-generator` |
+| prd-generator | PRD Generator | `/AIOS:skills:prd-generator` |
+| pre-deploy-telegram-bot | Pre-Deploy — Telegram Agenda Bot | `/AIOS:skills:pre-deploy-telegram-bot` |
 | pt-br-accentuation | Skill: Acentuação e Pontuação em Português Brasileiro | `/AIOS:skills:pt-br-accentuation` |
 | quality-dashboard | Quality Dashboard Skill | `/AIOS:skills:quality-dashboard` |
 | sherlock-investigator | Sherlock Investigator | `/AIOS:skills:sherlock-investigator` |
 | skill-creator | Skill Creator | `/AIOS:skills:skill-creator` |
-| superpowers | Sem descrição | `/AIOS:skills:superpowers` |
+| smart-browser-playwright | Smart Browser Playwright | `/AIOS:skills:smart-browser-playwright` |
+| superpowers | Superpowers | `/AIOS:skills:superpowers` |
 | synapse | SYNAPSE Context Engine | `/AIOS:skills:synapse` |
+| sync-projects | Sync Projects — Bridge Doc Updater | `/AIOS:skills:sync-projects` |
 | system-prompt-architect | System Prompt Architect | `/AIOS:skills:system-prompt-architect` |
 | tech-search | Tech Research | `/AIOS:skills:tech-search` |
 | tokenizacao | Tokenização - Frontend Quality Audit 2025 | `/AIOS:skills:tokenizacao` |
@@ -122,7 +126,7 @@
 
 ---
 
-## Tools (14)
+## Tools (15)
 
 | Tool | Descrição |
 |------|-----------|
@@ -134,6 +138,7 @@
 | hotmart-downloader | Sem descrição |
 | instagram-publisher | Instagram Publisher |
 | quality-dashboard | Quality Dashboard |
+| smart-browser-playwright | Sem descrição |
 | templates | Sem descrição |
 | tldv-scraper | Sem descrição |
 | transcription-dashboard | Sem descrição |
@@ -193,8 +198,8 @@
 | Categoria | Total | Coverage |
 |-----------|-------|----------|
 | Squads | 61 | 100% |
-| Skills | 43 | 100% |
-| Tools | 14 | 100% |
+| Skills | 47 | 100% |
+| Tools | 15 | 100% |
 | Agents | 12 | 100% |
 
 ---

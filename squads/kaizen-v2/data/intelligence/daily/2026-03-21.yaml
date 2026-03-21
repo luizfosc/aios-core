@@ -1,0 +1,80 @@
+# Kaizen v2 Daily Digest — 2026-03-21
+date: 2026-03-21
+capture_time: "2026-03-21T01:44:43.316Z"
+session_id: install-
+session_count: 5
+providers_active:
+  - "claude-sonnet-4-6"
+activity_summary: Session completed (no commits)
+highlights: []
+decisions:
+  -
+    context: session
+    decision: sucesso. decidimos usar patterns.yaml para persistência.
+stories_touched: []
+learnings:
+  -
+    signal: \bdecidimos\b
+    snippet: zen-v2 instalado com sucesso. decidimos usar patterns.yaml para persistência.
+    verified: false
+agents_involved: []
+
+# --- Session be8c1893 (2026-03-21T01:45:08.443Z) ---
+# Kaizen v2 Daily Digest — 2026-03-21
+date: 2026-03-21
+capture_time: "2026-03-21T01:45:08.443Z"
+session_id: be8c1893
+session_count: 1
+providers_active:
+  - "claude-sonnet-4-6"
+activity_summary: Session completed (no commits)
+highlights: []
+decisions: []
+stories_touched: []
+learnings: []
+agents_involved: []
+
+# --- Session be8c1893 (2026-03-21T01:46:16.101Z) ---
+# Kaizen v2 Daily Digest — 2026-03-21
+date: 2026-03-21
+capture_time: "2026-03-21T01:46:16.101Z"
+session_id: be8c1893
+session_count: 1
+providers_active:
+  - "claude-sonnet-4-6"
+activity_summary: Session completed (no commits)
+highlights: []
+decisions: []
+stories_touched: []
+learnings: []
+agents_involved: []
+
+# --- Session be8c1893 (2026-03-21T01:51:16.955Z) ---
+# Kaizen v2 Daily Digest — 2026-03-21
+date: 2026-03-21
+capture_time: "2026-03-21T01:51:16.954Z"
+session_id: be8c1893
+session_count: 1
+providers_active:
+  - "claude-sonnet-4-6"
+activity_summary: Session completed (no commits)
+highlights: []
+decisions: []
+stories_touched: []
+learnings: []
+agents_involved: []
+
+# --- Session be8c1893 (2026-03-21T01:52:17.650Z) ---
+# Kaizen v2 Daily Digest — 2026-03-21
+date: 2026-03-21
+capture_time: "2026-03-21T01:52:17.650Z"
+session_id: be8c1893
+session_count: 1
+providers_active:
+  - "claude-sonnet-4-6"
+activity_summary: Session completed (no commits)
+highlights: []
+decisions: []
+stories_touched: []
+learnings: []
+agents_involved: []

@@ -1,0 +1,92 @@
+name: wf-create-script
+display_name: Create Playwright Script
+version: 1.0.0
+description: |
+  Workflow completo para criar um script Playwright/Stagehand guiado.
+  Usuário descreve o objetivo → squad navega o site → gera script testado.
+
+trigger: "*create-script"
+
+phases:
+  - id: understand
+    name: Understand Intent
+    agent: playwright-chief
+    description: "Elicit from user: URL, objective, auth needs"
+    elicit: true
+    questions:
+      - "Qual a URL do site?"
+      - "O que você quer fazer? (extrair dados / preencher form / navegar / baixar)"
+      - "Precisa de login?"
+      - "É uma vez ou recorrente?"
+    output: task-brief.md
+    checkpoint:
+      question: "Entendi certo o objetivo?"
+      veto: "User says no or wants to change scope"
+
+  - id: scout
+    name: Site Reconnaissance
+    agent: recon-mapper
+    description: "Navigate the site, map structure, identify challenges"
+    input: task-brief.md
+    tool: |
+      cd tools/smart-browser-playwright && node run.js --task "{scout_task}" --headed
+    output: site-map.md
+    checkpoint:
+      question: "O mapa do site faz sentido? Encontrei tudo?"
+      veto: "Key pages or features missing from map"
+
+  - id: design
+    name: Script Design
+    agent: script-architect
+    description: "Choose Stagehand strategy, define schemas, plan steps"
+    input:
+      - task-brief.md
+      - site-map.md
+    output: script-plan.md
+    checkpoint:
+      question: "O plano do script faz sentido?"
+      veto: "Strategy won't work for the site structure"
+
+  - id: build
+    name: Script Implementation
+    agent: code-generator
+    description: "Write the actual executable script"
+    input:
+      - script-plan.md
+      - "data/patterns/ (reusable patterns)"
+    output: "output/scripts/{task-name}.js"
+    checkpoint:
+      question: "Quer que eu rode o script para testar?"
+      veto: "Script has obvious issues before running"
+
+  - id: test
+    name: Test & Validate
+    agent: script-tester-validator
+    description: "Execute script, validate output, iterate if needed"
+    input: "output/scripts/{task-name}.js"
+    tool: "node output/scripts/{task-name}.js --headed"
+    output: test-report.md
+    max_iterations: 3
+    on_fail: "Return to build phase with error details"
+    checkpoint:
+      question: "Script funcionou! O resultado ficou bom?"
+      veto: "Output doesn't match user expectation"
+
+  - id: save
+    name: Save & Catalog
+    agent: pattern-librarian-architect
+    description: "Save script, extract reusable patterns, update library"
+    input:
+      - "output/scripts/{task-name}.js"
+      - test-report.md
+    actions:
+      - "Save final script to output/scripts/"
+      - "Extract reusable patterns to data/patterns/"
+      - "Update patterns INDEX.md"
+    output: "Script delivered + patterns saved"
+
+completion_criteria:
+  - "Script executes without errors"
+  - "Output matches user expectation"
+  - "Error handling covers timeout + element not found"
+  - "Script is self-contained and executable with `node script.js`"

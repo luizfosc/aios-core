@@ -1,0 +1,286 @@
+{
+  "projects": [
+    {
+      "name": "telegram-agenda-bot",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/telegram-agenda-bot",
+      "description": "Personal Telegram assistant for agenda management, brain dumps, and reminders",
+      "stack": [
+        "Express",
+        "Telegram Bot",
+        "TypeScript"
+      ],
+      "lastActivity": "2026-03-20T13:26:32-03:00",
+      "recentChanges": [
+        "feat: add project sync endpoint for Claude Code context injection",
+        "feat: multi-theme dashboard with dark/light mode",
+        "feat: Today View as dashboard home + rich idea badges",
+        "refactor: remove Google Docs dependency — dashboard is the new UI",
+        "feat: interactive dashboard — Kanban view, status/quadrant dropdowns"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "opensquad",
+      "type": "tool",
+      "path": "/Users/luizfosc/CODE/tools/opensquad",
+      "description": "Multi-agent orchestration framework — create AI squads that work together",
+      "lastActivity": "2026-03-19T13:37:19-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:37",
+        "Merge remote-tracking branch 'upstream/master'",
+        "fix(dashboard): validate state.json before sending to frontend",
+        "backup: 2026-03-18 01:10",
+        "0.1.9"
+      ]
+    },
+    {
+      "name": "whatsapp-prospector",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/whatsapp-prospector",
+      "description": "WhatsApp prospector for Ensinio - Google Sheets first, Evolution API send, GHL sync optional",
+      "lastActivity": "2026-03-19T13:37:17-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:37",
+        "refactor: rename project from ensinio-whatsapp-prospector to whatsapp-prospector",
+        "refactor: full agnostic cleanup — remove all client-specific references",
+        "chore: checkpoint session - mentoria-50k pipeline Phase 5 in progress",
+        "feat: Phase 1-4 complete for ensinio/mentoria-50k pipeline"
+      ],
+      "status": "** PRONTO PARA PRODUCAO — Sistema agnostico, multi-tenant"
+    },
+    {
+      "name": "video-privacy-filter-opensquad",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/video-privacy-filter-opensquad",
+      "description": null,
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "lastActivity": "2026-03-19T13:36:29-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "backup: 2026-03-18 01:09",
+        "fix: corrigir localização de blur (timestamp + enable filter)",
+        "docs: add comprehensive project documentation",
+        "feat: add Python OCR validation scripts"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "tabgroup-vault",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/tabgroup-vault",
+      "description": null,
+      "lastActivity": "2026-03-19T13:36:26-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "fix: apply Kaizen review — performance + safety improvements",
+        "feat: initial TabGroup Vault extension"
+      ],
+      "status": "** Em andamento"
+    },
+    {
+      "name": "meta-ads-prospector",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/meta-ads-prospector",
+      "description": null,
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind",
+        "Supabase"
+      ],
+      "lastActivity": "2026-03-19T13:36:24-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "backup: 2026-03-16 11:02",
+        "backup: 2026-03-13 19:45",
+        "fix: remove signup from login page — invite-only access",
+        "fix: replace Vercel Cron with polling-driven state machine"
+      ],
+      "status": "** 🔄 Em andamento — Epic \"Validação End-to-End\" (5 stories criadas)"
+    },
+    {
+      "name": "dne-digital-student-id",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/dne-digital-student-id",
+      "description": null,
+      "stack": [
+        "React",
+        "TypeScript"
+      ],
+      "lastActivity": "2026-03-19T13:36:23-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "backup: 2026-03-09 13:33",
+        "feat(auth): add secure CPF claim flow for existing students",
+        "fix(security): block ALL public access — zero anon exposure",
+        "fix(security): remove public anon access to students table"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "desafio-aiox",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/desafio-aiox",
+      "description": null,
+      "stack": [
+        "React",
+        "TypeScript"
+      ],
+      "lastActivity": "2026-03-19T13:36:20-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "initial: add desafio-aiox"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "claude-limits-monitor",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/claude-limits-monitor",
+      "description": null,
+      "lastActivity": "2026-03-19T13:36:16-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "initial: add claude-limits-monitor"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "app-artes-ensinio",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/app-artes-ensinio",
+      "description": "Gerador de artes para plataforma Ensinio",
+      "lastActivity": "2026-03-19T13:36:15-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "backup: 2026-03-18 01:09",
+        "feat: implementar SPEC completo - upload foto, paletas, moods, builder avançado",
+        "feat: implementar preview modal e galeria de artes",
+        "backup: 2026-03-13 19:44"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "aios-project-monitor",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/aios-project-monitor",
+      "description": null,
+      "lastActivity": "2026-03-19T13:36:13-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "initial: add aios-project-monitor"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "ai-traffic-manager",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/ai-traffic-manager",
+      "description": null,
+      "lastActivity": "2026-03-19T13:36:07-03:00",
+      "recentChanges": [
+        "backup: 2026-03-19 13:36",
+        "feat: implement product registration & onboarding wizard (Story 1.3)",
+        "feat: project setup with auth, multi-LLM router and DB schema"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "designcode-ui",
+      "type": "design-system",
+      "path": "/Users/luizfosc/CODE/design-systems/designcode-ui",
+      "description": null,
+      "stack": [
+        "React",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "lastActivity": "2026-03-11T16:52:40-03:00",
+      "recentChanges": [
+        "docs: add MDX foundations, reorganize stories, and create composition examples",
+        "feat: add Storybook stories for all 29 components (100% coverage)",
+        "feat: implement complete DesignCode UI design system (30 components)"
+      ]
+    },
+    {
+      "name": "Instagram-leads-scraper-Fosc",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/Instagram-leads-scraper-Fosc",
+      "description": null,
+      "status": "** Inativo"
+    },
+    {
+      "name": "THUMBS-V2",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/THUMBS-V2",
+      "description": null,
+      "status": "** Inativo"
+    },
+    {
+      "name": "circle-br-clone",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/circle-br-clone",
+      "description": null,
+      "stack": [
+        "React",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "evolution-api",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/evolution-api",
+      "description": null,
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind"
+      ],
+      "status": "** Inativo"
+    },
+    {
+      "name": "garimpoai",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/garimpoai",
+      "description": null,
+      "status": "** 🔄 Em andamento"
+    },
+    {
+      "name": "luiz-fosc-palestras-negocio",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/luiz-fosc-palestras-negocio",
+      "description": null,
+      "status": "** Em andamento 🔄"
+    },
+    {
+      "name": "zeroaudio",
+      "type": "app",
+      "path": "/Users/luizfosc/CODE/Projects/zeroaudio",
+      "description": "Assistente inteligente de grupos WhatsApp com transcrição e digest diário",
+      "stack": [
+        "Express"
+      ],
+      "status": "** Wave 1 completa, Wave 2 pronta para implementar"
+    },
+    {
+      "name": "circle-ds",
+      "type": "design-system",
+      "path": "/Users/luizfosc/CODE/design-systems/circle-ds",
+      "description": null,
+      "stack": [
+        "React",
+        "TypeScript",
+        "Tailwind"
+      ]
+    }
+  ],
+  "syncedAt": "2026-03-20T18:04:55.027Z",
+  "source": "claude-code-local"
+}
