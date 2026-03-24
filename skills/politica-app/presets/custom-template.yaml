@@ -1,0 +1,211 @@
+# ============================================================================
+# TEMPLATE PARA PRESETS CUSTOMIZADOS — politica-app
+# ============================================================================
+#
+# Use este arquivo como guia para criar seus próprios presets demográficos.
+#
+# COMO USAR:
+#   1. Copie este arquivo: cp custom-template.yaml meu-preset.yaml
+#   2. Renomeie o arquivo para o slug do seu preset (ex: jovens-primeiro-voto.yaml)
+#   3. Preencha todos os campos marcados com TODO
+#   4. Valide antes de usar: verifique o checklist no final deste arquivo
+#   5. Use: /politica-app "Seu tema" --preset meu-preset
+#
+# REGRAS FUNDAMENTAIS:
+#   1. A soma de todos os `count` DEVE ser igual ao `total_agents`
+#      (o pipeline rejeita com erro se não bater)
+#   2. Cada segmento DEVE referenciar um archetype_base válido (lista abaixo)
+#   3. `template_overrides` faz MERGE com o archetype — apenas campos diferentes precisam ser incluídos
+#   4. `variation_rules` são instruções em linguagem natural para o gerador criar diversidade DENTRO do segmento
+#
+# ============================================================================
+# ARCHETYPES DISPONÍVEIS (data/demographic-archetypes.yaml)
+# ============================================================================
+#
+#   Archetype ID               | Perfil resumido
+#   ---------------------------|-----------------------------------------------
+#   executivo-sp               | Classe A, analítico, urbano sudeste
+#   professora-universitaria   | Classe B, analítica, progressista
+#   comerciante-bairro         | Classe C, pragmático, conservador moderado
+#   enfermeira-publica         | Classe C, emocional, saúde pública
+#   motorista-app              | Classe C, pragmático, evangélico
+#   dona-maria                 | Classe D, emocional, evangélica, periferia
+#   pedreiro-periferia         | Classe D, emocional, informal
+#   jovem-universitario        | Classe B, analítico, progressista, digital
+#   jovem-periferia-digital    | Classe D, pragmático, digital, evangélico
+#   agricultor-familiar        | Classe D, emocional, rural, tradicional
+#   pastor-periferia           | Classe C, moral-religioso, conservador
+#   empresario-sul             | Classe B, pragmático, conservador
+#
+# ============================================================================
+# DICAS DE COMPOSIÇÃO
+# ============================================================================
+#
+#   - Temas urbanos: mais segmentos urbanos (executivo, jovem-universitario, comerciante)
+#   - Temas rurais/agro: aumentar peso de agricultor-familiar e interior
+#   - Temas morais/costumes: aumentar peso evangélico (pastor-periferia, motorista-app)
+#   - Temas econômicos: distribuir bem entre classes A/B/C/D para capturar divergências
+#   - Temas sociais: incluir mais classes C/D que representam a maioria do eleitorado
+#   - Para maior precisão: 3-5 segmentos é o ideal; evitar mais de 8 segmentos
+#
+# ============================================================================
+# EXEMPLOS PRONTOS (ver SKILL.md seção "Como Criar um Preset Customizado")
+# ============================================================================
+#
+#   - jovens-primeiro-voto.yaml  — Jovens 18-25, primeiro ciclo eleitoral
+#   - regiao-norte.yaml          — Recorte geográfico Amazônia/Norte
+#   - classe-empresarial.yaml    — Empresários e decisores econômicos
+#
+# ============================================================================
+
+
+# ---- IDENTIFICAÇÃO --------------------------------------------------------
+
+# Nome único do preset — usado no CLI: --preset meu-preset
+# Deve ser um slug sem espaços ou caracteres especiais (use hífens)
+name: meu-preset-customizado  # TODO: renomear para slug do seu preset
+
+# Descrição do recorte demográfico
+# Responda: Quem são essas pessoas? Por que esta composição? Para que tipo de simulação serve?
+description: >
+  TODO: Descreva aqui qual recorte do eleitorado este preset representa,
+  qual a lógica da composição, e para que tipo de simulação ele é mais útil.
+  Exemplo: "Recorte de eleitores evangélicos da periferia do Nordeste, com foco
+  em temas morais e de segurança pública. Útil para candidatos que precisam
+  entender as prioridades e resistências deste segmento."
+
+# Número total de agentes no painel
+# Recomendado: 20 (padrão), mínimo 10, máximo 50
+# A soma de todos os `count` nos segmentos abaixo DEVE ser igual a este valor
+total_agents: 20  # TODO: ajustar se necessário
+
+# ---- COMPOSIÇÃO DOS SEGMENTOS ---------------------------------------------
+
+composition:
+
+  # ==========================================================================
+  # SEGMENTO 1 — Template completo com todos os campos possíveis
+  # ==========================================================================
+  - segment: nome-do-segmento-1  # TODO: slug descritivo (ex: classe-c-evangelico-nordeste)
+    count: 8                     # TODO: quantos agentes neste segmento (deve somar total_agents)
+    archetype_base: dona-maria   # TODO: escolher da lista de archetypes acima
+
+    # Descrição curta de quem são esses agentes neste segmento
+    description: "TODO: Descreva em uma frase quem são os agentes deste segmento"
+
+    # template_overrides: campos que DIFEREM do archetype base
+    # Regra: só inclua o que você quer mudar — o resto é herdado automaticamente
+    template_overrides:
+      demographic:
+        class: [C, D]                  # Lista de classes: [A], [B], [C], [D], [E] ou combinações
+        region: [nordeste-capital]     # Região(ões): ver lista de regiões em demographic-archetypes.yaml
+        education: [fundamental, medio-incompleto]  # Escolaridade
+        age_range: "25-55"            # Range etário: "MIN-MAX"
+        # gender: feminino            # Se omitido: o gerador varia automaticamente (recomendado)
+        # religion: evangelica        # Se omitido: herda do archetype
+        # occupation: comerciante     # Se omitido: herda do archetype
+
+      psychographic:
+        # values: [familia, fe, trabalho]     # Se omitido: herda do archetype
+        priorities: [seguranca, saude, educacao]  # O que este grupo prioriza
+        # information_sources: [whatsapp, tv-aberta]  # Se omitido: herda do archetype
+        # cognitive_biases: [...]     # Se omitido: herda do archetype
+        # influence_susceptibility:   # Se omitido: herda do archetype
+        #   prova_social: alto        # Quão sensível a "todo mundo está fazendo"
+        #   autoridade: alto          # Quão sensível a figuras de autoridade
+
+      deliberative:
+        processing_style: emocional   # emocional | analitico | pragmatico | moral-religioso
+        opinion_flexibility: baixa    # alta | media | baixa
+        # argument_weight: experiencia-pessoal  # dados-e-evidencias | experiencia-pessoal | autoridade-religiosa | etc
+        # expression_style: direto-coloquial    # anedotico | argumentativo-formal | direto-coloquial | tecnico | etc
+
+    # variation_rules: instruções para criar diversidade DENTRO deste segmento
+    # O gerador usa essas regras para evitar que todos os agentes do segmento sejam idênticos
+    # Escreva em linguagem natural — seja específico
+    variation_rules:
+      - "Incluir pelo menos 3 mulheres entre os 8 agentes"          # TODO: ajustar número
+      - "Variar faixa etária: 2 jovens (25-30), 4 adultos (31-45), 2 maduros (46-55)"
+      - "Variar religião: 4 evangélicos, 3 católicos, 1 sem religião"
+      - "Variar ocupação: doméstica, auxiliar de serviços gerais, vendedora ambulante, cuidadora"
+
+
+  # ==========================================================================
+  # SEGMENTO 2 — Versão mínima (campos essenciais apenas)
+  # ==========================================================================
+  - segment: nome-do-segmento-2   # TODO: slug
+    count: 7                      # TODO: count
+    archetype_base: comerciante-bairro  # TODO: archetype
+    description: "TODO: Descrição do segundo segmento"
+
+    template_overrides:
+      demographic:
+        class: [C]
+        region: [nordeste-capital, nordeste-cidade-media]  # TODO: regiões
+
+    variation_rules:
+      - "TODO: Regras de variação para este segmento"  # Exemplo: "Incluir 2 mulheres e 5 homens"
+
+
+  # ==========================================================================
+  # SEGMENTO 3 — Adicione mais segmentos copiando este bloco
+  # ==========================================================================
+  - segment: nome-do-segmento-3   # TODO: slug
+    count: 5                      # TODO: count (8 + 7 + 5 = 20 = total_agents)
+    archetype_base: pastor-periferia  # TODO: archetype
+    description: "TODO: Descrição do terceiro segmento"
+
+    template_overrides:
+      demographic:
+        region: [nordeste-interior]
+      deliberative:
+        processing_style: moral-religioso
+
+    variation_rules:
+      - "TODO: Regras de variação"
+
+
+  # ==========================================================================
+  # ADICIONE MAIS SEGMENTOS SE NECESSÁRIO
+  # ==========================================================================
+  # - segment: segmento-4
+  #   count: N                    # Lembre: a soma de todos os count deve = total_agents
+  #   archetype_base: ...
+  #   description: "..."
+  #   template_overrides: {}
+  #   variation_rules: []
+
+
+# ============================================================================
+# CHECKLIST DE VALIDAÇÃO — Verifique antes de usar
+# ============================================================================
+#
+# Execução manual antes de usar o preset:
+#
+# [ ] 1. A soma dos count = total_agents?
+#        (8 + 7 + 5 = 20 — confira a sua soma)
+#
+# [ ] 2. Todos os `archetype_base` existem em data/demographic-archetypes.yaml?
+#        (executivo-sp, professora-universitaria, comerciante-bairro, etc.)
+#
+# [ ] 3. Pelo menos 3 regiões distintas representadas?
+#        (diversidade regional é importante para resultados não viesados)
+#
+# [ ] 4. Pelo menos 2 gêneros representados?
+#        (mesmo que não explícito, os variation_rules devem garantir isso)
+#
+# [ ] 5. Pelo menos 2 faixas etárias diferentes?
+#
+# [ ] 6. Pelo menos 2 processing_styles diferentes?
+#        (emocional + pragmatico, ou analitico + moral-religioso, etc.)
+#
+# [ ] 7. Os variation_rules são específicos e garantem diversidade?
+#        (evite regras vagas como "variar perfis" — seja específico)
+#
+# [ ] 8. O `name` do preset é único e não conflita com presets existentes?
+#        (brasil-geral, sp-capital, nordeste-evangelico já estão reservados)
+#
+# [ ] 9. O arquivo foi salvo com o mesmo nome do campo `name`?
+#        (name: meu-preset → arquivo: meu-preset.yaml)
+#
+# ============================================================================

@@ -1,0 +1,128 @@
+# Preset: Brasil Geral
+# Composição aproximada do eleitorado brasileiro (inspirado IBGE/PNAD/TSE)
+# Referência: Architecture seção 4.5
+# 20 agentes distribuídos em 6 segmentos
+
+name: brasil-geral
+description: >
+  Composição aproximada do eleitorado brasileiro. Cobre as 5 regiões, todas as
+  classes sociais, diversidade religiosa e faixas etárias. Não é estatisticamente
+  exato, mas reflete proporções demográficas reais o suficiente para gerar
+  diversidade de opinião útil.
+total_agents: 20
+
+composition:
+  - segment: classe-ab-urbano-sudeste
+    count: 3
+    archetype_base: executivo-sp   # Usar como base, variar conforme overrides
+    description: "Elite urbana do Sudeste — alta escolaridade, renda alta, cosmopolita"
+    template_overrides:
+      demographic:
+        class: [A, B]
+        region: [sp-capital, rj-capital, bh]
+        education: [superior-completo, pos-graduacao]
+        age_range: "30-60"
+      psychographic:
+        information_sources: [folha, economist, linkedin, podcasts, instagram]
+      deliberative:
+        processing_style: analitico
+    variation_rules:
+      - "Incluir pelo menos 1 mulher (ex: professora-universitaria como archetype alternativo)"
+      - "Variar religião: 1 sem religião, 1 católico, 1 livre"
+      - "Variar ocupação: executivo, advogada, médico"
+
+  - segment: classe-c-urbano
+    count: 5
+    archetype_base: comerciante-bairro
+    description: "Espinha dorsal do Brasil — classe média urbana, educação intermediária, pragmática"
+    template_overrides:
+      demographic:
+        class: [C]
+        region: [sp-capital, rj-capital, nordeste-urbano, sul-urbano]
+        education: [medio-completo, superior-incompleto]
+        age_range: "25-55"
+      psychographic:
+        priorities: [custo-de-vida, seguranca, emprego, saude]
+    variation_rules:
+      - "Incluir pelo menos 2 mulheres"
+      - "Variar região: 2 Sudeste, 1 Nordeste, 1 Sul, 1 Centro-Oeste"
+      - "Variar religião: 2 católicos, 2 evangélicos, 1 sem religião"
+      - "Usar archetypes alternativos: enfermeira-publica, motorista-app"
+      - "Variar ocupação: comerciante, enfermeira, motorista, cabeleireira, técnico"
+
+  - segment: classe-de-periferia
+    count: 4
+    archetype_base: pedreiro-periferia
+    description: "Periferia urbana — renda baixa, informalidade, forte comunidade"
+    template_overrides:
+      demographic:
+        class: [D, E]
+        region: [periferia-sp, periferia-rj, periferia-nordeste]
+        education: [fundamental-completo, medio-incompleto]
+        age_range: "25-60"
+      psychographic:
+        priorities: [custo-de-vida, emprego, seguranca, moradia, saude]
+        information_sources: [tv-aberta, whatsapp, vizinhos, igreja]
+      deliberative:
+        processing_style: emocional
+    variation_rules:
+      - "Incluir pelo menos 2 mulheres (usar dona-maria como archetype alternativo)"
+      - "Variar faixa etária: 2 jovens (25-35), 2 maduros (45-60)"
+      - "Variar religião: 2 evangélicos, 1 católico, 1 livre"
+
+  - segment: rural-interior
+    count: 3
+    archetype_base: agricultor-familiar
+    description: "Brasil rural — agricultura familiar, comunidades tradicionais, ritmo lento"
+    template_overrides:
+      demographic:
+        class: [C, D]
+        region: [interior-sp, interior-mg, interior-nordeste]
+        education: [fundamental-incompleto, fundamental-completo]
+        age_range: "35-70"
+      psychographic:
+        values: [terra, familia, comunidade, fe]
+        information_sources: [radio-local, tv-aberta, vizinhos, sindicato-rural, igreja]
+      deliberative:
+        processing_style: emocional
+        opinion_flexibility: baixa
+    variation_rules:
+      - "Incluir pelo menos 1 mulher"
+      - "1 do Nordeste, 1 de Minas, 1 de SP interior"
+      - "Variar ocupação: agricultor, meeiro, dona de casa rural"
+
+  - segment: jovem-digital
+    count: 3
+    archetype_base: jovem-universitario
+    description: "Geração Z/millennial — nativos digitais, trans-classe, opinião volátil"
+    template_overrides:
+      demographic:
+        age_range: "18-29"
+      psychographic:
+        information_sources: [instagram, twitter, youtube, tiktok, podcasts]
+      deliberative:
+        opinion_flexibility: alta
+    variation_rules:
+      - "1 classe B (jovem-universitario), 1 classe C, 1 classe D (jovem-periferia-digital)"
+      - "Variar gênero: masculino, feminino, livre"
+      - "Variar religião: sem religião, evangélico, livre"
+      - "1 Sudeste, 1 Nordeste, 1 Sul"
+
+  - segment: evangelico-conservador
+    count: 2
+    archetype_base: pastor-periferia
+    description: "Segmento evangélico conservador — fé como eixo central, valores tradicionais"
+    template_overrides:
+      demographic:
+        religion: evangelica
+      psychographic:
+        values: [fe, familia-tradicional, moral-crista, ordem]
+        cognitive_biases: [authority_influence, inconsistency_avoidance]
+      deliberative:
+        processing_style: moral-religioso
+        opinion_flexibility: baixa
+    variation_rules:
+      - "1 líder (pastor/pastora), 1 fiel comum"
+      - "Variar gênero"
+      - "Variar região: 1 Sudeste periferia, 1 Nordeste"
+      - "Variar classe: 1 classe C, 1 classe D"

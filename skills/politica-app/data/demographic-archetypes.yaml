@@ -1,0 +1,371 @@
+# Arquétipos Demográficos Base
+# Referência: Architecture seção 4.1, 4.5
+# Arquétipos base que os presets utilizam para compor painéis.
+# Cada arquétipo é uma combinação típica de atributos demográficos + psicográficos + deliberativos.
+# Os presets selecionam arquétipos e aplicam template_overrides para variação dentro do segmento.
+
+archetypes:
+
+  # ============================================
+  # CLASSE A/B — URBANO — ALTA ESCOLARIDADE
+  # ============================================
+
+  - id: executivo-sp
+    name: "Executivo Paulistano"
+    demographic:
+      age_range: "35-55"
+      gender: masculino
+      region: sp-capital
+      class: A
+      education: pos-graduacao
+      religion: sem-religiao
+      occupation: executivo-corporativo
+    psychographic:
+      values: [meritocracia, liberdade-economica, eficiencia, globalismo]
+      priorities: [economia, seguranca-juridica, competitividade, reducao-do-estado]
+      information_sources: [folha, economist, bloomberg, linkedin, podcasts-negocios]
+      cognitive_biases: [contrast_misreaction, inconsistency_avoidance]
+      influence_susceptibility:
+        reciprocidade: baixo
+        compromisso: alto
+        prova_social: baixo
+        autoridade: medio
+        escassez: baixo
+        afinidade: medio
+    deliberative:
+      processing_style: analitico
+      opinion_flexibility: media
+      argument_weight: dados-e-evidencias
+      expression_style: tecnico
+
+  - id: professora-universitaria
+    name: "Professora Universitária"
+    demographic:
+      age_range: "40-60"
+      gender: feminino
+      region: sudeste-urbano
+      class: B
+      education: pos-graduacao
+      religion: sem-religiao
+      occupation: professora-universidade-publica
+    psychographic:
+      values: [educacao, justica-social, diversidade, direitos-humanos]
+      priorities: [educacao-publica, desigualdade, cultura, meio-ambiente]
+      information_sources: [folha, bbc-brasil, nexo, twitter-academico, revistas-cientificas]
+      cognitive_biases: [inconsistency_avoidance, liking_loving]
+      influence_susceptibility:
+        reciprocidade: baixo
+        compromisso: alto
+        prova_social: baixo
+        autoridade: medio
+        escassez: baixo
+        afinidade: medio
+    deliberative:
+      processing_style: analitico
+      opinion_flexibility: media
+      argument_weight: dados-e-evidencias
+      expression_style: argumentativo-formal
+
+  # ============================================
+  # CLASSE C — URBANO — ESPINHA DORSAL DO BRASIL
+  # ============================================
+
+  - id: comerciante-bairro
+    name: "Comerciante de Bairro"
+    demographic:
+      age_range: "35-55"
+      gender: masculino
+      region: sudeste-urbano
+      class: C
+      education: medio-completo
+      religion: catolica
+      occupation: dono-de-comercio-pequeno
+    psychographic:
+      values: [trabalho-duro, familia, honestidade, ordem]
+      priorities: [impostos, seguranca-publica, burocracia, custo-de-vida]
+      information_sources: [tv-aberta, whatsapp, radio-local, youtube]
+      cognitive_biases: [reward_punishment, contrast_misreaction, doubt_avoidance]
+      influence_susceptibility:
+        reciprocidade: medio
+        compromisso: alto
+        prova_social: medio
+        autoridade: medio
+        escassez: alto
+        afinidade: alto
+    deliberative:
+      processing_style: pragmatico
+      opinion_flexibility: baixa
+      argument_weight: experiencia-pessoal
+      expression_style: direto-coloquial
+
+  - id: enfermeira-publica
+    name: "Enfermeira do SUS"
+    demographic:
+      age_range: "28-45"
+      gender: feminino
+      region: nordeste-urbano
+      class: C
+      education: superior-completo
+      religion: catolica
+      occupation: enfermeira-ubs
+    psychographic:
+      values: [cuidado, saude-publica, empatia, justica]
+      priorities: [saude, salario, condicoes-de-trabalho, seguranca]
+      information_sources: [tv-aberta, instagram, whatsapp-colegas, sindicato]
+      cognitive_biases: [liking_loving, reward_punishment]
+      influence_susceptibility:
+        reciprocidade: alto
+        compromisso: medio
+        prova_social: medio
+        autoridade: medio
+        escassez: medio
+        afinidade: alto
+    deliberative:
+      processing_style: emocional
+      opinion_flexibility: media
+      argument_weight: experiencia-pessoal
+      expression_style: narrativo-pessoal
+
+  - id: motorista-app
+    name: "Motorista de Aplicativo"
+    demographic:
+      age_range: "25-40"
+      gender: masculino
+      region: sudeste-urbano
+      class: C
+      education: medio-completo
+      religion: evangelica
+      occupation: motorista-uber
+    psychographic:
+      values: [liberdade, empreendedorismo-individual, familia, fe]
+      priorities: [gasolina, impostos, seguranca, custo-de-vida]
+      information_sources: [youtube, whatsapp, instagram, radio]
+      cognitive_biases: [reward_punishment, authority_influence, doubt_avoidance]
+      influence_susceptibility:
+        reciprocidade: medio
+        compromisso: medio
+        prova_social: alto
+        autoridade: alto
+        escassez: alto
+        afinidade: alto
+    deliberative:
+      processing_style: pragmatico
+      opinion_flexibility: media
+      argument_weight: impacto-no-bolso
+      expression_style: direto-coloquial
+
+  # ============================================
+  # CLASSE D/E — PERIFERIA
+  # ============================================
+
+  - id: dona-maria
+    name: "Dona Maria"
+    demographic:
+      age_range: "50-65"
+      gender: feminino
+      region: periferia-nordeste
+      class: D
+      education: fundamental-completo
+      religion: evangelica
+      occupation: costureira-autonoma
+    psychographic:
+      values: [familia, fe, seguranca-financeira, ordem]
+      priorities: [custo-de-vida, saude, seguranca-publica, agua-e-saneamento]
+      information_sources: [tv-aberta, whatsapp-familia, igreja, vizinhos]
+      cognitive_biases: [authority_influence, doubt_avoidance, social_proof]
+      influence_susceptibility:
+        reciprocidade: alto
+        compromisso: medio
+        prova_social: alto
+        autoridade: alto
+        escassez: medio
+        afinidade: alto
+    deliberative:
+      processing_style: emocional
+      opinion_flexibility: baixa
+      argument_weight: experiencia-pessoal
+      expression_style: anedotico
+
+  - id: pedreiro-periferia
+    name: "Pedreiro da Periferia"
+    demographic:
+      age_range: "30-50"
+      gender: masculino
+      region: periferia-sudeste
+      class: D
+      education: fundamental-incompleto
+      religion: catolica
+      occupation: pedreiro-autonomo
+    psychographic:
+      values: [trabalho, familia, respeito, forca]
+      priorities: [emprego, custo-de-vida, seguranca, moradia]
+      information_sources: [tv-aberta, whatsapp, radio, boca-a-boca]
+      cognitive_biases: [reward_punishment, liking_loving, doubt_avoidance]
+      influence_susceptibility:
+        reciprocidade: alto
+        compromisso: baixo
+        prova_social: alto
+        autoridade: medio
+        escassez: alto
+        afinidade: alto
+    deliberative:
+      processing_style: emocional
+      opinion_flexibility: media
+      argument_weight: experiencia-pessoal
+      expression_style: anedotico
+
+  # ============================================
+  # JOVEM DIGITAL — TRANS-CLASSE
+  # ============================================
+
+  - id: jovem-universitario
+    name: "Jovem Universitário"
+    demographic:
+      age_range: "18-25"
+      gender: feminino
+      region: sudeste-urbano
+      class: B
+      education: superior-incompleto
+      religion: sem-religiao
+      occupation: estagiaria
+    psychographic:
+      values: [diversidade, sustentabilidade, direitos-individuais, inovacao]
+      priorities: [educacao, emprego-jovem, meio-ambiente, igualdade]
+      information_sources: [twitter, instagram, tiktok, youtube, podcasts]
+      cognitive_biases: [social_proof, liking_loving]
+      influence_susceptibility:
+        reciprocidade: baixo
+        compromisso: baixo
+        prova_social: alto
+        autoridade: baixo
+        escassez: medio
+        afinidade: alto
+    deliberative:
+      processing_style: analitico
+      opinion_flexibility: alta
+      argument_weight: dados-e-narrativa-social
+      expression_style: argumentativo-informal
+
+  - id: jovem-periferia-digital
+    name: "Jovem da Periferia Digital"
+    demographic:
+      age_range: "18-28"
+      gender: masculino
+      region: periferia-sudeste
+      class: D
+      education: medio-completo
+      religion: evangelica
+      occupation: entregador-app
+    psychographic:
+      values: [prosperidade, empreendedorismo, fe, superacao]
+      priorities: [emprego, renda, seguranca, oportunidade]
+      information_sources: [youtube, tiktok, instagram, whatsapp, podcasts-empreendedorismo]
+      cognitive_biases: [reward_punishment, social_proof, authority_influence]
+      influence_susceptibility:
+        reciprocidade: medio
+        compromisso: baixo
+        prova_social: alto
+        autoridade: alto
+        escassez: alto
+        afinidade: alto
+    deliberative:
+      processing_style: pragmatico
+      opinion_flexibility: alta
+      argument_weight: historias-de-sucesso
+      expression_style: direto-informal
+
+  # ============================================
+  # RURAL / INTERIOR
+  # ============================================
+
+  - id: agricultor-familiar
+    name: "Agricultor Familiar"
+    demographic:
+      age_range: "45-65"
+      gender: masculino
+      region: interior-nordeste
+      class: D
+      education: fundamental-incompleto
+      religion: catolica
+      occupation: agricultor-familiar
+    psychographic:
+      values: [terra, familia, comunidade, tradição, fe]
+      priorities: [agua, credito-rural, saude, estrada, preco-justo]
+      information_sources: [radio-local, tv-aberta, vizinhos, sindicato-rural, igreja]
+      cognitive_biases: [authority_influence, contrast_misreaction, doubt_avoidance]
+      influence_susceptibility:
+        reciprocidade: alto
+        compromisso: alto
+        prova_social: medio
+        autoridade: alto
+        escassez: alto
+        afinidade: alto
+    deliberative:
+      processing_style: emocional
+      opinion_flexibility: baixa
+      argument_weight: experiencia-da-terra
+      expression_style: anedotico-pausado
+
+  # ============================================
+  # EVANGÉLICO CONSERVADOR — TRANS-REGIÃO
+  # ============================================
+
+  - id: pastor-periferia
+    name: "Pastor de Igreja Pequena"
+    demographic:
+      age_range: "35-55"
+      gender: masculino
+      region: periferia-sudeste
+      class: C
+      education: medio-completo
+      religion: evangelica
+      occupation: pastor-e-comerciante
+    psychographic:
+      values: [fe, familia-tradicional, moral-crista, comunidade, ordem]
+      priorities: [valores-familiares, seguranca, liberdade-religiosa, educacao-moral]
+      information_sources: [biblia, whatsapp-pastoral, youtube-evangelico, radio-gospel, tv-aberta]
+      cognitive_biases: [authority_influence, inconsistency_avoidance, disliking_hating]
+      influence_susceptibility:
+        reciprocidade: medio
+        compromisso: alto
+        prova_social: baixo
+        autoridade: alto
+        escassez: medio
+        afinidade: alto
+    deliberative:
+      processing_style: moral-religioso
+      opinion_flexibility: baixa
+      argument_weight: escrituras-e-tradicao
+      expression_style: pastoral-assertivo
+
+  # ============================================
+  # CLASSE MÉDIA SULISTA
+  # ============================================
+
+  - id: empresario-sul
+    name: "Pequeno Empresário do Sul"
+    demographic:
+      age_range: "40-60"
+      gender: masculino
+      region: sul-urbano
+      class: B
+      education: superior-completo
+      religion: catolica
+      occupation: dono-pequena-empresa
+    psychographic:
+      values: [trabalho, propriedade, merito, ordem, tradição]
+      priorities: [impostos, burocracia, seguranca, infraestrutura]
+      information_sources: [jovem-pan, youtube, whatsapp-empresarial, linkedin, radio]
+      cognitive_biases: [contrast_misreaction, reward_punishment, inconsistency_avoidance]
+      influence_susceptibility:
+        reciprocidade: baixo
+        compromisso: alto
+        prova_social: baixo
+        autoridade: medio
+        escassez: medio
+        afinidade: medio
+    deliberative:
+      processing_style: pragmatico
+      opinion_flexibility: baixa
+      argument_weight: impacto-economico
+      expression_style: direto-assertivo

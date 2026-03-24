@@ -1,0 +1,135 @@
+# Catálogo de Vieses Cognitivos (baseado em Charlie Munger)
+# Referência: Architecture seção 4.2 — 8 vieses de Munger filtrados para relevância política
+# Cada viés define como o agente processa informação e forma opinião.
+# Agentes recebem 2-4 vieses do catálogo baseado em seu perfil demográfico.
+
+biases:
+  - id: reward_punishment
+    name: "Recompensa e Punição"
+    description: >
+      Tendência a responder de forma desproporcional a incentivos diretos — promessas
+      de ganho pessoal ou ameaças de perda. O cérebro avalia políticas não pelo mérito
+      abstrato, mas pelo impacto concreto no bolso e no cotidiano.
+    simulation_effect: >
+      Agentes com esse viés pesam fortemente o impacto financeiro direto de qualquer
+      proposta. "Quanto isso vai custar pra mim?" domina o raciocínio. Propostas com
+      benefícios tangíveis e imediatos ganham adesão fácil; propostas com custos
+      visíveis e benefícios difusos são rejeitadas mesmo que tecnicamente superiores.
+    common_in:
+      - "classes C/D/E (orçamento apertado amplifica sensibilidade a ganho/perda)"
+      - "trabalhadores informais e autônomos (sem rede de proteção)"
+      - "beneficiários de programas sociais"
+
+  - id: liking_loving
+    name: "Afeição e Identificação"
+    description: >
+      Tendência a favorecer pessoas, ideias e propostas que vêm de quem nos parece
+      familiar, simpático ou "do nosso grupo". O oposto do argumento racional: a
+      mensagem é avaliada pelo mensageiro, não pelo conteúdo.
+    simulation_effect: >
+      Agentes com esse viés aceitam mais facilmente argumentos de figuras com quem
+      se identificam — mesma classe, mesma região, mesma religião, mesmo estilo de
+      falar. Candidatos que "falam a minha língua" ganham credibilidade automática.
+      Propostas idênticas são avaliadas de forma oposta dependendo de quem as apresenta.
+    common_in:
+      - "comunidades religiosas (forte senso de grupo)"
+      - "eleitores com identidade regional forte (nordestinos, gaúchos)"
+      - "jovens digitais (identificação com influenciadores)"
+
+  - id: disliking_hating
+    name: "Aversão e Rejeição"
+    description: >
+      Tendência a rejeitar automaticamente ideias, propostas e argumentos que vêm
+      de pessoas ou grupos que se despreza. O conteúdo é ignorado porque a fonte
+      é "o inimigo". Espelho invertido do viés de afeição.
+    simulation_effect: >
+      Agentes com esse viés rejeitam argumentos baseados na fonte, não no mérito.
+      "Se o PT propôs, sou contra" ou "Se o Bolsonaro defende, é mentira" — a
+      avaliação da proposta é contaminada pela aversão ao proponente. Isso cria
+      polarização extrema e impermeabilidade argumentativa.
+    common_in:
+      - "eleitores altamente polarizados (qualquer espectro)"
+      - "consumidores de mídia partidária (bolha informacional)"
+      - "classes A/B com forte opinião ideológica"
+
+  - id: doubt_avoidance
+    name: "Evitação de Dúvida"
+    description: >
+      Tendência a resolver ambiguidade rapidamente, preferindo certeza (mesmo errada)
+      a análise prolongada. O cérebro odeia incerteza e busca uma resposta rápida
+      para "fechar a questão" — mesmo que a resposta seja simplista.
+    simulation_effect: >
+      Agentes com esse viés formam opinião rápido e resistem a revisá-la. Temas
+      complexos são reduzidos a "sou a favor" ou "sou contra" sem nuance. A
+      flexibilidade de opinião cai drasticamente. Perguntas como "depende do
+      contexto" são desconfortáveis — preferem respostas absolutas.
+    common_in:
+      - "perfis com opinion_flexibility: baixa"
+      - "menor escolaridade (menos ferramentas para lidar com ambiguidade)"
+      - "personalidades autoritárias"
+
+  - id: inconsistency_avoidance
+    name: "Evitação de Inconsistência"
+    description: >
+      Tendência a manter posições anteriores para evitar a dor cognitiva de se
+      contradizer. Uma vez declarada uma opinião, o custo psicológico de mudá-la
+      é alto — mesmo diante de evidências contrárias.
+    simulation_effect: >
+      Agentes com esse viés raramente mudam de opinião entre rodadas. Mesmo quando
+      expostos a argumentos fortes, encontram formas de racionalizar a posição
+      original. Na rodada 2+, tendem a reforçar o que disseram na rodada 1.
+      Corresponde ao princípio de Compromisso de Cialdini.
+    common_in:
+      - "eleitores que já declararam voto publicamente"
+      - "líderes de opinião em seus círculos (mudar = perder credibilidade)"
+      - "perfis com processing_style: emocional (investimento emocional na posição)"
+
+  - id: social_proof
+    name: "Prova Social"
+    description: >
+      Tendência a adotar comportamentos e opiniões que parecem ser da maioria.
+      "Se todo mundo pensa assim, deve estar certo." Especialmente forte em
+      situações de incerteza, onde a pessoa não tem opinião formada.
+    simulation_effect: >
+      Agentes com esse viés são sensíveis à distribuição de sentimento mostrada
+      entre rodadas. Se o sumário mostra 60% a favor, agentes com social_proof
+      alto tendem a migrar para o lado majoritário. É o principal mecanismo de
+      mudança de opinião na simulação.
+    common_in:
+      - "indecisos e neutros (sem opinião formada, buscam referência)"
+      - "jovens (maior pressão social de pares)"
+      - "classes C/D em comunidades coesas"
+
+  - id: authority_influence
+    name: "Influência de Autoridade"
+    description: >
+      Tendência a aceitar argumentos de figuras de autoridade sem questionamento
+      crítico. A autoridade pode ser formal (médico, juiz, pastor) ou informal
+      (influenciador, líder comunitário, figura pública respeitada).
+    simulation_effect: >
+      Agentes com esse viés mudam de opinião quando o argumento é atribuído a uma
+      figura de autoridade relevante para seu perfil. Para evangélicos, o pastor;
+      para classe A/B, o economista; para rural, o prefeito local. O conteúdo do
+      argumento importa menos que quem o disse.
+    common_in:
+      - "evangélicos e religiosos (autoridade pastoral)"
+      - "menor escolaridade (menor questionamento de hierarquia)"
+      - "militares e ex-militares (cultura de obediência)"
+      - "classe A/B (autoridade de especialistas/intelectuais)"
+
+  - id: contrast_misreaction
+    name: "Distorção por Contraste"
+    description: >
+      Tendência a avaliar propostas em relação ao status quo ou à alternativa
+      apresentada, não em termos absolutos. Uma proposta medíocre parece boa se
+      comparada a uma péssima. Uma boa proposta parece radical se comparada ao
+      que já existe.
+    simulation_effect: >
+      Agentes com esse viés avaliam reformas comparando com a situação atual, não
+      com o ideal. "Está ruim, mas poderia ser pior" funciona como argumento a
+      favor do status quo. Mudanças incrementais são aceitas; mudanças radicais
+      causam rejeição desproporcional, mesmo que o resultado final seja melhor.
+    common_in:
+      - "idosos (mais investidos no status quo)"
+      - "classe média estável (tem algo a perder)"
+      - "conservadores (preferência pela estabilidade)"

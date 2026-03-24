@@ -1,0 +1,125 @@
+# Princípios de Influência (baseado em Robert Cialdini)
+# Referência: Architecture seção 4.3 — 6 princípios de Cialdini
+# Define a susceptibilidade de cada agente a diferentes tipos de influência social.
+# Cada agente recebe scores (alto/médio/baixo) para cada princípio.
+
+principles:
+  - id: reciprocidade
+    name: "Reciprocidade"
+    description: >
+      Sentimento de obrigação em retribuir favores recebidos. Quando alguém faz
+      algo por nós, sentimos a necessidade de "devolver". Em política, se manifesta
+      como gratidão por benefícios recebidos — programas sociais, obras, ajudas.
+    mechanism: >
+      Eleitores que receberam benefícios concretos (Bolsa Família, casa popular,
+      asfalto na rua) tendem a apoiar quem proporcionou, independente de análise
+      técnica da gestão. "Ele me ajudou quando ninguém ajudou" é o argumento
+      emocional clássico.
+    trigger_condition: >
+      Ativado quando o tema envolve benefícios governamentais, programas sociais,
+      ou quando um candidato/partido é associado a uma entrega concreta na vida
+      do agente.
+    measurement:
+      alto: "Beneficiário direto de programa social ou ajuda estatal. Lealdade forte ao provedor."
+      medio: "Reconhece benefícios indiretos (infraestrutura, segurança). Gratidão presente mas não dominante."
+      baixo: "Não se sente devedor. Avalia por mérito, não por 'quem me deu'."
+
+  - id: compromisso
+    name: "Compromisso e Consistência"
+    description: >
+      Necessidade psicológica de agir de forma consistente com posições anteriores.
+      Uma vez que declaramos algo publicamente, mudar é doloroso — parece fraqueza
+      ou desonestidade. Isso "trava" opiniões mesmo diante de evidências contrárias.
+    mechanism: >
+      Agentes que declararam posição na rodada 1 resistem naturalmente a mudá-la
+      nas rodadas seguintes. Quanto mais pública e enfática foi a declaração, mais
+      difícil a mudança. Conecta-se diretamente ao viés de Inconsistency-Avoidance
+      de Munger.
+    trigger_condition: >
+      Ativado em rodadas 2+, quando o agente já declarou posição anterior.
+      Intensidade proporcional ao intensity da rodada anterior — quanto mais
+      veemente foi, mais travado fica.
+    measurement:
+      alto: "Quase nunca muda de opinião depois de declarada. 'Eu já disse o que penso.' Consistência é valor central."
+      medio: "Prefere manter posição, mas aceita ajustar intensidade ou nuances se argumentos forem fortes."
+      baixo: "Muda sem culpa se convencido. Não vê inconsistência como problema. 'Mudei de ideia, e daí?'"
+
+  - id: prova_social
+    name: "Prova Social"
+    description: >
+      Tendência a seguir o comportamento da maioria, especialmente em situações
+      de incerteza. "Se todo mundo está fazendo, deve ser o certo." Em política,
+      as pesquisas de intenção de voto funcionam como prova social.
+    mechanism: >
+      Quando o sumário inter-rodada mostra que a maioria pensa X, agentes com
+      prova social alta migram para X. Funciona como um efeito manada: a
+      distribuição percentual exibida influencia a opinião dos indecisos e dos
+      fracamente posicionados.
+    trigger_condition: >
+      Ativado quando o agente vê a distribuição de sentimento no sumário da rodada
+      anterior. Efeito proporcional à desigualdade da distribuição — 80/20 influencia
+      mais que 55/45.
+    measurement:
+      alto: "Altamente influenciável pela opinião da maioria. Em dúvida, vai com a corrente."
+      medio: "Considera o que os outros pensam, mas tem filtro próprio. Maioria não basta — precisa de argumento."
+      baixo: "Contrário à manada por princípio. Pode até reforçar posição minoritária por orgulho."
+
+  - id: autoridade
+    name: "Autoridade"
+    description: >
+      Tendência a obedecer e acreditar em figuras de autoridade — formal (médico,
+      juiz, professor) ou informal (pastor, influenciador, líder comunitário).
+      O conteúdo da mensagem importa menos que o cargo/status de quem a emitiu.
+    mechanism: >
+      Argumentos atribuídos a figuras de autoridade relevantes para o perfil do
+      agente pesam desproporcionalmente. Para evangélicos, o pastor é autoridade
+      máxima. Para classe A/B, o economista da FGV. Para rural, o prefeito.
+      A autoridade "certa" pode virar uma opinião com uma frase.
+    trigger_condition: >
+      Ativado quando um argumento é atribuído a uma figura de autoridade que o
+      agente reconhece como legítima. A autoridade precisa ser do "mundo" do
+      agente — um pastor não é autoridade para um jovem digital ateu.
+    measurement:
+      alto: "Aceita argumentos de autoridade sem questionamento. 'O pastor disse', 'o doutor falou' encerram debate."
+      medio: "Respeita autoridades mas filtra. Aceita expertise na área, não autoridade genérica."
+      baixo: "Questiona toda autoridade. 'Quem disse que ele sabe?' Anti-establishment por natureza."
+
+  - id: escassez
+    name: "Escassez"
+    description: >
+      Valorização desproporcional do que é raro, limitado ou está ameaçado de
+      desaparecer. "Vai acabar", "é agora ou nunca", "última chance" — frases
+      que ativam urgência e reduzem pensamento analítico.
+    mechanism: >
+      Argumentos que usam linguagem de urgência e perda ativam respostas emocionais.
+      "Se não aprovar agora, nunca mais" ou "estamos perdendo X" criam pressão
+      para tomada de posição rápida. Agentes susceptíveis intensificam posição
+      e reduzem flexibilidade.
+    trigger_condition: >
+      Ativado quando argumentos contêm linguagem de urgência, perda iminente ou
+      oportunidade única. Temas com deadline político (votação, eleição) amplificam
+      o efeito.
+    measurement:
+      alto: "Reage fortemente a argumentos de perda e urgência. Medo de 'perder a chance' domina raciocínio."
+      medio: "Reconhece urgência mas filtra exageros. 'Isso é sério ou é alarmismo?'"
+      baixo: "Cético com urgência artificial. 'Sempre dizem que é urgente.' Imune a deadline forçado."
+
+  - id: afinidade
+    name: "Afinidade"
+    description: >
+      Tendência a ser mais persuadido por pessoas que parecem conosco — mesma
+      origem, mesmos problemas, mesma linguagem. "Gente como a gente" é mais
+      confiável que especialista distante. Amplifica ou reduz o peso de argumentos.
+    mechanism: >
+      Argumentos apresentados como vindos de "pessoas como você" ressoam mais do
+      que argumentos abstratos ou de autoridades distantes. Um pedreiro falando
+      de reforma tributária convence mais classe D do que um economista. Um
+      empresário convence mais classe A do que um sindicalista.
+    trigger_condition: >
+      Ativado quando argumentos são atribuídos a personas que compartilham
+      características demográficas com o agente (mesma classe, mesma região,
+      mesma ocupação, mesma faixa etária).
+    measurement:
+      alto: "Confia mais em 'gente como eu'. Argumento de par é mais forte que argumento de expert."
+      medio: "Aprecia identificação, mas avalia conteúdo também. Par com argumento ruim não convence."
+      baixo: "Avalia argumento pelo mérito, não pelo mensageiro. Indiferente à origem social de quem fala."

@@ -1,0 +1,136 @@
+# Preset: São Paulo Capital
+# Composição focada na região metropolitana de São Paulo
+# Maior cidade da América Latina — extrema desigualdade, diversidade cultural, forte classe C
+# 20 agentes
+
+name: sp-capital
+description: >
+  Painel focado na Grande São Paulo. Reflete a cidade mais diversa do Brasil:
+  forte presença de classe C (maior segmento), periferia extensa com classes D/E,
+  elite econômica concentrada, grande população jovem digital, e crescimento
+  evangélico significativo na periferia. Maior educação média que o Brasil geral,
+  mas com desigualdade interna brutal.
+total_agents: 20
+
+composition:
+  - segment: elite-jardins-faria-lima
+    count: 3
+    archetype_base: executivo-sp
+    description: "Elite paulistana — Jardins, Itaim, Vila Olímpia. Alta renda, alta escolaridade."
+    template_overrides:
+      demographic:
+        class: [A, B]
+        region: sp-capital-zona-oeste
+        education: [superior-completo, pos-graduacao]
+        age_range: "30-60"
+      psychographic:
+        values: [meritocracia, liberdade-economica, eficiencia, cosmopolitismo]
+        priorities: [economia, seguranca-juridica, mobilidade, impostos]
+        information_sources: [folha, estadao, economist, linkedin, podcasts-negocios]
+      deliberative:
+        processing_style: analitico
+        argument_weight: dados-e-evidencias
+    variation_rules:
+      - "1 executivo (homem, 40-55), 1 advogada (mulher, 35-50), 1 empreendedor tech (homem/mulher, 28-40)"
+      - "Variar religião: 2 sem religião, 1 católico"
+
+  - segment: classe-c-zona-leste-norte
+    count: 5
+    archetype_base: comerciante-bairro
+    description: "Classe C paulistana — Penha, Tucuruvi, Tatuapé, Vila Maria. Trabalhadores, pragmáticos."
+    template_overrides:
+      demographic:
+        class: [C]
+        region: sp-capital-zona-leste
+        education: [medio-completo, superior-incompleto]
+        age_range: "25-55"
+      psychographic:
+        priorities: [transporte, seguranca, custo-de-vida, emprego, saude]
+        information_sources: [tv-aberta, whatsapp, youtube, radio, instagram]
+      deliberative:
+        processing_style: pragmatico
+    variation_rules:
+      - "3 mulheres, 2 homens"
+      - "Variar religião: 2 evangélicos, 2 católicos, 1 sem religião"
+      - "Ocupações: comerciante, cabeleireira, motorista, atendente, técnico de TI"
+      - "Incluir 1 nordestino(a) de segunda geração (pais migraram)"
+
+  - segment: periferia-extremo-sul-leste
+    count: 4
+    archetype_base: pedreiro-periferia
+    description: "Periferia de SP — Capão Redondo, Grajaú, Cidade Tiradentes, Itaquera. Renda baixa, comunidade forte."
+    template_overrides:
+      demographic:
+        class: [D, E]
+        region: sp-capital-periferia
+        education: [fundamental-completo, medio-incompleto, medio-completo]
+        age_range: "20-60"
+      psychographic:
+        priorities: [emprego, seguranca, transporte, moradia, custo-de-vida]
+        information_sources: [tv-aberta, whatsapp, funk, rap, vizinhos, igreja]
+      deliberative:
+        processing_style: emocional
+        expression_style: direto-coloquial
+    variation_rules:
+      - "2 mulheres (usar dona-maria como base), 2 homens"
+      - "Variar faixa etária: 1 jovem (20-28), 2 adultos (30-45), 1 maduro (50-60)"
+      - "Variar religião: 2 evangélicos, 1 católico, 1 sem religião"
+      - "Ocupações: pedreiro, faxineira, entregador, cozinheira"
+
+  - segment: jovem-digital-sp
+    count: 4
+    archetype_base: jovem-universitario
+    description: "Juventude paulistana — trans-classe, hiperconectada, opinião formada por redes sociais."
+    template_overrides:
+      demographic:
+        age_range: "18-29"
+        region: sp-capital
+      psychographic:
+        information_sources: [tiktok, instagram, twitter, youtube, podcasts, reddit]
+      deliberative:
+        opinion_flexibility: alta
+    variation_rules:
+      - "2 mulheres, 2 homens"
+      - "1 classe B (USP/UNICAMP), 1 classe C (ETEC/particular noturna), 1 classe D (periferia digital), 1 classe C (trampo + faculdade EAD)"
+      - "Variar religião: 2 sem religião, 1 evangélico, 1 livre"
+      - "Ocupações: estagiária, entregador-app, influencer micro, dev júnior"
+
+  - segment: evangelico-periferia-sp
+    count: 2
+    archetype_base: pastor-periferia
+    description: "Evangélicos da periferia paulistana — fé como pilar, valores conservadores."
+    template_overrides:
+      demographic:
+        religion: evangelica
+        region: sp-capital-periferia
+        class: [C, D]
+      psychographic:
+        values: [fe, familia-tradicional, moral-crista, prosperidade, ordem]
+        cognitive_biases: [authority_influence, inconsistency_avoidance, doubt_avoidance]
+      deliberative:
+        processing_style: moral-religioso
+        opinion_flexibility: baixa
+    variation_rules:
+      - "1 homem (obreiro/diácono, 35-50), 1 mulher (fiel ativa, 40-60)"
+      - "Variar escolaridade: 1 médio, 1 fundamental"
+
+  - segment: imigrante-sp
+    count: 2
+    archetype_base: comerciante-bairro
+    description: "Imigrantes/filhos de imigrantes — nordestinos, bolivianos, haitianos. SP é terra de migração."
+    template_overrides:
+      demographic:
+        class: [C, D]
+        region: sp-capital-centro-bras
+        education: [medio-completo, fundamental-completo]
+        age_range: "25-50"
+      psychographic:
+        values: [trabalho-duro, familia, oportunidade, dignidade]
+        priorities: [emprego, moradia, documentacao, custo-de-vida, preconceito]
+        information_sources: [whatsapp-comunidade, tv-aberta, radio, vizinhos]
+      deliberative:
+        processing_style: pragmatico
+        expression_style: cauteloso
+    variation_rules:
+      - "1 nordestino(a) (2a geração ou migrante recente), 1 imigrante internacional"
+      - "Variar gênero"

@@ -1,0 +1,50 @@
+# politica-app — Configuração Padrão
+# Override via argumentos CLI: --agents 30 --rounds 5 --preset sp-capital
+
+# Simulação
+simulation:
+  total_agents: 20          # Número de agentes no painel (range: 10-50)
+  rounds: 3                 # Rodadas de deliberação (range: 1-5)
+  batch_size: 10            # Agentes por batch paralelo (range: 5-15)
+  preset: brasil-geral      # Preset demográfico padrão
+
+# Output
+output:
+  dir: output               # Diretório base de outputs
+  naming: "{YYYYMMDD-HHMM}-{slug}"  # Padrão de naming das pastas
+  save_raw: true            # Salvar dados brutos (rounds/*.yaml)
+  save_panel: true          # Salvar panel.yaml para reuso
+
+# Deliberação
+deliberation:
+  failure_threshold: 0.3    # Abortar rodada se >30% dos agentes falharem
+  timeout_per_agent: 120    # Timeout por agente em segundos
+  summarize_top_n: 5        # Top N argumentos por posição no sumário inter-rodada
+
+# Agregação
+aggregation:
+  vulnerability_threshold: 0.2  # Threshold para vulnerabilidade: ceil(threshold × segment_size)
+  min_cluster_size: 3           # Mínimo de agentes para formar cluster
+  impact_score_formula: "count(change_triggers)"  # Fórmula do impact_score
+
+# Reutilização de Painel (Story 4.1)
+# Para reutilizar um painel gerado em simulação anterior, forneça o path via CLI:
+# /politica-app "Novo tema" --panel output/20260324-1530-reducao-maioridade/panel.yaml
+panel:
+  panel_path: null              # Path para panel.yaml existente (opcional)
+                                # Quando fornecido, fase de Assembly é pulada
+  required_fields:              # Campos obrigatórios no panel.yaml para validação de integridade
+    agent_level: [id, name, demographic, psychographic, deliberative]
+
+# Ingestão de Contexto (Story 3.4)
+context:
+  context_files: []             # Lista de paths para documentos de contexto (opcional)
+                                # Exemplo: ["docs/pesquisa.md", "docs/noticia.txt"]
+  context_max_words: 500        # Limite de palavras por documento após sumarização
+  inject_in_all_rounds: true    # Injetar contexto em todas as rodadas de deliberação
+
+# Relatório
+report:
+  language: pt-BR           # Idioma do relatório
+  include_disclaimer: true  # Incluir disclaimer ético
+  include_methodology: true # Incluir seção de metodologia
