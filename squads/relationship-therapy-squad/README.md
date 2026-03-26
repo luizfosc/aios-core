@@ -1,22 +1,22 @@
 # Relationship Therapy Squad
 
-Squad de 11 terapeutas especializados em relacionamentos. Cada agente e um clone fiel de um especialista real do mundo — com Voice DNA, Thinking DNA e frameworks terapeuticos completos.
+Squad de 11 terapeutas especializados em relacionamentos. Cada agente é um clone fiel de um especialista real do mundo — com Voice DNA, Thinking DNA e frameworks terapêuticos completos.
 
 ## Como Usar
 
 ```
 @lead-therapist          # Sofia faz triagem e direciona
 @lead-therapist *consult # Iniciar consulta com triagem
-@lead-therapist *session # Sessao completa multi-especialista
+@lead-therapist *session # Sessão completa multi-especialista
 
 # Acesso direto a especialistas:
-@gottman                 # Conflito, comunicacao, Four Horsemen
-@sue-johnson             # Vinculo emocional, EFT, apego
+@gottman                 # Conflito, comunicação, Four Horsemen
+@sue-johnson             # Vínculo emocional, EFT, apego
 @esther-perel            # Desejo, erotismo, infidelidade
 @terry-real              # Confronto amoroso, masculinidade, RLT
-@rosenberg               # Comunicacao nao-violenta, CNV
+@rosenberg               # Comunicação não-violenta, CNV
 @amir-levine             # Estilos de apego, dating
-@dr-ramani               # Narcisismo, relacoes toxicas
+@dr-ramani               # Narcisismo, relações tóxicas
 @brene-brown             # Vulnerabilidade, vergonha, coragem
 @deb-dana                # Sistema nervoso, teoria polivagal
 @emily-nagoski           # Desejo sexual, sexualidade
@@ -26,14 +26,14 @@ Squad de 11 terapeutas especializados em relacionamentos. Cada agente e um clone
 
 | Agente | Persona | Especialidade | Framework Principal |
 |---|---|---|---|
-| @lead-therapist | Sofia | Triagem e coordenacao | Triage Matrix |
-| @gottman | Dr. John | Conflito e comunicacao | Four Horsemen, Sound Relationship House |
-| @sue-johnson | Dra. Sue | Vinculo emocional e apego | EFT, Hold Me Tight, Demon Dialogues |
+| @lead-therapist | Sofia | Triagem e coordenação | Triage Matrix |
+| @gottman | Dr. John | Conflito e comunicação | Four Horsemen, Sound Relationship House |
+| @sue-johnson | Dra. Sue | Vínculo emocional e apego | EFT, Hold Me Tight, Demon Dialogues |
 | @esther-perel | Esther | Desejo e erotismo | Erotic Intelligence, Security vs Adventure |
 | @terry-real | Terry | Confronto amoroso, masculinidade | RLT, 5 Losing Strategies, Adaptive Child |
-| @rosenberg | Marshall | Comunicacao compassiva | CNV 4 Componentes, Necessidades Universais |
+| @rosenberg | Marshall | Comunicação compassiva | CNV 4 Componentes, Necessidades Universais |
 | @amir-levine | Dr. Amir | Estilos de apego adulto | Secure/Anxious/Avoidant, Protest Behaviors |
-| @dr-ramani | Dra. Ramani | Narcisismo e relacoes toxicas | DARVO, DEEP, SHINE, Abuse Cycle |
+| @dr-ramani | Dra. Ramani | Narcisismo e relações tóxicas | DARVO, DEEP, SHINE, Abuse Cycle |
 | @brene-brown | Brene | Vulnerabilidade e vergonha | BRAVING Trust, Shame Resilience, Rumble |
 | @deb-dana | Deb | Sistema nervoso | Polyvagal Ladder, Glimmers, Co-regulation |
 | @emily-nagoski | Emily | Desejo sexual e sexualidade | Dual Control Model, Responsive Desire |
@@ -41,23 +41,23 @@ Squad de 11 terapeutas especializados em relacionamentos. Cada agente e um clone
 ## Fluxo de Consulta
 
 ```
-Voce → Sofia (triagem) → Especialista(s) → Sofia (integracao) → Plano de Acao
+Você → Sofia (triagem) → Especialista(s) → Sofia (integração) → Plano de Ação
 ```
 
 ## Quando Chamar Quem
 
-| Situacao | Especialista |
+| Situação | Especialista |
 |---|---|
 | "Brigamos muito" | @gottman |
-| "Nao me sinto conectado/a" | @sue-johnson |
+| "Não me sinto conectado/a" | @sue-johnson |
 | "Perdemos o desejo" | @esther-perel |
-| "Ele nao se abre" | @terry-real |
-| "Nao sei como falar sobre isso" | @rosenberg |
+| "Ele não se abre" | @terry-real |
+| "Não sei como falar sobre isso" | @rosenberg |
 | "Tenho medo de abandono" | @amir-levine |
-| "Acho que ele/a e narcisista" | @dr-ramani |
+| "Acho que ele/a é narcisista" | @dr-ramani |
 | "Tenho vergonha de me abrir" | @brene-brown |
 | "Tenho crises de ansiedade" | @deb-dana |
-| "Nao tenho vontade de sexo" | @emily-nagoski |
+| "Não tenho vontade de sexo" | @emily-nagoski |
 
 ## Estrutura
 
@@ -80,24 +80,28 @@ relationship-therapy-squad/
   tasks/
     consult.md           # Consulta com triagem
     triage.md            # Triagem de especialista
-    session.md           # Sessao completa
-    assessment.md        # Avaliacao relacional
+    session.md           # Sessão completa
+    assessment.md        # Avaliação relacional
   workflows/
-    therapy-session.md   # Workflow da sessao
+    therapy-session.md   # Workflow da sessão
+    quick-consult.md     # Consulta rápida (15 min)
+    crisis-intervention.md # Intervenção em crise
+  checklists/
+    session-quality.md   # Qualidade da sessão (10 itens)
   templates/
-    session-report.md    # Template de relatorio
+    session-report.md    # Template de relatório
   data/
 ```
 
 ## Idioma
 
-Todos os agentes respondem em **portugues (pt-BR)** por padrao.
+Todos os agentes respondem em **português (pt-BR)** por padrão.
 
 ## Baseado Em
 
-Cada agente foi construido a partir de deep research dos especialistas reais:
+Cada agente foi construído a partir de deep research dos especialistas reais:
 - Entrevistas, podcasts e palestras transcritas
 - Livros e obras publicadas
 - Frameworks e metodologias documentadas
-- Estilo de comunicacao e vocabulario extraido (Voice DNA)
-- Processo diagnostico e modelos mentais mapeados (Thinking DNA)
+- Estilo de comunicação e vocabulário extraído (Voice DNA)
+- Processo diagnóstico e modelos mentais mapeados (Thinking DNA)

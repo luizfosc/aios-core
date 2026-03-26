@@ -1,0 +1,153 @@
+# Workflow: Reel Production Pipeline
+# Pipeline completo para produção de 1 reel (7 fases sequenciais)
+
+name: wf-reel-production
+trigger: "*produce-reel {topic}"
+description: "Pipeline end-to-end para 1 Instagram Reel — do tema ao vídeo final aprovado"
+owner: ai-reels-chief
+
+# Input obrigatório
+input:
+  required:
+    - topic: "Tema/assunto do reel"
+  optional:
+    - pain_point: "Dor específica do público"
+    - cta_goal: "Objetivo do CTA (follow, link, comment)"
+    - duration_target: "Duração alvo em segundos (default: 60)"
+    - style: "Estilo (educativo, provocativo, storytelling)"
+
+# Pipeline — 7 fases sequenciais (NENHUMA pode ser pulada)
+phases:
+
+  - phase: 1
+    name: "Hook"
+    agent: hook-architect
+    command: "*generate-hook"
+    task: "create-hook.md"
+    input_from: "user (topic, pain, CTA goal)"
+    output: "selected_hook + trigger + retention_strategy"
+    gate:
+      id: QG-AR-1
+      criteria: "Score >= 8/10 + curiosity gap + fórmula comprovada + dados verificados"
+      on_fail: "Regenerar com fórmula diferente (máx 3 tentativas)"
+    checkpoint:
+      type: human_optional
+      message: "Hook selecionado: '{hook}'. Aprovar ou pedir variação?"
+
+  - phase: 2
+    name: "Script"
+    agent: script-director
+    command: "*write-script"
+    task: "write-script.md"
+    input_from: "phase_1 (selected_hook, trigger, retention_strategy)"
+    output: "script_7beats + timing_map + performance_10D"
+    gate:
+      id: QG-AR-2
+      criteria: "7 beats completos + 10D por beat + timing validado (~150 wpm PT-BR)"
+      on_fail: "Reescrever beats problemáticos (máx 2 revisões)"
+    veto_conditions:
+      - "Script com < 7 beats → BLOQUEAR"
+      - "Duração estimada > 90s → CORTAR"
+      - "Insight antes da ação (beat order) → REESCREVER"
+
+  - phase: 3
+    name: "Voz"
+    agent: voice-engineer
+    command: "*generate-voice"
+    task: "generate-voice.md"
+    input_from: "phase_2 (script com beats marcados)"
+    output: "audio.wav merged + beat_timestamps + consumption_report"
+    gate:
+      id: QG-AR-3
+      criteria: "Fidelidade >= 80% + zero artefatos + pronúncia PT-BR correta"
+      on_fail: "Regerar beat com artefato (ajustar stability/similarity)"
+    veto_conditions:
+      - "Script enviado como bloco único (sem beats) → DEVOLVER para phase 2"
+      - "Artefatos audíveis em qualquer beat → REGERAR"
+      - "Credits insuficientes → FALLBACK para XTTS-v2"
+    checkpoint:
+      type: cost_check
+      message: "Consumo: {chars} caracteres ({cost}). Budget restante: {remaining}"
+
+  - phase: 4
+    name: "Avatar / Lip Sync"
+    agent: avatar-director
+    command: "*generate-video"
+    task: "generate-video.md"
+    input_from: "phase_3 (audio.wav + beat_timestamps)"
+    output: "video_raw.mp4 + sync_quality_score"
+    gate:
+      id: QG-AR-4
+      criteria: "Lip sync sem dessincronização visível + identidade preservada"
+      on_fail: "Reprocessar com template diferente ou ajustar parâmetros"
+    veto_conditions:
+      - "Dessincronização visível nos primeiros 10s → REPROCESSAR"
+      - "Identidade facial não preservada → TROCAR template"
+      - "Template com head movement > 30° → REJEITAR template"
+
+  - phase: 5
+    name: "Edição / Composição"
+    agent: video-composer
+    command: "*compose-reel"
+    task: "compose-reel.md"
+    input_from: "phase_4 (video_raw.mp4) + phase_2 (10D performance direction)"
+    output: "reel_edited.mp4 + composition_report"
+    gate:
+      id: QG-AR-5
+      criteria: "1080x1920 9:16 + legendas sync + duração correta + grain + -14 LUFS"
+      on_fail: "Corrigir camada problemática e re-render"
+    veto_conditions:
+      - "Resolução ≠ 1080x1920 → REJEITAR"
+      - "Captions dessincronizadas > 0.2s → REFAZER"
+      - "Áudio não normalizado (-14 LUFS) → REPROCESSAR"
+      - "Conteúdo em safe zones (200px bottom, 150px top) → REPOSICIONAR"
+
+  - phase: 6
+    name: "Caption Instagram"
+    agent: script-director
+    command: "*write-caption"
+    task: "write-caption.md"
+    input_from: "phase_2 (script) + phase_5 (reel editado)"
+    output: "caption_text + hashtags + CTA"
+    gate:
+      id: QG-AR-6
+      criteria: "Voice DNA pass + CTA específico + guardrail AI 10/10"
+      on_fail: "Reescrever com voice-dna.md como referência"
+    veto_conditions:
+      - "Caption sem CTA → BLOQUEAR"
+      - "Tom não alinhado com Voice DNA → REESCREVER"
+      - "Hashtags genéricas (#reels #viral) → SUBSTITUIR por nichadas"
+
+  - phase: 7
+    name: "QA Final"
+    agent: qa-sentinel
+    command: "*qa-review"
+    task: "qa-review.md"
+    input_from: "phase_5 (reel) + phase_6 (caption) + all phase outputs"
+    output: "qa_report + devils_advocate + human_decision"
+    gate:
+      id: QG-AR-7
+      criteria: "14/14 checklist + Devil's Advocate (3+ weak points) + aprovação Tiago"
+      on_fail: "Retornar à fase correspondente com feedback específico"
+    checkpoint:
+      type: human_blocking
+      message: |
+        QA completo. Resultado: {score}/14
+        Devil's Advocate: {weak_points}
+        Decisão necessária: PUBLICAR / REVISAR (qual fase?) / DESCARTAR
+
+# Output final
+output:
+  files:
+    - "reel-final.mp4 (1080x1920, H.264, -14 LUFS)"
+    - "caption.txt (texto + hashtags + CTA)"
+    - "qa-report.md (checklist + DA + decisão)"
+  delivery: "Aprovação do Tiago → publicação manual no Instagram"
+
+# Regras globais
+rules:
+  - "Sequência RÍGIDA 1→7 — nenhuma fase pode ser pulada"
+  - "Cada gate DEVE passar antes de avançar — sem exceções"
+  - "Máximo 3 retries por fase antes de escalar para o Chief"
+  - "Fase 7 (QA) é SEMPRE blocking — requer decisão humana"
+  - "Tempo estimado total: 45-90 min (depende de APIs externas)"

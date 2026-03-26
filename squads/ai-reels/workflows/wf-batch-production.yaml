@@ -1,0 +1,130 @@
+# Workflow: Batch Weekly Production
+# Produção semanal de 4-5 reels com aprovação em lote
+
+name: wf-batch-production
+trigger: "*batch-week"
+description: "Produção semanal batch — 4-5 reels com pipeline paralelo nas fases criativas"
+owner: ai-reels-chief
+
+# Input
+input:
+  required:
+    - topics: "Lista de 4-5 temas para a semana"
+  optional:
+    - priority_order: "Ordem de prioridade dos temas"
+    - style_mix: "Mix de estilos (ex: 2 educativos, 2 provocativos, 1 storytelling)"
+
+# Cronograma semanal
+schedule:
+  monday:
+    phases: [1, 2]
+    description: "Hooks + Scripts para todos os reels"
+    agent_primary: hook-architect, script-director
+    checkpoint:
+      type: human_blocking
+      message: "5 hooks + 5 scripts prontos. Revisar antes de produção?"
+
+  tuesday:
+    phases: [3, 4]
+    description: "Geração de voz + lip sync para todos os reels"
+    agent_primary: voice-engineer, avatar-director
+    checkpoint:
+      type: cost_check
+      message: "Consumo estimado: {total_chars} chars ElevenLabs + {total_min} min HeyGen"
+
+  wednesday:
+    phases: [5, 6]
+    description: "Edição Remotion + captions Instagram"
+    agent_primary: video-composer, script-director
+
+  thursday:
+    phases: [7]
+    description: "QA batch — todos os reels"
+    agent_primary: qa-sentinel
+    checkpoint:
+      type: human_blocking
+      message: |
+        QA batch completo:
+        {reel_results}
+        Decisão por reel: PUBLICAR / REVISAR / DESCARTAR
+
+  friday:
+    description: "Publicação dos reels aprovados"
+    action: "Manual — Tiago publica no Instagram"
+
+# Processo batch
+steps:
+
+  - step: 1
+    name: "Briefing semanal"
+    description: "Chief recebe 4-5 temas e distribui para o pipeline"
+    agent: ai-reels-chief
+    output: "batch_briefing.md com temas, prioridades e cronograma"
+
+  - step: 2
+    name: "Hooks batch"
+    description: "Hook architect gera 5 hooks por tema (25 total), seleciona top 1 por tema"
+    agent: hook-architect
+    gate: "QG-AR-1 por tema — todos devem passar antes de avançar"
+    veto_conditions:
+      - "Tema sem hook aprovado (8+/10) → DESCARTAR tema da semana"
+      - "Mais de 2 temas vetados → PARAR e revisar briefing"
+
+  - step: 3
+    name: "Scripts batch"
+    description: "Script director escreve 7 beats + 10D para cada tema aprovado"
+    agent: script-director
+    gate: "QG-AR-2 por tema"
+    veto_conditions:
+      - "Script com timing > 90s → CORTAR ou DIVIDIR em 2 reels"
+
+  - step: 4
+    name: "Voice batch"
+    description: "Voice engineer gera áudio para todos os scripts aprovados"
+    agent: voice-engineer
+    gate: "QG-AR-3 por tema"
+    veto_conditions:
+      - "Budget ElevenLabs < 20% restante → LIMITAR a 3 reels + fallback XTTS"
+
+  - step: 5
+    name: "Avatar batch"
+    description: "Avatar director gera lip sync para todos os áudios"
+    agent: avatar-director
+    gate: "QG-AR-4 por tema"
+    veto_conditions:
+      - "HeyGen credits < 3 min restantes → LIMITAR reels restantes"
+
+  - step: 6
+    name: "Edit batch"
+    description: "Video composer edita todos os reels via Remotion"
+    agent: video-composer
+    gate: "QG-AR-5 por tema"
+
+  - step: 7
+    name: "Captions batch"
+    description: "Script director escreve captions Instagram para todos os reels"
+    agent: script-director
+    gate: "QG-AR-6 por tema"
+
+  - step: 8
+    name: "QA batch"
+    description: "QA sentinel valida todos os reels — checklist 14 itens + DA por reel"
+    agent: qa-sentinel
+    gate: "QG-AR-7 por tema — BLOCKING (requer Tiago)"
+    checkpoint:
+      type: human_blocking
+      message: "Batch QA completo. {approved}/{total} reels aprovados."
+
+# Métricas
+metrics:
+  target: "4-5 reels/semana"
+  cost_budget: "$51/mês (ElevenLabs $22 + HeyGen $29)"
+  time_budget: "~4-6 horas distribuídas seg-qui"
+
+# Regras
+rules:
+  - "Monday checkpoint é BLOCKING — sem hooks/scripts aprovados, terça não começa"
+  - "Credit check antes de terça — se budget < 30%, reduzir batch"
+  - "Cada reel segue o mesmo pipeline de wf-reel-production (7 fases)"
+  - "QA quinta é batch mas cada reel é avaliado individualmente"
+  - "Reels descartados no QA NÃO contam para a meta semanal"

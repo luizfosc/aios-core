@@ -64,3 +64,9 @@ Relatório estruturado com:
 - Áreas de foco prioritárias (1-3)
 - Plano de ação recomendado
 - Exercícios práticos imediatos
+
+## Veto Conditions
+
+- "Avaliação sem múltiplas dimensões (comunicação + apego + conflito + intimidade) → VETO"
+- "Avaliação que rotula ('você é narcisista') → VETO (descrever padrões, não rotular)"
+- "Avaliação sem pontos fortes identificados → VETO (não só problemas)"

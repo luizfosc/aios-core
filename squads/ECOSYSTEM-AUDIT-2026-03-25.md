@@ -7,13 +7,13 @@
 
 ## Resumo Executivo
 
-- **Total de squads:** 64 *(era 65; squad-creator-pro merged em 2026-03-26)*
-- **GOLD (8.5+):** 5 *(era 6; -pro merged, squad-creator subiu para 9.0)*
-- **SILVER (7.0–8.4):** 17 *(corrigido: +3 ex-SKELETON reclassificados)*
-- **BRONZE (5.0–6.9):** 24 *(corrigido: +2 ex-SKELETON reclassificados)*
-- **DRAFT (3.0–4.9):** 16
-- **SKELETON (0–2.9):** 1 *(corrigido: 6 squads foram re-auditados com scores reais)*
-- **Média geral do ecossistema:** ~5.9/10 *(corrigida após re-auditoria)*
+- **Total de squads:** 63 *(era 65; -pro merged, storytelling arquivado)*
+- **GOLD (8.5+):** 5
+- **SILVER (7.0–8.4):** 19 *(+2: conteudo e ai-reels subiram para SILVER)*
+- **BRONZE (5.0–6.9):** 24 *(seo e marketing-board subiram dentro do BRONZE)*
+- **DRAFT (3.0–4.9):** 15 *(ai-reels subiu para SILVER)*
+- **SKELETON (0–2.9):** 0 *(storytelling arquivado em 2026-03-26)*
+- **Média geral do ecossistema:** ~6.2/10 *(atualizada após DNA enrichment de 3 squads)*
 - **Mind clones completos (DNA+Voice+Thinking):** 16 de 45 (35%)
 
 ### Top 5 Squads
@@ -45,7 +45,7 @@
 | 7 | curator | 12 | 9 | 5 | 8.2 | SILVER | Agents profundos (1186 avg). 7 checklists. Bom handoff entre agents. |
 | 8 | design | 9 | 101 | 13 | 8.1 | SILVER | Volume impressionante de tasks. Agents com voice_dna. Protocolos de handoff formais. |
 | 9 | kaizen-v2 | 8 | 16 | 6 | 8.0 | SILVER | Evolução sólida. Kill-switch protocol. Minds com heurísticas formais. |
-| 10 | content-engine | 28 | 25 | 10 | 7.8 | SILVER | 28 agents é o maior squad. Profundidade boa (791 avg). Falta veto_conditions em tasks. |
+| 10 | content-engine | 20 | 25 | 10 | 7.8 | SILVER | *(atualizado 2026-03-26)* 8 agents de copy de vendas movidos para copywriting-squad (fronteira definida). Foco: conteúdo orgânico + distribuição. |
 | 11 | dan-koe | 9 | 59 | 10 | 7.7 | SILVER | 59 tasks é excepcional. 26 checklists. Workflows com checkpoints claros. |
 | 12 | kaizen | 7 | 6 | 3 | 7.6 | SILVER | Agents muito profundos (1403 avg). Predecessor do kaizen-v2. |
 | 13 | affiliates | 17 | 73 | 12 | 7.5 | SILVER | Volume massivo (73 tasks, 12 WFs). Agents com veto_conditions. Falta profundidade de DNA em alguns. |
@@ -56,7 +56,7 @@
 | 18 | claude-code-mastery | 8 | 26 | 3 | 7.1 | SILVER | Agents com voice_dna. 26 tasks. Falta checklists mais robustos. |
 | 19 | business-rules-extraction | 8 | 0 | 3 | 7.0 | SILVER | 8 experts com voice_dna + thinking_dna + episodic. Zero tasks diretas — workflows compensam. |
 | 20 | mind-cloning | 1 | 7 | 1 | 7.0 | SILVER | Squad de infraestrutura. 45 minds no repositório. Templates sólidos. 16/45 completos. |
-| 21 | conteudo | 10 | 26 | 9 | 6.8 | BRONZE | Bom volume. 9 workflows. Agents com profundidade média (361 avg). |
+| 21 | conteudo | 10 | 26 | 9 | 7.8 | SILVER | *(atualizado 2026-03-26)* thinking_dna em 10 agents, veto_conditions em 6 tasks, pt-BR corrigido (~850 fixes). 9 workflows com checkpoints. |
 | 22 | storytelling-masters-fosc | 12 | 9 | 2 | 6.7 | BRONZE | 12 agents com veto_conditions. Profundidade média (445 avg). |
 | 23 | money-makers-vtd | 6 | 7 | 9 | 6.6 | BRONZE | 9 workflows é bom. 11 checklists. Agents rasos (329 avg). |
 | 24 | conversao-extrema | 6 | 12 | 2 | 6.5 | BRONZE | Tasks com veto_conditions. Agents com profundidade razoável (580 avg). |
@@ -73,14 +73,14 @@
 | 35 | legacy-rule-extractor | 4 | 16 | 4 | 5.7 | BRONZE | 16 tasks e 4 WFs. Agents rasos (244 avg). |
 | 36 | knowledge-base-builder | 8 | 10 | 4 | 5.6 | BRONZE | Boa estrutura. Agents rasos (278 avg). Sem voice_dna. |
 | 37 | high-ticket-sales | 1 | 4 | 0 | 5.5 | BRONZE | Single-agent muito profundo (1160 linhas). Zero workflows. |
-| 38 | marketing-board | 12 | 14 | 4 | 5.4 | BRONZE | 12 agents mas rasos (211 avg). Sem voice_dna profundo. |
+| 38 | marketing-board | 12 | 14 | 4 | 6.5 | BRONZE | *(atualizado 2026-03-26)* thinking_dna em 2 agents, veto_conditions em 5 tasks, pt-BR corrigido, 2 agents deprecados, checkpoint adicionado. |
 | 39 | advisor-board | 14 | 3 | 1 | 5.3 | BRONZE | 14 advisors mas profundidade média (447 avg). Voice_dna + thinking_dna. Poucas tasks. |
 | 40 | navigator | 1 | 12 | 3 | 5.2 | BRONZE | Single-agent. 12 tasks e 3 WFs. Checkpoints. Sem config.yaml. |
-| 41 | seo | 8 | 3 | 1 | 5.0 | BRONZE | 8 agents mas rasos (164 avg). Poucas tasks. |
+| 41 | seo | 8 | 16 | 1 | 6.8 | BRONZE | *(atualizado 2026-03-26)* 13 tasks criadas, 3 agents enriquecidos (+thinking_dna), templates e data adicionados. |
 | 42 | gui-avila | 1 | 5 | 1 | 4.8 | DRAFT | Single mind-clone profundo (828 linhas). Mind completo no mind-cloning. Poucas tasks. |
 | 43 | magic-bob | 3 | 7 | 4 | 4.7 | DRAFT | 4 workflows com checkpoints. Agents com profundidade média. Sem config.yaml. |
 | 44 | tathi-deandhela | 5 | 4 | 2 | 4.6 | DRAFT | Veto conditions nos workflows. Agents muito rasos (76 avg). Mind clone completo. |
-| 45 | ai-reels | 7 | 1 | 0 | 4.5 | DRAFT | 7 agents com voice_dna + handoffs. Zero workflows. Sem config.yaml. |
+| 45 | ai-reels | 7 | 7 | 3 | 7.2 | SILVER | *(atualizado 2026-03-26)* 3 workflows (production, batch, hook-sprint), 7 tasks com veto_conditions, checklist QA 14 itens, config.yaml. |
 | 46 | audio-reels | 7 | 6 | 1 | 4.4 | DRAFT | Agents rasos (160 avg). Pipeline documentado no README. |
 | 47 | italo-marsili | 1 | 5 | 1 | 4.4 | DRAFT | Single mind-clone (691 linhas). Mind completo. Poucas tasks. |
 | 48 | paulo-vieira | 1 | 5 | 1 | 4.3 | DRAFT | Single mind-clone (652 linhas). Voice_dna + thinking_dna. Mind incompleto no repositório. |
@@ -95,8 +95,8 @@
 | 57 | file-research | 1 | 3 | 1 | 3.3 | DRAFT | Single-agent utilitário. Funcional mas mínimo. |
 | 58 | zona-genialidade | 8 | 5 | 0 | 3.2 | DRAFT | 8 agents mas sem workflows. Conceito interessante, execução rasa. |
 | 59 | mind-content-updater | 1 | 5 | 1 | 3.0 | DRAFT | Utilitário. Agent raso (203 linhas). Sem config.yaml. |
-| 60 | relationship-therapy-squad | 11 | 4 | 1 | 3.0 | DRAFT | 11 terapeutas com voice_dna + thinking_dna. MAS: agents rasos (309 avg), poucas tasks, sem config.yaml. |
-| 61 | storytelling | 0 | 0 | 0 | 0.5 | SKELETON | Vazio. Só pasta output/. Conteúdo real está em storytelling-masters-fosc. |
+| 60 | relationship-therapy-squad | 11 | 4 | 3 | 6.8 | BRONZE | *(atualizado 2026-03-26)* config.yaml criado, +2 workflows (quick-consult, crisis-intervention), veto_conditions em 4 tasks, checklist QA, 3 agents enriquecidos, pt-BR corrigido. |
+| ~~61~~ | ~~storytelling~~ | — | — | — | — | ARCHIVED | *(Arquivado em 2026-03-26. Estava vazio — conteúdo real está em storytelling-masters-fosc.)* |
 
 **NOTA (2026-03-26 — Re-auditoria manual):** Os squads abaixo foram originalmente classificados como SKELETON mas foram re-auditados com análise profunda dos arquivos reais. Scores corrigidos e reposicionados:
 
@@ -164,8 +164,8 @@ Squad de melhoria contínua com kill-switch protocol, minds com heurísticas for
 - **Gaps:** Sem config.yaml na raiz (tem em config/). Memory-keeper agent poderia ser mais profundo.
 
 #### 10. content-engine — 7.8/10
-O maior squad em número de agents (28). Mix de copywriters e estrategistas de conteúdo. 25 tasks, 10 workflows.
-- **Gaps:** Sobreposição significativa com copywriting-squad. Nem todos os agents têm voice_dna.
+20 agents focados em conteúdo orgânico e distribuição (era 28 — 8 agents de copy de vendas movidos para copywriting-squad em 2026-03-26). 25 tasks, 10 workflows.
+- **Gaps:** ~~Sobreposição significativa com copywriting-squad~~ *(resolvido 2026-03-26)*. Nem todos os agents têm voice_dna.
 
 #### 11. dan-koe — 7.7/10
 59 tasks é o segundo maior volume. 26 checklists. 9 agents especializados em diferentes aspectos do método Koe (mindset, brand, offers, distribution). Mind clone documentado.
@@ -185,7 +185,7 @@ Squads funcionais mas com trabalho significativo necessário. Padrões comuns:
 - Falta de voice_dna ou thinking_dna em vários agents
 
 Destaques positivos no BRONZE:
-- **conteudo (6.8):** 9 workflows é bom, mas agents precisam de upgrade de DNA
+- ~~**conteudo (6.8):**~~ *(Promovido para SILVER 7.8 após DNA enrichment em 2026-03-26)*
 - **luiz-fosc (6.3):** Agent muito profundo mas é single-agent
 - **etl-universal-converter (5.8):** 14 tasks com veto_conditions, funcional como utilitário
 
@@ -199,13 +199,13 @@ Squads com estrutura básica mas que precisam de investimento para serem usávei
 - Poucos workflows (0-2)
 - Sem config.yaml em vários
 
-Destaque: **relationship-therapy-squad (3.0)** tem 11 terapeutas reais com voice_dna + thinking_dna, mas agents muito rasos (309 avg) e praticamente sem tasks/workflows. Alto potencial com pouco trabalho adicional.
+~~Destaque: **relationship-therapy-squad (3.0)**~~ *(atualizado para 6.8 BRONZE em 2026-03-26 — config.yaml + 2 workflows + veto_conditions + checklist + agents enriquecidos)*
 
 ---
 
-### SKELETON (0–2.9) — 1 squad *(corrigido de 7 após re-auditoria 2026-03-26)*
+### SKELETON (0–2.9) — 0 squads *(corrigido 2026-03-26)*
 
-- **storytelling:** Literalmente vazio (só pasta output/). O conteúdo real de storytelling está em `storytelling-masters-fosc/` (BRONZE 6.7).
+- ~~**storytelling:**~~ Arquivado em 2026-03-26. Estava vazio (só pasta output/). Conteúdo real está em `storytelling-masters-fosc/` (BRONZE 6.7).
 
 **Re-classificados após re-auditoria:**
 - **viral-squad:** 2.8 → **7.8 SILVER** (30+ agents reais, 25+ workflows)
@@ -236,8 +236,8 @@ Destaque: **relationship-therapy-squad (3.0)** tem 11 terapeutas reais com voice
 ### 6. Arquivar o 1 SKELETON squad restante *(corrigido 2026-03-26)*
 **Impacto: BAIXO** — Apenas `storytelling/` é realmente vazio (conteúdo real está em `storytelling-masters-fosc/`). Os outros 5 ex-SKELETONs foram re-auditados e reclassificados como SILVER (3) e BRONZE (2).
 
-### 7. Resolver sobreposição content-engine vs copywriting-squad
-**Impacto: MÉDIO** — Ambos têm agents como Stefan Georgi, Dan Kennedy, Gary Halbert, Eugene Schwartz. Definir fronteiras claras ou consolidar.
+### ~~7. Resolver sobreposição content-engine vs copywriting-squad~~ ✅ FEITO (2026-03-26)
+**Status:** Concluído. 8 agents de copy de vendas movidos do content-engine para `_archived/duplicate-agents/`. Fronteira definida: copywriting-squad = copy de vendas (sales, VSL, email, ads), content-engine = conteúdo orgânico + distribuição. Cross-reference adicionado no config.yaml.
 
 ### 8. Upgrade do relationship-therapy-squad
 **Impacto: MÉDIO** — 11 terapeutas reais é raro e valioso. Precisa de: agents mais profundos (de 309 para 800+ linhas), config.yaml, 3+ workflows, tasks estruturadas.
@@ -264,7 +264,7 @@ Destaque: **relationship-therapy-squad (3.0)** tem 11 terapeutas reais com voice
 ### Anti-patterns recorrentes
 1. **Squad sem workflow = coleção de agents solta.** 8 squads têm zero ou um workflow. Sem pipeline de execução, os agents não se conectam.
 
-2. **Duplicação entre squads.** content-engine, copywriting-squad e content-creator compartilham agents. ~~squad-creator e squad-creator-pro são quase idênticos~~ *(resolvido 2026-03-26)*.
+2. **Duplicação entre squads.** ~~content-engine e copywriting-squad compartilham agents~~ *(resolvido 2026-03-26: fronteira definida, duplicados arquivados)*. content-creator ainda tem sobreposição menor. ~~squad-creator e squad-creator-pro são quase idênticos~~ *(resolvido 2026-03-26)*.
 
 3. **"Production Ready" autodeclarado sem evidência.** Alguns squads se declaram prontos mas têm agents de 200 linhas sem voice_dna.
 

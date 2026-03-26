@@ -59,3 +59,10 @@ Sessão completa com múltiplos especialistas, coordenada por Sofia.
 - O paciente pode interromper e pedir para mudar de especialista a qualquer momento
 - Sofia sempre faz a integração final — nunca deixar o paciente com perspectivas desconectadas
 - Máximo de 3 especialistas por sessão para não sobrecarregar
+
+## Veto Conditions
+
+- "Sessão sem framework terapêutico identificável → VETO (cada terapeuta TEM frameworks)"
+- "Sessão genérica que poderia ser de qualquer terapeuta → VETO (voice_dna deve ser evidente)"
+- "Sessão sem plano de ação concreto → VETO"
+- "Sessão que toma partido em conflito de casal → VETO"

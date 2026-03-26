@@ -1,8 +1,8 @@
 # UPDATE SQUADS — Evolução do Ecossistema
 
 ## Estado Atual
-**Status:** 4/10 AÇÕES CONCLUÍDAS — Checkpoint
-**Escopo:** 64 squads ativos, 3 squads enriquecidos, 1 merge feito
+**Status:** 5/10 AÇÕES CONCLUÍDAS
+**Escopo:** 63 squads ativos (storytelling arquivado), 3 squads enriquecidos, 1 merge feito
 **Auditoria:** `squads/ECOSYSTEM-AUDIT-2026-03-25.md` (corrigida 2026-03-26)
 **Média estimada:** ~6.2/10 (era 5.9) | **Meta:** 8.0+
 **Checklist master:** `docs/projects/update-squads/checklists/MASTER.md`
@@ -30,16 +30,16 @@ Continuar Top 10 a partir da ação #6:
 | Tier | Qtd | % |
 |------|-----|---|
 | GOLD (8.5+) | 5 | 8% |
-| SILVER (7.0-8.4) | 17 | 27% |
+| SILVER (7.0-8.4) | 18 | 29% |
 | BRONZE (5.0-6.9) | 24 | 38% |
 | DRAFT (3.0-4.9) | 16 | 25% |
-| SKELETON (0-2.9) | 1 | 2% |
+| SKELETON (0-2.9) | 0 | 0% |
 
 ## Top 10 Ações
 
 | # | Ação | Status |
 |---|------|--------|
-| 1 | Arquivar 1 SKELETON (storytelling/) | ⬚ Pendente |
+| 1 | ~~Arquivar 1 SKELETON (storytelling/)~~ | ✅ Feito |
 | 2 | ~~Merge squad-creator + squad-creator-pro~~ | ✅ Feito |
 | 3 | ~~DNA enrichment — conteudo~~ | ✅ Feito |
 | 4 | ~~DNA enrichment — seo~~ | ✅ Feito |

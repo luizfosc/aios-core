@@ -1,16 +1,17 @@
 # Update Squads — Master Checklist
 
-**Objetivo:** Elevar o ecossistema de 64 squads de média 5.9/10 para 8.0+
+**Objetivo:** Elevar o ecossistema de 63 squads de média ~6.2/10 para 8.0+
 **Auditoria base:** `squads/ECOSYSTEM-AUDIT-2026-03-25.md`
 **Sub-checklists:** `docs/projects/update-squads/checklists/`
 
 ---
 
-## Ação #1 — Arquivar SKELETON
+## Ação #1 — Arquivar SKELETON ✅
 **Impacto:** Baixo | **Esforço:** 5 min
+**Executado em:** 2026-03-26
 
-- [ ] Mover `squads/storytelling/` → `squads/_archived/storytelling/`
-- [ ] Atualizar ECOSYSTEM-AUDIT (63 squads ativos)
+- [x] Mover `squads/storytelling/` → `squads/_archived/storytelling/`
+- [x] Atualizar ECOSYSTEM-AUDIT (63 squads ativos, 0 SKELETON)
 
 ---
 
@@ -35,7 +36,7 @@
 - [x] Adicionar thinking_dna em todos os 10 agents (~30L cada, únicos por papel)
 - [x] Adicionar veto_conditions em 6 tasks críticas (create-carousel, create-reels, create-strategy, create-campaign, validate-content, create-bio)
 - [x] Workflows já tinham checkpoints + veto_conditions (9/9) — nada a fazer
-- [ ] Re-score e atualizar ECOSYSTEM-AUDIT
+- [x] Re-score e atualizar ECOSYSTEM-AUDIT (6.8 → 7.8 SILVER)
 
 ---
 
@@ -50,7 +51,7 @@
 - [x] Criar templates/ (seo-report-template, llms-txt-template)
 - [x] Criar data/ (cwv-benchmarks, schema-types-reference)
 - [x] Corrigir acentuação pt-BR (3 ocorrências de "Metodo" → "Método")
-- [ ] Re-score e atualizar ECOSYSTEM-AUDIT
+- [x] Re-score e atualizar ECOSYSTEM-AUDIT (5.0 → 6.8 BRONZE)
 
 ---
 
@@ -66,40 +67,49 @@
 - [x] Corrigir acentuação pt-BR em 4 workflows + 1 task (~60+ correções)
 - [x] Adicionar checkpoint no workflow board-consultation
 - [x] Adicionar veto_conditions em 5 tasks críticas (daily-content, quick-post, consult-board, evaluate-deal, trend-sniper)
-- [ ] Re-score e atualizar ECOSYSTEM-AUDIT
+- [x] Re-score e atualizar ECOSYSTEM-AUDIT (5.4 → 6.5 BRONZE)
 
 ---
 
-## Ação #6 — Criar workflows: ai-reels (4.5 → 7.0+)
+## Ação #6 — Criar workflows: ai-reels (4.5 → 7.0+) ✅
 **Impacto:** Médio-Alto | **Esforço:** 1 sessão
+**Executado em:** 2026-03-26
 
-- [ ] Auditar estado atual (7 agents, 1 task, 0 workflows)
-- [ ] Criar 3+ workflows com checkpoints
-- [ ] Adicionar config.yaml se ausente
-- [ ] Re-score e atualizar ECOSYSTEM-AUDIT
-
----
-
-## Ação #7 — Resolver sobreposição content-engine vs copywriting
-**Impacto:** Alto | **Esforço:** 1 sessão (análise) + 1-2 sessões (execução)
-
-- [ ] Mapear agents duplicados entre os dois squads
-- [ ] Definir fronteira clara: copywriting = copy puro, content-engine = estratégia + distribuição
-- [ ] Decidir: merge, split, ou coexistência com escopo definido
-- [ ] Executar decisão
-- [ ] Atualizar referências e ECOSYSTEM-AUDIT
+- [x] Auditar estado atual — 7 agents (516L média), 0 workflows, 0 tasks reais, 0 checklists, sem config.yaml
+- [x] Criar 3 workflows: wf-reel-production (7 fases), wf-batch-production (semanal), wf-hook-sprint (brainstorm)
+- [x] Criar 7 tasks com veto_conditions (1 por fase do pipeline)
+- [x] Criar checklist QA final (14 itens binário + Devil's Advocate)
+- [x] Criar config.yaml com metadados, quality gates e veto_conditions globais
+- [x] Re-score e atualizar ECOSYSTEM-AUDIT (4.5 → 7.2 SILVER)
 
 ---
 
-## Ação #8 — Upgrade relationship-therapy (3.0 → 7.0+)
-**Impacto:** Médio-Alto | **Esforço:** 1-2 sessões
+## Ação #7 — Resolver sobreposição content-engine vs copywriting ✅
+**Impacto:** Alto | **Esforço:** 1 sessão
+**Executado em:** 2026-03-26
 
-- [ ] 11 terapeutas reais com voice_dna+thinking_dna (já tem) — expandir profundidade
-- [ ] Agents de 309 linhas média → expandir para 800+
-- [ ] Criar config.yaml
-- [ ] Criar 3+ workflows
-- [ ] Criar tasks estruturadas
-- [ ] Re-score e atualizar ECOSYSTEM-AUDIT
+- [x] Mapear agents duplicados — 8 duplicados: Hormozi, Schwartz, Halbert, Georgi, Hopkins, Ogilvy, Koe, Kennedy
+- [x] Definir fronteira: copywriting = copy de vendas (sales, VSL, email, ads) | content-engine = conteúdo orgânico + distribuição
+- [x] Decisão: coexistência com escopo definido (opção 1 + ADR para mind_source futuro)
+- [x] 8 agents movidos para content-engine/_archived/duplicate-agents/
+- [x] config.yaml atualizado (layers, debate pairs, cross_references)
+- [x] ECOSYSTEM-AUDIT atualizada
+- [x] ADR documentada em memory/project_mind-source-architecture.md
+
+---
+
+## Ação #8 — Upgrade relationship-therapy (3.0 → 7.0+) ✅
+**Impacto:** Médio-Alto | **Esforço:** 1 sessão
+**Executado em:** 2026-03-26
+
+- [x] Criar config.yaml com veto_conditions globais (6 condições incluindo segurança)
+- [x] Criar 2 workflows: quick-consult (15 min) e crisis-intervention (com CVV/emergência)
+- [x] Criar checklist session-quality (10 itens, 4 BLOCKER)
+- [x] Adicionar veto_conditions nas 4 tasks (triage, consult, session, assessment)
+- [x] Enriquecer 3 agents mais rasos: esther-perel (+130L), gottman (+135L), amir-levine (+173L)
+- [x] Corrigir acentuação pt-BR no README (~30 correções)
+- [x] Atualizar estrutura no README (novos workflows + checklist)
+- [x] Re-score e atualizar ECOSYSTEM-AUDIT (3.0 → 6.8 BRONZE)
 
 ---
 
@@ -128,15 +138,15 @@
 
 | # | Ação | Status |
 |---|------|--------|
-| 1 | Arquivar SKELETON | ⬚ Pendente |
+| 1 | Arquivar SKELETON | ✅ Feito |
 | 2 | Merge squad-creators | ✅ Feito |
 | 3 | DNA enrichment — conteudo | ✅ Feito |
 | 4 | DNA enrichment — seo | ✅ Feito |
 | 5 | DNA enrichment — marketing-board | ✅ Feito |
-| 6 | Workflows — ai-reels | ⬚ Pendente |
-| 7 | Sobreposição content-engine vs copywriting | ⬚ Pendente |
-| 8 | Upgrade relationship-therapy | ⬚ Pendente |
+| 6 | Workflows — ai-reels | ✅ Feito |
+| 7 | Sobreposição content-engine vs copywriting | ✅ Feito |
+| 8 | Upgrade relationship-therapy | ✅ Feito |
 | 9 | Veto conditions nos SILVER | ⬚ Pendente |
 | 10 | Mind clones top 5 | ⬚ Pendente |
 
-**Completo:** 4/10 | **Em progresso:** 0/10 | **Pendente:** 6/10
+**Completo:** 8/10 | **Em progresso:** 0/10 | **Pendente:** 2/10

@@ -1,7 +1,8 @@
 # Content Engine v2 - Unified Squad Configuration
 # Merge of social-strategist (8 agents) + copy (9 agents) + devil-advocate (new)
-# Version: 2.0.0
+# Version: 2.1.0
 # Created: 2026-02-10
+# Updated: 2026-03-26 — removed copy-de-vendas agents (delegated to copywriting-squad)
 
 # Top-level fields (standard AIOS format)
 name: content-engine
@@ -12,12 +13,13 @@ squad:
   name: content-engine
   display_name: "Content Engine v2"
   version: "2.0.0"
-  domain: "content strategy, copywriting, social media, brand building"
+  domain: "content strategy, organic content, social media, brand building, distribution"
   description: |
-    Squad unificado de 18 mentes elite para estrategia de conteudo, copywriting,
+    Squad unificado de 20 agents especializados para estrategia de conteudo organico,
     distribuicao e validacao. 3 camadas: Estrategia (planejar) → Producao (criar
     com debate) → Qualidade (validar + desafiar). Construido para o posicionamento
-    do Tiago: "Clareza em meio ao caos".
+    do Tiago: "Clareza em meio ao caos". Copy de vendas (sales letters, VSL, ads)
+    e delegado ao copywriting-squad.
 
   context: |
     Brazilian content creator selling clarity/direction services.
@@ -64,23 +66,11 @@ layers:
         frameworks: [Brand Journey, Accordion Method, Waterfall, 7-Day Sprint]
         also_in: [quality]  # Atua em review de alinhamento (Fase 5)
 
-      - id: dan-koe
-        name: Dan Koe
-        role: Content Philosopher & One-Person Business Architect
-        file: agents/dan-koe.md
-        frameworks: [One-Person Business Model, Newsletter-First, Art of Focus]
-
       - id: gary-vaynerchuk
         name: Gary Vaynerchuk
         role: Attention & Distribution Strategist
         file: agents/gary-vaynerchuk.md
         frameworks: [Day Trading Attention, Content Model, Platform-Native, Document Don't Create]
-
-      - id: alex-hormozi
-        name: Alex Hormozi
-        role: Leads & Content at Scale Strategist
-        file: agents/alex-hormozi.md
-        frameworks: [Core Four, Rule of 100, Hook-Retain-Reward, Lead Magnets]
 
   # CAMADA 2: PRODUCAO (criar — com debate)
   production:
@@ -92,12 +82,6 @@ layers:
         file: agents/nicolas-cole.md
         frameworks: [Atomic Essays, Headline Engineering, Rate of Revelation, Writing Rhythms]
         special_role: "Dono do merge em debates de copy social"
-
-      - id: stefan-georgi
-        name: Stefan Georgi
-        role: RMBC Method Master & Long-Form Specialist
-        file: agents/stefan-georgi.md
-        frameworks: [RMBC Method, VSL Scripts, Mechanism Discovery]
 
       - id: joanna-wiebe
         name: Joanna Wiebe
@@ -123,30 +107,6 @@ layers:
         file: agents/justin-welsh.md
         frameworks: [ContentOS, LinkedInOS, 1-to-12 Repurposing, Content Matrix]
 
-      - id: gary-halbert
-        name: Gary Halbert
-        role: Direct Response Master
-        file: agents/gary-halbert.md
-        frameworks: [Sales Letters, A-Pile, Starving Crowd, Emotional Hooks]
-
-      - id: claude-hopkins
-        name: Claude Hopkins
-        role: Scientific Advertising Pioneer
-        file: agents/claude-hopkins.md
-        frameworks: [Scientific Advertising, Preemptive Claims, Reason-Why Copy]
-
-      - id: dan-kennedy
-        name: Dan Kennedy
-        role: No BS Direct Response & Offer Specialist
-        file: agents/dan-kennedy.md
-        frameworks: [No BS Marketing, Magnetic Marketing, Offer Architecture, Deadline Strategies]
-
-      - id: david-ogilvy
-        name: David Ogilvy
-        role: Brand Advertising & Research-Driven Copy Pioneer
-        file: agents/david-ogilvy.md
-        frameworks: [Research-First Advertising, Brand Image, Headline Rules, Long Copy Principles]
-
   # LEGACY ORCHESTRATOR (mantido para compatibilidade)
   legacy_orchestrators:
     agents:
@@ -160,13 +120,6 @@ layers:
   quality:
     description: "Diagnostico de awareness, validacao brutal, devil's advocate"
     agents:
-      - id: eugene-schwartz
-        name: Eugene Schwartz
-        role: Market Analyst & Awareness Diagnostician
-        file: agents/eugene-schwartz.md
-        frameworks: [5 Levels of Awareness, 5 Levels of Market Sophistication]
-        rule: "SEMPRE roda ANTES de qualquer producao"
-
       - id: oraculo-torriani
         name: Oraculo Torriani
         role: Copy Quality Validator & QA Guardian
@@ -245,7 +198,7 @@ debate:
   agent_pairs:
     carousel_copy:
       agent_a: nicolas-cole
-      agent_b: alex-hormozi
+      agent_b: justin-welsh
       consolidator: nicolas-cole
 
     reel_script:
@@ -255,13 +208,12 @@ debate:
 
     static_phrase:
       agent_a: nicolas-cole
-      agent_b: dan-koe
+      agent_b: gary-vaynerchuk
       consolidator: nicolas-cole
 
     landing_email:
-      agent_a: joanna-wiebe
-      agent_b: stefan-georgi
-      consolidator: joanna-wiebe
+      note: "Delegado ao copywriting-squad (stefan-georgi + joanna-wiebe). Ver cross_references."
+      delegate_to: copywriting-squad
 
     # DEBATE VISUAL (capas de carrossel/post)
     carousel_cover:
@@ -339,9 +291,9 @@ quality_gates:
 
   - id: QG-002
     name: "Diagnosis Complete"
-    transition: "Camada 3 (Schwartz) → Camada 2"
+    transition: "Camada 1 (Estrategia) → Camada 2"
     type: blocking
-    criteria: "Market awareness + sophistication determinados"
+    criteria: "Market awareness + sophistication determinados (via caleb-ralston ou copywriting-squad/eugene-schwartz)"
 
   - id: QG-003
     name: "Debate Complete"
@@ -398,3 +350,13 @@ pattern_library:
     - id: WP
       name: "Workflow Patterns"
       description: "Patterns para workflows (sprint, adaptacao)"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# CROSS REFERENCES
+# ═══════════════════════════════════════════════════════════════════════════════
+
+cross_references:
+  copywriting-squad:
+    description: "Copy de vendas (sales letters, VSL, email sequences, ads). Delegar quando o pedido for copy de resposta direta."
+    agents: ["gary-halbert", "eugene-schwartz", "stefan-georgi", "claude-hopkins", "david-ogilvy", "dan-kennedy", "alex-hormozi", "dan-koe"]
+    trigger_keywords: ["sales letter", "VSL", "email sequence", "ads copy", "landing page copy", "sales page"]

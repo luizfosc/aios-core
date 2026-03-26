@@ -1,0 +1,64 @@
+# Workflow: Hook Sprint
+# Geração rápida de hooks para brainstorm ou teste A/B
+
+name: wf-hook-sprint
+trigger: "*generate-hooks {topic}"
+description: "Sprint focado em hooks — gera 10+ variações para brainstorm, teste A/B ou banco de hooks"
+owner: ai-reels-chief
+
+# Input
+input:
+  required:
+    - topic: "Tema/assunto"
+  optional:
+    - quantity: "Número de hooks (default: 10)"
+    - formulas: "Fórmulas específicas a usar (default: todas as 7)"
+    - constraint: "Restrição (ex: sem números, sem perguntas)"
+
+# Steps
+steps:
+
+  - step: 1
+    name: "Geração massiva"
+    agent: hook-architect
+    command: "*generate-hook --batch"
+    description: "Gerar 10+ hooks usando todas as 7 fórmulas"
+    output: "hooks_raw.md — lista com fórmula, trigger e score estimado"
+    veto_conditions:
+      - "Hook sem fórmula identificável → DESCARTAR"
+      - "Dados não verificáveis no hook → MARCAR como 'needs-verification'"
+
+  - step: 2
+    name: "Ranking e seleção"
+    agent: hook-architect
+    command: "*compare-hooks"
+    description: "Ranquear hooks por score (curiosity gap + viabilidade visual + trigger strength)"
+    output: "hooks_ranked.md — top 5 com justificativa"
+    gate:
+      id: QG-AR-1-SPRINT
+      criteria: "Top 5 todos com score >= 7/10"
+      on_fail: "Gerar mais hooks para preencher top 5"
+
+  - step: 3
+    name: "Apresentação"
+    agent: ai-reels-chief
+    description: "Apresentar top 5 hooks ao usuário com contexto"
+    checkpoint:
+      type: human_blocking
+      message: |
+        Top 5 hooks para "{topic}":
+        {ranked_hooks}
+        Escolher 1 para produção completa (*produce-reel) ou salvar todos no banco?
+
+# Output
+output:
+  files:
+    - "hooks_ranked.md — top 5 hooks ranqueados"
+  next_action: "Usuário escolhe: *produce-reel com hook selecionado OU salvar no banco"
+
+# Regras
+rules:
+  - "Workflow rápido — sem fases de produção (voz, vídeo, edição)"
+  - "Foco em quantidade + qualidade de hooks"
+  - "Hooks salvos podem ser usados em futuras produções"
+  - "Tempo estimado: 5-10 min"

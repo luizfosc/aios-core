@@ -1,0 +1,99 @@
+# AI Reels Squad — Configuration
+# Pipeline de produção de Instagram Reels com IA (voz + avatar + edição)
+
+name: ai-reels
+version: "3.1"
+status: developing
+description: "Produção automatizada de Instagram Reels 15-90s com clone de voz e avatar IA"
+
+# Stack técnica
+stack:
+  tts: "ElevenLabs Creator (PVC, eleven_multilingual_v2)"
+  lip_sync: "HeyGen Creator (web UI)"
+  editing: "Remotion 4.0.427"
+  captions: "Whisper (word-level) + @remotion/captions"
+  audio_norm: "FFmpeg (-14 LUFS)"
+
+# Custos mensais
+costs:
+  elevenlabs: "$22/mês"
+  heygen: "$29/mês"
+  total: "$51/mês"
+  capacity: "~15 reels/mês (limitado por HeyGen 15min/mês)"
+
+# Agentes
+agents:
+  - name: ai-reels-chief
+    tier: T0
+    role: "Orquestrador pipeline 7 fases"
+  - name: hook-architect
+    tier: T1
+    role: "Hooks — primeiros 3 segundos"
+  - name: script-director
+    tier: T1
+    role: "Roteiro 7 beats + direção 10D + captions"
+  - name: voice-engineer
+    tier: T1
+    role: "Clonagem de voz PT-BR via ElevenLabs"
+  - name: avatar-director
+    tier: T1
+    role: "Lip sync talking head via HeyGen"
+  - name: video-composer
+    tier: T2
+    role: "Pós-produção programática via Remotion"
+  - name: qa-sentinel
+    tier: T2
+    role: "QA binário 14 itens + gate humano"
+
+# Quality gates
+quality_gates:
+  - id: QG-AR-1
+    phase: "Hook"
+    criteria: "Score >= 8/10, curiosity gap + fórmula comprovada"
+    owner: hook-architect
+  - id: QG-AR-2
+    phase: "Script"
+    criteria: "7 beats completos, duração 15-90s, timing validado"
+    owner: script-director
+  - id: QG-AR-3
+    phase: "Voz"
+    criteria: "Fidelidade >= 80%, zero artefatos, pronúncia PT-BR"
+    owner: voice-engineer
+  - id: QG-AR-4
+    phase: "Lip Sync"
+    criteria: "Sync sem dessincronização + identidade preservada"
+    owner: avatar-director
+  - id: QG-AR-5
+    phase: "Edição"
+    criteria: "1080x1920 9:16, legendas, duração correta"
+    owner: video-composer
+  - id: QG-AR-6
+    phase: "Caption"
+    criteria: "Voice DNA pass, CTA específico, guardrail 10/10"
+    owner: script-director
+  - id: QG-AR-7
+    phase: "QA Final"
+    criteria: "14/14 checklist + Devil's Advocate + aprovação Tiago"
+    owner: qa-sentinel
+
+# Veto conditions globais
+veto_conditions:
+  - "Nenhuma fase pode ser pulada — sequência rígida 1→7"
+  - "Reel sem aprovação humana (Tiago) NUNCA é publicado"
+  - "Hook sem fórmula comprovada = VETO"
+  - "Script com menos de 7 beats = VETO"
+  - "Áudio com artefatos audíveis = VETO"
+  - "Lip sync com dessincronização visível = VETO"
+  - "Vídeo fora de 1080x1920 9:16 = VETO"
+  - "Caption sem Voice DNA = VETO"
+  - "QA com menos de 14/14 = VETO"
+
+# Output specs
+output:
+  resolution: "1080x1920"
+  aspect_ratio: "9:16"
+  fps: 25
+  codec: "H.264"
+  audio: "-14 LUFS (normalizado FFmpeg)"
+  format: "MP4"
+  duration: "15-90s"

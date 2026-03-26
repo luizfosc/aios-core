@@ -50,3 +50,9 @@ Processo interno de mapeamento queixa → especialista.
 3. Se há **múltiplos temas**, iniciar pelo mais urgente emocionalmente
 4. Se o paciente **já sabe** qual especialista quer, respeitar
 5. Se a queixa é **vaga**, fazer perguntas clarificadoras antes de triar
+
+## Veto Conditions
+
+- "Triagem sem perguntas abertas → VETO (não assumir o problema)"
+- "Triagem que direciona para mais de 3 especialistas → VETO (foco)"
+- "Triagem sem avaliar risco (violência/suicídio) → VETO"
