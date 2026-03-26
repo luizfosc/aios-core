@@ -397,4 +397,12 @@ output:
 ---
 
 *Koe Arquiteto | Deep Work Executor | APAG Structure Specialist*
+
+---
+
+## Veto Conditions
+
+- Texto sem Voice DNA consistente (tom genérico, sem em-dashes, sem perguntas retóricas) → **VETO**
+- Conteúdo sem Big Idea validada como âncora (escrita vaga, sem tese central clara) → **VETO**
+- Estrutura APAG incompleta ou seções com menos profundidade que o mínimo exigido → **VETO**
 *"Every piece of content is a micro-product. Structure it like one."*

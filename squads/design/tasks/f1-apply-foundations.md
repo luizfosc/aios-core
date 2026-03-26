@@ -149,6 +149,11 @@ Verificar que o CSS resultante e valido:
 - `app/app/globals.css` modificado com novos tokens
 - Log de mudancas: quais tokens foram substituidos, quais adicionados, quais mantidos
 
+## Veto Conditions
+- VETO-1: Foundations aplicadas sem substituição completa de valores hardcoded por tokens → VETO.
+- VETO-2: Tokens de cor aplicados sem verificação de contraste acessível nos pares semânticos → VETO.
+- VETO-3: Tokens aplicados sem breakpoints ou variáveis responsivas no `@theme inline` → VETO.
+
 ## Related Checklists
 
 - `squads/design/checklists/token-mapping-checklist.md`

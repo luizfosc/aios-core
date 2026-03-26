@@ -263,3 +263,11 @@ handoff:
     - offer_architecture.yaml
   notes: "Oferta criada. Validar com avatar real antes de lançar."
 ```
+
+---
+
+## Veto Conditions
+
+- Oferta sem mecanismo único que a diferencia das alternativas do mercado → **VETO**
+- Value-to-price ratio abaixo de 10:1 ou transformação não articulada com clareza → **VETO**
+- Promessa de resultado sem especificidade mensurável (vaga, sem prazo ou métrica) → **VETO**

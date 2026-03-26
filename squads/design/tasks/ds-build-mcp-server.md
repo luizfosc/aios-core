@@ -78,6 +78,11 @@ Core data exposed:
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Servidor MCP expondo componentes sem tokens de design system estruturados como metadados → VETO.
+- VETO-2: API do servidor sem endpoint de verificação de acessibilidade para os componentes servidos → VETO.
+- VETO-3: Componentes servidos sem metadados de responsividade (breakpoints e variantes responsivas) → VETO.
+
 ## Process Guards
 - **Execution Type:** `Hybrid`
 - **Dependencies:** depends_on: `[]` · enables: `[]` · workflow: `design-system`

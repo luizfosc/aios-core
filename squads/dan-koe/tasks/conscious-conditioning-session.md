@@ -337,3 +337,10 @@ handoff:
     - conscious_conditioning_session.yaml
   notes: "Sessão completa. O protocolo de 21 dias começa AMANHÃ. Checkpoint no Dia 7."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

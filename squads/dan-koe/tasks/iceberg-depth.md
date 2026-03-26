@@ -335,3 +335,10 @@ After completion: → koe-arquiteto (se verdict = MASTERPIECE ou STRONG) para cr
 
 ---
 *Task: KOE_SIN_003 | Agent: koe-sintetizador | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

@@ -23,3 +23,8 @@ Validar a estratégia final de palestra antes da execução.
 - QG-2: Coerência metodológica.
 - QG-3: Praticidade operacional.
 - QG-4: Métricas definidas.
+
+## Veto Conditions
+- VETO-1: Palestra sem estrutura narrativa clara → VETO.
+- VETO-2: Conteúdo sem adaptação ao público-alvo → VETO.
+- VETO-3: Apresentação sem call-to-action definido → VETO.

@@ -275,3 +275,11 @@ handoff:
     - product_ecosystem.yaml
   notes: "Ecossistema desenhado. Criar primeiro produto do tier prioritario IMEDIATAMENTE."
 ```
+
+---
+
+## Veto Conditions
+
+- Ecossistema sem escada de valor clara (cada produto deve levar naturalmente ao próximo) → **VETO**
+- Produto em tier que o criador não tem capacidade real de entregar no prazo definido → **VETO**
+- Value ladder sem produto gratuito ou de entrada que atrai audiência antes de monetizar → **VETO**

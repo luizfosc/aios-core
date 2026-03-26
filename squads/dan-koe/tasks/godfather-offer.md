@@ -286,3 +286,11 @@ handoff:
     - godfather_offer.yaml
   notes: "Godfather Offer criada. Testar com 5-10 avatares reais antes de lançar publicamente."
 ```
+
+---
+
+## Veto Conditions
+
+- Value-to-price ratio abaixo de 10:1 ou bônus genéricos sem matar objeção específica → **VETO**
+- Escassez ou urgência fabricada (sem razão estrutural legítima) → **VETO**
+- Criador sem capacidade real de cumprir tudo o que promete na oferta → **VETO**

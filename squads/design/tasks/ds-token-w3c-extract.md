@@ -101,5 +101,10 @@ Scan codebase for design values (colors, spacing, typography, shadows, etc.), no
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Tokens extraídos fora do formato W3C DTCG v1.0 (`$value`, `$type`, `$description` ausentes) → VETO.
+- VETO-2: Tokens de cor sem validação de contraste acessível (pares semânticos sem ratio WCAG AA) → VETO.
+- VETO-3: Tokens sem cobertura de responsividade (breakpoints e viewport tokens ausentes) → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

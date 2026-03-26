@@ -379,3 +379,10 @@ handoff:
     - opb_audit.yaml
   notes: "Auditoria completa. Focar no Gap #1 primeiro. Repetir auditoria em 90 dias."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

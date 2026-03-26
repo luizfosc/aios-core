@@ -336,3 +336,11 @@ handoff:
     - brand_lead_gen.yaml
   notes: "Sistema de lead gen desenhado. Implementar lead magnets primeiro, depois ativar content plan."
 ```
+
+---
+
+## Veto Conditions
+
+- Lead magnet genérico sem conexão direta com a oferta principal do criador → **VETO**
+- Sistema de lead gen dependente de plataforma única sem diversificação de canal → **VETO**
+- Funil sem sequência de nutrição que converte autonomia em confiança antes de vender → **VETO**

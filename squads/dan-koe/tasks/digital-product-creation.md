@@ -253,3 +253,11 @@ handoff:
     - digital_product.yaml
   notes: "Produto arquitetado. Comecar criacao na Semana 1 IMEDIATAMENTE. Ship in 30 days."
 ```
+
+---
+
+## Veto Conditions
+
+- Produto sem transformação claramente definida (do estado atual ao estado desejado) → **VETO**
+- Ideia de produto não validada com dados de audiência real ou de mercado → **VETO**
+- Conteúdo do produto genérico, sem IP proprietário ou perspectiva única do criador → **VETO**

@@ -325,6 +325,11 @@ Phase 4: Enforcement (1 sprint)
 - Timeline assumes team works on migration alongside features
 - Brad says: "Phased rollout = safe rollout. No big-bang rewrites."
 - After this, hand off to Merovingian: *agent atlas for component building
+## Veto Conditions
+- VETO-1: Estratégia de migração sem mapeamento completo de tokens para os componentes afetados → VETO.
+- VETO-2: Plano de migração sem checklist de acessibilidade por fase → VETO.
+- VETO-3: Migração sem validação de responsividade nos componentes de maior impacto → VETO.
+
 ## Related Checklists
 
 - `squads/design/checklists/ds-migration-readiness-checklist.md`

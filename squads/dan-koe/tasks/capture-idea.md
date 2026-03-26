@@ -255,3 +255,10 @@ After completion: → koe-coletor (KOE_COL_002 para processamento batch) ou → 
 
 ---
 *Task: KOE_COL_001 | Agent: koe-coletor | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

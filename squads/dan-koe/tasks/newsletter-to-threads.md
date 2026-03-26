@@ -445,3 +445,11 @@ output:
 
 *Koe Distribuidor | Content Cascade Executor | Thread Specialist*
 *"A thread is a newsletter in compressed form."*
+
+---
+
+## Veto Conditions
+
+- Thread sem hook irresistível no primeiro tweet (sem razão para clicar em "Ver mais") → **VETO**
+- Conteúdo adaptado que perdeu a voz do criador na compressão (parece genérico ou corporativo) → **VETO**
+- Tweets standalone que não funcionam de forma independente (dependem de contexto externo) → **VETO**

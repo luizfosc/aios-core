@@ -331,6 +331,11 @@ a11y_audit:
 **Brad says:** "Accessibility isn't a feature. It's a quality bar. Zero critical issues or it doesn't ship."
 
 
+## Veto Conditions
+- VETO-1: Auditoria com issues críticos (critical > 0) sem plano de remediação imediata → VETO.
+- VETO-2: Padrão visual sem teste de acessibilidade completo (contraste, teclado e ARIA não verificados) → VETO.
+- VETO-3: Componentes interativos sem responsividade verificada em mobile (target size < 24px) → VETO.
+
 ## Related Checklists
 
 - `squads/design/checklists/ds-accessibility-wcag-checklist.md`

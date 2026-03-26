@@ -340,3 +340,10 @@ handoff:
     - identity_evidence_file.md
   notes: "Protocolo criado. Começar ritual matinal AMANHÃ. Primeiro evidence logging à noite."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

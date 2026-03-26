@@ -265,3 +265,10 @@ After completion: → koe-arquiteto (se readiness = ready, para deep work na fas
 
 ---
 *Task: KOE_COL_005 | Agent: koe-coletor | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

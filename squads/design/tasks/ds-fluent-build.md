@@ -106,5 +106,10 @@ Generate a production-ready component following Microsoft Fluent 2 design patter
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Componente Fluent 2 sem mapeamento de tokens do design system (ausência de CSS custom properties) → VETO.
+- VETO-2: Padrão visual Fluent sem teste de acessibilidade (WCAG AA e padrões Fluent de foco não verificados) → VETO.
+- VETO-3: Componente sem responsividade verificada (não testado nos breakpoints definidos pelo Fluent 2) → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

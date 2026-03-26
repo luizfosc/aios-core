@@ -296,3 +296,11 @@ After completion: → koe-sintetizador (KOE_SIN_002 para naming + KOE_SIN_003 pa
 
 ---
 *Task: KOE_SIN_001 | Agent: koe-sintetizador | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Síntese usando domínios da mesma área (ex: marketing + copywriting) sem cruzamento real → **VETO**
+- Big Idea que falha no surprise test — óbvia, clichê ou variação do que já existe → **VETO**
+- Insight sem acionabilidade clara para a audiência (filosofia vazia sem caminho prático) → **VETO**

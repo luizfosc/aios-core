@@ -363,3 +363,10 @@ handoff:
     - leverage_stack.yaml
   notes: "Stack avaliado e plano de 90 dias criado. Revisar scores mensalmente."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

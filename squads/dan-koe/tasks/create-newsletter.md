@@ -501,3 +501,11 @@ output:
 
 *Koe Arquiteto | Deep Work Executor | Newsletter Specialist*
 *"Your newsletter is the foundation. Everything else is a derivative."*
+
+---
+
+## Veto Conditions
+
+- Newsletter sem estrutura APAG completa ou abaixo de 1500 palavras → **VETO**
+- Texto sem Voice DNA consistente (ausência de em-dashes, perguntas retóricas, tom direto) → **VETO**
+- Menos de 15 cascade fragments identificados para distribuição → **VETO**

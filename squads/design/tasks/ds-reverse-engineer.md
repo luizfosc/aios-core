@@ -183,6 +183,11 @@ recommendations:
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Engenharia reversa sem mapeamento de tokens para os padrões identificados no sistema validado → VETO.
+- VETO-2: Componentes identificados sem avaliação de acessibilidade (herança de padrões inacessíveis bloqueada) → VETO.
+- VETO-3: Sistema revertido sem verificação de responsividade dos padrões extraídos → VETO.
+
 ## Process Guards
 - **Execution Type:** `Hybrid`
 - **Dependencies:** depends_on: `[]` · enables: `[]` · workflow: `design-system`

@@ -102,5 +102,10 @@ export const FormField: React.FC<FormFieldProps> = ({
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Componente sem token de design system (valores hardcoded detectados) → VETO.
+- VETO-2: Padrão visual sem teste de acessibilidade (herança de átomos acessíveis não verificada) → VETO.
+- VETO-3: Design sem responsividade verificada (molécula não testada em múltiplos breakpoints) → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

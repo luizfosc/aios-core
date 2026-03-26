@@ -470,3 +470,10 @@ output:
 
 *Koe Distribuidor | Video Cascade Specialist | Short-Form Architect*
 *"One 20-minute video should generate a week of short-form content."*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

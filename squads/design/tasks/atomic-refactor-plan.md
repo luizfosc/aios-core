@@ -258,5 +258,10 @@ Each generated prompt includes:
 - Use SHARED_REQUESTS.md to coordinate cross-agent dependencies
 
 
+## Veto Conditions
+- VETO-1: Plano de refatoração sem mapeamento de tokens para os componentes identificados → VETO.
+- VETO-2: Componentes no plano sem verificação de acessibilidade atual (linha de base a ser preservada) → VETO.
+- VETO-3: Plano sem avaliação de responsividade dos componentes candidatos → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

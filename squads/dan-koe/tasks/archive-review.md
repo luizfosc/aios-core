@@ -272,3 +272,10 @@ After completion: → koe-sintetizador (com ideias phoenix de signal >= 8) e →
 
 ---
 *Task: KOE_COL_006 | Agent: koe-coletor | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

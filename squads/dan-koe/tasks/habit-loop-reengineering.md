@@ -301,3 +301,10 @@ handoff:
     - habit_loop_reengineering.yaml
   notes: "Loop redesenhado. Começar com versão de 2 minutos amanhã. Não pular direto para versão completa."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

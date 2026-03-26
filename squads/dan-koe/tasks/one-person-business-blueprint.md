@@ -274,3 +274,11 @@ handoff:
     - opb_blueprint.yaml
   notes: "Blueprint completo. Priorizar o pilar com menor score e trabalhar por 30 dias."
 ```
+
+---
+
+## Veto Conditions
+
+- Blueprint sem soberania real (modelo depende de plataformas, clientes ou empregadores externos para funcionar) → **VETO**
+- Arquitetura sem Personal Monopoly definido como base de posicionamento → **VETO**
+- Estratégia sem dados reais do criador (baseada em suposições sem auditoria de habilidades e ativos) → **VETO**

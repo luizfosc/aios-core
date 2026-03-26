@@ -289,3 +289,11 @@ handoff:
     - pricing_architecture.yaml
   notes: "Arquitetura de precificação completa. Testar preço com beta group antes do lançamento público."
 ```
+
+---
+
+## Veto Conditions
+
+- Preço sem justificativa de valor articulada em uma frase clara → **VETO**
+- Estrutura de tiers sem diferenciação real de transformação entre os níveis → **VETO**
+- Pricing sem âncora de valor (sem comparativo que torna o preço obviamente razoável) → **VETO**

@@ -329,3 +329,10 @@ handoff:
     - paradox_resolution.yaml
   notes: "Paradoxo resolvido via integração. Monitorar métricas semanalmente por 90 dias."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

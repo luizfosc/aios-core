@@ -309,3 +309,10 @@ handoff:
     - sovereignty_test.yaml
   notes: "Teste de soberania completo. Revisar scores a cada 30 dias."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

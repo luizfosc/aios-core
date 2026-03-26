@@ -253,3 +253,10 @@ handoff:
     - risk_reversal_strategy.yaml
   notes: "Estratégia de risco desenhada. Integrar na oferta principal e validar com clientes reais."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

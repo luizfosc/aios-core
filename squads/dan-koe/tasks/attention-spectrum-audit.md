@@ -231,3 +231,10 @@ handoff:
     - attention_spectrum_audit.yaml
   notes: "Auditoria completa. Aplicar prescricoes IMEDIATAMENTE. Re-auditar em 2 semanas."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

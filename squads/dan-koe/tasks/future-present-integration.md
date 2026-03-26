@@ -337,3 +337,10 @@ handoff:
     - future_present_integration.yaml
   notes: "Integração completa. Sprint 1 começa AMANHÃ. Review no dia 30."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

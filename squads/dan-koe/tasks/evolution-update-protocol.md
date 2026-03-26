@@ -214,3 +214,10 @@ handoff:
     - affected DNA files (updated)
   notes: "Update evolutivo completo. Proximo check quando nova fonte for identificada."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

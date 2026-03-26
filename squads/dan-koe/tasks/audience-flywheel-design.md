@@ -262,3 +262,11 @@ handoff:
     - audience_flywheel.yaml
   notes: "Flywheel desenhado. Foco no estagio mais fraco por 30 dias antes de otimizar outros."
 ```
+
+---
+
+## Veto Conditions
+
+- Flywheel sem mecanismo de amplificação por prova social (depende só de distribuição paga) → **VETO**
+- Estratégia de audiência sem dados reais do estágio atual (baseada em expectativas sem auditoria) → **VETO**
+- Meta de crescimento irrealista ou sem métricas mensuráveis para os 90 dias → **VETO**

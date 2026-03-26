@@ -246,6 +246,11 @@ Brad: "Override recorded. Keeping both."
 - Manual overrides are respected and documented
 - Run this after every audit to prevent pattern regression
 - Brad says: "Numbers don't lie. 82% reduction = real savings."
+## Veto Conditions
+- VETO-1: Consolidação gerando tokens sem nomenclatura semântica (valores literais como `#0066CC` sem alias) → VETO.
+- VETO-2: Padrões consolidados sem verificação de contraste acessível nos pares de cores → VETO.
+- VETO-3: Consolidação sem avaliação de uso responsivo dos padrões de espaçamento e tipografia → VETO.
+
 ## Related Checklists
 
 - `squads/design/checklists/ds-component-quality-checklist.md`

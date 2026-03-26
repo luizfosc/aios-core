@@ -305,6 +305,11 @@ Ready for Merovingian to build components or generate migration strategy.
 - Export formats stay in sync - update tokens.yaml and regenerate all
 - Brad recommends: Run *migrate next to create migration strategy
 - For component generation, hand off to Merovingian: *agent atlas
+## Veto Conditions
+- VETO-1: Tokens extraídos sem nomenclatura semântica (uso de cores literais como `blue-500` em vez de `primary`) → VETO.
+- VETO-2: Extração sem validação de cobertura mínima de 80% dos padrões consolidados → VETO.
+- VETO-3: Tokens sem verificação de contraste acessível (pares foreground/background sem ratio WCAG AA) → VETO.
+
 ## Related Checklists
 
 - `squads/design/checklists/ds-component-quality-checklist.md`

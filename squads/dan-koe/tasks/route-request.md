@@ -247,3 +247,10 @@ After completion: → koe-[target-agent] for task execution with full context pa
 
 ---
 *Task: KOE_CHIEF_002 | Agent: koe-chief | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

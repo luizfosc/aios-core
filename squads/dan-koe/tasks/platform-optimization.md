@@ -497,3 +497,10 @@ output:
 
 *Koe Distribuidor | Platform Optimizer | Data-Driven Iteration Specialist*
 *"Don't guess what works — let the data tell you."*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

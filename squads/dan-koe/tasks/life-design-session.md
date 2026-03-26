@@ -422,3 +422,10 @@ handoff:
     - life_design.yaml
   notes: "Life design completo. Usar business constraints como FILTRO para todas as decisões de negócio."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

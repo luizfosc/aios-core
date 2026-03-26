@@ -304,3 +304,10 @@ After completion: → koe-coletor for Fill Phase (curated consumption + idea cap
 
 ---
 *Task: KOE_CHIEF_005 | Agent: koe-chief | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

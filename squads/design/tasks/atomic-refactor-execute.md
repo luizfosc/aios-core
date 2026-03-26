@@ -387,5 +387,10 @@ Uma says: "Clean architecture is not optional."
 - `squads/design/checklists/atomic-refactor-checklist.md`
 - `squads/design/checklists/ds-component-quality-checklist.md`
 
+## Veto Conditions
+- VETO-1: Componente refatorado sem uso exclusivo de tokens de design system (zero valores hardcoded) → VETO.
+- VETO-2: Componente refatorado sem testes de acessibilidade passando (WCAG AA mínimo) → VETO.
+- VETO-3: Componente refatorado sem verificação de responsividade em todos os breakpoints → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

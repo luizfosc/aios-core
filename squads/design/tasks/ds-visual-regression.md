@@ -126,5 +126,10 @@ Each Storybook story serves 5 purposes simultaneously:
 
 - `squads/design/checklists/design-fidelity-checklist.md`
 
+## Veto Conditions
+- VETO-1: Testes de regressão visual sem cobertura de componentes com tokens de design system → VETO.
+- VETO-2: Pipeline sem snapshots de estados de acessibilidade (foco, hover, disabled) → VETO.
+- VETO-3: Testes sem variantes responsivas (apenas desktop sem mobile/tablet) → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

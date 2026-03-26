@@ -309,3 +309,11 @@ handoff:
     - personal_monopoly.yaml
   notes: "Monopoly desenhado. Usar como filtro para TODA decisão de conteúdo e produto."
 ```
+
+---
+
+## Veto Conditions
+
+- Posicionamento que descreve uma categoria de mercado existente com competidores (nicho, não monopoly) → **VETO**
+- Interseção sem fundação em experiência ou habilidade real do criador → **VETO**
+- Resultado genérico que qualquer criador poderia reivindicar sem diferenciação verificável → **VETO**

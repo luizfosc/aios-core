@@ -284,3 +284,10 @@ After completion: → koe-coletor (KOE_COL_005 — Active Recovery para processa
 
 ---
 *Task: KOE_COL_004 | Agent: koe-coletor | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

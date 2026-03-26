@@ -266,6 +266,11 @@ Output shows Vue-specific patterns (v-btn, el-button, etc.)
 - v4.0: Also scan for animation/transition values as motion token candidates
 - v4.0: Check machine-readability score (Storybook, structured tokens, docs) per agentic-ds-principles.md
 - v4.0: Use *motion-audit for deep animation analysis, *agentic-audit for full agentic readiness
+## Veto Conditions
+- VETO-1: Auditoria sem inventário de tokens existentes (não é possível avaliar sem baseline) → VETO.
+- VETO-2: Padrões visuais sem verificação de acessibilidade nos componentes identificados → VETO.
+- VETO-3: Relatório sem mapeamento de responsividade dos padrões encontrados → VETO.
+
 ## Related Checklists
 
 - `squads/design/checklists/ds-component-quality-checklist.md`

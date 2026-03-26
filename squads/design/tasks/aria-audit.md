@@ -516,6 +516,11 @@ aria_audit:
 **Brad says:** "First rule of ARIA: Don't use ARIA. Use semantic HTML. Second rule: If you use ARIA, use it correctly."
 
 
+## Veto Conditions
+- VETO-1: Componentes com `aria-hidden` em elementos focalizáveis sem correção documentada → VETO.
+- VETO-2: Padrão visual sem teste de acessibilidade (roles ARIA inválidos não corrigidos) → VETO.
+- VETO-3: Formulários e modais sem verificação de responsividade e comportamento em mobile → VETO.
+
 ## Related Checklists
 
 - `squads/design/checklists/ds-accessibility-wcag-checklist.md`

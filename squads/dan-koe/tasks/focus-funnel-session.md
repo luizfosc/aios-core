@@ -230,3 +230,10 @@ handoff:
     - focus_funnel_session.yaml
   notes: "Focus Funnel completo. Implementar eliminacoes IMEDIATAMENTE. Automacoes e delegacoes em 7 dias."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

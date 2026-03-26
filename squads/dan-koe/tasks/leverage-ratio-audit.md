@@ -468,3 +468,10 @@ output:
 
 *Koe Distribuidor | Leverage Auditor | Efficiency Analyst*
 *"If you're spending more time creating than distributing, you have a content job, not a content system."*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

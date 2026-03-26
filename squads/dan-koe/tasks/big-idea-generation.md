@@ -340,3 +340,11 @@ After completion: → koe-arquiteto para criação de conteúdo usando o Big Ide
 
 ---
 *Task: KOE_SIN_004 | Agent: koe-sintetizador | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Big Idea sem cruzamento de pelo menos 2 domínios distintos → **VETO**
+- Framework sem ângulo contrarian verificável (apenas reformulação do óbvio) → **VETO**
+- Iceberg Composite abaixo de 7 ou etapa de validação pulada → **VETO**

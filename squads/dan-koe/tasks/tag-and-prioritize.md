@@ -265,3 +265,10 @@ After completion: → koe-coletor (self — para KOE_COL_004 se consumo curado n
 
 ---
 *Task: KOE_COL_003 | Agent: koe-coletor | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

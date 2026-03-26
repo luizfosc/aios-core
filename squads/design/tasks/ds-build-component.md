@@ -345,5 +345,10 @@ Output includes additional features:
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Componente sem token de design system (valores hardcoded detectados) → VETO.
+- VETO-2: Padrão visual sem teste de acessibilidade (contraste < 4.5:1 ou sem ARIA) → VETO.
+- VETO-3: Design sem responsividade verificada (sem breakpoints ou layout fixo) → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

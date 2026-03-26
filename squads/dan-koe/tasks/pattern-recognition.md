@@ -286,3 +286,10 @@ After completion: → koe-sintetizador (KOE_SIN_001/004 para síntese dos padrõ
 
 ---
 *Task: KOE_SIN_005 | Agent: koe-sintetizador | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

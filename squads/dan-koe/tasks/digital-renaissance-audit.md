@@ -327,3 +327,10 @@ After completion: → koe-chief (para informar pipeline strategy com base na sa�
 
 ---
 *Task: KOE_SIN_006 | Agent: koe-sintetizador | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

@@ -313,3 +313,10 @@ After completion: → koe-[primary-agent] for immediate action, with full contex
 
 ---
 *Task: KOE_CHIEF_003 | Agent: koe-chief | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

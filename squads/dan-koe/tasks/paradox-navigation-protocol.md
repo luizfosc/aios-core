@@ -265,3 +265,10 @@ handoff:
     - paradox_navigation.yaml
   notes: "Paradoxo navegado com branching explicito. Reavaliar na data marcada."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

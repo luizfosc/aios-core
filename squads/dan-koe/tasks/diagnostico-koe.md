@@ -266,3 +266,10 @@ After completion: → koe-[agent-identified] for specialized task execution base
 
 ---
 *Task: KOE_CHIEF_001 | Agent: koe-chief | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

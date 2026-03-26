@@ -227,3 +227,10 @@ handoff:
     - creative_energy_management.yaml
   notes: "Rotina de energia desenhada. Implementar por 7 dias e ajustar. Nao tentar perfeicao no dia 1."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

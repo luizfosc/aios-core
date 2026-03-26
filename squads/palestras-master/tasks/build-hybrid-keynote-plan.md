@@ -24,3 +24,8 @@ Construir plano híbrido de keynote usando forças complementares dos satélites
 - QG-1: Mensagem única sem conflito entre blocos.
 - QG-2: Progressão narrativa consistente.
 - QG-3: CTA final coerente com objetivo.
+
+## Veto Conditions
+- VETO-1: Palestra sem estrutura narrativa clara → VETO.
+- VETO-2: Conteúdo sem adaptação ao público-alvo → VETO.
+- VETO-3: Apresentação sem call-to-action definido → VETO.

@@ -291,3 +291,10 @@ After completion: → koe-sintetizador (KOE_SIN_003 para Iceberg Depth Test) →
 
 ---
 *Task: KOE_SIN_002 | Agent: koe-sintetizador | Version: 1.0*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

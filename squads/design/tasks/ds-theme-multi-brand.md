@@ -86,5 +86,10 @@ Configure multi-brand token architecture enabling multiple brands to share the s
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Tema multi-marca sem tokens por marca (valores hardcoded fora da camada de tema) → VETO.
+- VETO-2: Nenhuma marca validada com teste de acessibilidade (contraste WCAG AA por brand) → VETO.
+- VETO-3: Temas sem verificação de responsividade (breakpoints não cobertos por todas as marcas) → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

@@ -275,3 +275,10 @@ handoff:
     - value_hierarchy.yaml
   notes: "Hierarquia desenhada. Usar como base para arquitetar oferta e precificação."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

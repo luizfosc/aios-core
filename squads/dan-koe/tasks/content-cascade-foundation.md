@@ -468,3 +468,10 @@ output:
 
 *Koe Arquiteto | Content Cascade Architect | Leverage Maximizer*
 *"Create once, distribute forever."*
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

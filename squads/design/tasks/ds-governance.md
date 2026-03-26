@@ -183,5 +183,10 @@ Any product team can propose components. The DS Core Team reviews all PRs.
 - [ ] All generated documentation is actionable (contains tables, checklists, or templates — not just prose)
 
 
+## Veto Conditions
+- VETO-1: Modelo de governança sem política de tokens (ausência de regras de adoção e deprecação) → VETO.
+- VETO-2: Governança sem requisitos de acessibilidade como critério de aceite para novos componentes → VETO.
+- VETO-3: Fluxo de contribuição sem checklist de responsividade obrigatório por componente → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

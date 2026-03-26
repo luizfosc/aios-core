@@ -96,5 +96,10 @@ Calculate an AI-readiness score (0-100) for your design system by checking struc
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Design system sem tokens estruturados legíveis por máquina (machine-readability score < 60%) → VETO.
+- VETO-2: Componentes sem metadados de acessibilidade (ausência de ARIA docs ou conformidade WCAG) → VETO.
+- VETO-3: Sistema sem documentação de responsividade acessível por agentes (breakpoints não documentados) → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

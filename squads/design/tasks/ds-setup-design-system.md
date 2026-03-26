@@ -293,5 +293,10 @@ User selects 1
 - `squads/design/checklists/ds-component-quality-checklist.md`
 - `squads/design/checklists/ds-pattern-audit-checklist.md`
 
+## Veto Conditions
+- VETO-1: Setup sem estrutura de tokens definida (ausência de tokens.yaml ou equivalente) → VETO.
+- VETO-2: Design system configurado sem checklist de acessibilidade base (WCAG AA como padrão) → VETO.
+- VETO-3: Configuração sem suporte a responsividade (ausência de breakpoints no sistema de tokens) → VETO.
+
 ## Process Guards
 - **On Fail:** Stop execution, capture evidence, and return remediation steps before proceeding.

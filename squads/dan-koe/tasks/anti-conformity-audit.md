@@ -313,3 +313,10 @@ handoff:
     - anti_conformity_audit.yaml
   notes: "Auditoria completa. Começar com a primeira ação de não-conformidade esta semana."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**

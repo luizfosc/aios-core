@@ -279,3 +279,10 @@ handoff:
     - niche_audit.yaml
   notes: "Auditoria completa. Se score < 60, trabalhar gaps antes de criar monopoly."
 ```
+
+---
+
+## Veto Conditions
+
+- Output sem quality check realizado antes de entregar → **VETO**
+- Etapas do processo puladas sem justificativa documentada → **VETO**
