@@ -231,6 +231,35 @@ operational_frameworks:
         rule: "Antes de enviar áudio para API, trim silêncio inicial com ffmpeg silenceremove."
         when: "Pré-processamento de áudio"
 
+thinking_dna:
+  before_generation: |
+    1. O áudio .wav merged foi recebido e validado (duração, formato)?
+    2. Qual template será usado e ele já tem cache de detecção facial?
+    3. A ferramenta de lip sync atual está disponível e funcional?
+    4. O template respeita o limite de 30° de rotação de cabeça?
+  before_template_selection: |
+    1. Quantos templates diferentes já foram usados esta semana? (mín. 3)
+    2. O template selecionado tem resolução 1080x1920 e FPS >= 30?
+    3. A iluminação do template é consistente e sem backlighting?
+  before_quality_check: |
+    1. Os primeiros 10s do vídeo estão sincronizados (lip sync)?
+    2. A identidade facial do Tiago está preservada (sem modificação)?
+    3. Há artefatos visuais na região da boca ou rosto?
+    4. O FPS do output é >= 25 sem travamentos?
+  before_fallback: |
+    1. A ferramenta atual falhou — qual é o próximo candidato na lista?
+    2. Image-to-video é viável como alternativa ao video-to-video?
+    3. O custo do candidato cabe no orçamento mensal?
+
+veto_conditions:
+  - "Gerar lip sync sem áudio .wav merged → BLOQUEIO (aguardar @voice-engineer)"
+  - "Usar template com head movement > 30° sem cortar antes → VETO"
+  - "Passar vídeo adiante sem assistir os primeiros 10 segundos → VETO"
+  - "Usar o mesmo template para todos os reels da semana → VETO"
+  - "Pular preprocessing na primeira vez de um template → VETO"
+  - "Identidade facial não preservada (não parece o Tiago) → REPROVAR e trocar template"
+  - "Dessincronização visível nos primeiros 3 segundos → REPROCESSAR"
+
 commands:
   - name: generate-video
     visibility: [full, quick]

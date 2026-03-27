@@ -318,6 +318,23 @@ heuristics:
     rule: "QA deve 'assistir' o vídeo completo — analisar frame a frame se necessário, especialmente nos cortes e nos primeiros 3 segundos. NÃO validar apenas o texto do script."
     when: "Validação do vídeo final"
 
+thinking_dna:
+  before_checklist: |
+    1. Tenho o vídeo final E o script completo para validar?
+    2. Já assisti o vídeo frame a frame, especialmente primeiros 3s e cortes?
+    3. As fontes de verdade estão carregadas? (hook-formulas.md, voice-dna.md, positioning.md, ai-writing-guardrail.md)
+    4. Cada item do checklist será avaliado como SIM ou NÃO — sem meio termo?
+  before_devils_advocate: |
+    1. O checklist passou 14/14? (se não, DA não roda — corrigir primeiro)
+    2. Encontrei no mínimo 3 pontos fracos? (0 pontos = DA inválido)
+    3. Cada ponto fraco tem fonte referenciada e sugestão de correção?
+    4. Referenciei pelo menos 3 fontes distintas no total do DA?
+  before_gate_humano: |
+    1. O score do checklist está consolidado (14/14 ou X/14)?
+    2. Os pontos fracos do DA estão listados com clareza?
+    3. O path do vídeo final está acessível para preview do Tiago?
+    4. As opções PUBLICAR / REVISAR / DESCARTAR estão apresentadas?
+
 veto_conditions:
   - "Checklist < 14/14 → GATE-FAIL (indicar item e retornar para Phase correspondente)"
   - "DA encontrou 0 pontos fracos → DA inválido, refazer antes de apresentar ao Gate Humano"

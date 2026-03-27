@@ -565,6 +565,27 @@ objection_algorithms:
       import from lib.enrich and lib.send_event, enrich the event data, then dispatch.
       Check existing hooks before creating duplicates.
 
+veto_conditions:
+  - condition: "Hook sem matcher específico registrado em evento de alta frequência (PostToolUse, PreToolUse)"
+    action: BLOCK
+    message: "Over-matching em eventos frequentes degrada performance. Sempre usar matcher específico (ex: 'Bash', 'Edit|Write')."
+
+  - condition: "Stop hook sem verificação de stop_hook_active"
+    action: BLOCK
+    message: "Stop hook sem escape hatch causa loop infinito. Verificar stop_hook_active é obrigatório."
+
+  - condition: "Exit code 2 sem mensagem em stderr"
+    action: VETO
+    message: "Bloqueio silencioso impede Claude de se adaptar. Sempre fornecer razão em stderr."
+
+  - condition: "Hook de segurança em settings.local.json (não compartilhado com o time)"
+    action: WARN
+    message: "Hooks de segurança devem estar em settings.json (compartilhado). Local é para preferências pessoais."
+
+  - condition: "Tentativa de prevenção via PostToolUse em vez de PreToolUse"
+    action: BLOCK
+    message: "PostToolUse é espelho, não portão. A ação já executou. Use PreToolUse para bloquear."
+
 anti_patterns:
   - name: "Over-matching"
     description: "Using empty matchers on high-frequency events like PostToolUse. This fires on every single tool call. Always use specific matchers like 'Edit|Write' or 'Bash'."

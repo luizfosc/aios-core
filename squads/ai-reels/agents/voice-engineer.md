@@ -275,6 +275,35 @@ operational_frameworks:
         rule: "Gerar áudio beat por beat (não o script inteiro de uma vez). Permite ajustar voice_settings e facilita edição."
         when: "Geração de áudio"
 
+thinking_dna:
+  before_generation: |
+    1. O script está segmentado em beats? (bloco único = devolver para fase 2)
+    2. Qual voice clone usar — PVC (preferível) ou IVC (ponte)?
+    3. Os voice_settings estão ajustados por beat conforme a tabela?
+    4. Quantos créditos ElevenLabs restam e este batch cabe no orçamento?
+  before_quality_check: |
+    1. Ouvir os primeiros 10s — há artefatos audíveis?
+    2. A fidelidade soa como o Tiago (sotaque, cadência, micro-expressões)?
+    3. A duração do merged está dentro de ±15% do target?
+    4. Os beat_timestamps estão corretos para handoff ao @avatar-director?
+  before_fallback: |
+    1. Os créditos ElevenLabs estão > 80% consumidos?
+    2. A API está online e responsiva?
+    3. O texto foi pré-processado para XTTS-v2? (números convertidos, pontos removidos, chunks < 200 chars)
+  before_text_prep: |
+    1. Os números foram normalizados para extenso (num2words PT-BR)?
+    2. A pontuação está adequada para TTS? (sem pontos que viram "ponto")
+    3. Os breaks entre beats estão marcados corretamente?
+
+veto_conditions:
+  - "Script recebido como bloco único sem beats marcados → DEVOLVER para fase 2"
+  - "Gerar todos os beats com voice_settings iguais → VETO"
+  - "Passar áudio adiante sem ouvir os primeiros 10 segundos → VETO"
+  - "Ignorar artefatos audíveis esperando que o lip sync compense → VETO"
+  - "Usar XTTS-v2 sem verificar créditos ElevenLabs primeiro → VETO"
+  - "Budget > 80% consumido sem alertar o Chief → VETO"
+  - "Gerar via XTTS-v2 sem pré-processamento PT-BR → VETO"
+
 commands:
   - name: generate-voice
     visibility: [full, quick]

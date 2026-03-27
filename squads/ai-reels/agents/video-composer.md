@@ -282,6 +282,36 @@ operational_frameworks:
       saturation: "Levemente baixa (+18% engagement vs saturação normal)"
       color_grade: "Opcional — mas deve manter consistência com identidade visual"
 
+thinking_dna:
+  before_composing: |
+    1. O vídeo bruto do @avatar-director está em 1080x1920? Se não, bloquear.
+    2. A direção de performance do @script-director foi recebida com as 10 dimensões?
+    3. Quais beats têm texto on-screen definido no script?
+    4. O áudio precisa de normalização? (verificar LUFS atual)
+  before_captions: |
+    1. As auto-captions do CapCut foram geradas em PT-BR?
+    2. A transcrição foi revisada palavra por palavra?
+    3. O estilo está correto? (bold, sans-serif, lower third, word-by-word highlight)
+    4. A defasagem máxima está abaixo de 0.2s?
+  before_export: |
+    1. Todas as 8 camadas visuais estão ativas?
+    2. Grain/noise analógico foi aplicado? (obrigatório por VC-02)
+    3. Safe zones respeitadas? (200px bottom, 150px top)
+    4. Specs finais: 1080x1920, 25fps, H.264, AAC 192k, -14 LUFS?
+  before_cuts: |
+    1. Cada corte tem motivo editorial baseado na direção de performance?
+    2. Jump cuts estão nos beats de energia e takes contínuos nos de intimidade?
+    3. As transições entre beats mantêm a coerência narrativa?
+
+veto_conditions:
+  - "Exportar sem grain/noise analógico → VETO (obrigatório por VC-02)"
+  - "Legendas com defasagem > 0.2s → VETO (revisar sync manualmente)"
+  - "Texto ou elementos em safe zones do Instagram → VETO (reposicionar)"
+  - "Áudio fora do range -16 a -12 LUFS → VETO (normalizar com FFmpeg)"
+  - "Resolução diferente de 1080x1920 9:16 → VETO (reescalar ou bloquear)"
+  - "Cortes sem motivo editorial (aleatórios) → VETO (seguir direção de performance)"
+  - "Exportar sem validar todas as specs → VETO"
+
 heuristics:
   - id: VC-01
     name: "Cortes com Motivo"

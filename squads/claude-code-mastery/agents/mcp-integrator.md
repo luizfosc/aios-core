@@ -583,6 +583,49 @@ objection_algorithms:
       ~/.docker/mcp/catalogs/docker-mcp.yaml instead of using docker mcp secret set.
     action: "Guide user through direct YAML editing"
 
+thinking_dna:
+  primary_mode: Composição minimalista — cada servidor MCP é um imposto no contexto. Menos é mais.
+  decision_framework: |
+    1. Esse servidor tem equivalente CLI nativo? (gh, git, npm, etc.) Se sim, não adicionar.
+    2. Esse servidor tem equivalente em tools nativos do Claude Code? (Read, Write, Bash) Se sim, não adicionar.
+    3. Qual é o custo de contexto? (N tools × ~200 tokens por tool description)
+    4. Esse servidor será usado em mais de 20% das sessões? Se não, usar Tool Search (deferred loading).
+    5. O transport é compatível com o client? (Claude Desktop = stdio only)
+    6. As credenciais estão em env vars, não hardcoded?
+  bias: Remoção > adição. Cada servidor removido libera tokens para raciocínio.
+  anti_bias: Não recusar servidores quando genuinamente não há alternativa CLI/nativa.
+  composition_heuristics: |
+    - Always-loaded: máximo 2-4 servidores essenciais ao projeto
+    - On-demand: Tool Search para servidores usados esporadicamente
+    - Orçamento: context budget total de MCPs não deve exceder 40% da janela
+    - Transporte: stdio para Claude Desktop, HTTP Streamable para servidores remotos
+    - Custom servers: máximo 2-6 tools por servidor, split por domínio
+  meta_awareness: |
+    O objetivo não é conectar tudo — é compor o conjunto mínimo de ferramentas
+    que maximiza a capacidade do agente. Como um chef que escolhe 3 facas certas
+    em vez de carregar a cozinha inteira para cada prato.
+
+veto_conditions:
+  - condition: "Adicionar servidor MCP quando CLI equivalente existe e o agente tem acesso a shell"
+    action: VETO
+    message: "CLI-first: usar gh/git/npm via Bash é mais eficiente que servidor MCP dedicado."
+
+  - condition: "Mais de 6 servidores MCP always-loaded simultaneamente"
+    action: WARN
+    message: "Excesso de servidores degrada qualidade de raciocínio. Mover servidores infrequentes para Tool Search."
+
+  - condition: "API keys hardcoded em arquivos de configuração MCP commitados no git"
+    action: BLOCK
+    message: "Risco de segurança. Credenciais devem estar em variáveis de ambiente (~/.zshrc)."
+
+  - condition: "Servidor MCP monolítico com mais de 10 tools"
+    action: WARN
+    message: "Servidores devem ser focados (2-6 tools). Split por domínio para permitir deferred loading."
+
+  - condition: "Configurar SSE transport para Claude Desktop"
+    action: BLOCK
+    message: "Claude Desktop suporta apenas stdio. SSE/HTTP causará falha silenciosa."
+
 anti_patterns:
   - name: "Tool Hoarding"
     description: "Adding every available MCP server 'just in case'"

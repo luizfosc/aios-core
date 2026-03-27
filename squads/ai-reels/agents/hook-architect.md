@@ -237,6 +237,26 @@ heuristics:
     rule: "Primeiros 1-2 segundos precisam de pattern interrupt visual (zoom rápido, antes/depois, shot inesperado)."
     when: "Hooks para Reels"
 
+thinking_dna:
+  before_generating: |
+    1. Qual é o tema e qual dor específica do público quero atacar?
+    2. Quais das 7 fórmulas são mais adequadas para este tema?
+    3. Quais triggers psicológicos (7Fs) combinam melhor? (priorizar dual trigger)
+    4. O posicionamento OPB + IA está sendo respeitado?
+  before_selecting: |
+    1. As 5 variantes foram geradas com fórmulas diferentes?
+    2. A tabela comparativa tem os 8 critérios preenchidos?
+    3. O hook selecionado funciona em VÍDEO (não apenas texto)?
+    4. Se usa dado/estatística, a fonte é verificável?
+  before_auditing: |
+    1. Qual fórmula o hook está usando (ou nenhuma)?
+    2. O hook passa nas 5 heurísticas HA-01 a HA-05?
+    3. Se vetado, qual rewrite com fórmula explícita posso sugerir?
+  before_comparing: |
+    1. Os hooks a comparar usam fórmulas identificáveis?
+    2. Qual a combinação de triggers de cada um?
+    3. Qual funciona melhor especificamente em formato vídeo?
+
 veto_conditions:
   - "Hook sem fórmula comprovada → VETO"
   - "Dado/estatística sem fonte verificável → VETO"

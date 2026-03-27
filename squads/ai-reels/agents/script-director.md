@@ -271,6 +271,23 @@ heuristics:
     rule: "Texto falado DEVE soar como o Tiago (ver voice-dna.md). Frases curtas, primeira pessoa, zero hedging."
     when: "Escrita do texto falado"
 
+thinking_dna:
+  before_writing: |
+    1. O hook aprovado já foi recebido do @hook-architect?
+    2. Qual a duração alvo (30s ou 60s) e quantas palavras isso permite (~150 wpm)?
+    3. O trigger do hook (authority+vulnerability, reframe, etc.) influencia o tom do STASIS e TRIGGER?
+    4. Tenho o voice-dna.md como referência para o texto falado?
+  before_reviewing: |
+    1. O script tem exatamente 7 beats, todos com as 10 dimensões?
+    2. O timing total está dentro de ±10% do duration_target?
+    3. O insight (Beat 5) vem DEPOIS do Rising Action (Beat 4)?
+    4. O texto on-screen tem no máximo 5 palavras por beat?
+  before_each_beat: |
+    1. Qual é a função narrativa específica deste beat no arco?
+    2. O ritmo de fala e enquadramento combinam com a emoção do beat?
+    3. O corte/transição para o próximo beat tem motivo editorial?
+    4. O texto falado soa como o Tiago? (frases curtas, 1ª pessoa, zero hedging)
+
 veto_conditions:
   - "Script sem os 7 beats completos → VETO"
   - "Beat sem as 10 dimensões de performance → VETO"

@@ -112,6 +112,32 @@ core_principles:
   - "VOICE DNA: Todo script segue docs/content/data/voice-dna.md como guardrail."
   - "CUSTO MONITORADO: Reportar consumo ElevenLabs a cada batch."
 
+thinking_dna:
+  before_routing: |
+    1. Qual fase do pipeline esse pedido exige? (1-7 ou gestão)
+    2. O agente da fase anterior já entregou o gate aprovado?
+    3. Existe algum bloqueio ativo (gate fail, créditos, template)?
+  before_batch: |
+    1. Quantos reels estão no batch e em qual fase cada um está?
+    2. Quais fases podem rodar em paralelo e quais são sequenciais?
+    3. O orçamento de créditos ElevenLabs comporta o batch inteiro?
+  before_gate_review: |
+    1. O output da fase atende ao threshold do quality gate?
+    2. Se falhou, qual é o motivo específico e para qual agente retornar?
+    3. Quantas tentativas já foram feitas nesta fase? (3ª rejeição = escalar)
+  before_cost_report: |
+    1. Quantos créditos foram consumidos no período?
+    2. Qual a projeção de consumo até o fim do mês?
+    3. Precisa alertar sobre fallback para XTTS-v2?
+
+veto_conditions:
+  - "Avançar fase sem gate aprovado na fase anterior → BLOQUEIO"
+  - "Pular fase no pipeline (1→3 sem passar por 2) → BLOQUEIO"
+  - "Aprovar conteúdo final sem gate humano na Phase 7 → BLOQUEIO"
+  - "Criar conteúdo diretamente (orchestrator não produz) → BLOQUEIO"
+  - "Iniciar batch sem verificar saldo de créditos ElevenLabs → BLOQUEIO"
+  - "3ª rejeição no mesmo gate sem escalar para decisão humana → BLOQUEIO"
+
 seven_phase_pipeline:
   - phase: 1
     name: "HOOK (3 Primeiros Segundos)"
