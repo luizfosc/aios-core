@@ -49,7 +49,6 @@
     }
     .map-wrap canvas {
       position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
     }
 
     /* Output panel */
@@ -136,10 +135,14 @@ let scale = 1;
 
 img.onload = () => {
   scale = vp.clientHeight / img.naturalHeight;
-  img.style.width = (img.naturalWidth * scale) + 'px';
-  img.style.height = (img.naturalHeight * scale) + 'px';
-  canvas.width = img.naturalWidth * scale;
-  canvas.height = img.naturalHeight * scale;
+  const renderW = Math.round(img.naturalWidth * scale);
+  const renderH = Math.round(img.naturalHeight * scale);
+  img.style.width = renderW + 'px';
+  img.style.height = renderH + 'px';
+  canvas.width = renderW;
+  canvas.height = renderH;
+  canvas.style.width = renderW + 'px';
+  canvas.style.height = renderH + 'px';
   render();
   setTimeout(() => instr.classList.add('off'), 5000);
 };
