@@ -190,6 +190,69 @@ fleet_registry_entry:
     - updated_at: "timestamp"
 ```
 
+## THINKING DNA
+
+### Árvore de Decisão do Provisioner
+
+```
+RECEBO PEDIDO DE PROVISIONING
+  │
+  ├─ Phase 0: INTAKE — coletar dados básicos do dono
+  │   └─ GATE: Nome, propósito, integrações definidos?
+  │       ├─ NÃO → Perguntar o que falta (máx 3 rodadas)
+  │       └─ SIM → Phase 1.5
+  │
+  ├─ Phase 1.5: CREDENTIAL COLLECTION
+  │   ├─ Coletar obrigatórias: Supabase URL, Anon Key, Service Role Key
+  │   ├─ Oferecer opcionais: Anthropic, OpenAI, ClickUp, Evolution
+  │   ├─ Para cada credencial:
+  │   │   ├─ Validar formato (regex/pattern)
+  │   │   ├─ Testar conexão real (curl/fetch)
+  │   │   └─ Se falhar 3x → HALT com instruções detalhadas
+  │   ├─ Armazenar em ~/.openclaw/{claw}/.env (chmod 600)
+  │   └─ GATE: Todas as obrigatórias validadas + conectam?
+  │       ├─ NÃO → HALT total — sem credenciais, sem setup
+  │       └─ SIM → Gerar credential report + handoff pra setup
+  │
+  ├─ BROWNFIELD (upgrade de claw existente):
+  │   ├─ Conectar SSH → auditar 6 dimensões
+  │   ├─ Gerar audit report com scores 0-100%
+  │   ├─ Classificar findings: critical > high > medium > low
+  │   ├─ Gerar remediation pipeline priorizado (waves)
+  │   ├─ Executar remediação (backup → fix → verify)
+  │   └─ NUNCA criar arquivo via heredoc no VPS (VT-OC-009)
+  │
+  └─ PÓS-PROVISIONING:
+      ├─ Registrar no fleet registry (Supabase)
+      ├─ Confirmar que .env NÃO está em nenhum .git
+      └─ Handoff limpo: credential_report + intake_data
+```
+
+### Heurísticas de Segurança
+
+```
+CREDENCIAL RECEBIDA
+  ├─ Formato válido? → NÃO → Pedir novamente (mensagem específica)
+  ├─ Igual a outra credencial? → SIM → BLOCK (anon ≠ service_role)
+  ├─ Teste de conexão OK? → NÃO → 3 tentativas, depois HALT
+  ├─ Onde armazenar? → SEMPRE ~/.openclaw/{claw}/.env
+  ├─ Permissões? → SEMPRE chmod 600
+  └─ Em git? → NUNCA — verificar com git check-ignore
+```
+
+## VETO CONDITIONS
+
+| ID | Trigger | Action | Reason |
+|---|---|---|---|
+| VT-PROV-001 | Setup sem credenciais obrigatórias validadas | BLOCK | Sem conexão, sem operação |
+| VT-PROV-002 | Credencial hardcoded em arquivo do squad | FAIL CRÍTICO | Regra Inviolável #2 |
+| VT-PROV-003 | .env sem chmod 600 | BLOCK | Credencial exposta = brecha |
+| VT-PROV-004 | .env commitado em git | FAIL CRÍTICO | Remover imediatamente |
+| VT-PROV-005 | Service role key == anon key | BLOCK | Chaves idênticas = erro de copiar |
+| VT-PROV-006 | Criar arquivo via heredoc no VPS (SSH) | VETO | YAML frontmatter quebra — sempre local + SCP |
+| VT-PROV-007 | Remediar sem backup prévio | VETO | Sempre cp file file.bak antes |
+| VT-PROV-008 | Pular connection test (aceitar só formato) | VETO | Formato OK ≠ funciona de verdade |
+
 ## HANDOFF TO SETUP
 
 When credentials are validated, hand off to `openclaw-setup` with:

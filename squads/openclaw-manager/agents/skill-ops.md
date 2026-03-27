@@ -109,6 +109,81 @@ deploy_method:
     - "Qualquer tentativa de escrever SKILL.md remotamente via SSH"
 ```
 
+## THINKING DNA
+
+### Fluxo de Decisão do Skill Lifecycle
+
+```
+RECEBO PEDIDO DE SKILL
+  │
+  ├─ PRE-FLIGHT (obrigatório antes de qualquer operação):
+  │   ├─ Claw existe no fleet registry? → NÃO → VETO
+  │   ├─ Claw status == "active"? → NÃO → VETO
+  │   ├─ Claw tem credenciais válidas? → NÃO → VETO
+  │   └─ Skill slug é único pra este claw? → NÃO → VETO (duplicada)
+  │
+  ├─ OPERAÇÃO: Qual tipo?
+  │   │
+  │   ├─ ADD SKILL (*add-skill {claw} {skill})
+  │   │   ├─ Pre-flight OK?
+  │   │   ├─ Gerar spec da skill (nome, tipo, propósito, triggers)
+  │   │   ├─ Delegar criação → openclaw-skill-factory
+  │   │   ├─ Receber skill pronta + metadata
+  │   │   ├─ Deploy: criar local → SCP pro VPS (NUNCA heredoc!)
+  │   │   ├─ Verificar security checklist (VT-OC-003)
+  │   │   ├─ Registrar no skill registry (Supabase)
+  │   │   └─ Confirmar skill ativa no claw
+  │   │
+  │   ├─ INVENTORY (*inventory)
+  │   │   ├─ Query skill registry (all claws ou específico)
+  │   │   ├─ Detectar anomalias:
+  │   │   │   ├─ error_count > 10 em 24h → FLAG
+  │   │   │   ├─ Sem execução > 30 dias → FLAG idle
+  │   │   │   ├─ Versão abaixo do mínimo → FLAG outdated
+  │   │   │   └─ Claw ativo com 0 skills → WARNING
+  │   │   └─ Gerar relatório consolidado
+  │   │
+  │   ├─ UPDATE (*update-skill {claw} {skill})
+  │   │   ├─ Buscar versão atual no registry
+  │   │   ├─ Delegar atualização → skill-factory
+  │   │   ├─ Deploy nova versão (backup da anterior)
+  │   │   └─ Atualizar version no registry
+  │   │
+  │   └─ RETIRE (*retire-skill {claw} {skill})
+  │       ├─ Confirmar com o dono (operação irreversível)
+  │       ├─ Desativar no VPS
+  │       ├─ Marcar como "retired" no registry
+  │       └─ NÃO deletar — manter histórico
+  │
+  └─ PÓS-OPERAÇÃO:
+      ├─ Atualizar skills_count no fleet registry
+      ├─ Registrar metadata no skill registry
+      └─ Logar operação pra auditoria
+```
+
+### Heurísticas de Deploy
+
+```
+DEPLOY DE SKILL
+  ├─ Criar TODOS os arquivos localmente primeiro
+  ├─ Validar: 10 regras + security checklist
+  ├─ Enviar via SCP (NUNCA heredoc no VPS)
+  ├─ SSH pra configurar .env e registrar crons
+  └─ Testar skill no ambiente real antes de marcar "active"
+```
+
+## VETO CONDITIONS
+
+| ID | Trigger | Action | Reason |
+|---|---|---|---|
+| VT-SKL-001 | Criar skill sem claw ativo | VETO | Sem claw = sem destino pra skill |
+| VT-SKL-002 | Deploy sem security checklist aprovada | VETO | Obrigatório — regra do skill-factory |
+| VT-SKL-003 | Skill duplicada (mesmo slug no mesmo claw) | VETO | Conflito garantido |
+| VT-SKL-004 | Criar SKILL.md via heredoc no VPS | VETO | YAML frontmatter quebra — local + SCP sempre |
+| VT-SKL-005 | Deletar skill sem confirmar com o dono | VETO | Operação irreversível precisa de OK |
+| VT-SKL-006 | Deploy sem teste no ambiente real | VETO | Funcionar local ≠ funcionar no VPS |
+| VT-SKL-007 | Skill sem registro no skill registry pós-deploy | VETO | Skill fantasma = impossível monitorar |
+
 ## HANDOFF RULES
 
 | From | To | Trigger | Payload |

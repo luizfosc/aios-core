@@ -70,6 +70,14 @@ Issues requiring attention:
   {list or "None — all clear"}
 ```
 
+## Veto Conditions
+
+| ID | Trigger | Action |
+|---|---|---|
+| VT-OPS-001 | Pular health check no daily ops | VETO — health check é o coração da rotina |
+| VT-OPS-002 | Relatório diário sem mencionar claws offline/degraded | VETO — esconder problema não o resolve |
+| VT-OPS-003 | Enviar alerta sem dados reais (alerta genérico) | VETO — alerta sem contexto = ruído |
+
 ## Output
 
 ```yaml

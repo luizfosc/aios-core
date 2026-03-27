@@ -68,6 +68,15 @@ Alerts: 1 critical (claw-carlos offline)
 
 Per alert rules defined in `fleet-monitor.md`.
 
+## Veto Conditions
+
+| ID | Trigger | Action |
+|---|---|---|
+| VT-FH-001 | Pular claw ativo durante health check fleet-wide | VETO — todos devem ser verificados |
+| VT-FH-002 | Marcar status sem connection test real | VETO — ping real ou nada |
+| VT-FH-003 | Health check sem atualizar fleet registry | VETO — registry é a fonte da verdade |
+| VT-FH-004 | Ignorar claw offline e não disparar alerta | VETO — offline > 30min = incidente |
+
 ## Output
 
 ```yaml

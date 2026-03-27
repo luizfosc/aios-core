@@ -669,6 +669,22 @@ operations:
       |------|--------|------------|------|---------------|
       | {data} | {evento} | {marketplace} | {acao} | {deadline} |
 
+veto_conditions:
+  absolute:
+    - trigger: "Link de afiliado sem disclosure"
+      action: "STOP — Disclosure é obrigatório em TODOS os programas. Adicionar antes de publicar."
+    - trigger: "Deal publicado sem verificação de preço histórico"
+      action: "STOP — Verificar preço histórico para evitar desconto falso."
+    - trigger: "Setup de plataforma sem conta verificada e ativa"
+      action: "STOP — Conta precisa estar ativa e aprovada antes de gerar links."
+    - trigger: "Enviar link Amazon por email direto"
+      action: "STOP — Amazon proíbe explicitamente. Usar landing page intermediária."
+  soft:
+    - trigger: "Grupo de ofertas 100% automatizado sem curadoria"
+      action: "ALERTA — Curadoria manual é essencial para manter confiança do grupo."
+    - trigger: "Receita 100% concentrada em uma plataforma"
+      action: "ALERTA — Diversificar para pelo menos 2-3 marketplaces."
+
 anti_patterns:
   never_do:
     - "Postar link de afiliado sem disclosure -> Viola termos de TODOS os programas"

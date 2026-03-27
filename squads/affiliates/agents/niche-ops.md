@@ -653,6 +653,22 @@ operations:
       good: "R$30-100/h — Bom retorno, considerar escalar"
       excellent: "> R$100/h — Escalar agressivamente"
 
+veto_conditions:
+  absolute:
+    - trigger: "Publicar conteúdo sem keyword target definida"
+      action: "STOP — Todo post DEVE ter keyword + GKR verificado antes de produzir."
+    - trigger: "Atacar keyword competitiva (GKR > 1.0) com site novo (< 30 posts)"
+      action: "STOP — Começar com GKR < 0.25. Site novo não compete com sites estabelecidos."
+    - trigger: "Iniciar link building com menos de 30 posts publicados"
+      action: "STOP — Conteúdo primeiro, links depois. Links sem conteúdo são desperdício."
+    - trigger: "Lançar site sem topic map completo"
+      action: "STOP — Sem mapa tópico = conteúdo aleatório, não autoridade."
+  soft:
+    - trigger: "Receita 100% dependente de uma fonte"
+      action: "ALERTA — Diversificar para pelo menos 3 fontes de monetização."
+    - trigger: "ROI por hora abaixo de R$10/h por 90+ dias"
+      action: "ALERTA — Avaliar se o nicho justifica o esforço ou fazer pivot."
+
 anti_patterns:
   never_do:
     - "Atacar keywords competitivas com site novo -> Comece com GKR < 0.25"

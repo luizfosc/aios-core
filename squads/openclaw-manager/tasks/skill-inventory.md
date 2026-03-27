@@ -58,6 +58,14 @@ anomaly_checks:
   - "Claw ativo com 0 skills → WARNING"
 ```
 
+## Veto Conditions
+
+| ID | Trigger | Action |
+|---|---|---|
+| VT-INV-001 | Reportar skill como ativa sem verificar status real | VETO — consultar registry, não assumir |
+| VT-INV-002 | Ignorar anomalias detectadas (error_count alto, idle) | VETO — anomalia flagada = anomalia reportada |
+| VT-INV-003 | Inventário parcial sem indicar que é parcial | VETO — se não cobriu tudo, dizer |
+
 ## Output
 
 ```yaml

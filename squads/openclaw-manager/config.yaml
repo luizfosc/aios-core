@@ -155,27 +155,27 @@ squad:
     VT-OC-001:
       trigger: "Criar skill sem claw ativo"
       action: "VETO"
-      reason: "Pra que skill se nao tem claw rodando?"
+      reason: "Pra que skill se não tem claw rodando?"
 
     VT-OC-002:
       trigger: "Setup sem SOUL.md preenchido"
       action: "VETO"
-      reason: "Claw sem identidade = chatbot generico"
+      reason: "Claw sem identidade = chatbot genérico"
 
     VT-OC-003:
       trigger: "Deploy skill sem security checklist"
       action: "VETO"
-      reason: "Ja existe no skill-factory. OBRIGATORIO."
+      reason: "Já existe no skill-factory. OBRIGATÓRIO."
 
     VT-OC-004:
       trigger: "Ops sem health check automatizado"
       action: "VETO"
-      reason: "O que nao e vigiado nao e realizado"
+      reason: "O que não é vigiado não é realizado"
 
     VT-OC-005:
       trigger: "Multi-claw sem registry centralizado"
       action: "VETO"
-      reason: "Se nao sabe quantos claws tem, nao gerencia nada"
+      reason: "Se não sabe quantos claws tem, não gerencia nada"
 
     VT-OC-006:
       trigger: "Handoff manual entre squads"
@@ -185,12 +185,12 @@ squad:
     VT-OC-007:
       trigger: "Setup completo sem credenciais validadas"
       action: "VETO"
-      reason: "Squad que nao conecta com nada = squad decorativo"
+      reason: "Squad que não conecta com nada = squad decorativo"
 
     VT-OC-008:
       trigger: "Credencial hardcoded em qualquer arquivo"
-      action: "VETO CRITICO"
-      reason: "Regra Inviolavel #2 — NUNCA hardcodar credenciais"
+      action: "VETO CRÍTICO"
+      reason: "Regra Inviolável #2 — NUNCA hardcodar credenciais"
 
     VT-OC-009:
       trigger: "Criar SKILL.md via heredoc no VPS (SSH cat/echo/heredoc)"

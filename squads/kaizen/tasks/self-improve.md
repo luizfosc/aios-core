@@ -91,6 +91,20 @@ task:
     format: "Self-Improvement Report"
     path: "data/reports/self-improve-{date}.md"
 
+  veto_conditions:
+    - id: VC_TASK_SI_001
+      condition: "Auto-aplicar melhoria destrutiva sem aprovação humana"
+      action: BLOCK
+      reason: "Mudanças destrutivas exigem supervisão. Autonomia só para melhorias triviais"
+    - id: VC_TASK_SI_002
+      condition: "Propor mais de 3 melhorias por ciclo"
+      action: BLOCK
+      reason: "Melhoria contínua é incremental. Mais de 3 por ciclo fragmenta foco"
+    - id: VC_TASK_SI_003
+      condition: "Atualizar baseline sem dados reais do filesystem"
+      action: BLOCK
+      reason: "Baseline baseado em suposição é ficção. Sempre escanear antes de atualizar"
+
   acceptance_criteria:
     - "Todas as recomendações anteriores rastreadas"
     - "Utilização de cada agente verificada"

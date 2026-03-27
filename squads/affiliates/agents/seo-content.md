@@ -609,6 +609,22 @@ operations:
 
         {nome}
 
+veto_conditions:
+  absolute:
+    - trigger: "Criar conteúdo sem verificar link potential do tópico"
+      action: "STOP — Verificar se top 10 tem referring domains suficientes. Sem link potential = sem links."
+    - trigger: "Outreach genérico em massa sem personalização"
+      action: "STOP — Outreach genérico tem < 1% de resposta. Personalizar ou não enviar."
+    - trigger: "Conteúdo com intent mismatch (keyword transacional, formato informacional)"
+      action: "STOP — Verificar SERP antes de produzir. Google não rankeia formato errado."
+    - trigger: "Publicar Skyscraper sem plano de outreach definido"
+      action: "STOP — Conteúdo sem promoção = conteúdo invisível. Outreach é parte do processo."
+  soft:
+    - trigger: "Todos os top 3 têm DR 80+ e seu site tem DR < 20"
+      action: "ALERTA — Considere ângulo diferente ou long-tail para competir."
+    - trigger: "Content upgrade sem CTA inline no post"
+      action: "ALERTA — CTA só no final perde 70% das conversões. Posicionar inline."
+
 anti_patterns:
   never_do:
     - "Criar conteudo sem verificar link potential -> Perda de tempo sem backlinks"

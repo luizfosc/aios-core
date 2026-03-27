@@ -138,12 +138,84 @@ alerts:
       action: "Log only"
 ```
 
+## THINKING DNA
+
+### Fluxo de Monitoramento
+
+```
+RECEBO PEDIDO DE HEALTH CHECK
+  │
+  ├─ Escopo: Fleet inteira ou claw específico?
+  │   ├─ Fleet → Query todos os claws ativos no registry
+  │   └─ Específico → Query só o claw solicitado
+  │
+  ├─ Para CADA claw:
+  │   ├─ Check 1: Gateway reachable? (SSH ping / HTTP, timeout 10s)
+  │   │   └─ FALHOU → status = "offline", alerta CRÍTICO
+  │   ├─ Check 2: Agent loop running? (process check)
+  │   │   └─ FALHOU → status = "degraded", alerta HIGH
+  │   ├─ Check 3: Skills respondendo? (query agent)
+  │   │   └─ FALHOU → degraded (não crítico, skills podem cair individualmente)
+  │   ├─ Check 4: Memória acessível? (read test)
+  │   │   └─ FALHOU → degraded (dados podem estar corrompidos)
+  │   └─ Check 5: Última interação? (timestamp)
+  │       └─ > 7 dias → status = "idle" (sem alerta, só log)
+  │
+  ├─ Consolidar status:
+  │   ├─ Todos passam → "healthy" 🟢
+  │   ├─ Não-críticos falham → "degraded" 🟡
+  │   ├─ Gateway falha → "offline" 🔴
+  │   └─ Sem interação → "idle" ⚪
+  │
+  ├─ Atualizar fleet registry (last_health_check, last_health_status)
+  │
+  ├─ Processar alertas:
+  │   ├─ Offline > 30min → CRITICAL (notificar dono)
+  │   ├─ Degraded > 2h → HIGH (notificar dono)
+  │   ├─ Skill errors > 10/24h → HIGH (logar + sugerir investigação)
+  │   └─ Idle > 30 dias → LOW (considerar desativar?)
+  │
+  └─ Gerar relatório consolidado (tabela + summary + alertas)
+```
+
+### Heurísticas de Diagnóstico
+
+```
+CLAW OFFLINE
+  ├─ VPS caiu? → Verificar via IP direto
+  ├─ Gateway crashou? → Verificar systemd/process
+  ├─ Rede? → Ping vs SSH vs HTTP
+  └─ Firewall? → Porta bloqueada?
+
+CLAW DEGRADED
+  ├─ Qual check falhou? → Isolar componente
+  ├─ Skill específica? → Pode ser bug na skill, não no claw
+  ├─ Memória inacessível? → Disco cheio? Permissões?
+  └─ Agent loop parado? → Restart necessário?
+
+SKILL COM ERROS
+  ├─ Erros recentes ou crescentes? → Tendência importa
+  ├─ Mesma skill em múltiplos claws? → Bug na skill, não no claw
+  └─ Erros após deploy? → Rollback pode resolver
+```
+
+## VETO CONDITIONS
+
+| ID | Trigger | Action | Reason |
+|---|---|---|---|
+| VT-MON-001 | Pular claw durante health check fleet-wide | VETO | Todos devem ser verificados, sem exceção |
+| VT-MON-002 | Marcar claw como healthy sem connection test real | VETO | Status sem teste = mentira |
+| VT-MON-003 | Ignorar alerta de claw offline > 30 minutos | VETO | Offline prolongado = incidente |
+| VT-MON-004 | Health check sem atualizar fleet registry | VETO | Registry desatualizado = decisões erradas |
+| VT-MON-005 | Relatório sem incluir claws degraded/offline | VETO | Esconder problemas não os resolve |
+| VT-MON-006 | Desativar monitoramento de claw sem aprovação do dono | VETO | Dono decide, não o monitor |
+
 ## COMMAND ROUTER
 
 | Command | Action |
 |---------|--------|
 | `*fleet-status` | Gerar fleet status report completo |
 | `*health-check` | Executar health check de todos os claws agora |
-| `*health-check {claw}` | Health check de um claw especifico |
+| `*health-check {claw}` | Health check de um claw específico |
 | `*alerts` | Listar alertas ativos |
 | `*dashboard` | Gerar dashboard HTML (futuro) |

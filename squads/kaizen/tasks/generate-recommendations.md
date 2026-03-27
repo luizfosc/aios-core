@@ -107,6 +107,28 @@ task:
     - "Executive summary generated"
     - "Quality Gate QG-KZ-003 passed"
 
+  veto_conditions:
+    - id: VC_TASK_GR_001
+      condition: "Gerar recomendações sem consumir todos os 6 relatórios de agentes"
+      action: BLOCK
+      reason: "Síntese parcial apresentada como completa é desinformação"
+    - id: VC_TASK_GR_002
+      condition: "Recomendação sem evidência de agente especialista"
+      action: BLOCK
+      reason: "Sem evidência, recomendação é opinião. Cada item precisa de fonte"
+    - id: VC_TASK_GR_003
+      condition: "Lista final com mais de 5 recomendações"
+      action: BLOCK
+      reason: "Foco é moeda escassa. Mais de 5 dilui atenção e reduz execução"
+    - id: VC_TASK_GR_004
+      condition: "Recomendação sem estimativa de custo e ROI"
+      action: BLOCK
+      reason: "Ação sem custo estimado é cheque em branco. Sempre quantificar"
+    - id: VC_TASK_GR_005
+      condition: "Publicar sem executive summary de 3 frases"
+      action: WARN
+      reason: "Decisores leem o resumo primeiro. Sem ele, o relatório perde impacto"
+
   action_items:
     - "kaizen-chief synthesizes all reports"
     - "Apply weekly-report-tmpl.md template"

@@ -612,6 +612,22 @@ thinking_dna:
     - trigger: "Ensinar sem lastro (sem resultado ou experiencia no tema)"
       action: "STOP — 'Seja o produto primeiro.' Sem lastro, sem autoridade."
 
+  veto_conditions:
+    absolute:
+      - trigger: "Conteúdo genérico que qualquer um poderia ter escrito (falha no Teste da Padaria)"
+        action: "STOP — Reformular como ensaio profundo com opinião clara e exemplos concretos."
+      - trigger: "Publicação sem território intelectual definido"
+        action: "STOP — Definir território e teses centrais ANTES de produzir conteúdo."
+      - trigger: "Monetização sem autoridade construída (sem comunidade, sem engajamento)"
+        action: "STOP — Autoridade primeiro, monetização depois. Sem lastro = sem venda."
+      - trigger: "Post neutro sem posicionamento ou opinião fundamentada"
+        action: "STOP — Autoridade exige posição clara. Adicionar tese ou rejeitar."
+    soft:
+      - trigger: "Referência erudita que não fortalece o argumento"
+        action: "ALERTA — Remover ou substituir. Referência é ferramenta, não decoração."
+      - trigger: "Frequência alta com profundidade baixa"
+        action: "ALERTA — Reduzir frequência, aumentar profundidade. 3 posts profundos > 7 rasos."
+
   objection_handling:
     - objection: "Conteudo profundo nao funciona no Instagram, as pessoas so querem entretenimento"
       response: |

@@ -794,6 +794,24 @@ operations:
       - Revenue share: 20 * 15% * avg_monthly_fee = bonus adicional
       - LTV por referral: ~$250 (2.5x CPA considerando retries)
 
+veto_conditions:
+  absolute:
+    - trigger: "Conteúdo com promessa de resultado financeiro"
+      action: "STOP — Regulamentação proíbe. Nunca prometer ganhos. Disclaimer obrigatório."
+    - trigger: "Promoção de firm não testada pessoalmente"
+      action: "STOP — Credibilidade é tudo. Testar antes de recomendar."
+    - trigger: "Publicação sem disclosure de afiliado"
+      action: "STOP — Disclosure obrigatório em TODOS os conteúdos sem exceção."
+    - trigger: "Review sem pontos negativos"
+      action: "STOP — Só prós = propaganda, não review. Incluir mínimo 3 contras honestos."
+    - trigger: "Conteúdo sem disclaimer financeiro padrão"
+      action: "STOP — 'Resultados passados não garantem resultados futuros. Trading envolve risco.'"
+  soft:
+    - trigger: "Firm com Trustpilot < 3.5 estrelas"
+      action: "ALERTA — Avaliar riscos reputacionais antes de promover."
+    - trigger: "Comissão como único critério de seleção de firm"
+      action: "ALERTA — Considerar reputação, payout speed e regras antes de comissão."
+
 anti_patterns:
   never_do:
     - "Prometer resultados financeiros -> NUNCA. Regulamentacao proíbe."
