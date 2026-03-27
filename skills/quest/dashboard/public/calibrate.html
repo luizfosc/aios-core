@@ -284,8 +284,9 @@ function clearPhase() {
   updateUI();
 }
 // Expected items per phase (from app-development.yaml)
-// 9 worlds — World 5 split into 5 (12 items) + 6 (12 items)
-const PHASE_EXPECTED = [7, 5, 8, 4, 8, 12, 12, 5, 6];
+// 9 worlds — expected items per phase (from app-development.yaml)
+// Note: map has more dot positions (12) in W5/W6 for future items
+const PHASE_EXPECTED = [7, 5, 8, 4, 8, 4, 7, 5, 6];
 
 function updateUI() {
   document.getElementById('phase-label').textContent = `Phase ${currentPhase} — ${PHASE_NAMES[currentPhase]}`;
