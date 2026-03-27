@@ -14,6 +14,8 @@ meta:
   project_path: string       # absolute path to project root
   pack: string               # pack id (e.g. "app-development")
   pack_version: string       # semver from pack.version
+  hero_name: string          # how the user wants to be called (e.g. "Luiz")
+  hero_title: string         # optional epic title (e.g. "O Forjador")
   created: datetime          # ISO 8601 UTC — when quest-log was first created
   last_updated: datetime     # ISO 8601 UTC — updated on every write
 

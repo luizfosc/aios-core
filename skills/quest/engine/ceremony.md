@@ -54,6 +54,51 @@ Output the fixed ASCII art "QUEST" followed by the pack's tagline. The ASCII art
 
 ---
 
+## 1.5. Hero Identity
+
+Right after the Title Screen, ask the user how they want to be called. This creates a personal connection — like choosing your character name before starting an RPG.
+
+### Flow
+
+```
+  Antes de começar, preciso saber...
+
+  Como devo te chamar, aventureiro(a)?
+  (Seu nome, apelido, ou como preferir)
+
+  > [user types their name]
+```
+
+After the user responds with their name, ask for an optional epic title:
+
+```
+  E se você tivesse um título épico, qual seria?
+  (ex: "Escudo de Carvalho", "O Forjador", "Mestre dos Códigos")
+  Ou tecle Enter para pular.
+
+  > [user types title or skips]
+```
+
+### Storage
+
+Store the responses in the quest-log `meta` block:
+- `hero_name`: the name/nickname (REQUIRED — do not proceed without it)
+- `hero_title`: the epic title (OPTIONAL — empty string if skipped)
+
+### Usage
+
+From this point forward, NEVER use "Builder" again. Always use `{hero_name}` to address the user. If they provided a `hero_title`, use it in special moments (celebrations, level ups, final victory) with the format: `{hero_name}, {hero_title}`.
+
+### Rules
+
+- Ask ONCE during first ceremony, never again
+- If user gives a single word, accept it (e.g., "Lu")
+- If user gives name + title together (e.g., "Thorin, Escudo de Carvalho"), parse it: name = "Thorin", title = "Escudo de Carvalho"
+- Use `AskUserQuestion` tool to collect the responses
+- This step happens BEFORE the Loading Sequence — the loading bars should already use the hero name
+
+---
+
 ## 2. Loading Sequence
 
 Generate progress bars using the pack's phase names. Each phase becomes a loading step, plus a fixed opening and closing line.
@@ -286,7 +331,7 @@ After the Project Card, output a thematic welcome message based on the project's
 **Fortaleza Ativa:**
 
 ```
-  "Bem-vindo de volta, Builder! Sua jornada continua.
+  "Bem-vindo de volta, {hero_name}! Sua jornada continua.
    Vamos ver o que vem a seguir."
 
   Carregando quest log...
@@ -417,10 +462,11 @@ The SKILL.md orchestrator calls this module in two scenarios:
 Output in this exact order, as one continuous text flow:
 
 1. Title Screen (Section 1)
-2. Loading Sequence (Section 2)
-3. Project Card (Section 3) — uses classification from Section 4
-4. Welcome Message (Section 5)
-5. Action Plan (Section 6) — wait for confirmation
+2. Hero Identity (Section 1.5) — ask name and optional title
+3. Loading Sequence (Section 2)
+4. Project Card (Section 3) — uses classification from Section 4
+5. Welcome Message (Section 5) — uses hero_name
+6. Action Plan (Section 6) — wait for confirmation
 
 ### Scenario B: Resumption (quest-log exists)
 
