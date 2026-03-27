@@ -1,0 +1,218 @@
+# =============================================================================
+# Command Map — Quest Item ID → Comando CLI Exato
+# Referência para agentes executarem cada missão do pack design-system-forge
+# =============================================================================
+
+# WORLD 0: O Laboratório
+"0.1":
+  command: "npx ~/aios-core init ."
+  who: user
+  note: "Requer TTY — usuário executa manualmente"
+
+"0.2":
+  command: "npm install -D @playwright/test && npx playwright install chromium"
+  who: user
+
+"0.3":
+  command: "npm install -g dembrandt"
+  who: user
+
+"0.4":
+  command: "npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir && npx shadcn@latest init"
+  who: "@dev"
+
+"0.5":
+  command: "criar docs/references/targets.md com URLs dos sites alvo"
+  who: user
+  note: "Arquivo manual — listar URLs de referência"
+
+"0.6":
+  command: "mkdir -p design-system/{tokens,patterns,anti-patterns,screenshots,components,states,references}"
+  who: "@dev"
+
+"0.7":
+  command: "@devops → *add-mcp playwright figma"
+  who: "@devops"
+
+# WORLD 1: O Espião
+"1.1":
+  command: "node ~/aios-core/skills/design-system-forge/lib/dissect.mjs {url} --name {name} --mobile --screenshots-only"
+  who: "@ux"
+
+"1.2":
+  command: "dembrandt {url} --dtcg --dark-mode --mobile --save-output"
+  who: user
+
+"1.3":
+  command: "node ~/aios-core/skills/design-system-forge/lib/dissect.mjs {url} --name {name} --mobile"
+  who: "@dev"
+
+"1.4":
+  command: "node ~/aios-core/skills/design-system-forge/lib/dissect.mjs {url} --name {name} --split-animations"
+  who: "@dev"
+  note: "Pós-processa extracted-css.json em animations.json + effects.json"
+
+"1.5":
+  command: "node ~/aios-core/skills/design-system-forge/lib/extract-states.mjs {url} --name {name}"
+  who: "@dev"
+
+"1.6":
+  command: "node ~/aios-core/skills/design-system-forge/lib/extract-dark-mode.mjs {url} --name {name}"
+  who: "@dev"
+
+"1.7":
+  command: "@ux → ler design-system/components.json + screenshots, produzir design-system/component-catalog.md"
+  who: "@ux"
+  note: "Agente analisa visualmente os screenshots e cataloga componentes"
+
+# WORLD 2: A Biblioteca Secreta
+"2.1":
+  command: "node ~/aios-core/skills/design-system-forge/lib/scrape-references.mjs --source awwwards"
+  who: "@analyst"
+
+"2.2":
+  command: "node ~/aios-core/skills/design-system-forge/lib/scrape-references.mjs --source 21st"
+  who: "@analyst"
+
+"2.3":
+  command: "node ~/aios-core/skills/design-system-forge/lib/scrape-references.mjs --source {name} --url {url}"
+  who: "@analyst"
+
+"2.4":
+  command: "@dev → organizar design-system/patterns/ em subcategorias"
+  who: "@dev"
+
+"2.5":
+  command: "@ux → documentar anti-patterns em design-system/anti-patterns/"
+  who: "@ux"
+
+"2.6":
+  command: "@dev → gerar design-system/INDEX.md com categorias e links"
+  who: "@dev"
+
+# WORLD 3: O Alquimista
+"3.1":
+  command: "node ~/aios-core/skills/design-system-forge/lib/consolidate-tokens.mjs --dembrandt ./dembrandt-output.json --dissect ./design-system/tokens.yaml --dark ./design-system/tokens/dark-tokens.yaml"
+  who: "@architect"
+
+"3.2":
+  command: "/design squad (Brad Frost) → arquitetar hierarquia: primitives → semantic → component tokens"
+  who: squad
+
+"3.3":
+  command: "node ~/aios-core/skills/design-system-forge/lib/generate-tailwind.mjs --input ./design-system/tokens/consolidated.yaml"
+  who: "@dev"
+
+"3.4":
+  command: "node ~/aios-core/skills/design-system-forge/lib/generate-tailwind.mjs --input ./design-system/tokens/consolidated.yaml --css-only"
+  who: "@dev"
+  note: "Gera apenas tokens.css com CSS custom properties"
+
+"3.5":
+  command: "node ~/aios-core/skills/design-system-forge/lib/generate-tailwind.mjs --input ./design-system/tokens/consolidated.yaml --animations"
+  who: "@dev"
+  note: "Foco em extend.animation + extend.keyframes"
+
+"3.6":
+  command: "@architect → criar design-system/DECISIONS.md"
+  who: "@architect"
+
+"3.7":
+  command: "/design squad (Brad Frost) → revisar token architecture"
+  who: squad
+
+# WORLD 4: A Forja dos Componentes
+"4.1":
+  command: "@dev → criar atoms usando tokens + Shadcn como base"
+  who: "@dev"
+
+"4.2":
+  command: "@dev → compor molecules a partir dos atoms"
+  who: "@dev"
+
+"4.3":
+  command: "@dev → aplicar keyframes e transitions extraídos nos componentes"
+  who: "@dev"
+
+"4.4":
+  command: "@dev → montar organisms a partir de molecules"
+  who: "@dev"
+
+"4.5":
+  command: "@dev → implementar breakpoints extraídos (390px, 768px, 1440px)"
+  who: "@dev"
+
+"4.6":
+  command: "@dev → implementar variantes dark usando tokens dark"
+  who: "@dev"
+
+"4.7":
+  command: "@ux + /design squad (Dave Malouf) → aria-labels, focus-visible, contrast, keyboard nav"
+  who: "@ux"
+
+"4.8":
+  command: "@dev → montar Storybook com todos os componentes e variantes"
+  who: "@dev"
+
+# WORLD 5: A Arena
+"5.1":
+  command: "@dev → compor pages usando organisms + patterns da biblioteca"
+  who: "@dev"
+
+"5.2":
+  command: "node ~/aios-core/skills/design-system-forge/lib/visual-diff.mjs --original ./design-system/screenshots/screenshot-desktop.png --redesign ./screenshots/redesign-desktop.png"
+  who: "@qa"
+
+"5.3":
+  command: "node ~/aios-core/skills/design-system-forge/lib/dissect.mjs http://localhost:3000 --name redesign --viewports 390x844,768x1024,1440x900"
+  who: "@qa"
+
+"5.4":
+  command: "npx lighthouse http://localhost:3000 --output=html --output-path=./design-system/lighthouse.html --chrome-flags='--headless'"
+  who: "@qa"
+
+"5.5":
+  command: "@dev + /design squad (Dan Mall) → trocar patterns genéricos por premium"
+  who: "@dev"
+
+"5.6":
+  command: "@qa → /tokenizacao + /design squad (Dave Malouf)"
+  who: "@qa"
+
+# WORLD 6: O Portal do Deploy
+"6.1":
+  command: "npm run build"
+  who: "@dev"
+
+"6.2":
+  command: "@devops → vercel --prod"
+  who: "@devops"
+
+"6.3":
+  command: "@devops → *push + *create-pr"
+  who: "@devops"
+
+"6.4":
+  command: "node ~/aios-core/skills/design-system-forge/lib/visual-diff.mjs --original ./design-system/screenshots/screenshot-desktop.png --redesign {deployed-url-screenshot}"
+  who: "@qa"
+
+"6.5":
+  command: "@dev → criar design-system/README.md com guia de uso"
+  who: "@dev"
+
+# WORLD 7: A Evolução
+"7.1":
+  command: "@devops → npm pack"
+  who: "@devops"
+
+"7.2":
+  command: "@ux → Figma MCP Code Connect"
+  who: "@ux"
+
+"7.3":
+  command: "@dev → copiar patterns novos para ~/aios-core/skills/design-system-forge/library/"
+  who: "@dev"
+
+"7.4":
+  command: "@qa → /quality-dashboard"
+  who: "@qa"

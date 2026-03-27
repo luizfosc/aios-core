@@ -1,0 +1,650 @@
+# =============================================================================
+# Pack: Design System Forge
+# De qualquer site a um design system premium — extract, elevate, build.
+# Version: 1.1.0
+# =============================================================================
+
+pack:
+  id: design-system-forge
+  version: "1.1.0"
+  name: "Design System Forge"
+  icon: "🎨"
+  class_name: "Alquimia Visual"
+  tagline: "Extraia o DNA. Eleve o design. Entregue arte."
+  type: expansion
+  requires: aios
+  parent_pack: app-development
+  parent_item: "2.5"
+
+# =============================================================================
+# Detection
+# =============================================================================
+
+detection:
+  rules:
+    - condition: "has_dir('design-system') OR has_dir('ds')"
+      confidence: high
+    - condition: "has_file('tailwind.config.ts') OR has_file('tailwind.config.js')"
+      confidence: medium
+    - condition: "has_file_matching('**/tokens.*')"
+      confidence: medium
+    - condition: "inside_path('~/CODE/design-systems')"
+      confidence: high
+  prerequisites:
+    - condition: "has_dir('.aios-core') OR has_dir('.aios')"
+      message: "AIOS obrigatório. Rode: npx ~/aios-core init ."
+  fallback_question: "Quer extrair o DNA visual de um site e criar um design system premium? Essa quest transforma qualquer referência em componentes prontos pra uso."
+
+# =============================================================================
+# Levels — 6 níveis de 0 a 1000 XP
+# =============================================================================
+
+levels:
+  1:
+    name: "Aprendiz Visual"
+    xp: 0
+    message: "Todo alquimista começa observando."
+  2:
+    name: "Extrator de DNA"
+    xp: 150
+    message: "Você já sabe ver além da superfície."
+  3:
+    name: "Curador de Padrões"
+    xp: 350
+    message: "Sua biblioteca cresce. Seu olho afia."
+  4:
+    name: "Arquiteto de Tokens"
+    xp: 550
+    message: "Tokens são a linguagem. Você fala fluente."
+  5:
+    name: "Mestre Componentista"
+    xp: 750
+    message: "Cada componente é uma obra de arte."
+  6:
+    name: "Alquimista Visual"
+    xp: 1000
+    message: "De qualquer site, você extrai ouro."
+
+# =============================================================================
+# Achievements
+# =============================================================================
+
+achievements:
+  - id: "first_extract"
+    name: "Primeiro Extrato"
+    icon: "eyedropper"
+    condition: "first_item_done"
+    xp_bonus: 10
+    message: "Primeira extração concluída"
+
+  - id: "lab_ready"
+    name: "Laboratório Montado"
+    icon: "flask"
+    condition: "all_required_done_in_phase:0"
+    xp_bonus: 10
+    message: "Fase 0 completa — ferramentas prontas"
+
+  - id: "spy_master"
+    name: "Espião Mestre"
+    icon: "magnifier"
+    condition: "all_required_done_in_phase:1"
+    xp_bonus: 25
+    message: "DNA do site extraído por completo"
+
+  - id: "librarian"
+    name: "Bibliotecário"
+    icon: "book"
+    condition: "all_required_done_in_phase:2"
+    xp_bonus: 25
+    message: "Biblioteca de patterns construída"
+
+  - id: "token_master"
+    name: "Mestre dos Tokens"
+    icon: "gem"
+    condition: "item_done:3.1 AND item_done:3.3"
+    xp_bonus: 25
+    message: "Tokens arquitetados e Tailwind gerado"
+
+  - id: "component_smith"
+    name: "Ferreiro de Componentes"
+    icon: "hammer"
+    condition: "item_done:4.2 AND item_done:4.3"
+    xp_bonus: 25
+    message: "Componentes forjados e animados"
+
+  - id: "pixel_perfect"
+    name: "Pixel Perfect"
+    icon: "diamond"
+    condition: "item_done:5.2"
+    xp_bonus: 25
+    message: "Visual diff aprovado — fidelidade confirmada"
+
+  - id: "better_than_original"
+    name: "Melhor Que o Original"
+    icon: "crown"
+    condition: "item_done:5.5"
+    xp_bonus: 50
+    message: "O redesign superou o site original"
+
+  - id: "shipper"
+    name: "No Ar"
+    icon: "rocket"
+    condition: "item_done:6.2"
+    xp_bonus: 25
+    message: "Site deployado com sucesso"
+
+  - id: "pattern_hoarder"
+    name: "Colecionador"
+    icon: "chest"
+    condition: "item_done:2.1 AND item_done:2.2 AND item_done:2.3"
+    xp_bonus: 25
+    message: "Scrapou awwwards + 21st.dev + referências"
+
+  - id: "completionist"
+    name: "Completionist"
+    icon: "crown"
+    condition: "all_items_done"
+    xp_bonus: 50
+    message: "Completou TODOS os itens — alquimista supremo"
+
+  - id: "speed_runner"
+    name: "Speed Runner"
+    icon: "lightning"
+    condition: "phase_done_same_day:0"
+    xp_bonus: 10
+    message: "Lab montado em menos de 1 hora"
+
+  - id: "no_skip"
+    name: "Sem Atalho"
+    icon: "path"
+    condition: "all_required_done AND zero_required_skipped"
+    xp_bonus: 25
+    message: "Percorreu toda a jornada sem pular"
+
+# =============================================================================
+# Phases — 8 worlds | ~49 items | 1000 XP
+# Requires: AIOS ecosystem (agents, squads, skills)
+# =============================================================================
+
+phases:
+  # ---------------------------------------------------------------------------
+  # WORLD 0: O Laboratório (80 XP)
+  # ---------------------------------------------------------------------------
+  0:
+    name: "O Laboratório"
+    description: "Monte sua bancada de alquimista antes de tocar em qualquer poção."
+    unlock_message: "Todo alquimista precisa de um laboratório. Sem ferramentas, sem magia."
+    complete_message: "Bancada montada. Reagentes prontos. Hora de caçar DNA."
+    items:
+      - id: "0.1"
+        label: "Instalar AIOS no projeto"
+        command: "npx ~/aios-core init ."
+        who: "user"
+        required: true
+        xp: 15
+        scan_rule: "has_dir('.aios-core') OR has_dir('.aios')"
+
+      - id: "0.2"
+        label: "Instalar Playwright"
+        command: "npm install -D @playwright/test && npx playwright install chromium"
+        who: "user"
+        required: true
+        xp: 10
+        scan_rule: "has_file_matching('**/playwright*') OR has_content('package.json', 'playwright')"
+
+      - id: "0.3"
+        label: "Instalar Dembrandt"
+        command: "npm install -g dembrandt"
+        who: "user"
+        required: true
+        xp: 10
+        scan_rule: "command_exists('dembrandt')"
+
+      - id: "0.4"
+        label: "Setup Next.js + Tailwind + Shadcn"
+        command: "@dev → scaffold projeto com Next.js + Tailwind + Shadcn/ui"
+        who: "@dev"
+        required: true
+        xp: 20
+        scan_rule: "has_file('tailwind.config.ts') OR has_file('tailwind.config.js')"
+
+      - id: "0.5"
+        label: "Definir site(s) alvo"
+        command: "criar docs/references/targets.md com URLs dos sites de referência"
+        who: "user"
+        required: true
+        xp: 10
+        scan_rule: "has_file_matching('docs/*target*') OR has_file_matching('docs/*reference*')"
+
+      - id: "0.6"
+        label: "Criar estrutura de pastas do DS"
+        command: "@dev → mkdir -p design-system/{tokens,patterns,anti-patterns,screenshots,components}"
+        who: "@dev"
+        required: true
+        xp: 10
+        scan_rule: "has_dir('design-system') OR has_dir('ds')"
+
+      - id: "0.7"
+        label: "Configurar MCP servers (Playwright, Figma)"
+        command: "@devops → *add-mcp playwright + figma"
+        who: "@devops"
+        required: false
+        xp: 5
+        scan_rule: "has_file('.mcp.json') OR has_file('.claude/mcp.json')"
+
+  # ---------------------------------------------------------------------------
+  # WORLD 1: O Espião (150 XP)
+  # ---------------------------------------------------------------------------
+  1:
+    name: "O Espião"
+    description: "Infiltre-se no site alvo. Extraia tudo. Não deixe rastros."
+    unlock_message: "Hora de vestir o disfarce. Seu alvo não vai saber o que aconteceu."
+    complete_message: "DNA extraído com sucesso. Você tem tudo: cores, fontes, animações, efeitos."
+    items:
+      - id: "1.1"
+        label: "Screenshots do site alvo (desktop + mobile)"
+        command: "@ux → Playwright captura full-page desktop (1440px) + mobile (390px)"
+        who: "@ux"
+        required: true
+        xp: 20
+        scan_rule: "has_file_matching('design-system/screenshots/*') OR has_file_matching('docs/screenshots/*')"
+
+      - id: "1.2"
+        label: "Extração rápida com Dembrandt"
+        command: "dembrandt {url} --dtcg --dark-mode --mobile --save-output"
+        who: "user"
+        required: true
+        xp: 20
+        scan_rule: "has_file_matching('**/dembrandt*') OR has_file_matching('**/tokens*.json')"
+
+      - id: "1.3"
+        label: "Deep CSS extraction via Playwright"
+        command: "@dev → injetar script no browser para extrair CSS computado, @keyframes, transitions, custom properties, pseudo-elements, media queries"
+        who: "@dev"
+        required: true
+        xp: 40
+        scan_rule: "has_file_matching('design-system/**/deep-extract*') OR has_file_matching('design-system/**/css-extract*')"
+        note: "O diferencial — script injetado captura o que nenhuma ferramenta externa pega"
+
+      - id: "1.4"
+        label: "Extrair animações e efeitos"
+        command: "@dev → Playwright captura @keyframes, transitions, transforms, backdrop-filters, clip-paths, gradients"
+        who: "@dev"
+        required: true
+        xp: 25
+        scan_rule: "has_file_matching('design-system/**/animations*') OR has_file_matching('design-system/**/effects*')"
+
+      - id: "1.5"
+        label: "Capturar estados interativos"
+        command: "@dev → Playwright simula :hover, :focus, :active e captura diferenças"
+        who: "@dev"
+        required: false
+        xp: 15
+        condition: "se o site tem micro-interações relevantes"
+        scan_rule: "has_file_matching('design-system/**/states*') OR has_file_matching('design-system/**/interactions*')"
+
+      - id: "1.6"
+        label: "Dark mode extraction"
+        command: "@dev → Playwright toggle prefers-color-scheme: dark e re-extrair tokens"
+        who: "@dev"
+        required: false
+        xp: 15
+        condition: "se o site tem dark mode"
+        scan_rule: "has_file_matching('design-system/**/dark*')"
+
+      - id: "1.7"
+        label: "Catalogar componentes visuais"
+        command: "@ux → Claude Vision analisa screenshots e identifica cada componente (Hero, Card, Nav, Footer, CTA, etc.)"
+        who: "@ux"
+        required: true
+        xp: 15
+        scan_rule: "has_file_matching('design-system/components/*') OR has_file_matching('design-system/**/component-catalog*')"
+
+  # ---------------------------------------------------------------------------
+  # WORLD 2: A Biblioteca Secreta (130 XP)
+  # ---------------------------------------------------------------------------
+  2:
+    name: "A Biblioteca Secreta"
+    description: "Colete padrões premium do mundo inteiro. Seu cérebro visual cresce."
+    unlock_message: "Os maiores alquimistas tinham bibliotecas. A sua começa agora."
+    complete_message: "Sua biblioteca é uma arma. Cada pattern é uma munição premium."
+    items:
+      - id: "2.1"
+        label: "Scrapar referências do Awwwards"
+        command: "@analyst → /smart-browser-playwright awwwards.com/awwwards/collections/css-js-animations"
+        who: "@analyst"
+        required: true
+        xp: 30
+        scan_rule: "has_file_matching('design-system/patterns/awwwards*') OR has_file_matching('design-system/references/awwwards*')"
+
+      - id: "2.2"
+        label: "Scrapar componentes do 21st.dev"
+        command: "@analyst → /smart-browser-playwright 21st.dev — extrair patterns e componentes"
+        who: "@analyst"
+        required: true
+        xp: 30
+        scan_rule: "has_file_matching('design-system/patterns/21st*') OR has_file_matching('design-system/references/21st*')"
+
+      - id: "2.3"
+        label: "Scrapar referências adicionais"
+        command: "@analyst → dribbble, mobbin, godly.website, minimal.gallery"
+        who: "@analyst"
+        required: false
+        xp: 20
+        condition: "se quer mais diversidade de referências"
+        scan_rule: "has_file_matching('design-system/references/*')"
+
+      - id: "2.4"
+        label: "Catalogar patterns por categoria"
+        command: "@dev → organizar em: hero-sections/, animations/, micro-interactions/, layouts/, typography/, cards/, navbars/, footers/"
+        who: "@dev"
+        required: true
+        xp: 25
+        scan_rule: "has_dir('design-system/patterns/hero-sections') OR has_dir('design-system/patterns/animations')"
+
+      - id: "2.5"
+        label: "Documentar anti-patterns"
+        command: "@ux → catalogar o que NÃO funciona — erros comuns, patterns datados, problemas de a11y"
+        who: "@ux"
+        required: false
+        xp: 10
+        scan_rule: "has_file_matching('design-system/anti-patterns/*')"
+
+      - id: "2.6"
+        label: "Criar INDEX.md da biblioteca"
+        command: "@dev → índice navegável com categorias, quantidade de patterns, e links"
+        who: "@dev"
+        required: true
+        xp: 15
+        scan_rule: "has_file('design-system/patterns/INDEX.md') OR has_file('design-system/INDEX.md')"
+
+  # ---------------------------------------------------------------------------
+  # WORLD 3: O Alquimista (140 XP)
+  # ---------------------------------------------------------------------------
+  3:
+    name: "O Alquimista"
+    description: "Transforme dados brutos em tokens de ouro. A arquitetura do design system."
+    unlock_message: "Reagentes prontos. Hora de transformar chumbo em ouro."
+    complete_message: "Tokens forjados. O DNA está codificado. Tailwind configurado."
+    items:
+      - id: "3.1"
+        label: "Analisar e consolidar tokens extraídos"
+        command: "@architect → comparar output do dembrandt + deep extract, resolver conflitos, escolher valores finais"
+        who: "@architect"
+        required: true
+        xp: 25
+        scan_rule: "has_file_matching('design-system/tokens/consolidated*') OR has_file_matching('design-system/tokens/final*')"
+
+      - id: "3.2"
+        label: "Arquitetar hierarquia de tokens"
+        command: "/design squad (Brad Frost) → definir: primitives → semantic → component tokens"
+        who: "squad"
+        required: true
+        xp: 30
+        scan_rule: "has_file_matching('design-system/tokens/primitives*') OR has_file_matching('design-system/tokens/semantic*')"
+
+      - id: "3.3"
+        label: "Gerar tailwind.config.ts"
+        command: "@dev → converter tokens consolidados em configuração Tailwind completa"
+        who: "@dev"
+        required: true
+        xp: 25
+        scan_rule: "has_content('tailwind.config.ts', 'colors') OR has_content('tailwind.config.js', 'colors')"
+
+      - id: "3.4"
+        label: "Gerar CSS custom properties"
+        command: "@dev → exportar tokens como :root CSS variables para fallback e interop"
+        who: "@dev"
+        required: true
+        xp: 15
+        scan_rule: "has_file_matching('**/*tokens*.css') OR has_file_matching('**/*variables*.css')"
+
+      - id: "3.5"
+        label: "Mapear animações para Tailwind"
+        command: "@dev → converter @keyframes extraídos em extend.animation + extend.keyframes no Tailwind"
+        who: "@dev"
+        required: false
+        xp: 20
+        condition: "se o site tem animações relevantes"
+        scan_rule: "has_content('tailwind.config*', 'keyframes') OR has_content('tailwind.config*', 'animation')"
+
+      - id: "3.6"
+        label: "Documentar decisões de design"
+        command: "@architect → criar DECISIONS.md com trade-offs e regras de cada token"
+        who: "@architect"
+        required: false
+        xp: 10
+        scan_rule: "has_file_matching('design-system/*DECISION*') OR has_file_matching('docs/*design-decision*')"
+
+      - id: "3.7"
+        label: "Validar tokens com /design squad"
+        command: "/design squad (Brad Frost) → revisar token architecture, apontar gaps"
+        who: "squad"
+        required: false
+        xp: 15
+        condition: "recomendado para DS reutilizável"
+
+  # ---------------------------------------------------------------------------
+  # WORLD 4: A Forja dos Componentes (200 XP)
+  # ---------------------------------------------------------------------------
+  4:
+    name: "A Forja dos Componentes"
+    description: "Tokens viram componentes. Dados viram arte. Aqui o site ganha forma."
+    unlock_message: "O forno está quente. Cada componente será forjado com precisão."
+    complete_message: "Componentes forjados. O site está tomando forma."
+    items:
+      - id: "4.1"
+        label: "Componentes atômicos (Button, Badge, Input, Avatar)"
+        command: "@dev → criar atoms usando tokens + Shadcn como base"
+        who: "@dev"
+        required: true
+        xp: 30
+        scan_rule: "has_file_matching('**/components/**/button*') OR has_file_matching('**/components/**/input*')"
+
+      - id: "4.2"
+        label: "Componentes moleculares (Card, NavItem, FormField)"
+        command: "@dev → compor molecules a partir dos atoms"
+        who: "@dev"
+        required: true
+        xp: 30
+        scan_rule: "has_file_matching('**/components/**/card*') OR has_file_matching('**/components/**/nav*')"
+
+      - id: "4.3"
+        label: "Implementar animações e transições"
+        command: "@dev → aplicar keyframes e transitions extraídos nos componentes"
+        who: "@dev"
+        required: true
+        xp: 30
+        scan_rule: "has_file_matching('**/*animation*') OR has_content_matching('**/components/**', 'transition')"
+
+      - id: "4.4"
+        label: "Organismos (Hero, Header, Footer, Pricing, FAQ)"
+        command: "@dev → montar organisms a partir de molecules"
+        who: "@dev"
+        required: true
+        xp: 35
+        scan_rule: "has_file_matching('**/components/**/hero*') OR has_file_matching('**/components/**/header*') OR has_file_matching('**/components/**/footer*')"
+
+      - id: "4.5"
+        label: "Responsividade (mobile-first)"
+        command: "@dev → implementar breakpoints extraídos, testar em 390px, 768px, 1440px"
+        who: "@dev"
+        required: true
+        xp: 25
+        scan_rule: "has_content_matching('**/components/**', 'md:') OR has_content_matching('**/components/**', 'lg:')"
+
+      - id: "4.6"
+        label: "Dark mode"
+        command: "@dev → implementar variantes dark usando tokens dark extraídos"
+        who: "@dev"
+        required: false
+        xp: 20
+        condition: "se o DS tem dark mode"
+        scan_rule: "has_content_matching('**/components/**', 'dark:') OR has_content_matching('**/*.css', 'prefers-color-scheme')"
+
+      - id: "4.7"
+        label: "Acessibilidade"
+        command: "@ux + /design squad (Dave Malouf) → aria-labels, focus-visible, contrast ratios, keyboard nav, WCAG 2.1 AA"
+        who: "@ux"
+        required: true
+        xp: 15
+        scan_rule: "has_content_matching('**/components/**', 'aria-') OR has_content_matching('**/components/**', 'focus-visible')"
+
+      - id: "4.8"
+        label: "Storybook ou catálogo de componentes"
+        command: "@dev → montar vitrine visual de todos os componentes com variantes"
+        who: "@dev"
+        required: false
+        xp: 15
+        condition: "se quer biblioteca documentada"
+        scan_rule: "has_file_matching('**/.storybook/*') OR has_file_matching('**/stories/*')"
+
+  # ---------------------------------------------------------------------------
+  # WORLD 5: A Arena (150 XP)
+  # ---------------------------------------------------------------------------
+  5:
+    name: "A Arena"
+    description: "Monte as páginas. Compare com o original. Supere."
+    unlock_message: "Componentes prontos. Hora de montar o quebra-cabeça final."
+    complete_message: "O site redesignado está pronto. E ficou melhor que o original."
+    items:
+      - id: "5.1"
+        label: "Montar páginas completas"
+        command: "@dev → compor pages usando organisms + patterns da biblioteca"
+        who: "@dev"
+        required: true
+        xp: 35
+        scan_rule: "has_file_matching('**/app/**/page.tsx') OR has_file_matching('**/pages/**')"
+
+      - id: "5.2"
+        label: "Visual diff — screenshot original vs redesign"
+        command: "@qa → Playwright captura screenshots do redesign e compara lado a lado com originais"
+        who: "@qa"
+        required: true
+        xp: 30
+        scan_rule: "has_file_matching('design-system/screenshots/*comparison*') OR has_file_matching('design-system/screenshots/*diff*')"
+
+      - id: "5.3"
+        label: "Teste responsivo em 3 breakpoints"
+        command: "@qa → Playwright screenshots em 390px, 768px, 1440px — validar layout"
+        who: "@qa"
+        required: true
+        xp: 20
+        scan_rule: "has_file_matching('design-system/screenshots/*mobile*') OR has_file_matching('design-system/screenshots/*tablet*')"
+
+      - id: "5.4"
+        label: "Performance audit (Lighthouse)"
+        command: "@qa → npx lighthouse {url} --output=html --chrome-flags='--headless'"
+        who: "@qa"
+        required: false
+        xp: 20
+        condition: "recomendado para produção"
+        scan_rule: "has_file_matching('**/lighthouse*')"
+
+      - id: "5.5"
+        label: "Elevação — aplicar patterns premium da biblioteca"
+        command: "@dev + /design squad (Dan Mall) → trocar patterns genéricos por premium (awwwards/21st.dev)"
+        who: "@dev"
+        required: false
+        xp: 25
+        condition: "se quer superar o original"
+        note: "O passo que transforma 'réplica' em 'melhor que o original'"
+        scan_rule: "has_file_matching('docs/*elevation*') OR has_file_matching('docs/*improvements*')"
+
+      - id: "5.6"
+        label: "Auditoria frontend completa"
+        command: "@qa → /tokenizacao + /design squad (Dave Malouf)"
+        who: "@qa"
+        required: false
+        xp: 20
+        condition: "se quer score de qualidade"
+
+  # ---------------------------------------------------------------------------
+  # WORLD 6: O Portal do Deploy (100 XP)
+  # ---------------------------------------------------------------------------
+  6:
+    name: "O Portal do Deploy"
+    description: "O site está pronto. Mande pro mundo."
+    unlock_message: "A poção está pronta. Hora de servir."
+    complete_message: "No ar. De um site qualquer, você criou uma obra de arte."
+    items:
+      - id: "6.1"
+        label: "Build de produção"
+        command: "@dev → npm run build — zero errors, zero warnings"
+        who: "@dev"
+        required: true
+        xp: 20
+        scan_rule: "has_dir('.next') OR has_dir('dist') OR has_dir('build')"
+
+      - id: "6.2"
+        label: "Deploy"
+        command: "@devops → vercel --prod ou equivalente"
+        who: "@devops"
+        required: true
+        xp: 30
+        scan_rule: "has_file('vercel.json') OR has_file('netlify.toml') OR has_dir('.vercel')"
+
+      - id: "6.3"
+        label: "Push + Pull Request"
+        command: "@devops → *push + *create-pr"
+        who: "@devops"
+        required: true
+        xp: 25
+        scan_rule: "has_remote('origin')"
+
+      - id: "6.4"
+        label: "Comparação final: original vs redesign (URLs públicas)"
+        command: "@qa → Playwright screenshots lado a lado das URLs públicas"
+        who: "@qa"
+        required: true
+        xp: 15
+        scan_rule: "has_file_matching('design-system/screenshots/*final*')"
+
+      - id: "6.5"
+        label: "Documentar o design system"
+        command: "@dev → README.md do DS com: como usar, tokens, componentes, guidelines"
+        who: "@dev"
+        required: true
+        xp: 10
+        scan_rule: "has_file('design-system/README.md') OR has_file('ds/README.md')"
+
+  # ---------------------------------------------------------------------------
+  # WORLD 7: A Evolução (50 XP — bônus)
+  # ---------------------------------------------------------------------------
+  7:
+    name: "A Evolução"
+    description: "O alquimista nunca para de aprender. Alimente o cérebro."
+    unlock_message: "O site está no ar. Mas o verdadeiro tesouro é a biblioteca que você construiu."
+    complete_message: "Você é um Alquimista Visual. Qualquer site é matéria-prima nas suas mãos."
+    items:
+      - id: "7.1"
+        label: "Exportar DS como package reutilizável"
+        command: "@devops → npm pack ou publicar como pacote interno"
+        who: "@devops"
+        required: false
+        xp: 15
+        scan_rule: "has_content('package.json', 'files') OR has_content('package.json', 'exports')"
+
+      - id: "7.2"
+        label: "Conectar com Figma (Code Connect)"
+        command: "@ux → Figma MCP mapear componentes code ↔ design"
+        who: "@ux"
+        required: false
+        xp: 15
+        condition: "se usa Figma"
+
+      - id: "7.3"
+        label: "Alimentar biblioteca global com novos patterns"
+        command: "@dev → extrair patterns criados e adicionar à library em ~/aios-core"
+        who: "@dev"
+        required: false
+        xp: 10
+        note: "O loop que faz a biblioteca crescer a cada projeto"
+
+      - id: "7.4"
+        label: "Quality dashboard"
+        command: "@qa → /quality-dashboard"
+        who: "@qa"
+        required: false
+        xp: 10
+        scan_rule: "has_file_matching('docs/*quality*')"

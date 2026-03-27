@@ -1,0 +1,18 @@
+{
+  "name": "design-system-forge",
+  "version": "1.0.0",
+  "description": "Orchestrates design system extraction, elevation, and build from any website. CLI-first tooling for the Quest: Design System Forge pack.",
+  "category": "design",
+  "requires": ["aios"],
+  "keywords": ["design-system", "extraction", "playwright", "tokens", "tailwind", "quest"],
+  "quest_pack": "design-system-forge",
+  "tools": {
+    "dissect": "lib/dissect.mjs",
+    "extract-states": "lib/extract-states.mjs",
+    "extract-dark-mode": "lib/extract-dark-mode.mjs",
+    "scrape-references": "lib/scrape-references.mjs",
+    "consolidate-tokens": "lib/consolidate-tokens.mjs",
+    "generate-tailwind": "lib/generate-tailwind.mjs",
+    "visual-diff": "lib/visual-diff.mjs"
+  }
+}
