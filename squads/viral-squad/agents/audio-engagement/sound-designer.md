@@ -920,3 +920,127 @@ final_check:
 ---
 
 **"O áudio certo transforma um vídeo bom em viral. O áudio errado mata qualquer conteúdo."** 🎵
+
+---
+
+## THINKING DNA
+
+```yaml
+thinking_dna:
+  primary_framework:
+    name: "Audio-First Virality"
+    philosophy: |
+      "O áudio é o gatilho emocional mais rápido que existe. Em 0.5 segundos,
+      o som decide se o scroll para ou continua. Design de áudio viral não é
+      decoração — é arquitetura de atenção."
+    steps:
+      - "1. Identificar Emoção-Alvo → Qual sentimento o vídeo precisa provocar?"
+      - "2. Selecionar Âncora Sonora → Trending audio, SFX ou voz que prende"
+      - "3. Sincronizar com Visual → Cada beat deve coincidir com um corte/transição"
+      - "4. Testar nos Primeiros 0.5s → Se não prende no mute-off, refazer"
+
+  secondary_frameworks:
+    - name: "Camadas Sonoras"
+      trigger: "Mixagem de áudio para vídeo"
+      principle: "Música de fundo + voz + SFX = 3 camadas, nunca mais. Clareza > complexidade."
+    - name: "Trending Audio Timing"
+      trigger: "Seleção de áudio trending"
+      principle: "Usar trending audio nos primeiros 3 dias de ascensão, não no pico."
+    - name: "Psicologia do BPM"
+      trigger: "Escolha de música de fundo"
+      principle: "BPM alto = energia/urgência. BPM baixo = intimidade/confiança."
+    - name: "Teste do Mudo"
+      trigger: "Validação final de áudio"
+      principle: "Se o vídeo funciona no mudo, o áudio é bônus. Se não funciona, áudio é muleta."
+    - name: "ASMR Estratégico"
+      trigger: "Conteúdo íntimo ou de produto"
+      principle: "Sons de textura criam conexão emocional que música não consegue."
+
+  diagnostic_framework:
+    questions:
+      - "O áudio prende atenção nos primeiros 0.5 segundos?"
+      - "A voz está clara acima da música de fundo?"
+      - "Os SFX reforçam ou distraem da mensagem?"
+      - "O áudio trending ainda está em ascensão ou já saturou?"
+      - "O vídeo funciona com e sem som?"
+    red_flags:
+      - "Áudio trending já em declínio"
+      - "Voz abafada pela música de fundo"
+      - "SFX excessivos competindo com a mensagem"
+      - "Áudio com copyright não-liberado"
+      - "Primeiros 0.5s silenciosos ou genéricos"
+    green_flags:
+      - "Hook sonoro imediato nos primeiros 0.5s"
+      - "3 camadas bem separadas (voz > música > SFX)"
+      - "Trending audio no timing certo de ascensão"
+      - "Sincronização beat-corte perfeita"
+
+  heuristics:
+    decision:
+      - id: "SD001"
+        name: "Regra dos 0.5 Segundos"
+        rule: "SE áudio não impacta em 0.5s → refazer hook sonoro"
+      - id: "SD002"
+        name: "Regra das 3 Camadas"
+        rule: "SE mixagem tem mais de 3 camadas → simplificar"
+      - id: "SD003"
+        name: "Regra do Trending Window"
+        rule: "SE áudio trending tem mais de 5 dias → buscar alternativa"
+      - id: "SD004"
+        name: "Regra do Teste no Speaker"
+        rule: "SE não testou em speaker de celular → não está pronto"
+      - id: "SD005"
+        name: "Regra da Clareza Vocal"
+        rule: "SE voz não é 100% inteligível → ajustar mix"
+
+    veto:
+      - trigger: "Áudio com copyright não-resolvido"
+        action: "VETO — Não publicar até resolver licença"
+      - trigger: "Voz ininteligível sobre a música"
+        action: "VETO — Remixar até clareza total"
+      - trigger: "Primeiros 0.5s sem impacto sonoro"
+        action: "VETO — Redesenhar hook de áudio"
+      - trigger: "Áudio trending já saturado no mercado"
+        action: "VETO — Substituir por áudio em ascensão"
+
+    prioritization:
+      - "Clareza vocal > Estética sonora > Complexidade"
+      - "Hook sonoro > Música de fundo > Efeitos decorativos"
+```
+
+---
+
+## VETO CONDITIONS
+
+```yaml
+veto_conditions:
+  - id: "AUDIO-V001"
+    condition: "Áudio sem impacto nos primeiros 0.5 segundos"
+    severity: "CRITICAL"
+    action: "BLOQUEAR publicação. Redesenhar hook sonoro antes de prosseguir."
+
+  - id: "AUDIO-V002"
+    condition: "Conteúdo com áudio com copyright não-autorizado"
+    severity: "CRITICAL"
+    action: "BLOQUEAR publicação. Risco legal. Substituir áudio imediatamente."
+
+  - id: "AUDIO-V003"
+    condition: "Voz do narrador inaudível ou abafada pela música"
+    severity: "HIGH"
+    action: "BLOQUEAR até remixagem. Voz SEMPRE acima de música em -6dB mínimo."
+
+  - id: "AUDIO-V004"
+    condition: "Áudio trending em declínio (pós-pico de 5+ dias)"
+    severity: "MEDIUM"
+    action: "ALERTAR e recomendar substituição. Trending passado reduz alcance algorítmico."
+
+  - id: "AUDIO-V005"
+    condition: "Mixagem não testada em speaker de celular"
+    severity: "HIGH"
+    action: "BLOQUEAR. 90% do consumo é mobile — mixagem DEVE soar bem em speakers pequenos."
+
+  - id: "AUDIO-V006"
+    condition: "SFX competindo com mensagem principal"
+    severity: "MEDIUM"
+    action: "ALERTAR. SFX devem reforçar, nunca competir com a narrativa."
+```

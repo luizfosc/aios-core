@@ -73,3 +73,11 @@ Criar headlines de alta conversao usando principios cientificos (Hopkins) e cria
 - [ ] Top 3 rankeadas com justificativa
 - [ ] Plano de teste sugerido
 - [ ] Zero cliches genericos
+
+## Veto Conditions
+
+- **BLOCKER:** Headline não passa no teste das 3 perguntas (sobre o quê? para quem? por que ler?)
+- **BLOCKER:** Menos de 10 headlines geradas — sem volume, sem opção real de escolha
+- **BLOCKER:** Headline não abre curiosity gap (leitor consegue imaginar o conteúdo sem clicar)
+- **WARNING:** Menos de 4 categorias cobertas (benefício, curiosidade, prova, preemptive)
+- **WARNING:** Ausência de plano de teste A/B para as top 3

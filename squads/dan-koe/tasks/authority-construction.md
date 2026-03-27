@@ -304,5 +304,8 @@ handoff:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Plano de autoridade baseado em credenciais (diplomas, certificações) em vez de frameworks + resultados
+- **BLOCKER:** Estratégia que depende de seguidores/vanity metrics como prova de autoridade
+- **BLOCKER:** Conteúdo planejado que informa sem mudar perspectiva (autoridade vem de reframe, não de informação)
+- **WARNING:** Plano sem pelo menos 3 frameworks documentados do criador (propriedade intelectual mínima)
+- **WARNING:** Ausência de prova social concreta (resultados próprios ou de alunos/clientes)

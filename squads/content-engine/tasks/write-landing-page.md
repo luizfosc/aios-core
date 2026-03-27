@@ -71,3 +71,11 @@ Escrever copy para landing page de captura ou conversao, otimizada para um unico
 - [ ] Congruente com fonte de trafego
 - [ ] Wiebe's 5 checks passaram
 - [ ] Zero cliches de coach
+
+## Veto Conditions
+
+- **BLOCKER:** Mais de um objetivo por página (cada LP tem UM CTA único)
+- **BLOCKER:** Headline não visível above the fold (primeiro elemento que o visitor vê)
+- **BLOCKER:** Ausência de VoC — copy usa linguagem do criador em vez das palavras do público
+- **WARNING:** Links de saída presentes (exceto o CTA principal — todo link é um vazamento)
+- **WARNING:** Incongruência com a fonte de tráfego (promessa do anúncio ≠ promessa da LP)

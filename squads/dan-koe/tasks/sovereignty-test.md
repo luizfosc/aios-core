@@ -314,5 +314,9 @@ handoff:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Avaliação que pula qualquer das 5 dimensões de soberania (todas são obrigatórias)
+- **BLOCKER:** Score auto-avaliado sem evidência concreta para cada dimensão (achismo não é métrica)
+- **BLOCKER:** Recomendação que troca soberania por receita sem reconhecer explicitamente o trade-off
+- **BLOCKER:** Resultado que valida situação comprometida (score < 20/50) sem plano de ação urgente
+- **WARNING:** Teste aplicado sem projeção de 3 anos dos efeitos de segunda ordem
+- **WARNING:** Foco exclusivo em soberania financeira sem considerar tempo, local e criativa

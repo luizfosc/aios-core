@@ -53,3 +53,11 @@ Criar uma oferta irresistivel usando os principios de Dan Kennedy: core offer + 
 - [ ] Preco ancorado (comparacao)
 - [ ] Instrucoes claras de como comprar
 - [ ] Trackavel (como medir resultado)
+
+## Veto Conditions
+
+- **BLOCKER:** Core offer focado em features em vez de resultado/transformação
+- **BLOCKER:** USP ausente ou genérica — não responde "por que VOCÊ e não o concorrente?"
+- **BLOCKER:** Ausência de garantia — oferta sem garantia transmite insegurança
+- **WARNING:** Bonus stack com valor percebido menor que 3x o preço
+- **WARNING:** Escassez fabricada (countdown fake, vagas inventadas) em vez de escassez real

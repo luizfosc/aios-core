@@ -49,3 +49,11 @@ validation:
   - Contrast Exercise has minimum 5 items per column
   - Recommendations directly tie back to identified gaps
 ```
+
+## Veto Conditions
+
+- **BLOCKER:** Brand Journey com respostas genéricas ("ajudo pessoas a ter sucesso") em vez de específicas
+- **BLOCKER:** Alignment score sem exemplos concretos de conteúdo como evidência
+- **BLOCKER:** Recomendações desconectadas dos gaps identificados (solução sem diagnóstico)
+- **WARNING:** Contrast Exercise com menos de 5 itens por coluna (diferenciação insuficiente)
+- **WARNING:** Ausência de action items prioritizados — lista sem prioridade não gera ação

@@ -61,3 +61,11 @@ validation:
   - Weekly KPI is measurable and specific
   - At least 1 content piece directly promotes Next Step
 ```
+
+## Veto Conditions
+
+- **BLOCKER:** Plano semanal sem KPI mensurável — sem métrica, sem como saber se funcionou
+- **BLOCKER:** 100% conteúdo "create" sem nenhum "document" — falta autenticidade
+- **BLOCKER:** Nenhum conteúdo da semana promove diretamente o serviço (Next Step)
+- **WARNING:** Ausência de data de revisão mid-week (plano sem checkpoint = execução cega)
+- **WARNING:** Split 80/20 não visível — maioria deve ser conteúdo comprovado, minoria experimental

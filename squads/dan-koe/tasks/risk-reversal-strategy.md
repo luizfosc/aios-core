@@ -258,5 +258,9 @@ handoff:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Garantia que cobre apenas risco financeiro sem endereçar temporal, esforço ou social
+- **BLOCKER:** Promessa de garantia insustentável financeiramente (teste de autenticidade score < 4/5)
+- **BLOCKER:** Garantia vaga tipo "satisfação garantida" sem resultado quantificável e prazo definido
+- **BLOCKER:** Reversão de risco sem linguagem copy-ready escrita (precisa estar pronta para usar)
+- **WARNING:** Garantia condicional com condições tão difíceis que na prática ninguém consegue reembolso
+- **WARNING:** Processo de reembolso complexo ou com fricção excessiva (deve ser simples e sem vergonha)

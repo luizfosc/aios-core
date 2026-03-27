@@ -55,3 +55,11 @@ validation:
   - No hook uses generic/cliche openings
   - Retain transitions flow naturally from the hook
 ```
+
+## Veto Conditions
+
+- **BLOCKER:** Menos de 10 hooks gerados — volume é necessário para encontrar o melhor
+- **BLOCKER:** Todos os hooks do mesmo tipo (apenas contrarian, apenas pergunta) — variedade obrigatória
+- **BLOCKER:** Hooks com aberturas clichê/genéricas ("Você sabia que...", "Neste vídeo...")
+- **WARNING:** Hooks que não estão na voz do criador (soam como template americano traduzido)
+- **WARNING:** Top 3 hooks com score abaixo de 7 — nenhum está forte o suficiente

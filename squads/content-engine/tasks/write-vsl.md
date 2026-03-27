@@ -69,3 +69,11 @@ Escrever um script de Video Sales Letter (VSL) completo usando o metodo RMBC, ot
 - [ ] Notas de slide/visual incluidas
 - [ ] Duracao dentro do target
 - [ ] Zero cliches de coach
+
+## Veto Conditions
+
+- **BLOCKER:** Hook não trava atenção nos primeiros 30 segundos (sem tensão, sem curiosidade)
+- **BLOCKER:** Mecanismo único ausente — VSL sem mecanismo é apresentação, não venda
+- **BLOCKER:** Dor amplificada genérica em vez de cena viva (leitor não sente soco no estômago)
+- **WARNING:** Transições abruptas entre segmentos (quebram o fluxo emocional)
+- **WARNING:** CTA diluído — mais de um CTA ou CTA vago no final

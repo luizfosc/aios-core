@@ -69,3 +69,11 @@ Escrever uma sales page completa de alta conversao seguindo os principios de dir
 - [ ] PS presente (obrigatorio)
 - [ ] Zero cliches de coach
 - [ ] Copy proprietaria (teste do concorrente)
+
+## Veto Conditions
+
+- **BLOCKER:** Promessa genérica que funciona no perfil de qualquer concorrente (Teste de Substituição falhou)
+- **BLOCKER:** Dor descrita de forma poética/bonita em vez de crua e específica (sem cena viva)
+- **BLOCKER:** Mecanismo único ausente ou genérico (sem nome proprietário, sem visualização)
+- **WARNING:** Offer stack com valor percebido menor que 10x o preço pedido
+- **WARNING:** Ausência de PS no final (regra Halbert obrigatória para sales pages)

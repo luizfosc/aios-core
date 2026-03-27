@@ -77,3 +77,11 @@ validation:
   - Subject line is under 50 characters and creates curiosity
   - Reads like Tiago talking to a friend (direto, sem verniz, pratico)
 ```
+
+## Veto Conditions
+
+- **BLOCKER:** Mais de um insight principal por edição (newsletter ≠ livro — UMA ideia por vez)
+- **BLOCKER:** Cold open fraco — primeiras 2 frases não criam curiosidade ou identificação
+- **BLOCKER:** Leitura excede 4 minutos — respeitar o tempo do leitor é inegociável
+- **WARNING:** Ausência de elemento pessoal (newsletter sem história pessoal parece artigo genérico)
+- **WARNING:** Subject line com mais de 50 caracteres (taxa de abertura cai drasticamente)

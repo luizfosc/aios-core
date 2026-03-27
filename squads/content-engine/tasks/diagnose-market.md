@@ -141,3 +141,11 @@ Documento de diagnostico com:
 - [ ] Recomendacao de abordagem clara
 - [ ] Handoff agent definido
 - [ ] Brief estrategico preenchido
+
+## Veto Conditions
+
+- **BLOCKER:** Awareness level definido sem evidências concretas (chute ≠ diagnóstico)
+- **BLOCKER:** Mass desire articulada de forma genérica ("as pessoas querem sucesso")
+- **BLOCKER:** Diagnóstico sem recomendação de abordagem — diagnóstico sem direção é inútil
+- **WARNING:** Sophistication level ignorado (awareness sem sophistication é diagnóstico incompleto)
+- **WARNING:** Handoff sem brief estratégico — próximo agente precisa de contexto para executar

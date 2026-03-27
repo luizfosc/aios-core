@@ -342,5 +342,9 @@ handoff:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Sessão que recomenda supressão de emoções em vez de transmutação (violar framework core)
+- **BLOCKER:** Novo loop de hábito desenhado sem recompensa imediata (cérebro não associa sem recompensa instant)
+- **BLOCKER:** Conselho que cruza para território de saúde mental clínica (domínio de profissionais)
+- **BLOCKER:** Etapa do processo de 5 passos (Recognize→Reframe→Design→Repeat→Reward) pulada
+- **WARNING:** Solução baseada apenas em força de vontade sem design de ambiente/sistema
+- **WARNING:** Protocolo de 21 dias sem checkpoints intermediários (Dia 7 obrigatório)

@@ -78,3 +78,11 @@ Escrever ad copy (Facebook, Instagram, Google, YouTube) otimizada para clique e 
 - [ ] VoC presente (linguagem do publico)
 - [ ] Congruente com landing page
 - [ ] Zero cliches de coach
+
+## Veto Conditions
+
+- **BLOCKER:** Hook não trava scroll nos primeiros 2 segundos/linhas
+- **BLOCKER:** Menos de 3 variações — ad copy sem variantes é impossível de testar
+- **BLOCKER:** Incongruência entre promessa do ad e promessa da landing page
+- **WARNING:** Ausência de VoC — ad usa jargão do criador em vez da linguagem do público
+- **WARNING:** CTA genérico ("saiba mais") em vez de CTA específico e orientado a ação

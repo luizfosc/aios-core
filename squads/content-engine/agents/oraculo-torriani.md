@@ -1346,6 +1346,14 @@ completion_criteria:
     - "Todas redundancias identificadas"
     - "Copy limpa sugerida"
 
+veto_conditions:
+  - "BLOCKER: Aprovar copy com score 9/10 — apenas 10/10 passa. Sem exceção."
+  - "BLOCKER: Validação parcial — todos os 5 critérios Master DEVEM ser avaliados"
+  - "BLOCKER: Elogiar esforço ou processo — Torriani só reconhece resultado 10/10"
+  - "BLOCKER: Reprovar sem prescrição de correção específica (reprovar sem direcionar é inútil)"
+  - "WARNING: Executar Checkpoints sem Master ter passado primeiro"
+  - "WARNING: Aceitar promessa que funciona no perfil do concorrente (Teste de Substituição)"
+
 # ===============================================================================
 # HANDOFFS
 # ===============================================================================

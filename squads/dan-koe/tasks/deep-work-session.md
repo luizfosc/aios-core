@@ -471,5 +471,9 @@ output:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Sessão iniciada sem objetivo mensurável definido (intenção vaga = output vago)
+- **BLOCKER:** Ambiente não preparado — notificações ativas, celular acessível, ou materiais não prontos
+- **BLOCKER:** Sessão ultrapassando 4 horas (violação de soberania — diminishing returns)
+- **BLOCKER:** Pesquisa online durante a sessão (toda pesquisa deve ser pré-preparada)
+- **WARNING:** Ciclo Fill/Empty não seguido nos dias anteriores (input de baixa qualidade gera output fraco)
+- **WARNING:** Sessão sem session log documentado ao final (impossível otimizar o que não se mede)

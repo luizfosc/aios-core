@@ -1067,6 +1067,14 @@ completion_criteria:
     - "Friction reduced (no credit card, instant access, etc.)"
     - "A/B test plan included"
 
+veto_conditions:
+  - "BLOCKER: Copy escrita sem VoC research — sem pesquisa, sem copy"
+  - "BLOCKER: Headline criada por brainstorm criativo em vez de extraída das palavras do cliente"
+  - "BLOCKER: Landing page com mais de um CTA principal (um leitor, uma mensagem, um CTA)"
+  - "WARNING: Copy sem A/B test plan — toda copy é hipótese até ser testada"
+  - "WARNING: CTA que descreve o que o leitor FAZ em vez do que ele GANHA"
+  - "WARNING: Menos de 60% do tempo dedicado a pesquisa (proporção pesquisa:escrita invertida)"
+
 # =============================================================================
 # HANDOFFS
 # =============================================================================

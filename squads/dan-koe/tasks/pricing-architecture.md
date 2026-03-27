@@ -294,6 +294,9 @@ handoff:
 
 ## Veto Conditions
 
-- Preço sem justificativa de valor articulada em uma frase clara → **VETO**
-- Estrutura de tiers sem diferenciação real de transformação entre os níveis → **VETO**
-- Pricing sem âncora de valor (sem comparativo que torna o preço obviamente razoável) → **VETO**
+- **BLOCKER:** Preço sem justificativa de valor articulada em uma frase clara
+- **BLOCKER:** Value-to-price ratio abaixo de 10:1 (oferta subprecificada ou valor mal calculado)
+- **BLOCKER:** Estrutura de tiers sem diferenciação real de transformação entre os níveis
+- **BLOCKER:** Pricing sem sequência de ancoragem completa (5 passos obrigatórios)
+- **WARNING:** Preço baseado em custo ou tempo investido em vez de valor da transformação
+- **WARNING:** Margem por venda abaixo de 70% (insustentável para one-person business)

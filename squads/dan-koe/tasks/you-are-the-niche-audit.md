@@ -284,5 +284,8 @@ handoff:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Resultado da auditoria que valida nicho tradicional em vez de interseção única (ex: "marketing para dentistas")
+- **BLOCKER:** Interseção baseada em habilidades que o criador não possui de fato (aspiracional, não real)
+- **BLOCKER:** Auditoria que não testa autenticidade — posicionamento que qualquer pessoa poderia reivindicar
+- **WARNING:** Score abaixo de 60 sem plano de ação para fechar os gaps identificados
+- **WARNING:** Auditoria sem comparação com concorrentes diretos para validar unicidade real

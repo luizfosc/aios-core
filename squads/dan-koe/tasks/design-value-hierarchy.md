@@ -280,5 +280,8 @@ handoff:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Oferta posicionada no nível "Information" sem estratégia para subir para "Transformation"
+- **BLOCKER:** Hierarquia sem diferenciação clara entre os 4 níveis (entertainment/information/transformation/implementation)
+- **BLOCKER:** Precificação baseada em volume de conteúdo em vez de nível de transformação entregue
+- **WARNING:** Nível "Implementation" ausente do design (maior valor, maior margem)
+- **WARNING:** Cada nível sem exemplo concreto de entrega e pricing justificável

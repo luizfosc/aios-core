@@ -368,5 +368,9 @@ handoff:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Camadas do stack construídas fora de ordem (Brand → Products → Content → Automation é sequencial)
+- **BLOCKER:** Automação recomendada antes de ter marca e produto validados (pular fundação)
+- **BLOCKER:** Stack que requer equipe grande para funcionar (viola princípio de one-person business)
+- **BLOCKER:** Plano de 90 dias sem métricas de sucesso claras para cada camada
+- **WARNING:** Leverage Stack desenhado sem Personal Monopoly como base (KOE_BRD_002 é pré-requisito)
+- **WARNING:** Camada de produtos sem margem acima de 90% (digital products devem ter margem ~98%)

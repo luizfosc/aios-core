@@ -473,5 +473,9 @@ output:
 
 ## Veto Conditions
 
-- Output sem quality check realizado antes de entregar → **VETO**
-- Etapas do processo puladas sem justificativa documentada → **VETO**
+- **BLOCKER:** Peça-âncora sem estrutura APAG completa (todos os 4 componentes obrigatórios)
+- **BLOCKER:** Menos de 10 fragmentos de cascade identificados (não justifica o esforço de cascade)
+- **BLOCKER:** Menos de 5 plataformas cobertas no cascade skeleton (cobertura insuficiente)
+- **BLOCKER:** Big Idea com cascade_score < 8 usada como fundação (profundidade insuficiente para fragmentação)
+- **WARNING:** Leverage ratio abaixo de 1h criação → 5h distribuição (eficiência comprometida)
+- **WARNING:** Fragmentos que não funcionam standalone sem contexto da peça-âncora

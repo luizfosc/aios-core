@@ -69,3 +69,11 @@ Escrever uma sequencia de emails de alta conversao, desde welcome ate venda, usa
 - [ ] VoC presente (linguagem do publico)
 - [ ] Urgencia real no email final
 - [ ] Zero cliches de coach
+
+## Veto Conditions
+
+- **BLOCKER:** Email 1 já tenta vender — primeiro email DEVE construir confiança e abrir loop
+- **BLOCKER:** Subject lines genéricas que não criam curiosidade (parecem spam ou newsletter corporativa)
+- **BLOCKER:** Arco emocional repetitivo — todos os emails com mesmo tom/energia
+- **WARNING:** Ausência de PS em qualquer email (Halbert Rule)
+- **WARNING:** Urgência fabricada no email final (countdown fake, escassez falsa)

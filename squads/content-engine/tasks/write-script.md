@@ -77,3 +77,11 @@ validation:
   - Title options are under 60 characters and create curiosity
   - Clear transformation arc from start to finish
 ```
+
+## Veto Conditions
+
+- **BLOCKER:** Avatar da audiência não definido antes de escrever (80% do script é preparação)
+- **BLOCKER:** Hook resume o vídeo inteiro em vez de ganhar os próximos 30 segundos
+- **BLOCKER:** Zona morta maior que 60 segundos sem curiosity gap ou mini-payoff
+- **WARNING:** Menos de 5 segmentos STP em vídeos com mais de 8 minutos
+- **WARNING:** Script soa como ensaio escrito em vez de fala natural

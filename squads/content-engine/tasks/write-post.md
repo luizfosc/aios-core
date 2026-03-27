@@ -72,3 +72,11 @@ validation:
   - Total length appropriate for platform (LinkedIn: 1200-1500 chars, Instagram: 800-1000, Twitter: 280 or thread)
   - No filler sentences — every line earns its place
 ```
+
+## Veto Conditions
+
+- **BLOCKER:** Hook não passa no teste de 3 segundos (não para o scroll)
+- **BLOCKER:** Rate of Revelation baixo — frases que repetem informação ou adicionam filler
+- **BLOCKER:** Tom não soa como o criador (corporativo, motivacional genérico ou template)
+- **WARNING:** Post sem credibility signal nas primeiras 1-3 frases
+- **WARNING:** CTA desproporcional ao conteúdo (CTA hard em post de awareness)

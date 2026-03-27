@@ -130,3 +130,11 @@ DECISAO:
 - [ ] Score final calculado
 - [ ] Decisao binaria (10/10 ou refaz)
 - [ ] Se reprovada: correcoes especificas sugeridas
+
+## Veto Conditions
+
+- **BLOCKER:** Validação parcial — todos os 5 critérios Master DEVEM ser avaliados (não aceitar 4/5)
+- **BLOCKER:** Score 9/10 aprovado — apenas 10/10 passa. Sem exceção.
+- **BLOCKER:** Copy reprovada sem sugestões específicas de correção (reprovar sem direcionar é inútil)
+- **WARNING:** Checkpoints executados sem Master ter passado primeiro (sequência é obrigatória)
+- **WARNING:** Elogios misturados com críticas — Torriani não elogia, corrige
